@@ -53,8 +53,14 @@ add_executable(${PROJECT_NAME}
         Source/UIElements/UIImage.h
         Source/SpatialHashing.cpp
         Source/SpatialHashing.h
+        Source/MainMenu.cpp
+        Source/MainMenu.h
+        Source/Actors/MainMenuActor.cpp
+        Source/Actors/MainMenuActor.h
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE SDL2::SDL2 SDL2_image::SDL2_image SDL2_ttf::SDL2_ttf SDL2_mixer::SDL2_mixer)
-# target_compile_options(${PROJECT_NAME} PRIVATE -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer)
-# target_link_options(${PROJECT_NAME} PRIVATE -fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer)
+
+if(MINGW)
+    target_link_options(${PROJECT_NAME} PRIVATE -mconsole)
+endif()

@@ -1,0 +1,315 @@
+{
+  "frames": [
+    {
+      "filename": "armor__0007_walk_2.png",
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 200,
+        "h": 442
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 200,
+        "h": 442
+      },
+      "sourceSize": {
+        "w": 200,
+        "h": 442
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "armor__0002_idle_3.png",
+      "frame": {
+        "x": 0,
+        "y": 442,
+        "w": 235,
+        "h": 440
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 235,
+        "h": 440
+      },
+      "sourceSize": {
+        "w": 235,
+        "h": 440
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "armor__0008_walk_3.png",
+      "frame": {
+        "x": 0,
+        "y": 882,
+        "w": 193,
+        "h": 440
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 193,
+        "h": 440
+      },
+      "sourceSize": {
+        "w": 193,
+        "h": 440
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "armor__0001_idle_2.png",
+      "frame": {
+        "x": 200,
+        "y": 0,
+        "w": 223,
+        "h": 438
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 223,
+        "h": 438
+      },
+      "sourceSize": {
+        "w": 223,
+        "h": 438
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "armor__0006_walk_1.png",
+      "frame": {
+        "x": 0,
+        "y": 1322,
+        "w": 193,
+        "h": 436
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 193,
+        "h": 436
+      },
+      "sourceSize": {
+        "w": 193,
+        "h": 436
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "armor__0011_walk_6.png",
+      "frame": {
+        "x": 193,
+        "y": 882,
+        "w": 176,
+        "h": 435
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 435
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 435
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "armor__0000_idle_1.png",
+      "frame": {
+        "x": 423,
+        "y": 0,
+        "w": 213,
+        "h": 428
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 213,
+        "h": 428
+      },
+      "sourceSize": {
+        "w": 213,
+        "h": 428
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "armor__0003_turn_1.png",
+      "frame": {
+        "x": 0,
+        "y": 1758,
+        "w": 213,
+        "h": 432
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 213,
+        "h": 432
+      },
+      "sourceSize": {
+        "w": 213,
+        "h": 432
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "armor__0010_walk_5.png",
+      "frame": {
+        "x": 235,
+        "y": 438,
+        "w": 184,
+        "h": 434
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 184,
+        "h": 434
+      },
+      "sourceSize": {
+        "w": 184,
+        "h": 434
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "armor__0004_turn_2.png",
+      "frame": {
+        "x": 636,
+        "y": 0,
+        "w": 205,
+        "h": 432
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 205,
+        "h": 432
+      },
+      "sourceSize": {
+        "w": 205,
+        "h": 432
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "armor__0005_turn_3.png",
+      "frame": {
+        "x": 193,
+        "y": 1317,
+        "w": 202,
+        "h": 432
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 202,
+        "h": 432
+      },
+      "sourceSize": {
+        "w": 202,
+        "h": 432
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "filename": "armor__0009_walk_4.png",
+      "frame": {
+        "x": 419,
+        "y": 438,
+        "w": 180,
+        "h": 431
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 431
+      },
+      "sourceSize": {
+        "w": 180,
+        "h": 431
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  ],
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7",
+    "image": "texture.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 841,
+      "h": 1971
+    },
+    "scale": 1
+  }
+}

@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------
 // From Game Programming in C++ by Sanjay Madhav
 // Copyright (C) 2017 Sanjay Madhav. All rights reserved.
-// 
+//
 // Released under the BSD License
 // See LICENSE in root directory for full details.
 // ----------------------------------------------------------------
@@ -26,6 +26,7 @@
 #include "Components/DrawComponents/DrawAnimatedComponent.h"
 #include "Components/DrawComponents/DrawPolygonComponent.h"
 #include "Components/ColliderComponents/AABBColliderComponent.h"
+#include "SpatialHashing.h"
 
 Game::Game(int windowWidth, int windowHeight)
         :mWindow(nullptr)
@@ -89,7 +90,7 @@ bool Game::Initialize()
     }
 
     // Initialize SDL_mixer
-    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) == -1)
+   if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) == -1)
     {
         SDL_Log("Failed to initialize SDL_mixer");
         return false;
@@ -132,7 +133,7 @@ void Game::SetGameScene(Game::GameScene scene, float transitionTime)
 {
     if (mSceneManagerState == SceneManagerState::None)
     {
-        if (scene == GameScene::MainMenu || scene == GameScene::Level1 || scene == GameScene::Level2)
+        if (scene == GameScene::MainMenu || scene == GameScene::Ship || scene == GameScene::Level1 || scene == GameScene::Level2)
         {
             mNextScene = scene;
             mSceneManagerState = SceneManagerState::Exiting;
@@ -185,6 +186,13 @@ void Game::ChangeScene()
         // Initialize main menu actors
         LoadMainMenu();
     }
+    else if (mNextScene == GameScene::Ship)
+    {
+        mAlien = new MainMenuActor(this);
+        mAlien->SetPosition(Vector2(0, mWindowHeight-TILE_SIZE));
+
+        SetBackgroundImage("../Assets/Sprites/background.png", Vector2(TILE_SIZE,0), Vector2(3000,448));
+    }
     else if (mNextScene == GameScene::Level1)
     {
         mShip = new Ship(this, 20);
@@ -208,7 +216,7 @@ void Game::ChangeScene()
         mBackgroundColor.Set(0.0f, 0.0f, 0.0f);
 
         // Set background color
-        // SetBackgroundImage("../Assets/Sprites/Background.png", Vector2(TILE_SIZE,0), Vector2(6784,448));
+        //SetBackgroundImage("../Assets/Sprites/background.png", Vector2(TILE_SIZE,0), Vector2(6784,448));
 
         // Initialize actors
         // LoadLevel("../Assets/Levels/level1-1.csv", LEVEL_WIDTH, LEVEL_HEIGHT);
@@ -270,8 +278,8 @@ void Game::LoadMainMenu()
     const Vector2 buttonSize = Vector2(200.0f, 40.0f);
 
     auto button1 = mainMenu->AddButton("Play", button1Pos, buttonSize, [this]() {
-                                SetGameScene(GameScene::Level1, TRANSITION_TIME);
-                            }); 
+                                SetGameScene(GameScene::Ship, TRANSITION_TIME);
+                            });
 
     auto button2 = mainMenu->AddButton("Exit", button2Pos, buttonSize, [this]() {
                                 Shutdown();
@@ -752,9 +760,9 @@ void Game::Shutdown()
     delete mAudio;
     mAudio = nullptr;
 
-    Mix_CloseAudio();
+   // Mix_CloseAudio();
 
-    Mix_Quit();
+   // Mix_Quit();
     TTF_Quit();
     IMG_Quit();
 

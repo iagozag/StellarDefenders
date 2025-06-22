@@ -12,6 +12,11 @@
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 448;
 
+
+int WINAPI WinMain() {
+    return main(__argc, __argv);
+}
+
 int main(int argc, char** argv)
 {
     Game game = Game(SCREEN_WIDTH, SCREEN_HEIGHT);

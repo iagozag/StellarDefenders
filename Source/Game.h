@@ -15,6 +15,7 @@
 
 #include "Actors/Ship.h"
 #include "Actors/Star.h"
+#include "Actors/MainMenuActor.h"
 
 class Game
 {
@@ -28,6 +29,7 @@ public:
     enum class GameScene
     {
         MainMenu,
+        Ship,
         Level1,
         Level2
     };
@@ -169,6 +171,7 @@ private:
     class HUD *mHUD;
     SoundHandle mMusicHandle;
 
+    class MainMenuActor* mAlien;
     float mGameTimer;
     int mGameTimeLimit;
 
