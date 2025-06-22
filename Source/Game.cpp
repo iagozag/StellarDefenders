@@ -511,7 +511,7 @@ void Game::UpdateGame()
     // ---------------------
     // Game Specific Updates
     // ---------------------
-    // UpdateCamera();
+    if (mGameScene == GameScene::Ship) UpdateCamera();
 
     // --------------
     // TODO - PARTE 2
@@ -519,6 +519,21 @@ void Game::UpdateGame()
 
     // TODO 1.: Chame UpdateSceneManager passando o deltaTime.
     UpdateSceneManager(deltaTime);
+}
+
+void Game::UpdateCamera()
+{
+
+    Vector2 posJog = mAlien->GetPosition();
+    Vector2 posCam =  GetCameraPos();
+
+    posJog.x -= mWindowWidth / 2;
+
+
+    if (float(mAlien->GetPosition().x -  mWindowWidth / 2) > mCameraPos.x) mCameraPos.x = mAlien->GetPosition().x -  mWindowWidth / 2;
+    if (mCameraPos.x <0) mCameraPos.x = 0;
+    if (mCameraPos.x > LEVEL_WIDTH*TILE_SIZE-mWindowWidth) mCameraPos.x = LEVEL_WIDTH*TILE_SIZE-mWindowWidth;
+
 }
 
 void Game::UpdateSceneManager(float deltaTime)

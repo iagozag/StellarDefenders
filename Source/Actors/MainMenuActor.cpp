@@ -61,14 +61,14 @@ MainMenuActor::MainMenuActor(Game* game, const float forwardSpeed, const float j
     // TODO 4.2 (~4 linhas): Utilize a função `AddAnimation` para adicionar as animações "dead", "idle",
     //  "jump" e "run".
 
-    mDrawComponent->AddAnimation("idle", std::vector<int>({6,3,1}));
+    mDrawComponent->AddAnimation("idle", std::vector<int>({6}));
     mDrawComponent->AddAnimation("run", std::vector<int>({4,0,2,11,8,5}));
 
 
     // TODO 3.4 (~2 linhas): Utilize a função `SetAnimation` para definir a animação inicial como "idle". Em seguida,
     //  utilize a função `SetAnimFPS` para definir a taxa de atualização de quadros da animação para 10.0f.
     mDrawComponent->SetAnimation("idle");
-    mDrawComponent->SetAnimFPS(50.0f);
+    mDrawComponent->SetAnimFPS(5.0f);
 }
 
 void MainMenuActor::OnProcessInput(const uint8_t* state)
@@ -128,7 +128,7 @@ void MainMenuActor::OnUpdate(float deltaTime)
     Vector2 posCam = mGame->GetCameraPos();
     if (mPosition.x < posCam.x) mPosition.x = posCam.x;
 
-    mPosition.y = std::min(mPosition.y, (float)(mGame->GetWindowHeight()-442));
+    mPosition.y = std::min(mPosition.y, (float)(mGame->GetWindowHeight()-171));
 
     if (mPosition.x > 2800) mGame->SetGameScene(Game::GameScene::Level1, Game::TRANSITION_TIME);
 
