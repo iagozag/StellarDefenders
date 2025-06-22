@@ -1,0 +1,3 @@
+/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles/stellar-defenders.dir
+/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles/edit_cache.dir
+/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles/rebuild_cache.dir

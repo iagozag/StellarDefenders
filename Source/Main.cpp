@@ -12,10 +12,13 @@
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 448;
 
+// #define WINDOWS
 
+#ifdef WINDOWS
 int WINAPI WinMain() {
     return main(__argc, __argv);
 }
+#endif
 
 int main(int argc, char** argv)
 {
