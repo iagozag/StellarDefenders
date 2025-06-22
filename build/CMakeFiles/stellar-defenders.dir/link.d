@@ -6,6 +6,8 @@ stellar-defenders: \
   CMakeFiles/stellar-defenders.dir/Source/Math.cpp.o \
   CMakeFiles/stellar-defenders.dir/Source/Random.cpp.o \
   CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.o \
+  CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.o \
+  CMakeFiles/stellar-defenders.dir/Source/Actors/Star.cpp.o \
   CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.o \
   CMakeFiles/stellar-defenders.dir/Source/Game.cpp.o \
   CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.o \
@@ -88,6 +90,10 @@ CMakeFiles/stellar-defenders.dir/Source/Math.cpp.o:
 CMakeFiles/stellar-defenders.dir/Source/Random.cpp.o:
 
 CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.o:
+
+CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.o:
+
+CMakeFiles/stellar-defenders.dir/Source/Actors/Star.cpp.o:
 
 CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.o:
 

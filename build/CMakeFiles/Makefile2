@@ -85,12 +85,12 @@ clean: CMakeFiles/stellar-defenders.dir/clean
 CMakeFiles/stellar-defenders.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/stellar-defenders.dir/build.make CMakeFiles/stellar-defenders.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/stellar-defenders.dir/build.make CMakeFiles/stellar-defenders.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23 "Built target stellar-defenders"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25 "Built target stellar-defenders"
 .PHONY : CMakeFiles/stellar-defenders.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/stellar-defenders.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/stellar-defenders.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles 0
 .PHONY : CMakeFiles/stellar-defenders.dir/rule
@@ -102,7 +102,7 @@ stellar-defenders: CMakeFiles/stellar-defenders.dir/rule
 # codegen rule for target.
 CMakeFiles/stellar-defenders.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/stellar-defenders.dir/build.make CMakeFiles/stellar-defenders.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23 "Finished codegen for target stellar-defenders"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25 "Finished codegen for target stellar-defenders"
 .PHONY : CMakeFiles/stellar-defenders.dir/codegen
 
 # clean rule for target.

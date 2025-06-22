@@ -16,6 +16,8 @@ add_executable(${PROJECT_NAME}
         Source/Math.cpp
         Source/Random.cpp
         Source/Actors/Actor.cpp
+        Source/Actors/Ship.cpp
+        Source/Actors/Star.cpp
         Source/Components/Component.cpp
         Source/Game.cpp
         Source/Components/DrawComponents/DrawComponent.cpp

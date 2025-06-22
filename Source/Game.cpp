@@ -32,6 +32,7 @@ Game::Game(int windowWidth, int windowHeight)
         ,mRenderer(nullptr)
         ,mTicksCount(0)
         ,mIsRunning(true)
+        ,mShip(nullptr)
         ,mWindowWidth(windowWidth)
         ,mWindowHeight(windowHeight)
         ,mHUD(nullptr)
@@ -116,6 +117,17 @@ bool Game::Initialize()
     return true;
 }
 
+void Game::AddStar(Star* star)
+{
+    mStars.emplace_back(star);
+}
+
+void Game::RemoveStar(Star* star)
+{
+    auto it = std::find(mStars.begin(), mStars.end(), star);
+    if(it != mStars.end()) mStars.erase(it);
+}
+
 void Game::SetGameScene(Game::GameScene scene, float transitionTime)
 {
     if (mSceneManagerState == SceneManagerState::None)
@@ -170,13 +182,13 @@ void Game::ChangeScene()
     // Scene Manager FSM: using if/else instead of switch
     if (mNextScene == GameScene::MainMenu)
     {
-
-
         // Initialize main menu actors
         LoadMainMenu();
     }
     else if (mNextScene == GameScene::Level1)
     {
+        mShip = new Ship(this, 20);
+        mShip->SetPosition(Vector2(mWindowWidth/2, mWindowHeight/2));
         // --------------
         // TODO - PARTE 3
         // --------------

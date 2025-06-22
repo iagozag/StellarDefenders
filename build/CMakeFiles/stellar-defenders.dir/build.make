@@ -128,10 +128,38 @@ CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.s"
 	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Actor.cpp -o CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.s
 
+CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.o: CMakeFiles/stellar-defenders.dir/flags.make
+CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.o: /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Ship.cpp
+CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.o: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.o"
+	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.o -MF CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.o.d -o CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.o -c /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Ship.cpp
+
+CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.i"
+	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Ship.cpp > CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.i
+
+CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.s"
+	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Ship.cpp -o CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.s
+
+CMakeFiles/stellar-defenders.dir/Source/Actors/Star.cpp.o: CMakeFiles/stellar-defenders.dir/flags.make
+CMakeFiles/stellar-defenders.dir/Source/Actors/Star.cpp.o: /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Star.cpp
+CMakeFiles/stellar-defenders.dir/Source/Actors/Star.cpp.o: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Actors/Star.cpp.o"
+	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Actors/Star.cpp.o -MF CMakeFiles/stellar-defenders.dir/Source/Actors/Star.cpp.o.d -o CMakeFiles/stellar-defenders.dir/Source/Actors/Star.cpp.o -c /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Star.cpp
+
+CMakeFiles/stellar-defenders.dir/Source/Actors/Star.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Actors/Star.cpp.i"
+	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Star.cpp > CMakeFiles/stellar-defenders.dir/Source/Actors/Star.cpp.i
+
+CMakeFiles/stellar-defenders.dir/Source/Actors/Star.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Actors/Star.cpp.s"
+	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Star.cpp -o CMakeFiles/stellar-defenders.dir/Source/Actors/Star.cpp.s
+
 CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.o: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.o: /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/Component.cpp
 CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.o: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.o"
 	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.o -MF CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.o.d -o CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.o -c /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/Component.cpp
 
 CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.i: cmake_force
@@ -145,7 +173,7 @@ CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.s: cmake_force
 CMakeFiles/stellar-defenders.dir/Source/Game.cpp.o: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Game.cpp.o: /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Game.cpp
 CMakeFiles/stellar-defenders.dir/Source/Game.cpp.o: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Game.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Game.cpp.o"
 	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Game.cpp.o -MF CMakeFiles/stellar-defenders.dir/Source/Game.cpp.o.d -o CMakeFiles/stellar-defenders.dir/Source/Game.cpp.o -c /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Game.cpp
 
 CMakeFiles/stellar-defenders.dir/Source/Game.cpp.i: cmake_force
@@ -159,7 +187,7 @@ CMakeFiles/stellar-defenders.dir/Source/Game.cpp.s: cmake_force
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.o: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.o: /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/DrawComponents/DrawComponent.cpp
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.o: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.o"
 	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.o -MF CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.o.d -o CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.o -c /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/DrawComponents/DrawComponent.cpp
 
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.i: cmake_force
@@ -173,7 +201,7 @@ CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.
 CMakeFiles/stellar-defenders.dir/Source/Components/RigidBodyComponent.cpp.o: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Components/RigidBodyComponent.cpp.o: /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/RigidBodyComponent.cpp
 CMakeFiles/stellar-defenders.dir/Source/Components/RigidBodyComponent.cpp.o: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/RigidBodyComponent.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/RigidBodyComponent.cpp.o"
 	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Components/RigidBodyComponent.cpp.o -MF CMakeFiles/stellar-defenders.dir/Source/Components/RigidBodyComponent.cpp.o.d -o CMakeFiles/stellar-defenders.dir/Source/Components/RigidBodyComponent.cpp.o -c /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/RigidBodyComponent.cpp
 
 CMakeFiles/stellar-defenders.dir/Source/Components/RigidBodyComponent.cpp.i: cmake_force
@@ -187,7 +215,7 @@ CMakeFiles/stellar-defenders.dir/Source/Components/RigidBodyComponent.cpp.s: cma
 CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/CircleColliderComponent.cpp.o: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/CircleColliderComponent.cpp.o: /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/ColliderComponents/CircleColliderComponent.cpp
 CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/CircleColliderComponent.cpp.o: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/CircleColliderComponent.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/CircleColliderComponent.cpp.o"
 	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/CircleColliderComponent.cpp.o -MF CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/CircleColliderComponent.cpp.o.d -o CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/CircleColliderComponent.cpp.o -c /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/ColliderComponents/CircleColliderComponent.cpp
 
 CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/CircleColliderComponent.cpp.i: cmake_force
@@ -201,7 +229,7 @@ CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/CircleColl
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComponent.cpp.o: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComponent.cpp.o: /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/DrawComponents/DrawSpriteComponent.cpp
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComponent.cpp.o: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComponent.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComponent.cpp.o"
 	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComponent.cpp.o -MF CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComponent.cpp.o.d -o CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComponent.cpp.o -c /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/DrawComponents/DrawSpriteComponent.cpp
 
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComponent.cpp.i: cmake_force
@@ -215,7 +243,7 @@ CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComp
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawPolygonComponent.cpp.o: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawPolygonComponent.cpp.o: /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/DrawComponents/DrawPolygonComponent.cpp
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawPolygonComponent.cpp.o: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawPolygonComponent.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawPolygonComponent.cpp.o"
 	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawPolygonComponent.cpp.o -MF CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawPolygonComponent.cpp.o.d -o CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawPolygonComponent.cpp.o -c /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/DrawComponents/DrawPolygonComponent.cpp
 
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawPolygonComponent.cpp.i: cmake_force
@@ -229,7 +257,7 @@ CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawPolygonCom
 CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/AABBColliderComponent.cpp.o: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/AABBColliderComponent.cpp.o: /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/ColliderComponents/AABBColliderComponent.cpp
 CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/AABBColliderComponent.cpp.o: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/AABBColliderComponent.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/AABBColliderComponent.cpp.o"
 	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/AABBColliderComponent.cpp.o -MF CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/AABBColliderComponent.cpp.o.d -o CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/AABBColliderComponent.cpp.o -c /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/ColliderComponents/AABBColliderComponent.cpp
 
 CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/AABBColliderComponent.cpp.i: cmake_force
@@ -243,7 +271,7 @@ CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/AABBCollid
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawAnimatedComponent.cpp.o: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawAnimatedComponent.cpp.o: /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/DrawComponents/DrawAnimatedComponent.cpp
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawAnimatedComponent.cpp.o: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawAnimatedComponent.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawAnimatedComponent.cpp.o"
 	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawAnimatedComponent.cpp.o -MF CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawAnimatedComponent.cpp.o.d -o CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawAnimatedComponent.cpp.o -c /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/DrawComponents/DrawAnimatedComponent.cpp
 
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawAnimatedComponent.cpp.i: cmake_force
@@ -257,7 +285,7 @@ CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawAnimatedCo
 CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.o: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.o: /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/AudioSystem.cpp
 CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.o: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.o"
 	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.o -MF CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.o.d -o CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.o -c /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/AudioSystem.cpp
 
 CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.i: cmake_force
@@ -271,7 +299,7 @@ CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.s: cmake_force
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.o: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.o: /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/UIScreen.cpp
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.o: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.o"
 	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.o -MF CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.o.d -o CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.o -c /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/UIScreen.cpp
 
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.i: cmake_force
@@ -285,7 +313,7 @@ CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.s: cmake_force
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIFont.cpp.o: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIFont.cpp.o: /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/UIFont.cpp
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIFont.cpp.o: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/UIElements/UIFont.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/UIElements/UIFont.cpp.o"
 	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/UIElements/UIFont.cpp.o -MF CMakeFiles/stellar-defenders.dir/Source/UIElements/UIFont.cpp.o.d -o CMakeFiles/stellar-defenders.dir/Source/UIElements/UIFont.cpp.o -c /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/UIFont.cpp
 
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIFont.cpp.i: cmake_force
@@ -299,7 +327,7 @@ CMakeFiles/stellar-defenders.dir/Source/UIElements/UIFont.cpp.s: cmake_force
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIButton.cpp.o: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIButton.cpp.o: /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/UIButton.cpp
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIButton.cpp.o: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/UIElements/UIButton.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/UIElements/UIButton.cpp.o"
 	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/UIElements/UIButton.cpp.o -MF CMakeFiles/stellar-defenders.dir/Source/UIElements/UIButton.cpp.o.d -o CMakeFiles/stellar-defenders.dir/Source/UIElements/UIButton.cpp.o -c /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/UIButton.cpp
 
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIButton.cpp.i: cmake_force
@@ -313,7 +341,7 @@ CMakeFiles/stellar-defenders.dir/Source/UIElements/UIButton.cpp.s: cmake_force
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.o: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.o: /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/UIText.cpp
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.o: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.o"
 	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.o -MF CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.o.d -o CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.o -c /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/UIText.cpp
 
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.i: cmake_force
@@ -327,7 +355,7 @@ CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.s: cmake_force
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIElement.cpp.o: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIElement.cpp.o: /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/UIElement.cpp
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIElement.cpp.o: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/UIElements/UIElement.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/UIElements/UIElement.cpp.o"
 	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/UIElements/UIElement.cpp.o -MF CMakeFiles/stellar-defenders.dir/Source/UIElements/UIElement.cpp.o.d -o CMakeFiles/stellar-defenders.dir/Source/UIElements/UIElement.cpp.o -c /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/UIElement.cpp
 
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIElement.cpp.i: cmake_force
@@ -341,7 +369,7 @@ CMakeFiles/stellar-defenders.dir/Source/UIElements/UIElement.cpp.s: cmake_force
 CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.o: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.o: /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/HUD.cpp
 CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.o: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.o"
 	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.o -MF CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.o.d -o CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.o -c /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/HUD.cpp
 
 CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.i: cmake_force
@@ -355,7 +383,7 @@ CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.s: cmake_force
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.o: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.o: /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/UIImage.cpp
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.o: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.o"
 	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.o -MF CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.o.d -o CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.o -c /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/UIImage.cpp
 
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.i: cmake_force
@@ -369,7 +397,7 @@ CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.s: cmake_force
 CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.o: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.o: /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/SpatialHashing.cpp
 CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.o: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.o"
 	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.o -MF CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.o.d -o CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.o -c /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/SpatialHashing.cpp
 
 CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.i: cmake_force
@@ -386,6 +414,8 @@ stellar__defenders_OBJECTS = \
 "CMakeFiles/stellar-defenders.dir/Source/Math.cpp.o" \
 "CMakeFiles/stellar-defenders.dir/Source/Random.cpp.o" \
 "CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.o" \
+"CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.o" \
+"CMakeFiles/stellar-defenders.dir/Source/Actors/Star.cpp.o" \
 "CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.o" \
 "CMakeFiles/stellar-defenders.dir/Source/Game.cpp.o" \
 "CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.o" \
@@ -412,6 +442,8 @@ stellar-defenders: CMakeFiles/stellar-defenders.dir/Source/Main.cpp.o
 stellar-defenders: CMakeFiles/stellar-defenders.dir/Source/Math.cpp.o
 stellar-defenders: CMakeFiles/stellar-defenders.dir/Source/Random.cpp.o
 stellar-defenders: CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.o
+stellar-defenders: CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.o
+stellar-defenders: CMakeFiles/stellar-defenders.dir/Source/Actors/Star.cpp.o
 stellar-defenders: CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.o
 stellar-defenders: CMakeFiles/stellar-defenders.dir/Source/Game.cpp.o
 stellar-defenders: CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.o
@@ -437,7 +469,7 @@ stellar-defenders: /opt/SDL2_image/lib/libSDL2_image.so
 stellar-defenders: /usr/lib/libSDL2_ttf.so
 stellar-defenders: /usr/lib/libSDL2_mixer.so
 stellar-defenders: CMakeFiles/stellar-defenders.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX executable stellar-defenders"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking CXX executable stellar-defenders"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/stellar-defenders.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

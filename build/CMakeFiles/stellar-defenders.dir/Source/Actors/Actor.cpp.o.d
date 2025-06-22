@@ -312,4 +312,6 @@ CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.o: \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/bits/types/error_t.h \
  /usr/include/c++/15.1.1/bits/charconv.h \
- /usr/include/c++/15.1.1/bits/basic_string.tcc
+ /usr/include/c++/15.1.1/bits/basic_string.tcc \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Actors/Ship.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Actors/Star.h

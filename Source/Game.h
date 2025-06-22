@@ -13,6 +13,9 @@
 #include "AudioSystem.h"
 #include "Math.h"
 
+#include "Actors/Ship.h"
+#include "Actors/Star.h"
+
 class Game
 {
 public:
@@ -99,14 +102,14 @@ public:
     void TogglePause();
 
     // Game-specific
-    const class Mario* GetMario() { return mMario; }
+    void AddStar(class Star* star);
+    void RemoveStar(class Star* star);
+    std::vector<class Star*>& GetStars() { return mStars; }
+
+    class Ship* GetShip(){ return mShip; }
 
     void SetGamePlayState(GamePlayState state) { mGamePlayState = state; }
     GamePlayState GetGamePlayState() const { return mGamePlayState; }
-
-    // Coin
-    void AddCoin();
-    int GetCoinCount() const { return mCoinCount; }
 
 private:
     void ProcessInput();
@@ -161,13 +164,13 @@ private:
     Vector2 mCameraPos;
 
     // Game-specific
-    class Mario *mMario;
+    class Ship* mShip;
+    std::vector<class Star*> mStars;
     class HUD *mHUD;
     SoundHandle mMusicHandle;
 
     float mGameTimer;
     int mGameTimeLimit;
-    int mCoinCount;
 
     SDL_Texture *mBackgroundTexture;
     Vector2 mBackgroundSize;

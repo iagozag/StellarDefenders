@@ -312,4 +312,6 @@ CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComp
  /usr/include/c++/15.1.1/bits/hashtable.h \
  /usr/include/c++/15.1.1/bits/hashtable_policy.h \
  /usr/include/c++/15.1.1/bits/enable_special_members.h \
- /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/DrawComponents/../../AudioSystem.h
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/DrawComponents/../../AudioSystem.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/DrawComponents/../../Actors/Ship.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/DrawComponents/../../Actors/Star.h

@@ -295,4 +295,21 @@ CMakeFiles/stellar-defenders.dir/Source/Main.cpp.o: \
  /usr/include/c++/15.1.1/bits/basic_string.tcc \
  /usr/local/include/SDL2/SDL_stdinc.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Math.h \
- /usr/include/memory.h
+ /usr/include/memory.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Ship.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Actor.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Components/ColliderComponents/AABBColliderComponent.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Components/ColliderComponents/../Component.h \
+ /usr/local/include/SDL2/SDL_stdinc.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Components/ColliderComponents/../RigidBodyComponent.h \
+ /usr/include/c++/15.1.1/set /usr/include/c++/15.1.1/bits/stl_set.h \
+ /usr/include/c++/15.1.1/bits/stl_multiset.h \
+ /usr/include/c++/15.1.1/algorithm \
+ /usr/include/c++/15.1.1/bits/stl_algo.h \
+ /usr/include/c++/15.1.1/bits/algorithmfwd.h \
+ /usr/include/c++/15.1.1/bits/stl_heap.h \
+ /usr/include/c++/15.1.1/bits/uniform_int_dist.h \
+ /usr/include/c++/15.1.1/bits/stl_tempbuf.h \
+ /usr/include/c++/15.1.1/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/15.1.1/pstl/execution_defs.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Star.h

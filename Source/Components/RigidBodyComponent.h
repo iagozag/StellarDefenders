@@ -24,6 +24,9 @@ public:
     void SetApplyGravity(const bool applyGravity) { mApplyGravity = applyGravity; }
     void SetApplyFriction(const bool applyFriction) { mApplyFriction = applyFriction;  }
 
+    void SetAngularSpeed(const float speed) { mAngularSpeed = speed; }
+    float GetAngularSpeed() const { return mAngularSpeed; }
+
     void ApplyForce(const Vector2 &force);
 
 private:
@@ -34,6 +37,7 @@ private:
     float mFrictionCoefficient;
     float mMass;
     float m;
+    float mAngularSpeed;
 
     Vector2 mVelocity;
     Vector2 mAcceleration;

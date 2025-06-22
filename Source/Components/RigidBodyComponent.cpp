@@ -20,6 +20,7 @@ RigidBodyComponent::RigidBodyComponent(class Actor* owner, float mass, float fri
         ,mFrictionCoefficient(friction)
         ,mVelocity(Vector2::Zero)
         ,mAcceleration(Vector2::Zero)
+        ,mAngularSpeed(.0f)
 {
 
 }
@@ -74,5 +75,10 @@ void RigidBodyComponent::Update(float deltaTime)
     }
 
     mAcceleration.Set(0.f, 0.f);
-}
 
+    float rot = mOwner->GetRotation();
+
+    rot += mAngularSpeed*deltaTime;
+
+    mOwner->SetRotation(rot);
+}

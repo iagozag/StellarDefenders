@@ -153,6 +153,54 @@ Source/Actors/Actor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/stellar-defenders.dir/build.make CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.s
 .PHONY : Source/Actors/Actor.cpp.s
 
+Source/Actors/Ship.o: Source/Actors/Ship.cpp.o
+.PHONY : Source/Actors/Ship.o
+
+# target to build an object file
+Source/Actors/Ship.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stellar-defenders.dir/build.make CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.o
+.PHONY : Source/Actors/Ship.cpp.o
+
+Source/Actors/Ship.i: Source/Actors/Ship.cpp.i
+.PHONY : Source/Actors/Ship.i
+
+# target to preprocess a source file
+Source/Actors/Ship.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stellar-defenders.dir/build.make CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.i
+.PHONY : Source/Actors/Ship.cpp.i
+
+Source/Actors/Ship.s: Source/Actors/Ship.cpp.s
+.PHONY : Source/Actors/Ship.s
+
+# target to generate assembly for a file
+Source/Actors/Ship.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stellar-defenders.dir/build.make CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.s
+.PHONY : Source/Actors/Ship.cpp.s
+
+Source/Actors/Star.o: Source/Actors/Star.cpp.o
+.PHONY : Source/Actors/Star.o
+
+# target to build an object file
+Source/Actors/Star.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stellar-defenders.dir/build.make CMakeFiles/stellar-defenders.dir/Source/Actors/Star.cpp.o
+.PHONY : Source/Actors/Star.cpp.o
+
+Source/Actors/Star.i: Source/Actors/Star.cpp.i
+.PHONY : Source/Actors/Star.i
+
+# target to preprocess a source file
+Source/Actors/Star.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stellar-defenders.dir/build.make CMakeFiles/stellar-defenders.dir/Source/Actors/Star.cpp.i
+.PHONY : Source/Actors/Star.cpp.i
+
+Source/Actors/Star.s: Source/Actors/Star.cpp.s
+.PHONY : Source/Actors/Star.s
+
+# target to generate assembly for a file
+Source/Actors/Star.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stellar-defenders.dir/build.make CMakeFiles/stellar-defenders.dir/Source/Actors/Star.cpp.s
+.PHONY : Source/Actors/Star.cpp.s
+
 Source/AudioSystem.o: Source/AudioSystem.cpp.o
 .PHONY : Source/AudioSystem.o
 
@@ -669,6 +717,12 @@ help:
 	@echo "... Source/Actors/Actor.o"
 	@echo "... Source/Actors/Actor.i"
 	@echo "... Source/Actors/Actor.s"
+	@echo "... Source/Actors/Ship.o"
+	@echo "... Source/Actors/Ship.i"
+	@echo "... Source/Actors/Ship.s"
+	@echo "... Source/Actors/Star.o"
+	@echo "... Source/Actors/Star.i"
+	@echo "... Source/Actors/Star.s"
 	@echo "... Source/AudioSystem.o"
 	@echo "... Source/AudioSystem.i"
 	@echo "... Source/AudioSystem.s"

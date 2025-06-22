@@ -367,6 +367,15 @@ CMakeFiles/stellar-defenders.dir/Source/Game.cpp.o: \
  /usr/include/c++/15.1.1/bits/enable_special_members.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/AudioSystem.h \
  /usr/local/include/SDL2/SDL_stdinc.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Ship.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Actor.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Components/ColliderComponents/AABBColliderComponent.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Components/ColliderComponents/../Component.h \
+ /usr/local/include/SDL2/SDL_stdinc.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Components/ColliderComponents/../RigidBodyComponent.h \
+ /usr/include/c++/15.1.1/set /usr/include/c++/15.1.1/bits/stl_set.h \
+ /usr/include/c++/15.1.1/bits/stl_multiset.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Star.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/HUD.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/UIScreen.h \
  /usr/include/c++/15.1.1/list /usr/include/c++/15.1.1/bits/stl_list.h \
@@ -381,13 +390,6 @@ CMakeFiles/stellar-defenders.dir/Source/Game.cpp.o: \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/UIFont.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/UIImage.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/SpatialHashing.h \
- /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Actor.h \
- /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Components/ColliderComponents/AABBColliderComponent.h \
- /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Components/ColliderComponents/../Component.h \
- /usr/local/include/SDL2/SDL_stdinc.h \
- /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Components/ColliderComponents/../RigidBodyComponent.h \
- /usr/include/c++/15.1.1/set /usr/include/c++/15.1.1/bits/stl_set.h \
- /usr/include/c++/15.1.1/bits/stl_multiset.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/DrawComponents/DrawComponent.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/DrawComponents/DrawSpriteComponent.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/DrawComponents/DrawAnimatedComponent.h \

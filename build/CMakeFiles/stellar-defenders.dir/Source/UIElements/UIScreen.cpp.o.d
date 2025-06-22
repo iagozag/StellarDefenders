@@ -314,4 +314,21 @@ CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.o: \
  /usr/include/c++/15.1.1/map /usr/include/c++/15.1.1/bits/stl_tree.h \
  /usr/include/c++/15.1.1/bits/stl_map.h \
  /usr/include/c++/15.1.1/bits/stl_multimap.h \
- /usr/local/include/SDL2/SDL_stdinc.h
+ /usr/local/include/SDL2/SDL_stdinc.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/../Actors/Ship.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/../Actors/Actor.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/../Actors/../Components/ColliderComponents/AABBColliderComponent.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/../Actors/../Components/ColliderComponents/../Component.h \
+ /usr/local/include/SDL2/SDL_stdinc.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/../Actors/../Components/ColliderComponents/../RigidBodyComponent.h \
+ /usr/include/c++/15.1.1/set /usr/include/c++/15.1.1/bits/stl_set.h \
+ /usr/include/c++/15.1.1/bits/stl_multiset.h \
+ /usr/include/c++/15.1.1/algorithm \
+ /usr/include/c++/15.1.1/bits/stl_algo.h \
+ /usr/include/c++/15.1.1/bits/algorithmfwd.h \
+ /usr/include/c++/15.1.1/bits/stl_heap.h \
+ /usr/include/c++/15.1.1/bits/uniform_int_dist.h \
+ /usr/include/c++/15.1.1/bits/stl_tempbuf.h \
+ /usr/include/c++/15.1.1/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/15.1.1/pstl/execution_defs.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/../Actors/Star.h
