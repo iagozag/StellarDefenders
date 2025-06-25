@@ -50,6 +50,7 @@ Game::Game(int windowWidth, int windowHeight)
         ,mBackgroundTexture(nullptr)
         ,mBackgroundSize(Vector2::Zero)
         ,mBackgroundPosition(Vector2::Zero)
+        ,mIsViableAreaActive(false)
 {
 
 }
@@ -191,12 +192,12 @@ void Game::ChangeScene()
         mAlien = new Alien(this);
         mAlien->SetPosition(Vector2(0, mWindowHeight-TILE_SIZE));
 
-        SetBackgroundImage("../Assets/Sprites/background.png", Vector2(TILE_SIZE,0), Vector2(3000,448));
+        SetBackgroundImage("../Assets/Sprites/background.png", Vector2(0,0), Vector2(3000,448));
     }
     else if (mNextScene == GameScene::Level1)
     {
-        mShip = new Ship(this, 40);
-        mShip->SetPosition(Vector2(mWindowWidth/2, mWindowHeight/2));
+        mShip = new Ship(this, 50);
+        mShip->SetPosition(Vector2(0, 0));
         // --------------
         // TODO - PARTE 3
         // --------------
@@ -205,6 +206,10 @@ void Game::ChangeScene()
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
 
         mHUD->SetLevelName("Fase 1");
+
+        // Set Viable Area for ships
+        SDL_Rect viableArea = {0, 0, mWindowWidth/2, mWindowHeight};
+        SetViableArea(viableArea);
 
         // --------------
         // TODO - PARTE 4
@@ -254,6 +259,16 @@ void Game::ChangeScene()
     mGameScene = mNextScene;
 }
 
+void Game::SetViableArea(const SDL_Rect& rect)
+{
+    mViableAreaRect = rect;
+    mIsViableAreaActive = true;
+}
+
+void Game::DisableViableArea()
+{
+    mIsViableAreaActive = false;
+}
 
 void Game::LoadMainMenu()
 {
@@ -523,17 +538,14 @@ void Game::UpdateGame()
 
 void Game::UpdateCamera()
 {
-
     Vector2 posJog = mAlien->GetPosition();
     Vector2 posCam =  GetCameraPos();
 
     posJog.x -= mWindowWidth / 2;
 
-
-    if (float(mAlien->GetPosition().x -  mWindowWidth / 2) > mCameraPos.x) mCameraPos.x = mAlien->GetPosition().x -  mWindowWidth / 2;
-    if (mCameraPos.x <0) mCameraPos.x = 0;
-    if (mCameraPos.x > LEVEL_WIDTH*TILE_SIZE-mWindowWidth) mCameraPos.x = LEVEL_WIDTH*TILE_SIZE-mWindowWidth;
-
+    mCameraPos.x = posJog.x;
+    if (mCameraPos.x < 0) mCameraPos.x = 0;
+    if (mCameraPos.x > 3000-mWindowWidth) mCameraPos.x = 3000-mWindowWidth;
 }
 
 void Game::UpdateSceneManager(float deltaTime)
@@ -627,6 +639,18 @@ void Game::GenerateOutput()
         SDL_RenderCopy(mRenderer, mBackgroundTexture, nullptr, &dstRect);
     }
 
+    // Draw viable area
+    if (mGameScene != GameScene::MainMenu and mGameScene != GameScene::Ship and mIsViableAreaActive)
+    {
+        SDL_SetRenderDrawBlendMode(mRenderer, SDL_BLENDMODE_BLEND);
+        SDL_SetRenderDrawColor(mRenderer, 135, 206, 250, 64);
+        SDL_RenderFillRect(mRenderer, &mViableAreaRect);
+
+        SDL_Rect inviableAreaRect = {mViableAreaRect.x+mViableAreaRect.w, 0, mWindowWidth-(mViableAreaRect.x+mViableAreaRect.w), mWindowHeight};
+        SDL_SetRenderDrawColor(mRenderer, 255, 100, 100, 64);
+        SDL_RenderFillRect(mRenderer, &inviableAreaRect);
+    }
+
     // Get actors on camera
     std::vector<Actor*> actorsOnCamera =
             mSpatialHashing->QueryOnCamera(mCameraPos,mWindowWidth,mWindowHeight);
@@ -675,7 +699,6 @@ void Game::GenerateOutput()
         SDL_Rect fullscreenRect = {0, 0, mWindowWidth, mWindowHeight};
         SDL_RenderFillRect(mRenderer, &fullscreenRect);
     }
-
 
     // Swap front buffer and back buffer
     SDL_RenderPresent(mRenderer);

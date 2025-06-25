@@ -70,8 +70,10 @@ void Ship::OnProcessInput(const uint8_t* state)
     int mouseX, mouseY;
     Uint32 mouseState = SDL_GetMouseState(&mouseX, &mouseY);
 
-    if (mShipState == ShipState::Positioning and (mouseState & SDL_BUTTON(SDL_BUTTON_LEFT)))
+    if (mShipState == ShipState::Positioning and (mouseState & SDL_BUTTON(SDL_BUTTON_LEFT))){
         mShipState = ShipState::SlingShot;
+        mGame->DisableViableArea();
+    }
     else if(mShipState == ShipState::SlingShot and mouseState & SDL_BUTTON(SDL_BUTTON_LEFT)){
         mShipState = ShipState::Ready;
         mDirection = mPosition-mSlingShotPoint;
@@ -83,6 +85,14 @@ void Ship::OnUpdate(float deltaTime)
     if(mShipState == ShipState::Positioning){
         int mouseX, mouseY;
         SDL_GetMouseState(&mouseX,&mouseY);
+
+        SDL_Rect area = mGame->GetViableArea();
+
+        if(mouseX < area.x) mouseX = area.x;
+        if(mouseX > area.x+area.w-mHeight) mouseX = area.x+area.w-mHeight;
+        if(mouseY < area.y) mouseY = area.y;
+        if(mouseY > area.y+area.h-mHeight) mouseY = area.y+area.h-mHeight;
+
         SetPosition(Vector2(mouseX, mouseY));
     }
 
