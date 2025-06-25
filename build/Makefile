@@ -153,29 +153,29 @@ Source/Actors/Actor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/stellar-defenders.dir/build.make CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.s
 .PHONY : Source/Actors/Actor.cpp.s
 
-Source/Actors/MainMenuActor.o: Source/Actors/MainMenuActor.cpp.o
-.PHONY : Source/Actors/MainMenuActor.o
+Source/Actors/Alien.o: Source/Actors/Alien.cpp.o
+.PHONY : Source/Actors/Alien.o
 
 # target to build an object file
-Source/Actors/MainMenuActor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stellar-defenders.dir/build.make CMakeFiles/stellar-defenders.dir/Source/Actors/MainMenuActor.cpp.o
-.PHONY : Source/Actors/MainMenuActor.cpp.o
+Source/Actors/Alien.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stellar-defenders.dir/build.make CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.o
+.PHONY : Source/Actors/Alien.cpp.o
 
-Source/Actors/MainMenuActor.i: Source/Actors/MainMenuActor.cpp.i
-.PHONY : Source/Actors/MainMenuActor.i
+Source/Actors/Alien.i: Source/Actors/Alien.cpp.i
+.PHONY : Source/Actors/Alien.i
 
 # target to preprocess a source file
-Source/Actors/MainMenuActor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stellar-defenders.dir/build.make CMakeFiles/stellar-defenders.dir/Source/Actors/MainMenuActor.cpp.i
-.PHONY : Source/Actors/MainMenuActor.cpp.i
+Source/Actors/Alien.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stellar-defenders.dir/build.make CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.i
+.PHONY : Source/Actors/Alien.cpp.i
 
-Source/Actors/MainMenuActor.s: Source/Actors/MainMenuActor.cpp.s
-.PHONY : Source/Actors/MainMenuActor.s
+Source/Actors/Alien.s: Source/Actors/Alien.cpp.s
+.PHONY : Source/Actors/Alien.s
 
 # target to generate assembly for a file
-Source/Actors/MainMenuActor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stellar-defenders.dir/build.make CMakeFiles/stellar-defenders.dir/Source/Actors/MainMenuActor.cpp.s
-.PHONY : Source/Actors/MainMenuActor.cpp.s
+Source/Actors/Alien.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stellar-defenders.dir/build.make CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.s
+.PHONY : Source/Actors/Alien.cpp.s
 
 Source/Actors/Ship.o: Source/Actors/Ship.cpp.o
 .PHONY : Source/Actors/Ship.o
@@ -513,30 +513,6 @@ Source/Main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/stellar-defenders.dir/build.make CMakeFiles/stellar-defenders.dir/Source/Main.cpp.s
 .PHONY : Source/Main.cpp.s
 
-Source/MainMenu.o: Source/MainMenu.cpp.o
-.PHONY : Source/MainMenu.o
-
-# target to build an object file
-Source/MainMenu.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stellar-defenders.dir/build.make CMakeFiles/stellar-defenders.dir/Source/MainMenu.cpp.o
-.PHONY : Source/MainMenu.cpp.o
-
-Source/MainMenu.i: Source/MainMenu.cpp.i
-.PHONY : Source/MainMenu.i
-
-# target to preprocess a source file
-Source/MainMenu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stellar-defenders.dir/build.make CMakeFiles/stellar-defenders.dir/Source/MainMenu.cpp.i
-.PHONY : Source/MainMenu.cpp.i
-
-Source/MainMenu.s: Source/MainMenu.cpp.s
-.PHONY : Source/MainMenu.s
-
-# target to generate assembly for a file
-Source/MainMenu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stellar-defenders.dir/build.make CMakeFiles/stellar-defenders.dir/Source/MainMenu.cpp.s
-.PHONY : Source/MainMenu.cpp.s
-
 Source/Math.o: Source/Math.cpp.o
 .PHONY : Source/Math.o
 
@@ -765,9 +741,9 @@ help:
 	@echo "... Source/Actors/Actor.o"
 	@echo "... Source/Actors/Actor.i"
 	@echo "... Source/Actors/Actor.s"
-	@echo "... Source/Actors/MainMenuActor.o"
-	@echo "... Source/Actors/MainMenuActor.i"
-	@echo "... Source/Actors/MainMenuActor.s"
+	@echo "... Source/Actors/Alien.o"
+	@echo "... Source/Actors/Alien.i"
+	@echo "... Source/Actors/Alien.s"
 	@echo "... Source/Actors/Ship.o"
 	@echo "... Source/Actors/Ship.i"
 	@echo "... Source/Actors/Ship.s"
@@ -810,9 +786,6 @@ help:
 	@echo "... Source/Main.o"
 	@echo "... Source/Main.i"
 	@echo "... Source/Main.s"
-	@echo "... Source/MainMenu.o"
-	@echo "... Source/MainMenu.i"
-	@echo "... Source/MainMenu.s"
 	@echo "... Source/Math.o"
 	@echo "... Source/Math.i"
 	@echo "... Source/Math.s"

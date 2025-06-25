@@ -23,6 +23,7 @@ Ship::Ship(Game* game,
         , mForwardSpeed(forwardForce)
         , mRotationForce(rotationForce)
         , mFrictionCoefficient(frictionCoefficient)
+        , mShipState(ShipState::Positioning)
 {
     // --------------
     // TODO - PARTE 3
@@ -66,55 +67,23 @@ void Ship::OnProcessInput(const uint8_t* state)
     //  subtraia da velocidade angular (angularSpeed) a velocidade de rotação (mRotationForce).
     if(state[SDL_SCANCODE_D]) angularSpeed -= mRotationForce;
 
-    // TODO 2.4 (1 linha): Verifique se o jogador está pressionando a barra de Espaço e se o tempo de
-    //  resfriamento do laser já passou (mLaserCooldown <= 0.0f). Se ambas as condições forem verdadeiras:
-    // if(state[SDL_SCANCODE_SPACE] and mLaserCooldown <= 0.0f){
-    //     // TODO 2.4.1 (1 linha): Instancie uma nova partícula de laser com tamanho 5.0;
-    //     auto laser = new Laser(mGame, 5.0f, 1.0f);
+    int mouseX, mouseY;
+    Uint32 mouseState = SDL_GetMouseState(&mouseX, &mouseY);
 
-    //     // TODO 2.4.2 (1 linha): Posicione esse partícula na ponta da frente da nave (posição da nave + vetor forward *
-    //     //  altura do triângulo da nave);
-    //     laser->SetPosition(mPosition+GetForward()*mHeight);
-
-    //     // TODO 2.4.3 (1 linha): Inicialize a rotação dessa partícula com o ângulo da nave. Basta utilizar
-    //     //  os métodos SetRotation do laser e GetRotation da nave;
-    //     laser->SetRotation(GetRotation());
-
-    //     // TODO 2.4.4 (1 linha): Aplique uma força para frente nessa partícula com magnitude 3000.0;
-    //     laser->GetComponent<RigidBodyComponent>()->ApplyForce(GetForward()*3000.0f);
-
-    //     // TODO 2.4.5 (1 linha): Reinicialize o tempo de resfriamento do laser para um quarto de segundo (0.25).
-    //     mLaserCooldown = 0.25f;
-
-    // }
-
-    // TODO 2.5 (1 linha): Altere a velocidade angular (SetAngularSpeed) com o novo valor calculado (angularSpeed).
-    mRigidBodyComponent->SetAngularSpeed(angularSpeed);
+    if (mShipState == ShipState::Positioning and (mouseState & SDL_BUTTON(SDL_BUTTON_LEFT)))
+        mShipState = ShipState::SlingShot;
+    else if(mShipState == ShipState::SlingShot and mouseState & SDL_BUTTON(SDL_BUTTON_LEFT)){
+        mShipState = ShipState::Ready;
+        mDirection = mPosition-mSlingShotPoint;
+    }
 }
 
 void Ship::OnUpdate(float deltaTime)
 {
-    // --------------
-    // TODO - PARTE 3
-    // --------------
-
-    // TODO 3.1 (1 linha): Subtraia deltaTime do tempo de resfriamento do laser (mLaserCooldown)
-    // mLaserCooldown -= deltaTime;
-
-    Vector2 velocity = mRigidBodyComponent->GetVelocity();
-    float vLen = velocity.Length();
-
-    if(vLen > .0f) {
-        // TODO 3.2 (~6 linhas): Calcule a força de resistência do ar para parar lentamente a nave
-        //  lembre-se que essa força é um vetor f_r = -v.norm() * ||v||^2 * c_r. Onde v é o vetor
-        //  velocidade (velocity) e c_r é o coeficiente de resistência (mFrictionCoefficient).
-        //  Armazena a força calculada em um vetor chamado drag.
-        Vector2 drag = velocity;
-        drag.Normalize();
-        drag *= -(mFrictionCoefficient*vLen*vLen);
-
-        // TODO 3.3 (1 linha): Aplique a força drag na nave com a função ApplyForce do mRigidBodyComponent.
-        mRigidBodyComponent->ApplyForce(drag);
+    if(mShipState == ShipState::Positioning){
+        int mouseX, mouseY;
+        SDL_GetMouseState(&mouseX,&mouseY);
+        SetPosition(Vector2(mouseX, mouseY));
     }
 
     // TODO 3.4 (~6 linhas): Percorra a lista de asteroides do jogo e verifique, para cada asteroide,
@@ -126,7 +95,7 @@ void Ship::OnUpdate(float deltaTime)
         auto starCollider = star->GetComponent<CircleColliderComponent>();
 
         if(mCircleColliderComponent->Intersect(*starCollider)){
-            mGame->Quit();
+            // mGame->Quit();
         }
     }
 }

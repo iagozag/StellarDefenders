@@ -9,7 +9,6 @@
 class RigidBodyComponent : public Component
 {
 public:
-    // Lower update order to update first
     RigidBodyComponent(class Actor* owner, float mass = 1.0f, float friction = 0.0f,
                         bool applyGravity = true, int updateOrder = 10);
 

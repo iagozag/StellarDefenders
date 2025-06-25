@@ -5,6 +5,14 @@
 #pragma once
 #include "Actor.h"
 
+enum class ShipState
+{
+    Positioning,
+    SlingShot,
+    Ready,
+    Simulating
+};
+
 class Ship : public Actor
 {
 public:
@@ -22,6 +30,11 @@ private:
     float mFrictionCoefficient;
     float mLaserCooldown;
     float mHeight;
+
+    ShipState mShipState;
+
+    Vector2 mSlingShotPoint;
+    Vector2 mDirection;
 
     class DrawSpriteComponent* mDrawSpriteComponent;
     class RigidBodyComponent* mRigidBodyComponent;

@@ -1,7 +1,8 @@
-CMakeFiles/stellar-defenders.dir/Source/Main.cpp.o: \
- /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Main.cpp \
+CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.o: \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Alien.cpp \
  /usr/include/stdc-predef.h \
- /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Game.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Alien.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Game.h \
  /usr/local/include/SDL2/SDL.h /usr/local/include/SDL2/SDL_main.h \
  /usr/local/include/SDL2/SDL_stdinc.h \
  /usr/local/include/SDL2/SDL_config.h \
@@ -268,7 +269,7 @@ CMakeFiles/stellar-defenders.dir/Source/Main.cpp.o: \
  /usr/include/c++/15.1.1/bits/enable_special_members.h \
  /usr/include/c++/15.1.1/bits/node_handle.h \
  /usr/include/c++/15.1.1/bits/erase_if.h \
- /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/AudioSystem.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../AudioSystem.h \
  /usr/include/c++/15.1.1/map /usr/include/c++/15.1.1/bits/stl_tree.h \
  /usr/include/c++/15.1.1/bits/stl_map.h \
  /usr/include/c++/15.1.1/bits/stl_multimap.h \
@@ -294,13 +295,13 @@ CMakeFiles/stellar-defenders.dir/Source/Main.cpp.o: \
  /usr/include/c++/15.1.1/bits/charconv.h \
  /usr/include/c++/15.1.1/bits/basic_string.tcc \
  /usr/local/include/SDL2/SDL_stdinc.h \
- /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Math.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Math.h \
  /usr/include/memory.h \
- /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Ship.h \
- /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Actor.h \
- /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Components/ColliderComponents/AABBColliderComponent.h \
- /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Components/ColliderComponents/../Component.h \
- /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Components/ColliderComponents/../RigidBodyComponent.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Actors/Ship.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Actors/Actor.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Actors/../Components/ColliderComponents/AABBColliderComponent.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Actors/../Components/ColliderComponents/../Component.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Actors/../Components/ColliderComponents/../RigidBodyComponent.h \
  /usr/include/c++/15.1.1/set /usr/include/c++/15.1.1/bits/stl_set.h \
  /usr/include/c++/15.1.1/bits/stl_multiset.h \
  /usr/include/c++/15.1.1/algorithm \
@@ -311,8 +312,8 @@ CMakeFiles/stellar-defenders.dir/Source/Main.cpp.o: \
  /usr/include/c++/15.1.1/bits/stl_tempbuf.h \
  /usr/include/c++/15.1.1/pstl/glue_algorithm_defs.h \
  /usr/include/c++/15.1.1/pstl/execution_defs.h \
- /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Star.h \
- /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Alien.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Actors/Star.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Actors/Alien.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Components/DrawComponents/DrawAnimatedComponent.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Components/DrawComponents/DrawSpriteComponent.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Components/DrawComponents/DrawComponent.h \

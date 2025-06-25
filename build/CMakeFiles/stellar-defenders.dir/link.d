@@ -26,8 +26,7 @@ stellar-defenders: \
   CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.o \
   CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.o \
   CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.o \
-  CMakeFiles/stellar-defenders.dir/Source/MainMenu.cpp.o \
-  CMakeFiles/stellar-defenders.dir/Source/Actors/MainMenuActor.cpp.o \
+  CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.o \
   /usr/local/lib/libSDL2.so \
   /opt/SDL2_image/lib/libSDL2_image.so \
   /usr/lib/libSDL2_ttf.so \
@@ -133,9 +132,7 @@ CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.o:
 
 CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.o:
 
-CMakeFiles/stellar-defenders.dir/Source/MainMenu.cpp.o:
-
-CMakeFiles/stellar-defenders.dir/Source/Actors/MainMenuActor.cpp.o:
+CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.o:
 
 /usr/local/lib/libSDL2.so:
 

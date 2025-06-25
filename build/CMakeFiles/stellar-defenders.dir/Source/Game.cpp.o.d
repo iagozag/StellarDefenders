@@ -375,7 +375,7 @@ CMakeFiles/stellar-defenders.dir/Source/Game.cpp.o: \
  /usr/include/c++/15.1.1/set /usr/include/c++/15.1.1/bits/stl_set.h \
  /usr/include/c++/15.1.1/bits/stl_multiset.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Star.h \
- /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/MainMenuActor.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Alien.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Components/DrawComponents/DrawAnimatedComponent.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Components/DrawComponents/DrawSpriteComponent.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/../Components/DrawComponents/DrawComponent.h \

@@ -331,7 +331,7 @@ CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.o: \
  /usr/include/c++/15.1.1/pstl/glue_algorithm_defs.h \
  /usr/include/c++/15.1.1/pstl/execution_defs.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/../Actors/Star.h \
- /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/../Actors/MainMenuActor.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/../Actors/Alien.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/../Actors/../Components/DrawComponents/DrawAnimatedComponent.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/../Actors/../Components/DrawComponents/DrawSpriteComponent.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/UIElements/../Actors/../Components/DrawComponents/DrawComponent.h \

@@ -408,33 +408,19 @@ CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.s"
 	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/SpatialHashing.cpp -o CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.s
 
-CMakeFiles/stellar-defenders.dir/Source/MainMenu.cpp.o: CMakeFiles/stellar-defenders.dir/flags.make
-CMakeFiles/stellar-defenders.dir/Source/MainMenu.cpp.o: /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/MainMenu.cpp
-CMakeFiles/stellar-defenders.dir/Source/MainMenu.cpp.o: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/MainMenu.cpp.o"
-	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/MainMenu.cpp.o -MF CMakeFiles/stellar-defenders.dir/Source/MainMenu.cpp.o.d -o CMakeFiles/stellar-defenders.dir/Source/MainMenu.cpp.o -c /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/MainMenu.cpp
+CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.o: CMakeFiles/stellar-defenders.dir/flags.make
+CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.o: /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Alien.cpp
+CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.o: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.o"
+	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.o -MF CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.o.d -o CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.o -c /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Alien.cpp
 
-CMakeFiles/stellar-defenders.dir/Source/MainMenu.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/MainMenu.cpp.i"
-	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/MainMenu.cpp > CMakeFiles/stellar-defenders.dir/Source/MainMenu.cpp.i
+CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.i"
+	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Alien.cpp > CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.i
 
-CMakeFiles/stellar-defenders.dir/Source/MainMenu.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/MainMenu.cpp.s"
-	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/MainMenu.cpp -o CMakeFiles/stellar-defenders.dir/Source/MainMenu.cpp.s
-
-CMakeFiles/stellar-defenders.dir/Source/Actors/MainMenuActor.cpp.o: CMakeFiles/stellar-defenders.dir/flags.make
-CMakeFiles/stellar-defenders.dir/Source/Actors/MainMenuActor.cpp.o: /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/MainMenuActor.cpp
-CMakeFiles/stellar-defenders.dir/Source/Actors/MainMenuActor.cpp.o: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Actors/MainMenuActor.cpp.o"
-	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Actors/MainMenuActor.cpp.o -MF CMakeFiles/stellar-defenders.dir/Source/Actors/MainMenuActor.cpp.o.d -o CMakeFiles/stellar-defenders.dir/Source/Actors/MainMenuActor.cpp.o -c /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/MainMenuActor.cpp
-
-CMakeFiles/stellar-defenders.dir/Source/Actors/MainMenuActor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Actors/MainMenuActor.cpp.i"
-	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/MainMenuActor.cpp > CMakeFiles/stellar-defenders.dir/Source/Actors/MainMenuActor.cpp.i
-
-CMakeFiles/stellar-defenders.dir/Source/Actors/MainMenuActor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Actors/MainMenuActor.cpp.s"
-	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/MainMenuActor.cpp -o CMakeFiles/stellar-defenders.dir/Source/Actors/MainMenuActor.cpp.s
+CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.s"
+	/sbin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Actors/Alien.cpp -o CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.s
 
 # Object files for target stellar-defenders
 stellar__defenders_OBJECTS = \
@@ -462,8 +448,7 @@ stellar__defenders_OBJECTS = \
 "CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.o" \
 "CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.o" \
 "CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.o" \
-"CMakeFiles/stellar-defenders.dir/Source/MainMenu.cpp.o" \
-"CMakeFiles/stellar-defenders.dir/Source/Actors/MainMenuActor.cpp.o"
+"CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.o"
 
 # External object files for target stellar-defenders
 stellar__defenders_EXTERNAL_OBJECTS =
@@ -492,8 +477,7 @@ stellar-defenders: CMakeFiles/stellar-defenders.dir/Source/UIElements/UIElement.
 stellar-defenders: CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.o
 stellar-defenders: CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.o
 stellar-defenders: CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.o
-stellar-defenders: CMakeFiles/stellar-defenders.dir/Source/MainMenu.cpp.o
-stellar-defenders: CMakeFiles/stellar-defenders.dir/Source/Actors/MainMenuActor.cpp.o
+stellar-defenders: CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.o
 stellar-defenders: CMakeFiles/stellar-defenders.dir/build.make
 stellar-defenders: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
 stellar-defenders: /usr/local/lib/libSDL2.so
@@ -501,7 +485,7 @@ stellar-defenders: /opt/SDL2_image/lib/libSDL2_image.so
 stellar-defenders: /usr/lib/libSDL2_ttf.so
 stellar-defenders: /usr/lib/libSDL2_mixer.so
 stellar-defenders: CMakeFiles/stellar-defenders.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Linking CXX executable stellar-defenders"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable stellar-defenders"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/stellar-defenders.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -188,14 +188,14 @@ void Game::ChangeScene()
     }
     else if (mNextScene == GameScene::Ship)
     {
-        mAlien = new MainMenuActor(this);
+        mAlien = new Alien(this);
         mAlien->SetPosition(Vector2(0, mWindowHeight-TILE_SIZE));
 
         SetBackgroundImage("../Assets/Sprites/background.png", Vector2(TILE_SIZE,0), Vector2(3000,448));
     }
     else if (mNextScene == GameScene::Level1)
     {
-        mShip = new Ship(this, 20);
+        mShip = new Ship(this, 40);
         mShip->SetPosition(Vector2(mWindowWidth/2, mWindowHeight/2));
         // --------------
         // TODO - PARTE 3

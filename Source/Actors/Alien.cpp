@@ -2,13 +2,13 @@
 // Created by csxuser on 22/06/2025.
 //
 
-#include "MainMenuActor.h"
+#include "Alien.h"
 //
 // Created by Lucas N. Ferreira on 03/08/23.
 //
 
 
-MainMenuActor::MainMenuActor(Game* game, const float forwardSpeed, const float jumpSpeed)
+Alien::Alien(Game* game, const float forwardSpeed, const float jumpSpeed)
         : Actor(game)
         , mIsRunning(false)
         , mIsDead(false)
@@ -71,7 +71,7 @@ MainMenuActor::MainMenuActor(Game* game, const float forwardSpeed, const float j
     mDrawComponent->SetAnimFPS(5.0f);
 }
 
-void MainMenuActor::OnProcessInput(const uint8_t* state)
+void Alien::OnProcessInput(const uint8_t* state)
 {
     // --------------
     // TODO - PARTE 2
@@ -115,7 +115,7 @@ void MainMenuActor::OnProcessInput(const uint8_t* state)
 }
 
 
-void MainMenuActor::OnUpdate(float deltaTime)
+void Alien::OnUpdate(float deltaTime)
 {
 
     // --------------
@@ -135,7 +135,7 @@ void MainMenuActor::OnUpdate(float deltaTime)
     ManageAnimations();
 }
 
-void MainMenuActor::ManageAnimations()
+void Alien::ManageAnimations()
 {
     // --------------
     // TODO - PARTE 4
@@ -156,7 +156,7 @@ void MainMenuActor::ManageAnimations()
 
 }
 
-void MainMenuActor::Kill()
+void Alien::Kill()
 {
     // --------------
     // TODO - PARTE 5
@@ -172,7 +172,7 @@ void MainMenuActor::Kill()
 
 }
 
-void MainMenuActor::OnHorizontalCollision(const float minOverlap, AABBColliderComponent* other)
+void Alien::OnHorizontalCollision(const float minOverlap, AABBColliderComponent* other)
 {
     // --------------
     // TODO - PARTE 5
@@ -185,7 +185,7 @@ void MainMenuActor::OnHorizontalCollision(const float minOverlap, AABBColliderCo
     }
 }
 
-void MainMenuActor::OnVerticalCollision(const float minOverlap, AABBColliderComponent* other)
+void Alien::OnVerticalCollision(const float minOverlap, AABBColliderComponent* other)
 {
     // --------------
     // TODO - PARTE 5

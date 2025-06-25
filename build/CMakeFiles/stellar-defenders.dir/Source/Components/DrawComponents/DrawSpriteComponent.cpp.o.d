@@ -314,6 +314,6 @@ CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComp
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/DrawComponents/../../AudioSystem.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/DrawComponents/../../Actors/Ship.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/DrawComponents/../../Actors/Star.h \
- /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/DrawComponents/../../Actors/MainMenuActor.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/DrawComponents/../../Actors/Alien.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/DrawComponents/../../Actors/../Components/DrawComponents/DrawAnimatedComponent.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/DrawComponents/../../Actors/../Components/DrawComponents/DrawPolygonComponent.h

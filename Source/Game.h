@@ -15,7 +15,7 @@
 
 #include "Actors/Ship.h"
 #include "Actors/Star.h"
-#include "Actors/MainMenuActor.h"
+#include "Actors/Alien.h"
 
 class Game
 {
@@ -171,7 +171,7 @@ private:
     class HUD *mHUD;
     SoundHandle mMusicHandle;
 
-    class MainMenuActor* mAlien;
+    class Alien* mAlien;
     float mGameTimer;
     int mGameTimeLimit;
 

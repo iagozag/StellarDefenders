@@ -313,7 +313,7 @@ CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/AABBCollid
  /usr/include/c++/15.1.1/bits/basic_string.tcc \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/ColliderComponents/../../Actors/Ship.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/ColliderComponents/../../Actors/Star.h \
- /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/ColliderComponents/../../Actors/MainMenuActor.h \
+ /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/ColliderComponents/../../Actors/Alien.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/ColliderComponents/../../Actors/../Components/DrawComponents/DrawAnimatedComponent.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/ColliderComponents/../../Actors/../Components/DrawComponents/DrawSpriteComponent.h \
  /home/ventoy/documents/school/ufmg/programmingSubjects/desenvolvimento_jogos_digitais/StellarDefenders/Source/Components/ColliderComponents/../../Actors/../Components/DrawComponents/DrawComponent.h \
