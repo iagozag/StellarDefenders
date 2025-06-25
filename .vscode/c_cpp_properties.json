@@ -5,7 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "/usr/local/include/SDL2",
-                "/usr/include/SDL2"
+                "/usr/include/SDL2",
+                "${workspaceFolder}/vendor"
             ],
             "defines": [],
             "cStandard": "c17",

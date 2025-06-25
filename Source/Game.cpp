@@ -63,7 +63,7 @@ bool Game::Initialize()
         return false;
     }
 
-    mWindow = SDL_CreateWindow("Stellar Defenders", 0, 0, mWindowWidth, mWindowHeight, 0);
+    mWindow = SDL_CreateWindow("Stellar Defenders", 0, 0, mWindowWidth, mWindowHeight, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
     if (!mWindow)
     {
         SDL_Log("Failed to create window: %s", SDL_GetError());
