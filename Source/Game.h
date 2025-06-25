@@ -110,6 +110,10 @@ public:
 
     class Ship* GetShip(){ return mShip; }
 
+    SDL_Rect GetViableArea(){ return mViableAreaRect; }
+    void SetViableArea(const SDL_Rect& rect);
+    void DisableViableArea();
+
     void SetGamePlayState(GamePlayState state) { mGamePlayState = state; }
     GamePlayState GetGamePlayState() const { return mGamePlayState; }
 
@@ -170,6 +174,9 @@ private:
     std::vector<class Star*> mStars;
     class HUD *mHUD;
     SoundHandle mMusicHandle;
+
+    SDL_Rect mViableAreaRect;
+    bool mIsViableAreaActive;
 
     class Alien* mAlien;
     float mGameTimer;
