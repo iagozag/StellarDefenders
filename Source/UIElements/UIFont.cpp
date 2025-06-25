@@ -85,7 +85,7 @@ SDL_Texture* UIFont::RenderText(const std::string& text, const Vector3& color /*
 
     SDL_Surface* surf = TTF_RenderUTF8_Blended_Wrapped(mFontData[pointSize], text.c_str(), sdlColor, wrapLength);
     if (!surf) {
-        SDL_Log("Failed to create surface for text: %s", text);
+        SDL_Log("Failed to create surface for text: %s", text.c_str());
         return nullptr;
     }
 
