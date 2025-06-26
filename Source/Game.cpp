@@ -614,7 +614,7 @@ void Game::draw_ellipsis(const glm::vec2 &pos, const glm::vec2 &dim, const size_
         SDL_Vertex border_vertex;
         border_vertex.position.x = pos.x + dim.x * 0.5f * glm::cos(angle);
         border_vertex.position.y = pos.y + dim.y * 0.5f * glm::sin(angle);
-        border_vertex.color = center_vertex.color; // Usa a mesma cor do centro
+        border_vertex.color = {0, Uint8((i & 1) * 255), Uint8((1 - (i & 1)) * 255), 255}; // Usa a mesma cor do centro
         vertices.push_back(border_vertex);
     }
 
