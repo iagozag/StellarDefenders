@@ -7,7 +7,7 @@
 
 UIText::UIText(
     const std::string &text, class UIFont* font, int pointSize, const unsigned wrapLength,
-    const Vector2 &pos, const Vector2 &size, const Vector3 &color
+    const glm::vec2 &pos, const glm::vec2 &size, const glm::vec3 &color
 ):
     UIElement(pos, size, color),
     mFont(font),
@@ -47,7 +47,7 @@ void UIText::SetText(const std::string &text)
     mText = text;
 }
 
-void UIText::Draw(SDL_Renderer *renderer, const Vector2 &screenPos)
+void UIText::Draw(SDL_Renderer *renderer, const glm::vec2 &screenPos)
 {
     // --------------
     // TODO - PARTE 1-1

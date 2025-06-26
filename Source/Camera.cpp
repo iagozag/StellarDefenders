@@ -1,5 +1,5 @@
 
-#include "camera.hpp"
+#include "Camera.hpp"
 
 #include "Game.h"
 #include <glm/ext/matrix_clip_space.hpp>
@@ -71,3 +71,5 @@ glm::mat4 Camera::get_screen_matrix(const Game &game) const {
 glm::mat4 Camera::get_total_transformation_matrix(const Game &game) const {
     return get_screen_matrix(game) * get_projection_matrix(game);
 }
+
+glm::vec2 Camera::get_pos() const{ return m_pos; }

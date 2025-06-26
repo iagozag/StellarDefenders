@@ -14,7 +14,7 @@
 Actor::Actor(Game* game):
     mGame(game),
     mState(ActorState::Active),
-    mPosition(Vector2::Zero),
+    mPosition(glm::vec2(.0f)),
     mScale(1.0f),
     mRotation(0.0f),
     mIsOnGround(false)
@@ -33,7 +33,7 @@ Actor::~Actor()
     mComponents.clear();
 }
 
-void Actor::SetPosition(const Vector2& pos)
+void Actor::SetPosition(const glm::vec2& pos)
 {
     mPosition = pos;
     mGame->Reinsert(this);

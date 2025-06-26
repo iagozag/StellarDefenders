@@ -15,7 +15,7 @@ AABBColliderComponent::AABBColliderComponent(
     int updateOrder
 ):
     Component(owner, updateOrder),
-    mOffset(Vector2((float)dx, (float)dy)),
+    mOffset(glm::vec2((float)dx, (float)dy)),
     mWidth(w),
     mHeight(h),
     mIsStatic(isStatic),
@@ -29,19 +29,19 @@ AABBColliderComponent::~AABBColliderComponent()
 //    mOwner->GetGame()->RemoveCollider(this);
 }
 
-Vector2 AABBColliderComponent::GetMin() const
+glm::vec2 AABBColliderComponent::GetMin() const
 {
     return mOwner->GetPosition() + mOffset;
 }
 
-Vector2 AABBColliderComponent::GetMax() const
+glm::vec2 AABBColliderComponent::GetMax() const
 {
-    return GetMin() + Vector2((float)mWidth, (float)mHeight);
+    return GetMin() + glm::vec2((float)mWidth, (float)mHeight);
 }
 
-Vector2 AABBColliderComponent::GetCenter() const
+glm::vec2 AABBColliderComponent::GetCenter() const
 {
-    return GetMin() + Vector2((float)mWidth / 2.0f, (float)mHeight / 2.0f);
+    return GetMin() + glm::vec2((float)mWidth / 2.0f, (float)mHeight / 2.0f);
 }
 
 bool AABBColliderComponent::Intersect(const AABBColliderComponent& b) const
@@ -74,7 +74,9 @@ float AABBColliderComponent::DetectHorizontalCollision(RigidBodyComponent *rigid
     auto colliders = mOwner->GetGame()->GetNearbyColliders(mOwner->GetPosition());
 
     std::sort(colliders.begin(), colliders.end(), [this](AABBColliderComponent* a, AABBColliderComponent* b) {
-        return Math::Abs((a->GetCenter() - GetCenter()).LengthSq() < (b->GetCenter() - GetCenter()).LengthSq());
+        glm::vec2 distA = a->GetCenter() - GetCenter();
+        glm::vec2 distB = b->GetCenter() - GetCenter();
+        return glm::dot(distA, distA) < glm::dot(distB, distB);
     });
 
     for (auto& collider : colliders)
@@ -114,7 +116,9 @@ float AABBColliderComponent::DetectVertialCollision(RigidBodyComponent *rigidBod
     auto colliders = mOwner->GetGame()->GetNearbyColliders(mOwner->GetPosition());
 
     std::sort(colliders.begin(), colliders.end(), [this](AABBColliderComponent* a, AABBColliderComponent* b) {
-        return Math::Abs((a->GetCenter() - GetCenter()).LengthSq() < (b->GetCenter() - GetCenter()).LengthSq());
+        glm::vec2 distA = a->GetCenter() - GetCenter();
+        glm::vec2 distB = b->GetCenter() - GetCenter();
+        return glm::dot(distA, distA) < glm::dot(distB, distB);
     });
 
     for (auto& collider : colliders)
@@ -149,14 +153,14 @@ float AABBColliderComponent::DetectVertialCollision(RigidBodyComponent *rigidBod
 
 void AABBColliderComponent::ResolveHorizontalCollisions(RigidBodyComponent *rigidBody, const float minXOverlap)
 {
-    mOwner->SetPosition(mOwner->GetPosition() - Vector2(minXOverlap, 0.0f));
-    rigidBody->SetVelocity(Vector2(0.f, rigidBody->GetVelocity().y));
+    mOwner->SetPosition(mOwner->GetPosition() - glm::vec2(minXOverlap, 0.0f));
+    rigidBody->SetVelocity(glm::vec2(0.f, rigidBody->GetVelocity().y));
 }
 
 void AABBColliderComponent::ResolveVerticalCollisions(RigidBodyComponent *rigidBody, const float minYOverlap)
 {
-    mOwner->SetPosition(mOwner->GetPosition() - Vector2(0.0f, minYOverlap));
-    rigidBody->SetVelocity(Vector2(rigidBody->GetVelocity().x, 0.f));
+    mOwner->SetPosition(mOwner->GetPosition() - glm::vec2(0.0f, minYOverlap));
+    rigidBody->SetVelocity(glm::vec2(rigidBody->GetVelocity().x, 0.f));
 
     if (minYOverlap > .0f) {
         mOwner->SetOnGround();

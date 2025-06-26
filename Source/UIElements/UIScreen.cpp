@@ -125,7 +125,7 @@ void UIScreen::Close()
 	mState = UIState::Closing;
 }
 
-UIText* UIScreen::AddText(const std::string &name, const Vector2 &pos, const Vector2 &dims, const int pointSize, const int unsigned wrapLength)
+UIText* UIScreen::AddText(const std::string &name, const glm::vec2 &pos, const glm::vec2 &dims, const int pointSize, const int unsigned wrapLength)
 {
     // --------------
     // TODO - PARTE 1-1
@@ -134,11 +134,11 @@ UIText* UIScreen::AddText(const std::string &name, const Vector2 &pos, const Vec
     // TODO 1.: Crie um novo UIText com o nome, fonte (mFont), tamanho do ponto (pointSize), comprimento de quebra (wrapLength),
     //  posição (pos), dimensões (dims) e cor branca. Armazene o ponteiro em uma variável t. A seguir, adicione o UIText
     //  à lista de textos (mTexts) e retorne o ponteiro t.
-    mTexts.emplace_back(new UIText(name, mFont, pointSize, wrapLength, pos, dims, Vector3(1.0f, 1.0f, 1.0f)));
+    mTexts.emplace_back(new UIText(name, mFont, pointSize, wrapLength, pos, dims, glm::vec3(1.0f, 1.0f, 1.0f)));
     return mTexts.back();
 }
 
-UIButton* UIScreen::AddButton(const std::string& name, const Vector2 &pos, const Vector2& dims, std::function<void()> onClick)
+UIButton* UIScreen::AddButton(const std::string& name, const glm::vec2 &pos, const glm::vec2& dims, std::function<void()> onClick)
 {
     // --------------
     // TODO - PARTE 1-2
@@ -146,7 +146,7 @@ UIButton* UIScreen::AddButton(const std::string& name, const Vector2 &pos, const
 
     // TODO 1.: Crie um novo UIButton com o nome, fonte (mFont), função de clique (onClick),
     //  posição (pos), dimensões (dims) e cor laranja. Adicione o botão à lista de botões (mButtons).
-    mButtons.emplace_back(new UIButton(name, mFont, onClick, pos, dims, Vector3(200.0f/255.0f, 100.0f/255.0f, 0.0f/255.0f)));
+    mButtons.emplace_back(new UIButton(name, mFont, onClick, pos, dims, glm::vec3(200.0f/255.0f, 100.0f/255.0f, 0.0f/255.0f)));
 
     // TODO 2.: Se a lista de botões (mButtons) tiver apenas um botão, defina o índice do botão
     //  selecionado (mSelectedButtonIndex) como 0 e destaque o botão (b->SetHighlighted(true)).
@@ -156,7 +156,7 @@ UIButton* UIScreen::AddButton(const std::string& name, const Vector2 &pos, const
     return mButtons.back();
 }
 
-UIImage* UIScreen::AddImage(const std::string &imagePath, const Vector2 &pos, const Vector2 &dims, const Vector3 &color)
+UIImage* UIScreen::AddImage(const std::string &imagePath, const glm::vec2 &pos, const glm::vec2 &dims, const glm::vec3 &color)
 {
     // --------------
     // TODO - PARTE 1-3

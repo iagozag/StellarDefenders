@@ -12,10 +12,10 @@ public:
     ~Star();
 
 private:
-    static std::vector<Vector2> GenerateVertices(int numVertices, float radius);
-    static Vector2 GenerateRandomStartingForce(float min, float max);
+    static std::vector<glm::vec2> GenerateVertices(int numVertices, float radius);
+    static glm::vec2 GenerateRandomStartingForce(float min, float max);
 
-    static float CalculateAverageVerticesLength(std::vector<Vector2>& vertices);
+    static float CalculateAverageVerticesLength(std::vector<glm::vec2>& vertices);
 
     class DrawSpriteComponent* mDrawSpriteComponent;
     class RigidBodyComponent* mRigidBodyComponent;

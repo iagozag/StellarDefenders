@@ -24,26 +24,26 @@ DrawSpriteComponent::~DrawSpriteComponent()
     }
 }
 
-void DrawSpriteComponent::Draw(SDL_Renderer *renderer, const Vector3 &modColor)
+void DrawSpriteComponent::Draw(SDL_Renderer *renderer, const glm::vec3 &modColor)
 {
-    // SDL_Rect dstRect = {
-    //     static_cast<int>(mOwner->GetPosition().x - mOwner->GetGame()->GetCameraPos().x),
-    //     static_cast<int>(mOwner->GetPosition().y - mOwner->GetGame()->GetCameraPos().y),
-    //     mWidth,
-    //     mHeight
-    // };
+    SDL_Rect dstRect = {
+        static_cast<int>(mOwner->GetPosition().x - mOwner->GetGame()->GetCamera().get_pos().x),
+        static_cast<int>(mOwner->GetPosition().y - mOwner->GetGame()->GetCamera().get_pos().y),
+        mWidth,
+        mHeight
+    };
 
-    // SDL_RendererFlip flip = SDL_FLIP_NONE;
-    // if (mOwner->GetRotation() == Math::Pi) {
-    //     flip = SDL_FLIP_HORIZONTAL;
-    // }
+    SDL_RendererFlip flip = SDL_FLIP_NONE;
+    if (mOwner->GetRotation() == Math::Pi) {
+        flip = SDL_FLIP_HORIZONTAL;
+    }
 
-    // SDL_SetTextureBlendMode(mSpriteSheetSurface, SDL_BLENDMODE_BLEND);
+    SDL_SetTextureBlendMode(mSpriteSheetSurface, SDL_BLENDMODE_BLEND);
 
-    // SDL_SetTextureColorMod(mSpriteSheetSurface,
-    //                        static_cast<Uint8>(modColor.x),
-    //                        static_cast<Uint8>(modColor.y),
-    //                        static_cast<Uint8>(modColor.z));
+    SDL_SetTextureColorMod(mSpriteSheetSurface,
+                           static_cast<Uint8>(modColor.x),
+                           static_cast<Uint8>(modColor.y),
+                           static_cast<Uint8>(modColor.z));
 
-    // SDL_RenderCopyEx(renderer, mSpriteSheetSurface, nullptr, &dstRect, mOwner->GetRotation(), nullptr, flip);
+    SDL_RenderCopyEx(renderer, mSpriteSheetSurface, nullptr, &dstRect, mOwner->GetRotation(), nullptr, flip);
 }

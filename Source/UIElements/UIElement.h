@@ -6,26 +6,28 @@
 
 #include "../Math.h"
 #include <SDL.h>
+#include <glm/glm.hpp>
+#include "../Color.h"
 
 class UIElement {
 public:
-    UIElement(const Vector2 &pos, const Vector2 &size, const Vector3 &color);
+    UIElement(const glm::vec2 &pos, const glm::vec2 &size, const glm::vec3 &color);
     virtual ~UIElement() = default;
 
     // Getters/setters
-    const Vector2& GetPosition() const { return mPosition; }
-    void SetPosition(const Vector2 &pos) { mPosition = pos; }
+    const glm::vec2& GetPosition() const { return mPosition; }
+    void SetPosition(const glm::vec2 &pos) { mPosition = pos; }
 
-    const Vector2& GetSize() const { return mSize; }
-    void SetSize(const Vector2 &size) { mSize = size; }
+    const glm::vec2& GetSize() const { return mSize; }
+    void SetSize(const glm::vec2 &size) { mSize = size; }
 
-    const Vector3& GetColor() const { return mColor; }
-    void SetColor(const Vector3 &color) { mColor = color; }
+    const glm::vec3& GetColor() const { return mColor; }
+    void SetColor(const glm::vec3 &color) { mColor = color; }
 
-    virtual void Draw(SDL_Renderer* renderer, const Vector2 &screenPos) {};
+    virtual void Draw(SDL_Renderer* renderer, const glm::vec2 &screenPos) {};
 
 protected:
-    Vector2 mPosition;
-    Vector2 mSize;
-    Vector3 mColor;
+    glm::vec2 mPosition;
+    glm::vec2 mSize;
+    glm::vec3 mColor;
 };

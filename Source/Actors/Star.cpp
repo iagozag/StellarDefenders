@@ -22,21 +22,21 @@ Star::Star(Game* game, const float radius, const int numVertices, const float fo
     // --------------
 
     // Create a circle with numVertices
-    std::vector<Vector2> vertices = GenerateVertices(numVertices, radius);
+    std::vector<glm::vec2> vertices = GenerateVertices(numVertices, radius);
 
     // Calculate average vertices length to be the collider radius
     float averageLength = CalculateAverageVerticesLength(vertices);
 
     // Generate random starting force
-    Vector2 randStartingForce = GenerateRandomStartingForce(0.0f, 0.0f);
+    glm::vec2 randStartingForce = GenerateRandomStartingForce(0.0f, 0.0f);
 
     // TODO 1.2 (~3 linhas): Utilize a função Random::GetVector para gerar uma posição aleatória inicial para
     //  o asteroide. Garanta que essa posição inicial não resultará em uma colisão com a configuração inicial
     //  da nave. Utilize a função SetPosition para alterar a posição inicial do asteroide com a posição gerada.
-    Vector2 pos;
+    glm::vec2 pos;
     do{
-        pos = Random::GetVector(Vector2::Zero, Vector2(mGame->GetWindowWidth(), mGame->GetWindowHeight()));
-    } while((pos - mGame->GetShip()->GetPosition()).Length() < radius + mGame->GetShip()->GetComponent<CircleColliderComponent>()->GetRadius());
+        pos = Random::GetVector(glm::vec2(.0f), glm::vec2(mGame->GetWindowWidth(), mGame->GetWindowHeight()));
+    } while((pos - mGame->GetShip()->GetPosition()).length() < radius + mGame->GetShip()->GetComponent<CircleColliderComponent>()->GetRadius());
 
     SetPosition(pos);
 
@@ -76,7 +76,7 @@ Star::~Star()
     //     float randomAngle = Random::GetFloatRange(0.0f, Math::TwoPi);
     //     particle->SetRotation(randomAngle);
 
-    //     Vector2 direction = Vector2(Math::Cos(randomAngle), Math::Sin(randomAngle));
+    //     glm::vec2 direction = glm::vec2(Math::Cos(randomAngle), Math::Sin(randomAngle));
     //     particle->GetComponent<RigidBodyComponent>()->ApplyForce(direction*2000.0f);
     // }
 
@@ -85,11 +85,11 @@ Star::~Star()
 }
 
 
-std::vector<Vector2> Star::GenerateVertices(const int numVertices, const float radius)
+std::vector<glm::vec2> Star::GenerateVertices(const int numVertices, const float radius)
 {
     // Gerar um conjunto de vértices em uma circunferência, adicionando um pequeno ruído a cada um deles.
 
-    std::vector<Vector2> vertices;
+    std::vector<glm::vec2> vertices;
 
     // --------------
     // TODO - PARTE 3
@@ -108,7 +108,7 @@ std::vector<Vector2> Star::GenerateVertices(const int numVertices, const float r
     //  (d) Incremente o ângulo corrente por 2*PI dividido pelo número de vértices (numVertices).
     for(int i = 0; i < numVertices; i++){
         float randLength = Random::GetFloatRange(0.5, 1.0)*radius;
-        Vector2 v(randLength*cos(angle), randLength*sin(angle));
+        glm::vec2 v(randLength*cos(angle), randLength*sin(angle));
         vertices.emplace_back(v);
         angle += 2.0*Math::Pi/numVertices;
     }
@@ -116,7 +116,7 @@ std::vector<Vector2> Star::GenerateVertices(const int numVertices, const float r
     return vertices;
 }
 
-float Star::CalculateAverageVerticesLength(std::vector<Vector2>& vertices)
+float Star::CalculateAverageVerticesLength(std::vector<glm::vec2>& vertices)
 {
     // --------------
     // TODO - PARTE 3
@@ -124,13 +124,13 @@ float Star::CalculateAverageVerticesLength(std::vector<Vector2>& vertices)
 
     // TODO 6.1 (~4 linhas): Calcule e retorne a média de comprimento dos vértices em (vertices) .
     float mean = .0f;
-    for(auto v: vertices) mean += v.Length();
+    for(auto v: vertices) mean += v.length();
     mean /= (float)(vertices.size());
 
     return mean;
 }
 
-Vector2 Star::GenerateRandomStartingForce(const float min, const float max)
+glm::vec2 Star::GenerateRandomStartingForce(const float min, const float max)
 {
     // --------------
     // TODO - PARTE 3
@@ -148,9 +148,9 @@ Vector2 Star::GenerateRandomStartingForce(const float min, const float max)
 
     // TODO 7.3 (~3 linhas): Gere um vetor aleatório chamado randForce com a função Random::GetVector. Utilize os
     //  parâmetros min e max desse método para restringir os limites inferior e superior do vetor.
-    Vector2 minForce(min, min);
-    Vector2 maxForce(max, max);
-    Vector2 randForce = Random::GetVector(minForce, maxForce);
+    glm::vec2 minForce(min, min);
+    glm::vec2 maxForce(max, max);
+    glm::vec2 randForce = Random::GetVector(minForce, maxForce);
 
     // TODO 7.4 (~3 linhas): Multiplique a componente horizontal de randForce por randDirX e a vertical por randDirY.
     //  Depois, retorn randForce.

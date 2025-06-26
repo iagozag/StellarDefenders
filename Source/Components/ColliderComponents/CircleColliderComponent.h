@@ -15,7 +15,7 @@ public:
     void SetRadius(float radius) { mRadius = radius; }
     float GetRadius() const;
 
-    const Vector2& GetCenter() const;
+    const glm::vec2& GetCenter() const;
 
     bool Intersect(const CircleColliderComponent& b) const;
 

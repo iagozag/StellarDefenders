@@ -14,7 +14,7 @@
 
 #include "AudioSystem.h"
 #include "Math.h"
-#include "camera.hpp"
+#include "Camera.hpp"
 
 #include "Actors/Ship.h"
 #include "Actors/Star.h"
@@ -74,13 +74,16 @@ public:
     void LoadMainMenu();
     void LoadLevel(const std::string& levelName, const int levelWidth, const int levelHeight);
 
-    std::vector<Actor *> GetNearbyActors(const Vector2& position, const int range = 1);
-    std::vector<class AABBColliderComponent *> GetNearbyColliders(const Vector2& position, const int range = 2);
+    std::vector<Actor *> GetNearbyActors(const glm::vec2& position, const int range = 1);
+    std::vector<class AABBColliderComponent *> GetNearbyColliders(const glm::vec2& position, const int range = 2);
 
     void Reinsert(Actor* actor);
 
     // Audio functions
     class AudioSystem* GetAudio() { return mAudio; }
+
+    // Camera functions
+    class Camera GetCamera(){ return m_camera; }
 
     // UI functions
     void PushUI(class UIScreen* screen) { mUIStack.emplace_back(screen); }
@@ -101,7 +104,7 @@ public:
     void ResetGameScene(float transitionTime = .0f);
     void UnloadScene();
 
-    void SetBackgroundImage(const std::string& imagePath, const Vector2 &position = Vector2::Zero, const Vector2& size = Vector2::Zero);
+    void SetBackgroundImage(const std::string& imagePath, const glm::vec2 &position = glm::vec2(.0f), const glm::vec2& size = glm::vec2(.0f));
     void TogglePause();
 
     // Game-specific
@@ -168,7 +171,7 @@ private:
     GameScene mNextScene;
 
     // Background and camera
-    Vector3 mModColor;
+    glm::vec3 mModColor;
     Camera m_camera;
 
     // Game-specific
@@ -185,8 +188,8 @@ private:
     int mGameTimeLimit;
 
     SDL_Texture *mBackgroundTexture;
-    Vector2 mBackgroundSize;
-    Vector2 mBackgroundPosition;
+    glm::vec2 mBackgroundSize;
+    glm::vec2 mBackgroundPosition;
 
     Simulation m_simulation;
 };

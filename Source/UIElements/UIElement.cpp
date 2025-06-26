@@ -4,7 +4,7 @@
 
 #include "UIElement.h"
 
-UIElement::UIElement(const Vector2 &pos, const Vector2 &size, const Vector3 &color)
+UIElement::UIElement(const glm::vec2 &pos, const glm::vec2 &size, const glm::vec3 &color)
         :mPosition(pos)
         ,mSize(size)
         ,mColor(color)

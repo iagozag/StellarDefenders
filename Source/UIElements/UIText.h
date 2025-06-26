@@ -12,12 +12,12 @@
 class UIText : public UIElement {
 public:
     UIText(const std::string& text, class UIFont* font, int pointSize = 40, const unsigned wrapLength = 1024,
-           const Vector2 &pos = Vector2::Zero, const Vector2 &size = Vector2(100.f, 20.0f), const Vector3& color = Color::White);
+           const glm::vec2 &pos = glm::vec2(.0f), const glm::vec2 &size = glm::vec2(100.f, 20.0f), const glm::vec3& color = Color::White);
 
     ~UIText();
 
     void SetText(const std::string& name);
-    void Draw(SDL_Renderer* renderer, const Vector2 &screenPos) override;
+    void Draw(SDL_Renderer* renderer, const glm::vec2 &screenPos) override;
 
 protected:
     std::string mText;

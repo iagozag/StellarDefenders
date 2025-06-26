@@ -83,7 +83,7 @@ void Alien::OnProcessInput(const uint8_t* state)
 
     if (state[SDL_SCANCODE_D])
     {
-        mRigidBodyComponent->ApplyForce(Vector2(mForwardSpeed,0));
+        mRigidBodyComponent->ApplyForce(glm::vec2(mForwardSpeed,0));
         mRotation = 0.0f;
         mIsRunning = true;
     }
@@ -95,7 +95,7 @@ void Alien::OnProcessInput(const uint8_t* state)
 
     if (state[SDL_SCANCODE_A])
     {
-        mRigidBodyComponent->ApplyForce(Vector2(-mForwardSpeed, 0.0f));
+        mRigidBodyComponent->ApplyForce(glm::vec2(-mForwardSpeed, 0.0f));
         mRotation = Math::Pi;
         mIsRunning = true;
     }
@@ -193,7 +193,7 @@ void Alien::OnVerticalCollision(const float minOverlap, AABBColliderComponent* o
     //  um meio pulo no jogador (ou seja, altere a velocidade vertical do jogador para `mJumpSpeed / 2`).
     if (other->GetLayer() == ColliderLayer::Enemy) {
         other->GetOwner()->Kill();
-        mRigidBodyComponent->SetVelocity(Vector2(0.0f, mJumpSpeed/2));
+        mRigidBodyComponent->SetVelocity(glm::vec2(0.0f, mJumpSpeed/2));
     }
 
 }

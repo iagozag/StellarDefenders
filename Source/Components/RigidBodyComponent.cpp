@@ -19,13 +19,13 @@ RigidBodyComponent::RigidBodyComponent(class Actor* owner, float mass, float fri
     mFrictionCoefficient(friction),
     mMass(mass),
     mAngularSpeed(.0f),
-    mVelocity(Vector2::Zero),
-    mAcceleration(Vector2::Zero)
+    mVelocity(glm::vec2(.0f)),
+    mAcceleration(glm::vec2(.0f))
 {
 
 }
 
-void RigidBodyComponent::ApplyForce(const Vector2 &force) {
+void RigidBodyComponent::ApplyForce(const glm::vec2 &force) {
     mAcceleration += force * (1.f/mMass);
 }
 
@@ -33,12 +33,12 @@ void RigidBodyComponent::Update(float deltaTime)
 {
     // Apply gravity acceleration
     if(mApplyGravity) {
-        ApplyForce(Vector2::UnitY * GRAVITY);
+        ApplyForce(glm::vec2(.0f, 1.0f) * GRAVITY);
     }
 
     // Apply friction
     if(mApplyFriction && Math::Abs(mVelocity.x) > 0.05f) {
-        ApplyForce(Vector2::UnitX * -mFrictionCoefficient * mVelocity.x);
+        ApplyForce(glm::vec2(1.0f, .0f) * -mFrictionCoefficient * mVelocity.x);
     }
 
     // Euler Integration
@@ -55,7 +55,7 @@ void RigidBodyComponent::Update(float deltaTime)
 
     if(mVelocity.x != 0.0f)
     {
-        mOwner->SetPosition(Vector2(mOwner->GetPosition().x + mVelocity.x * deltaTime,
+        mOwner->SetPosition(glm::vec2(mOwner->GetPosition().x + mVelocity.x * deltaTime,
                                          mOwner->GetPosition().y));
 
         if (collider) {
@@ -65,7 +65,7 @@ void RigidBodyComponent::Update(float deltaTime)
 
     if(mVelocity.y != 0.0f)
     {
-        mOwner->SetPosition(Vector2(mOwner->GetPosition().x,
+        mOwner->SetPosition(glm::vec2(mOwner->GetPosition().x,
                                          mOwner->GetPosition().y + mVelocity.y * deltaTime));
 
         if (collider) {
@@ -74,7 +74,7 @@ void RigidBodyComponent::Update(float deltaTime)
 
     }
 
-    mAcceleration.Set(0.f, 0.f);
+    mAcceleration = glm::vec2(0.f, 0.f);
 
     float rot = mOwner->GetRotation();
 

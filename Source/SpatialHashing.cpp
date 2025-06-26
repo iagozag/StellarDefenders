@@ -37,7 +37,7 @@ SpatialHashing::~SpatialHashing()
 void SpatialHashing::Insert(Actor *collider)
 {
     // Compute positions for each vertex of the collider
-    Vector2 position = collider->GetPosition();
+    glm::vec2 position = collider->GetPosition();
 
     int col = static_cast<int>(position.x / mCellSize);
     int row = static_cast<int>(position.y / mCellSize);
@@ -78,7 +78,7 @@ void SpatialHashing::Reinsert(Actor *actor)
     Insert(actor);
 }
 
-std::vector<Actor*> SpatialHashing::Query(const Vector2& position, const int range) const
+std::vector<Actor*> SpatialHashing::Query(const glm::vec2& position, const int range) const
 {
     std::vector<Actor*> results;
 
@@ -109,7 +109,7 @@ std::vector<Actor*> SpatialHashing::Query(const Vector2& position, const int ran
     return results;
 }
 
-std::vector<AABBColliderComponent *> SpatialHashing::QueryColliders(const Vector2& position, const int range) const
+std::vector<AABBColliderComponent *> SpatialHashing::QueryColliders(const glm::vec2& position, const int range) const
 {
     std::vector<AABBColliderComponent*> results;
 
@@ -144,8 +144,8 @@ std::vector<Actor*> SpatialHashing::QueryOnCamera(
     }
     
     // // Get the camera vertices
-    // Vector2 topLeft = Vector2(cameraPosition.x - extraRadius, cameraPosition.y - extraRadius);
-    // Vector2 bottomRight = Vector2(cameraPosition.x + screenWidth + extraRadius, cameraPosition.y + screenHeight + extraRadius);
+    // glm::vec2 topLeft = glm::vec2(cameraPosition.x - extraRadius, cameraPosition.y - extraRadius);
+    // glm::vec2 bottomRight = glm::vec2(cameraPosition.x + screenWidth + extraRadius, cameraPosition.y + screenHeight + extraRadius);
 
     // // Calculate the grid cells that the camera covers
     // int startCol = static_cast<int>(topLeft.x / mCellSize);

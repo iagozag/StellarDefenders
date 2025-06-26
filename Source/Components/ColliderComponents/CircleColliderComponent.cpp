@@ -11,7 +11,7 @@ CircleColliderComponent::CircleColliderComponent(class Actor* owner, const float
 
 }
 
-const Vector2& CircleColliderComponent::GetCenter() const
+const glm::vec2& CircleColliderComponent::GetCenter() const
 {
     return mOwner->GetPosition();
 }
@@ -24,8 +24,8 @@ float CircleColliderComponent::GetRadius() const
 bool CircleColliderComponent::Intersect(const CircleColliderComponent& c) const
 {
     // Calculate amount squared
-    Vector2 diff = GetCenter() - c.GetCenter();
-    float distSq = diff.LengthSq();
+    glm::vec2 diff = GetCenter() - c.GetCenter();
+    float distSq = glm::dot(diff, diff);
 
     // Calculate sum of radii squared
     float radiiSq = GetRadius() + c.GetRadius();

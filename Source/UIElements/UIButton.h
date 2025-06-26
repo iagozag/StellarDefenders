@@ -15,23 +15,23 @@ class UIButton : public UIElement
 {
 public:
     UIButton(const std::string& text, class UIFont* font, std::function<void()> onClick,
-             const Vector2& pos, const Vector2& size, const Vector3& color = Vector3(30, 30, 30),
+             const glm::vec2& pos, const glm::vec2& size, const glm::vec3& color = glm::vec3(30, 30, 30),
              int pointSize = 40, const unsigned wrapLength = 1024,
-             const Vector2 &textPos = Vector2::Zero,
-             const Vector2 &textSize = Vector2(140.f, 20.0f),
-             const Vector3& textColor = Color::White);
+             const glm::vec2 &textPos = glm::vec2(.0f),
+             const glm::vec2 &textSize = glm::vec2(140.f, 20.0f),
+             const glm::vec3& textColor = Color::White);
 
     ~UIButton();
 
     // Set the name of the button
     void SetText(const std::string& text);
-    void Draw(SDL_Renderer* renderer, const Vector2 &screenPos) override;
+    void Draw(SDL_Renderer* renderer, const glm::vec2 &screenPos) override;
 
     void SetHighlighted(bool sel) { mHighlighted = sel; }
     bool GetHighlighted() const { return mHighlighted; }
 
     // Returns true if the point is within the button's bounds
-    bool ContainsPoint(const Vector2& pt) const;
+    bool ContainsPoint(const glm::vec2& pt) const;
 
     // Called when button is clicked
     void OnClick();

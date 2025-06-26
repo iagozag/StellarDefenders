@@ -8,6 +8,7 @@
 
 #pragma once
 #include <vector>
+#include <glm/glm.hpp>
 #include <SDL_stdinc.h>
 #include "../Math.h"
 #include "../Components/ColliderComponents/AABBColliderComponent.h"
@@ -33,10 +34,10 @@ public:
     void HandleKeyPress(const int key, const bool isPressed);
 
     // Position getter/setter
-    const Vector2& GetPosition() const { return mPosition; }
-    void SetPosition(const Vector2& pos);
+    const glm::vec2& GetPosition() const { return mPosition; }
+    void SetPosition(const glm::vec2& pos);
 
-    Vector2 GetForward() const { return Vector2(Math::Cos(mRotation), -Math::Sin(mRotation)); }
+    glm::vec2 GetForward() const { return glm::vec2(Math::Cos(mRotation), -Math::Sin(mRotation)); }
 
     // Scale getter/setter
     float GetScale() const { return mScale; }
@@ -92,7 +93,7 @@ protected:
     ActorState mState;
 
     // Transform
-    Vector2 mPosition;
+    glm::vec2 mPosition;
     float mScale;
     float mRotation;
 

@@ -43,9 +43,9 @@ public:
 
     void SetStatic(bool isStatic) { mIsStatic = isStatic; }
 
-    Vector2 GetMin() const;
-    Vector2 GetMax() const;
-    Vector2 GetCenter() const;
+    glm::vec2 GetMin() const;
+    glm::vec2 GetMax() const;
+    glm::vec2 GetCenter() const;
     ColliderLayer GetLayer() const { return mLayer; }
 
 private:
@@ -55,7 +55,7 @@ private:
     void ResolveHorizontalCollisions(RigidBodyComponent *rigidBody, const float minOverlap);
     void ResolveVerticalCollisions(RigidBodyComponent *rigidBody, const float minOverlap);
 
-    Vector2 mOffset;
+    glm::vec2 mOffset;
     int mWidth;
     int mHeight;
     bool mIsStatic;

@@ -33,7 +33,7 @@
 constexpr Planet PLANETS[] = {};
 constexpr auto NUM_PLANETS = sizeof(PLANETS) / sizeof(PLANETS[0]);
 
-constexpr glm::u8vec4 BACKGROUND_COLOR = {0, 0, 0, 0};
+constexpr glm::u8vec4 BACKGROUND_COLOR = {0, 0, 0, 255};
 
 Game::Game(int windowWidth, int windowHeight):
     mSceneManagerState(SceneManagerState::None),
@@ -54,8 +54,8 @@ Game::Game(int windowWidth, int windowHeight):
     mGameTimer(0.0f),
     mGameTimeLimit(0),
     mBackgroundTexture(nullptr),
-    mBackgroundSize(Vector2::Zero),
-    mBackgroundPosition(Vector2::Zero),
+    mBackgroundSize(glm::vec2(.0f)),
+    mBackgroundPosition(glm::vec2(.0f)),
     m_simulation(std::vector(PLANETS, &PLANETS[NUM_PLANETS]))
 {
 
@@ -193,14 +193,14 @@ void Game::ChangeScene()
     else if (mNextScene == GameScene::Ship)
     {
         mAlien = new Alien(this);
-        mAlien->SetPosition(Vector2(0, mWindowHeight-TILE_SIZE));
+        mAlien->SetPosition(glm::vec2(0, mWindowHeight-TILE_SIZE));
 
-        SetBackgroundImage("../Assets/Sprites/background.png", Vector2(0,0), Vector2(3000,448));
+        SetBackgroundImage("../Assets/Sprites/background.png", glm::vec2(0,0), glm::vec2(3000,448));
     }
     else if (mNextScene == GameScene::Level1)
     {
         mShip = new Ship(this, 50);
-        mShip->SetPosition(Vector2(0, 0));
+        mShip->SetPosition(glm::vec2(0, 0));
         // --------------
         // TODO - PARTE 3
         // --------------
@@ -221,7 +221,7 @@ void Game::ChangeScene()
         // TODO 1. Toque a música de fundo "MusicMain.ogg" em loop e armaze o SoundHandle retornado em mMusicHandle.
 
         // Set background color
-        //SetBackgroundImage("../Assets/Sprites/background.png", Vector2(TILE_SIZE,0), Vector2(6784,448));
+        //SetBackgroundImage("../Assets/Sprites/background.png", glm::vec2(TILE_SIZE,0), glm::vec2(6784,448));
 
         // Initialize actors
         // LoadLevel("../Assets/Levels/level1-1.csv", LEVEL_WIDTH, LEVEL_HEIGHT);
@@ -270,7 +270,7 @@ void Game::DisableViableArea()
 void Game::LoadMainMenu()
 {
 
-    // SetBackgroundImage("../Assets/Sprites/Background.png", Vector2(TILE_SIZE,-TILE_SIZE), Vector2(6784,448));
+    // SetBackgroundImage("../Assets/Sprites/Background.png", glm::vec2(TILE_SIZE,-TILE_SIZE), glm::vec2(6784,448));
 
     // --------------
     // TODO - PARTE 1
@@ -279,13 +279,13 @@ void Game::LoadMainMenu()
     // Esse método será usado para criar uma tela de UI e adicionar os elementos do menu principal.
     auto mainMenu = new UIScreen(this, "../Assets/Fonts/SMB.ttf");
 
-    const Vector2 titleSize = Vector2(500.0f, 88.0f);
-    const Vector2 titlePos = Vector2(mWindowWidth/2.0f - titleSize.x/2.0f, 50.0f);
+    const glm::vec2 titleSize = glm::vec2(500.0f, 88.0f);
+    const glm::vec2 titlePos = glm::vec2(mWindowWidth/2.0f - titleSize.x/2.0f, 50.0f);
     mainMenu->AddText("Stellar Defenders", titlePos, titleSize);
 
-    const Vector2 button1Pos = Vector2(0, titlePos.y)+Vector2(mWindowWidth/2.0f - 100.0f, 200.0f);
-    const Vector2 button2Pos = Vector2(0, titlePos.y)+Vector2(mWindowWidth/2.0f - 100.0f, 250.0f);
-    const Vector2 buttonSize = Vector2(200.0f, 40.0f);
+    const glm::vec2 button1Pos = glm::vec2(0, titlePos.y)+glm::vec2(mWindowWidth/2.0f - 100.0f, 200.0f);
+    const glm::vec2 button2Pos = glm::vec2(0, titlePos.y)+glm::vec2(mWindowWidth/2.0f - 100.0f, 250.0f);
+    const glm::vec2 buttonSize = glm::vec2(200.0f, 40.0f);
 
     mainMenu->AddButton("Play", button1Pos, buttonSize, [this]() {
                                 SetGameScene(GameScene::Ship, TRANSITION_TIME);
@@ -566,12 +566,12 @@ void Game::Reinsert(Actor* actor)
     mSpatialHashing->Reinsert(actor);
 }
 
-std::vector<Actor *> Game::GetNearbyActors(const Vector2& position, const int range)
+std::vector<Actor *> Game::GetNearbyActors(const glm::vec2& position, const int range)
 {
     return mSpatialHashing->Query(position, range);
 }
 
-std::vector<AABBColliderComponent *> Game::GetNearbyColliders(const Vector2& position, const int range)
+std::vector<AABBColliderComponent *> Game::GetNearbyColliders(const glm::vec2& position, const int range)
 {
     return mSpatialHashing->QueryColliders(position, range);
 }
@@ -647,12 +647,24 @@ glm::ivec2 Game::get_window_dimensions() const {
 }
 
 void Game::GenerateOutput() {
-
     // Clear frame with background color
-    SDL_SetRenderDrawColor(mRenderer, 0, 0, 0, 0);
+    SDL_SetRenderDrawColor(mRenderer, 0, 0, 0, 255);
     SDL_RenderClear(mRenderer);
 
-    m_simulation.draw(*this);
+    // m_simulation.draw(*this);
+
+    if (mBackgroundTexture)
+    {
+        // Cria um retângulo de destino na tela com a posição e o tamanho do fundo
+        SDL_Rect destRect;
+        destRect.x = static_cast<int>(mBackgroundPosition.x);
+        destRect.y = static_cast<int>(mBackgroundPosition.y);
+        destRect.w = static_cast<int>(mBackgroundSize.x);
+        destRect.h = static_cast<int>(mBackgroundSize.y);
+
+        // Copia a textura de fundo para o renderizador na posição/tamanho especificados
+        SDL_RenderCopy(mRenderer, mBackgroundTexture, nullptr, &destRect);
+    }
 
     // Draw viable area
     if (mGameScene != GameScene::MainMenu and mGameScene != GameScene::Ship and mIsViableAreaActive)
@@ -719,7 +731,7 @@ void Game::GenerateOutput() {
     SDL_RenderPresent(mRenderer);
 }
 
-void Game::SetBackgroundImage(const std::string& texturePath, const Vector2 &position, const Vector2 &size)
+void Game::SetBackgroundImage(const std::string& texturePath, const glm::vec2 &position, const glm::vec2 &size)
 {
     if (mBackgroundTexture) {
         SDL_DestroyTexture(mBackgroundTexture);
@@ -733,10 +745,10 @@ void Game::SetBackgroundImage(const std::string& texturePath, const Vector2 &pos
     }
 
     // Set background position
-    mBackgroundPosition.Set(position.x, position.y);
+    mBackgroundPosition = position;
 
     // Set background size
-    mBackgroundSize.Set(size.x, size.y);
+    mBackgroundSize = size;
 }
 
 SDL_Texture* Game::LoadTexture(const std::string& texturePath)

@@ -8,6 +8,7 @@
 
 #pragma once
 #include <SDL_stdinc.h>
+#include <glm/glm.hpp>
 
 class Component
 {

@@ -5,9 +5,9 @@
 #include "UIButton.h"
 
 UIButton::UIButton(const std::string& text, class UIFont* font, std::function<void()> onClick,
-                    const Vector2& pos, const Vector2& size, const Vector3& color,
+                    const glm::vec2& pos, const glm::vec2& size, const glm::vec3& color,
                     int pointSize , unsigned wrapLength,
-                    const Vector2 &textPos, const Vector2 &textSize, const Vector3& textColor):
+                    const glm::vec2 &textPos, const glm::vec2 &textSize, const glm::vec3& textColor):
     UIElement(pos, size, color),
     mOnClick(onClick),
     mText(text, font, pointSize, wrapLength, textPos, textSize, textColor),
@@ -22,7 +22,7 @@ UIButton::~UIButton()
 }
 
 
-void UIButton::Draw(SDL_Renderer *renderer, const Vector2 &screenPos)
+void UIButton::Draw(SDL_Renderer *renderer, const glm::vec2 &screenPos)
 {
     // --------------
     // TODO - PARTE 1-2

@@ -4,7 +4,7 @@
 
 #include "UIImage.h"
 
-UIImage::UIImage(SDL_Renderer* renderer, const std::string &imagePath, const Vector2 &pos, const Vector2 &size, const Vector3 &color)
+UIImage::UIImage(SDL_Renderer* renderer, const std::string &imagePath, const glm::vec2 &pos, const glm::vec2 &size, const glm::vec3 &color)
     : UIElement(pos, size, color),
     mTexture(nullptr)
 {
@@ -43,7 +43,7 @@ UIImage::~UIImage()
     }
 }
 
-void UIImage::Draw(SDL_Renderer* renderer, const Vector2 &screenPos)
+void UIImage::Draw(SDL_Renderer* renderer, const glm::vec2 &screenPos)
 {
     // --------------
     // TODO - PARTE 1-3

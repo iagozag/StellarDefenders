@@ -47,9 +47,9 @@ public:
     class Game* GetGame() { return mGame; }
 
     // Add a button to this screen
-	UIButton* AddButton(const std::string& name, const Vector2& pos, const Vector2& dims, std::function<void()> onClick);
-    UIText* AddText(const std::string& name, const Vector2& pos, const Vector2& dims, const int pointSize = 40, const int unsigned wrapLength = 1024);
-    UIImage* AddImage(const std::string& imagePath, const Vector2& pos, const Vector2& dims, const Vector3& color = Color::White);
+	UIButton* AddButton(const std::string& name, const glm::vec2& pos, const glm::vec2& dims, std::function<void()> onClick);
+    UIText* AddText(const std::string& name, const glm::vec2& pos, const glm::vec2& dims, const int pointSize = 40, const int unsigned wrapLength = 1024);
+    UIImage* AddImage(const std::string& imagePath, const glm::vec2& pos, const glm::vec2& dims, const glm::vec3& color = Color::White);
 
 protected:
     // Sets the mouse mode to relative or not
@@ -57,8 +57,8 @@ protected:
 	class UIFont* mFont;
 
 	// Configure positions
-	Vector2 mPos;
-	Vector2 mSize;
+	glm::vec2 mPos;
+	glm::vec2 mSize;
 
 	// State
 	UIState mState;

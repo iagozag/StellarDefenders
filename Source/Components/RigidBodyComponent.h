@@ -14,11 +14,11 @@ public:
 
     void Update(float deltaTime) override;
 
-    const Vector2& GetVelocity() const { return mVelocity; }
-    void SetVelocity(const Vector2& velocity) { mVelocity = velocity; }
+    const glm::vec2& GetVelocity() const { return mVelocity; }
+    void SetVelocity(const glm::vec2& velocity) { mVelocity = velocity; }
 
-    const Vector2& GetAcceleration() const { return mAcceleration; }
-    void SetAcceleration(const Vector2& acceleration) { mAcceleration = acceleration; }
+    const glm::vec2& GetAcceleration() const { return mAcceleration; }
+    void SetAcceleration(const glm::vec2& acceleration) { mAcceleration = acceleration; }
 
     void SetApplyGravity(const bool applyGravity) { mApplyGravity = applyGravity; }
     void SetApplyFriction(const bool applyFriction) { mApplyFriction = applyFriction;  }
@@ -26,7 +26,7 @@ public:
     void SetAngularSpeed(const float speed) { mAngularSpeed = speed; }
     float GetAngularSpeed() const { return mAngularSpeed; }
 
-    void ApplyForce(const Vector2 &force);
+    void ApplyForce(const glm::vec2 &force);
 
 private:
     bool mApplyGravity;
@@ -37,6 +37,6 @@ private:
     float mMass;
     float mAngularSpeed;
 
-    Vector2 mVelocity;
-    Vector2 mAcceleration;
+    glm::vec2 mVelocity;
+    glm::vec2 mAcceleration;
 };
