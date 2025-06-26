@@ -10,12 +10,17 @@
 #include <SDL.h>
 #include <vector>
 #include <unordered_map>
+#include <glm/glm.hpp>
+
 #include "AudioSystem.h"
 #include "Math.h"
+#include "camera.hpp"
 
 #include "Actors/Ship.h"
 #include "Actors/Star.h"
 #include "Actors/Alien.h"
+
+#include "Scenes/Simulation/simulation.hpp"
 
 class Game
 {
@@ -74,10 +79,6 @@ public:
 
     void Reinsert(Actor* actor);
 
-    // Camera functions
-    Vector2& GetCameraPos() { return mCameraPos; };
-    void SetCameraPos(const Vector2& position) { mCameraPos = position; };
-
     // Audio functions
     class AudioSystem* GetAudio() { return mAudio; }
 
@@ -117,10 +118,12 @@ public:
     void SetGamePlayState(GamePlayState state) { mGamePlayState = state; }
     GamePlayState GetGamePlayState() const { return mGamePlayState; }
 
+    void draw_ellipsis(const glm::vec2 &pos, const glm::vec2 &dim, const size_t num_steps = 16);
+    glm::ivec2 get_window_dimensions() const;
+
 private:
     void ProcessInput();
     void UpdateGame();
-    void UpdateCamera();
     void GenerateOutput();
 
     // Scene Manager
@@ -167,7 +170,7 @@ private:
     // Background and camera
     Vector3 mBackgroundColor;
     Vector3 mModColor;
-    Vector2 mCameraPos;
+    Camera m_camera;
 
     // Game-specific
     class Ship* mShip;
@@ -185,4 +188,6 @@ private:
     SDL_Texture *mBackgroundTexture;
     Vector2 mBackgroundSize;
     Vector2 mBackgroundPosition;
+
+    Simulation m_simulation;
 };

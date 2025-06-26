@@ -24,7 +24,6 @@ file(GLOB_RECURSE SOURCE_FILES
     CONFIGURE_DEPENDS
     "${CMAKE_SOURCE_DIR}/Source/*.cpp"
     "${CMAKE_SOURCE_DIR}/Source/*.h"
-    "${CMAKE_SOURCE_DIR}/Source/UIElements/UIText.hpp"
     "${CMAKE_SOURCE_DIR}/Source/*.hpp"
 )
 

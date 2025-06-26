@@ -8,6 +8,7 @@
 #include <unordered_map>
 #include "Math.h"
 #include "Actors/Actor.h"
+#include "camera.hpp"
 
 class SpatialHashing
 {
@@ -22,7 +23,7 @@ public:
     std::vector<AABBColliderComponent *> QueryColliders(const Vector2& position, const int range = 1) const;
 
     std::vector<Actor*> Query(const Vector2& position, const int range = 1) const;
-    std::vector<Actor*> QueryOnCamera(const Vector2& cameraPosition,
+    std::vector<Actor*> QueryOnCamera(const Camera& camera,
                                                       const float screenWidth,
                                                       const float screenHeight,
                                                       const float extraRadius = 0.0f) const;

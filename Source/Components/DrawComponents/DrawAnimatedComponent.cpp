@@ -49,28 +49,28 @@ void DrawAnimatedComponent::LoadSpriteSheet(const std::string& texturePath, cons
 
 void DrawAnimatedComponent::Draw(SDL_Renderer* renderer, const Vector3 &modColor)
 {
-    int spriteIdx = mAnimations[mAnimName][static_cast<int>(mAnimTimer)];
-    SDL_Rect* srcRect = mSpriteSheetData[spriteIdx];
+    // int spriteIdx = mAnimations[mAnimName][static_cast<int>(mAnimTimer)];
+    // SDL_Rect* srcRect = mSpriteSheetData[spriteIdx];
 
-    SDL_Rect dstRect = {
-            static_cast<int>(mOwner->GetPosition().x - mOwner->GetGame()->GetCameraPos().x),
-            static_cast<int>(mOwner->GetPosition().y - mOwner->GetGame()->GetCameraPos().y),
-            srcRect->w,
-            srcRect->h
-    };
+    // SDL_Rect dstRect = {
+    //         static_cast<int>(mOwner->GetPosition().x - mOwner->GetGame()->GetCameraPos().x),
+    //         static_cast<int>(mOwner->GetPosition().y - mOwner->GetGame()->GetCameraPos().y),
+    //         srcRect->w,
+    //         srcRect->h
+    // };
 
-    SDL_RendererFlip flip = SDL_FLIP_NONE;
-    if (mOwner->GetRotation() == Math::Pi) {
-        flip = SDL_FLIP_HORIZONTAL;
-    }
+    // SDL_RendererFlip flip = SDL_FLIP_NONE;
+    // if (mOwner->GetRotation() == Math::Pi) {
+    //     flip = SDL_FLIP_HORIZONTAL;
+    // }
 
-    SDL_SetTextureBlendMode(mSpriteSheetSurface, SDL_BLENDMODE_BLEND);
-    SDL_SetTextureColorMod(mSpriteSheetSurface,
-                           static_cast<Uint8>(modColor.x),
-                           static_cast<Uint8>(modColor.y),
-                           static_cast<Uint8>(modColor.z));
+    // SDL_SetTextureBlendMode(mSpriteSheetSurface, SDL_BLENDMODE_BLEND);
+    // SDL_SetTextureColorMod(mSpriteSheetSurface,
+    //                        static_cast<Uint8>(modColor.x),
+    //                        static_cast<Uint8>(modColor.y),
+    //                        static_cast<Uint8>(modColor.z));
 
-    SDL_RenderCopyEx(renderer, mSpriteSheetSurface, srcRect, &dstRect, mOwner->GetRotation(), nullptr, flip);
+    // SDL_RenderCopyEx(renderer, mSpriteSheetSurface, srcRect, &dstRect, mOwner->GetRotation(), nullptr, flip);
 }
 
 void DrawAnimatedComponent::Update(float deltaTime)

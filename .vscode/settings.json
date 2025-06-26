@@ -64,6 +64,7 @@
         "fstream": "cpp",
         "ranges": "cpp",
         "valarray": "cpp",
-        "bitset": "cpp"
+        "bitset": "cpp",
+        "list": "cpp"
     }
 }

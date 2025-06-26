@@ -14,7 +14,7 @@ HUD::HUD(class Game* game, const std::string& fontName)
     // --------------
 
     // TODO 4.: Adicione um texto com a string "1-1" logo abaixo do texto "World".
-    mLevelName = AddText("Fase 1", Vector2(mGame->GetWindowWidth() - (CHAR_WIDTH * 6 + WORD_OFFSET) + CHAR_WIDTH, HUD_POS_Y), Vector2(CHAR_WIDTH * 3, WORD_HEIGHT), POINT_SIZE, 1024);
+    mLevelName = AddText("Fase 1", Vector2(mGame->GetWindowWidth() - (CCHAR_WIDTH * 6 + WORD_OFFSET) + CCHAR_WIDTH, HUD_POS_Y), Vector2(CCHAR_WIDTH * 3, WORD_HEIGHT), POINT_SIZE, 1024);
 }
 
 HUD::~HUD()

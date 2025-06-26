@@ -11,11 +11,11 @@
 class HUD : public UIScreen
 {
 public:
-    const int POINT_SIZE = 48;
-    const int WORD_HEIGHT = 20.0f;
-    const int WORD_OFFSET = 25.0f;
-    const int CHAR_WIDTH = 20.0f;
-    const int HUD_POS_Y = 10.0f;
+    constexpr static int POINT_SIZE = 48;
+    constexpr static int WORD_HEIGHT = 20;
+    constexpr static int WORD_OFFSET = 25;
+    constexpr static int CCHAR_WIDTH = 20;
+    constexpr static int HUD_POS_Y = 10;
 
     HUD(class Game* game, const std::string& fontName);
     ~HUD();

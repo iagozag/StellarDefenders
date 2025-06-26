@@ -126,38 +126,48 @@ std::vector<AABBColliderComponent *> SpatialHashing::QueryColliders(const Vector
     return results;
 }
 
-std::vector<Actor*> SpatialHashing::QueryOnCamera(const Vector2& cameraPosition,
-                                                                  const float screenWidth,
-                                                                  const float screenHeight,
-                                                                  const float extraRadius) const
-{
+// Precisa disso não, pode retornar tudo que é GG
+std::vector<Actor*> SpatialHashing::QueryOnCamera(
+    const Camera& camera,
+    const float screenWidth,
+    const float screenHeight,
+    const float extraRadius
+) const {
     std::vector<Actor*> results;
 
-    // Get the camera vertices
-    Vector2 topLeft = Vector2(cameraPosition.x - extraRadius, cameraPosition.y - extraRadius);
-    Vector2 bottomRight = Vector2(cameraPosition.x + screenWidth + extraRadius, cameraPosition.y + screenHeight + extraRadius);
 
-    // Calculate the grid cells that the camera covers
-    int startCol = static_cast<int>(topLeft.x / mCellSize);
-    int startRow = static_cast<int>(topLeft.y / mCellSize);
-    int endCol = static_cast<int>(bottomRight.x / mCellSize);
-    int endRow = static_cast<int>(bottomRight.y / mCellSize);
-
-    // Ensure indices are within bounds
-    startCol = std::max(0, startCol);
-    startRow = std::max(0, startRow);
-    endCol = std::min(static_cast<int>(mGrid[0].size()) - 1, endCol);
-    endRow = std::min(static_cast<int>(mGrid.size()) - 1, endRow);
-
-    // Check the cells within the camera bounds
-    for (int r = startRow; r <= endRow; ++r)
-    {
-        for (int c = startCol; c <= endCol; ++c)
-        {
-            const auto& cell = mGrid[r][c];
-            results.insert(results.end(), cell.begin(), cell.end());
+    for(auto &t : mGrid) {
+        for(auto &tt : t) {
+            // Isso pode ser O(n^2), tem que investigar
+            results.insert(results.end(), tt.begin(), tt.end());
         }
     }
+    
+    // // Get the camera vertices
+    // Vector2 topLeft = Vector2(cameraPosition.x - extraRadius, cameraPosition.y - extraRadius);
+    // Vector2 bottomRight = Vector2(cameraPosition.x + screenWidth + extraRadius, cameraPosition.y + screenHeight + extraRadius);
+
+    // // Calculate the grid cells that the camera covers
+    // int startCol = static_cast<int>(topLeft.x / mCellSize);
+    // int startRow = static_cast<int>(topLeft.y / mCellSize);
+    // int endCol = static_cast<int>(bottomRight.x / mCellSize);
+    // int endRow = static_cast<int>(bottomRight.y / mCellSize);
+
+    // // Ensure indices are within bounds
+    // startCol = std::max(0, startCol);
+    // startRow = std::max(0, startRow);
+    // endCol = std::min(static_cast<int>(mGrid[0].size()) - 1, endCol);
+    // endRow = std::min(static_cast<int>(mGrid.size()) - 1, endRow);
+
+    // // Check the cells within the camera bounds
+    // for (int r = startRow; r <= endRow; ++r)
+    // {
+    //     for (int c = startCol; c <= endCol; ++c)
+    //     {
+    //         const auto& cell = mGrid[r][c];
+    //         results.insert(results.end(), cell.begin(), cell.end());
+    //     }
+    // }
 
     return results;
 }

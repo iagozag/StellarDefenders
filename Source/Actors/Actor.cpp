@@ -119,14 +119,6 @@ void Actor::AddComponent(Component* c)
     });
 }
 
-bool Actor::IsVisibleOnCamera() const
-{
-    // Get the camera's position and dimensions
-    Vector2 cameraPosition = mGame->GetCameraPos();
-    float screenWidth = mGame->GetWindowWidth();
-    float screenHeight = mGame->GetWindowHeight();
-
-    // Check if the actor's position is within the camera's view
-    return (mPosition.x >= cameraPosition.x && mPosition.x <= cameraPosition.x + screenWidth &&
-            mPosition.y >= cameraPosition.y && mPosition.y <= cameraPosition.y + screenHeight);
+bool Actor::IsVisibleOnCamera() const {
+    return true;
 }

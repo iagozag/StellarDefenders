@@ -125,9 +125,6 @@ void Alien::OnUpdate(float deltaTime)
     // TODO 4 (~2 linhas): Para evitar que o jogador ultrapasse o limite inferior (esquerdo) da câmera,
     //  limite sua posição horizontal para ser sempre maior ou igual a posição horizontal da câmera.
 
-    Vector2 posCam = mGame->GetCameraPos();
-    if (mPosition.x < posCam.x) mPosition.x = posCam.x;
-
     mPosition.y = std::min(mPosition.y, (float)(mGame->GetWindowHeight()-171));
 
     if (mPosition.x > 2800) mGame->SetGameScene(Game::GameScene::Level1, Game::TRANSITION_TIME);

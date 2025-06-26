@@ -3,7 +3,8 @@
 
 #include <glm/glm.hpp>
 #include <vector>
-#include "../../Game.h"
+
+class Game;
 
 struct Planet {
     glm::vec2 position;

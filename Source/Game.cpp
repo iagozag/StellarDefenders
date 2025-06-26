@@ -27,6 +27,11 @@
 #include "Components/DrawComponents/DrawPolygonComponent.h"
 #include "Components/ColliderComponents/AABBColliderComponent.h"
 #include "SpatialHashing.h"
+#include "Scenes/Simulation/simulation.hpp"
+#include <glm/gtc/constants.hpp>
+
+constexpr Planet PLANETS[] = {};
+constexpr auto NUM_PLANETS = sizeof(PLANETS) / sizeof(PLANETS[0]);
 
 Game::Game(int windowWidth, int windowHeight):
     mSceneManagerState(SceneManagerState::None),
@@ -42,7 +47,6 @@ Game::Game(int windowWidth, int windowHeight):
     mNextScene(GameScene::MainMenu),
     mBackgroundColor(0, 0, 0),
     mModColor(255, 255, 255),
-    mCameraPos(Vector2::Zero),
     mShip(nullptr),
     mHUD(nullptr),
     mIsViableAreaActive(false),
@@ -50,7 +54,8 @@ Game::Game(int windowWidth, int windowHeight):
     mGameTimeLimit(0),
     mBackgroundTexture(nullptr),
     mBackgroundSize(Vector2::Zero),
-    mBackgroundPosition(Vector2::Zero)
+    mBackgroundPosition(Vector2::Zero),
+    m_simulation(std::vector(PLANETS, &PLANETS[NUM_PLANETS]))
 {
 
 }
@@ -168,9 +173,6 @@ void Game::ChangeScene()
 {
     // Unload current Scene
     UnloadScene();
-
-    // Reset camera position
-    mCameraPos.Set(0.0f, 0.0f);
 
     // Reset game timer
     mGameTimer = 0.0f;
@@ -410,7 +412,7 @@ void Game::ProcessInputActors()
     {
         // Get actors on camera
         std::vector<Actor*> actorsOnCamera =
-                mSpatialHashing->QueryOnCamera(mCameraPos,mWindowWidth,mWindowHeight);
+                mSpatialHashing->QueryOnCamera(m_camera, mWindowWidth,mWindowHeight);
 
         const Uint8* state = SDL_GetKeyboardState(nullptr);
 
@@ -427,7 +429,7 @@ void Game::HandleKeyPressActors(const int key, const bool isPressed)
     {
         // Get actors on camera
         std::vector<Actor*> actorsOnCamera =
-                mSpatialHashing->QueryOnCamera(mCameraPos,mWindowWidth,mWindowHeight);
+                mSpatialHashing->QueryOnCamera(m_camera, mWindowWidth,mWindowHeight);
 
         for (auto actor: actorsOnCamera) {
             actor->HandleKeyPress(key, isPressed);
@@ -469,67 +471,49 @@ void Game::TogglePause()
     }
 }
 
-void Game::UpdateGame()
-{
-    while (!SDL_TICKS_PASSED(SDL_GetTicks(), mTicksCount + 16));
-
-    float deltaTime = (SDL_GetTicks() - mTicksCount) / 1000.0f;
-    if (deltaTime > 0.05f)
-    {
-        deltaTime = 0.05f;
-    }
-
+void Game::UpdateGame() {
+    float delta_t = (SDL_GetTicks() - mTicksCount) / 1000.0f;
+    m_simulation.run(*this, delta_t);
     mTicksCount = SDL_GetTicks();
 
-    if(mGamePlayState != GamePlayState::Paused && mGamePlayState != GamePlayState::GameOver)
-    {
-        // Reinsert all actors and pending actors
-        UpdateActors(deltaTime);
-    }
+    // if(mGamePlayState != GamePlayState::Paused && mGamePlayState != GamePlayState::GameOver)
+    // {
+    //     // Reinsert all actors and pending actors
+    //     UpdateActors(deltaTime);
+    // }
 
-    // Reinsert audio system
-    mAudio->Update(deltaTime);
+    // // Reinsert audio system
+    // mAudio->Update(deltaTime);
 
-    // Reinsert UI screens
-    for (auto ui : mUIStack) {
-        if (ui->GetState() == UIScreen::UIState::Active) {
-            ui->Update(deltaTime);
-        }
-    }
+    // // Reinsert UI screens
+    // for (auto ui : mUIStack) {
+    //     if (ui->GetState() == UIScreen::UIState::Active) {
+    //         ui->Update(deltaTime);
+    //     }
+    // }
 
-    // Delete any UIElements that are closed
-    auto iter = mUIStack.begin();
-    while (iter != mUIStack.end()) {
-        if ((*iter)->GetState() == UIScreen::UIState::Closing) {
-            delete *iter;
-            iter = mUIStack.erase(iter);
-        } else {
-            ++iter;
-        }
-    }
+    // // Delete any UIElements that are closed
+    // auto iter = mUIStack.begin();
+    // while (iter != mUIStack.end()) {
+    //     if ((*iter)->GetState() == UIScreen::UIState::Closing) {
+    //         delete *iter;
+    //         iter = mUIStack.erase(iter);
+    //     } else {
+    //         ++iter;
+    //     }
+    // }
 
-    // ---------------------
-    // Game Specific Updates
-    // ---------------------
-    if (mGameScene == GameScene::Ship) UpdateCamera();
+    // // ---------------------
+    // // Game Specific Updates
+    // // ---------------------
+    // if (mGameScene == GameScene::Ship) UpdateCamera();
 
-    // --------------
-    // TODO - PARTE 2
-    // --------------
+    // // --------------
+    // // TODO - PARTE 2
+    // // --------------
 
-    // TODO 1.: Chame UpdateSceneManager passando o deltaTime.
-    UpdateSceneManager(deltaTime);
-}
-
-void Game::UpdateCamera()
-{
-    Vector2 posJog = mAlien->GetPosition();
-
-    posJog.x -= mWindowWidth / 2;
-
-    mCameraPos.x = posJog.x;
-    if (mCameraPos.x < 0) mCameraPos.x = 0;
-    if (mCameraPos.x > 3000-mWindowWidth) mCameraPos.x = 3000-mWindowWidth;
+    // // TODO 1.: Chame UpdateSceneManager passando o deltaTime.
+    // UpdateSceneManager(deltaTime);
 }
 
 void Game::UpdateSceneManager(float deltaTime)
@@ -564,7 +548,7 @@ void Game::UpdateActors(float deltaTime)
 {
     // Get actors on camera
     std::vector<Actor*> actorsOnCamera =
-            mSpatialHashing->QueryOnCamera(mCameraPos,mWindowWidth,mWindowHeight);
+            mSpatialHashing->QueryOnCamera(m_camera, mWindowWidth, mWindowHeight);
 
     for (auto actor : actorsOnCamera)
     {
@@ -604,88 +588,161 @@ std::vector<AABBColliderComponent *> Game::GetNearbyColliders(const Vector2& pos
     return mSpatialHashing->QueryColliders(position, range);
 }
 
+void Game::draw_ellipsis(const glm::vec2 &pos, const glm::vec2 &dim, const size_t num_steps) {
+    const auto transform = m_camera.get_total_transformation_matrix(*this);
+
+    // Uma elipse preenchida pode ser construída como um triângulo fan
+    // onde todos os triângulos compartilham o centro da elipse como um vértice.
+    // O número de vértices será num_steps + 2 (centro + num_steps na borda + um extra para fechar o loop).
+    std::vector<SDL_Vertex> vertices;
+    vertices.reserve(num_steps + 2);
+
+    // Vértice central
+    SDL_Vertex center_vertex;
+    center_vertex.position.x = pos.x;
+    center_vertex.position.y = pos.y;
+    center_vertex.color.r = 255; // Cor vermelha por padrão, você pode parametrizar
+    center_vertex.color.g = 0;
+    center_vertex.color.b = 0;
+    center_vertex.color.a = 255;
+    vertices.push_back(center_vertex);
+
+    // Gera os vértices da borda da elipse
+    for (size_t i = 0; i <= num_steps; ++i) {
+        float angle = static_cast<float>(i) / static_cast<float>(num_steps) * glm::two_pi<float>();
+
+        SDL_Vertex border_vertex;
+        border_vertex.position.x = pos.x + dim.x * 0.5f * glm::cos(angle);
+        border_vertex.position.y = pos.y + dim.y * 0.5f * glm::sin(angle);
+        border_vertex.color = center_vertex.color; // Usa a mesma cor do centro
+        vertices.push_back(border_vertex);
+    }
+
+    // Geralmente isso é feito no vertex shader, mas como não temos tempo
+    // pra brincar com OpenGl, vai ser no CPU mesmo.
+    for(auto &vertice : vertices) {
+        const auto transform_point = glm::vec4(vertice.position.x, vertice.position.y, 0, 1);
+        const auto transformed = transform * transform_point;
+        vertice.position.x = transformed.x;
+        vertice.position.y = transformed.y;
+    }
+
+    // SDL_RenderGeometry desenha triângulos usando um array de vértices.
+    // Para um triângulo fan, os índices de elementos são:
+    // (0, 1, 2), (0, 2, 3), (0, 3, 4), ... (0, num_steps, 1)
+    // O vértice 0 é o centro.
+    // O último triângulo conecta o vértice central, o último ponto gerado (num_steps) e o primeiro ponto gerado (1).
+
+    // Gerar os índices para o triângulo fan
+    std::vector<int> indices;
+    indices.reserve(num_steps * 3); // Cada triângulo tem 3 vértices
+
+    for (size_t i = 0; i < num_steps; ++i) {
+        indices.push_back(0);        // Vértice central
+        indices.push_back(i + 1);    // Vértice atual na borda
+        indices.push_back(i + 2 > num_steps + 1 ? 1 : i + 2); // Próximo vértice na borda (volta para o 1º no final)
+    }
+
+    // Para simplificar, SDL_RenderGeometry pode desenhar um "strip" ou "fan"
+    // sem a necessidade de gerar os índices manualmente se os vértices estiverem na ordem correta.
+    // No entanto, para um triângulo fan, o método de enviar vértices e índices explícitos é mais robusto.
+
+    // Desenha a elipse preenchida
+    // O segundo parâmetro `texture` é NULL para desenhar apenas com cor.
+    // O quarto parâmetro `indices` é o vetor de índices.
+    // O quinto parâmetro `num_indices` é o número de índices no vetor.
+    SDL_RenderGeometry(mRenderer, nullptr, vertices.data(), static_cast<int>(vertices.size()), indices.data(), static_cast<int>(indices.size()));
+}
+
+glm::ivec2 Game::get_window_dimensions() const {
+    return {mWindowWidth, mWindowHeight};
+}
+
 void Game::GenerateOutput()
 {
-    // Clear frame with background color
-    SDL_SetRenderDrawColor(mRenderer, mBackgroundColor.x, mBackgroundColor.y, mBackgroundColor.z, 255);
-
-    // Clear back buffer
     SDL_RenderClear(mRenderer);
-
-    // Draw background texture considering camera position
-    if (mBackgroundTexture)
-    {
-        SDL_Rect dstRect = { static_cast<int>(mBackgroundPosition.x - mCameraPos.x),
-                             static_cast<int>(mBackgroundPosition.y - mCameraPos.y),
-                             static_cast<int>(mBackgroundSize.x),
-                             static_cast<int>(mBackgroundSize.y) };
-
-        SDL_RenderCopy(mRenderer, mBackgroundTexture, nullptr, &dstRect);
-    }
-
-    // Draw viable area
-    if (mGameScene != GameScene::MainMenu and mGameScene != GameScene::Ship and mIsViableAreaActive)
-    {
-        SDL_SetRenderDrawBlendMode(mRenderer, SDL_BLENDMODE_BLEND);
-        SDL_SetRenderDrawColor(mRenderer, 135, 206, 250, 64);
-        SDL_RenderFillRect(mRenderer, &mViableAreaRect);
-
-        SDL_Rect inviableAreaRect = {mViableAreaRect.x+mViableAreaRect.w, 0, mWindowWidth-(mViableAreaRect.x+mViableAreaRect.w), mWindowHeight};
-        SDL_SetRenderDrawColor(mRenderer, 255, 100, 100, 64);
-        SDL_RenderFillRect(mRenderer, &inviableAreaRect);
-    }
-
-    // Get actors on camera
-    std::vector<Actor*> actorsOnCamera =
-            mSpatialHashing->QueryOnCamera(mCameraPos,mWindowWidth,mWindowHeight);
-
-    // Get list of drawables in draw order
-    std::vector<DrawComponent*> drawables;
-
-    for (auto actor : actorsOnCamera)
-    {
-        auto drawable = actor->GetComponent<DrawComponent>();
-        if (drawable && drawable->IsVisible())
-        {
-            drawables.emplace_back(drawable);
-        }
-    }
-
-    // Sort drawables by draw order
-    std::sort(drawables.begin(), drawables.end(),
-              [](const DrawComponent* a, const DrawComponent* b) {
-                  return a->GetDrawOrder() < b->GetDrawOrder();
-              });
-
-    // Draw all drawables
-    for (auto drawable : drawables)
-    {
-        drawable->Draw(mRenderer, mModColor);
-    }
-
-    // Draw all UI screens
-    for (auto ui :mUIStack)
-    {
-        ui->Draw(mRenderer);
-    }
-
-    // --------------
-    // TODO - PARTE 2
-    // --------------
-
-    // TODO 1.: Verifique se o SceneManager está no estado ativo. Se estiver, desenhe um retângulo preto cobrindo
-    //  toda a tela.
-    if (mSceneManagerState == SceneManagerState::Exiting || mSceneManagerState == SceneManagerState::Entering)
-    {
-        int alpha = static_cast<int>(mSceneManagerAlpha * 255.0f);
-        SDL_SetRenderDrawBlendMode(mRenderer, SDL_BLENDMODE_BLEND);
-        SDL_SetRenderDrawColor(mRenderer, 0, 0, 0, alpha);
-        SDL_Rect fullscreenRect = {0, 0, mWindowWidth, mWindowHeight};
-        SDL_RenderFillRect(mRenderer, &fullscreenRect);
-    }
+    m_simulation.draw(*this);
 
     // Swap front buffer and back buffer
     SDL_RenderPresent(mRenderer);
+
+    // // Clear frame with background color
+    // SDL_SetRenderDrawColor(mRenderer, mBackgroundColor.x, mBackgroundColor.y, mBackgroundColor.z, 255);
+
+
+    // // Draw background texture considering camera position
+    // if (mBackgroundTexture)
+    // {
+    //     SDL_Rect dstRect = { static_cast<int>(mBackgroundPosition.x - mCameraPos.x),
+    //                          static_cast<int>(mBackgroundPosition.y - mCameraPos.y),
+    //                          static_cast<int>(mBackgroundSize.x),
+    //                          static_cast<int>(mBackgroundSize.y) };
+
+    //     SDL_RenderCopy(mRenderer, mBackgroundTexture, nullptr, &dstRect);
+    // }
+
+    // // Draw viable area
+    // if (mGameScene != GameScene::MainMenu and mGameScene != GameScene::Ship and mIsViableAreaActive)
+    // {
+    //     SDL_SetRenderDrawBlendMode(mRenderer, SDL_BLENDMODE_BLEND);
+    //     SDL_SetRenderDrawColor(mRenderer, 135, 206, 250, 64);
+    //     SDL_RenderFillRect(mRenderer, &mViableAreaRect);
+
+    //     SDL_Rect inviableAreaRect = {mViableAreaRect.x+mViableAreaRect.w, 0, mWindowWidth-(mViableAreaRect.x+mViableAreaRect.w), mWindowHeight};
+    //     SDL_SetRenderDrawColor(mRenderer, 255, 100, 100, 64);
+    //     SDL_RenderFillRect(mRenderer, &inviableAreaRect);
+    // }
+
+    // // Get actors on camera
+    // std::vector<Actor*> actorsOnCamera =
+    //         mSpatialHashing->QueryOnCamera(mCameraPos,mWindowWidth,mWindowHeight);
+
+    // // Get list of drawables in draw order
+    // std::vector<DrawComponent*> drawables;
+
+    // for (auto actor : actorsOnCamera)
+    // {
+    //     auto drawable = actor->GetComponent<DrawComponent>();
+    //     if (drawable && drawable->IsVisible())
+    //     {
+    //         drawables.emplace_back(drawable);
+    //     }
+    // }
+
+    // // Sort drawables by draw order
+    // std::sort(drawables.begin(), drawables.end(),
+    //           [](const DrawComponent* a, const DrawComponent* b) {
+    //               return a->GetDrawOrder() < b->GetDrawOrder();
+    //           });
+
+    // // Draw all drawables
+    // for (auto drawable : drawables)
+    // {
+    //     drawable->Draw(mRenderer, mModColor);
+    // }
+
+    // // Draw all UI screens
+    // for (auto ui :mUIStack)
+    // {
+    //     ui->Draw(mRenderer);
+    // }
+
+    // // --------------
+    // // TODO - PARTE 2
+    // // --------------
+
+    // // TODO 1.: Verifique se o SceneManager está no estado ativo. Se estiver, desenhe um retângulo preto cobrindo
+    // //  toda a tela.
+    // if (mSceneManagerState == SceneManagerState::Exiting || mSceneManagerState == SceneManagerState::Entering)
+    // {
+    //     int alpha = static_cast<int>(mSceneManagerAlpha * 255.0f);
+    //     SDL_SetRenderDrawBlendMode(mRenderer, SDL_BLENDMODE_BLEND);
+    //     SDL_SetRenderDrawColor(mRenderer, 0, 0, 0, alpha);
+    //     SDL_Rect fullscreenRect = {0, 0, mWindowWidth, mWindowHeight};
+    //     SDL_RenderFillRect(mRenderer, &fullscreenRect);
+    // }
+
+    
 }
 
 void Game::SetBackgroundImage(const std::string& texturePath, const Vector2 &position, const Vector2 &size)
