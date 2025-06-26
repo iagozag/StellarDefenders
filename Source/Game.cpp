@@ -473,47 +473,42 @@ void Game::TogglePause()
 
 void Game::UpdateGame() {
     float delta_t = (SDL_GetTicks() - mTicksCount) / 1000.0f;
-    m_simulation.run(*this, delta_t);
+    // m_simulation.run(*this, delta_t);
     mTicksCount = SDL_GetTicks();
 
-    // if(mGamePlayState != GamePlayState::Paused && mGamePlayState != GamePlayState::GameOver)
-    // {
-    //     // Reinsert all actors and pending actors
-    //     UpdateActors(deltaTime);
-    // }
+    if(mGamePlayState != GamePlayState::Paused && mGamePlayState != GamePlayState::GameOver)
+    {
+        // Reinsert all actors and pending actors
+        UpdateActors(delta_t);
+    }
 
-    // // Reinsert audio system
-    // mAudio->Update(deltaTime);
+    // Reinsert audio system
+    mAudio->Update(delta_t);
 
-    // // Reinsert UI screens
-    // for (auto ui : mUIStack) {
-    //     if (ui->GetState() == UIScreen::UIState::Active) {
-    //         ui->Update(deltaTime);
-    //     }
-    // }
+    // Reinsert UI screens
+    for (auto ui : mUIStack) {
+        if (ui->GetState() == UIScreen::UIState::Active) {
+            ui->Update(delta_t);
+        }
+    }
 
-    // // Delete any UIElements that are closed
-    // auto iter = mUIStack.begin();
-    // while (iter != mUIStack.end()) {
-    //     if ((*iter)->GetState() == UIScreen::UIState::Closing) {
-    //         delete *iter;
-    //         iter = mUIStack.erase(iter);
-    //     } else {
-    //         ++iter;
-    //     }
-    // }
+    // Delete any UIElements that are closed
+    auto iter = mUIStack.begin();
+    while (iter != mUIStack.end()) {
+        if ((*iter)->GetState() == UIScreen::UIState::Closing) {
+            delete *iter;
+            iter = mUIStack.erase(iter);
+        } else {
+            ++iter;
+        }
+    }
 
-    // // ---------------------
-    // // Game Specific Updates
-    // // ---------------------
-    // if (mGameScene == GameScene::Ship) UpdateCamera();
+    // --------------
+    // TODO - PARTE 2
+    // --------------
 
-    // // --------------
-    // // TODO - PARTE 2
-    // // --------------
-
-    // // TODO 1.: Chame UpdateSceneManager passando o deltaTime.
-    // UpdateSceneManager(deltaTime);
+    // TODO 1.: Chame UpdateSceneManager passando o deltaTime.
+    UpdateSceneManager(delta_t);
 }
 
 void Game::UpdateSceneManager(float deltaTime)
@@ -658,91 +653,76 @@ glm::ivec2 Game::get_window_dimensions() const {
     return {mWindowWidth, mWindowHeight};
 }
 
-void Game::GenerateOutput()
-{
+void Game::GenerateOutput() {
+    // m_simulation.draw(*this);
+
+    // Clear frame with background color
+    SDL_SetRenderDrawColor(mRenderer, 0, 0, 0, 0);
     SDL_RenderClear(mRenderer);
-    m_simulation.draw(*this);
+
+    // Draw viable area
+    if (mGameScene != GameScene::MainMenu and mGameScene != GameScene::Ship and mIsViableAreaActive)
+    {
+        SDL_SetRenderDrawBlendMode(mRenderer, SDL_BLENDMODE_BLEND);
+        SDL_SetRenderDrawColor(mRenderer, 135, 206, 250, 64);
+        SDL_RenderFillRect(mRenderer, &mViableAreaRect);
+
+        SDL_Rect inviableAreaRect = {mViableAreaRect.x+mViableAreaRect.w, 0, mWindowWidth-(mViableAreaRect.x+mViableAreaRect.w), mWindowHeight};
+        SDL_SetRenderDrawColor(mRenderer, 255, 100, 100, 64);
+        SDL_RenderFillRect(mRenderer, &inviableAreaRect);
+    }
+
+    // Get actors on camera
+    std::vector<Actor*> actorsOnCamera =
+            mSpatialHashing->QueryOnCamera(m_camera, mWindowWidth, mWindowHeight);
+
+    // Get list of drawables in draw order
+    std::vector<DrawComponent*> drawables;
+
+    for (auto actor : actorsOnCamera)
+    {
+        auto drawable = actor->GetComponent<DrawComponent>();
+        if (drawable && drawable->IsVisible())
+        {
+            drawables.emplace_back(drawable);
+        }
+    }
+
+    // Sort drawables by draw order
+    std::sort(drawables.begin(), drawables.end(),
+              [](const DrawComponent* a, const DrawComponent* b) {
+                  return a->GetDrawOrder() < b->GetDrawOrder();
+              });
+
+    // Draw all drawables
+    for (auto drawable : drawables)
+    {
+        drawable->Draw(mRenderer, mModColor);
+    }
+
+    // Draw all UI screens
+    for (auto ui :mUIStack)
+    {
+        ui->Draw(mRenderer);
+    }
+
+    // --------------
+    // TODO - PARTE 2
+    // --------------
+
+    // TODO 1.: Verifique se o SceneManager está no estado ativo. Se estiver, desenhe um retângulo preto cobrindo
+    //  toda a tela.
+    if (mSceneManagerState == SceneManagerState::Exiting || mSceneManagerState == SceneManagerState::Entering)
+    {
+        int alpha = static_cast<int>(mSceneManagerAlpha * 255.0f);
+        SDL_SetRenderDrawBlendMode(mRenderer, SDL_BLENDMODE_BLEND);
+        SDL_SetRenderDrawColor(mRenderer, 0, 0, 0, alpha);
+        SDL_Rect fullscreenRect = {0, 0, mWindowWidth, mWindowHeight};
+        SDL_RenderFillRect(mRenderer, &fullscreenRect);
+    }
 
     // Swap front buffer and back buffer
     SDL_RenderPresent(mRenderer);
-
-    // // Clear frame with background color
-    // SDL_SetRenderDrawColor(mRenderer, mBackgroundColor.x, mBackgroundColor.y, mBackgroundColor.z, 255);
-
-
-    // // Draw background texture considering camera position
-    // if (mBackgroundTexture)
-    // {
-    //     SDL_Rect dstRect = { static_cast<int>(mBackgroundPosition.x - mCameraPos.x),
-    //                          static_cast<int>(mBackgroundPosition.y - mCameraPos.y),
-    //                          static_cast<int>(mBackgroundSize.x),
-    //                          static_cast<int>(mBackgroundSize.y) };
-
-    //     SDL_RenderCopy(mRenderer, mBackgroundTexture, nullptr, &dstRect);
-    // }
-
-    // // Draw viable area
-    // if (mGameScene != GameScene::MainMenu and mGameScene != GameScene::Ship and mIsViableAreaActive)
-    // {
-    //     SDL_SetRenderDrawBlendMode(mRenderer, SDL_BLENDMODE_BLEND);
-    //     SDL_SetRenderDrawColor(mRenderer, 135, 206, 250, 64);
-    //     SDL_RenderFillRect(mRenderer, &mViableAreaRect);
-
-    //     SDL_Rect inviableAreaRect = {mViableAreaRect.x+mViableAreaRect.w, 0, mWindowWidth-(mViableAreaRect.x+mViableAreaRect.w), mWindowHeight};
-    //     SDL_SetRenderDrawColor(mRenderer, 255, 100, 100, 64);
-    //     SDL_RenderFillRect(mRenderer, &inviableAreaRect);
-    // }
-
-    // // Get actors on camera
-    // std::vector<Actor*> actorsOnCamera =
-    //         mSpatialHashing->QueryOnCamera(mCameraPos,mWindowWidth,mWindowHeight);
-
-    // // Get list of drawables in draw order
-    // std::vector<DrawComponent*> drawables;
-
-    // for (auto actor : actorsOnCamera)
-    // {
-    //     auto drawable = actor->GetComponent<DrawComponent>();
-    //     if (drawable && drawable->IsVisible())
-    //     {
-    //         drawables.emplace_back(drawable);
-    //     }
-    // }
-
-    // // Sort drawables by draw order
-    // std::sort(drawables.begin(), drawables.end(),
-    //           [](const DrawComponent* a, const DrawComponent* b) {
-    //               return a->GetDrawOrder() < b->GetDrawOrder();
-    //           });
-
-    // // Draw all drawables
-    // for (auto drawable : drawables)
-    // {
-    //     drawable->Draw(mRenderer, mModColor);
-    // }
-
-    // // Draw all UI screens
-    // for (auto ui :mUIStack)
-    // {
-    //     ui->Draw(mRenderer);
-    // }
-
-    // // --------------
-    // // TODO - PARTE 2
-    // // --------------
-
-    // // TODO 1.: Verifique se o SceneManager está no estado ativo. Se estiver, desenhe um retângulo preto cobrindo
-    // //  toda a tela.
-    // if (mSceneManagerState == SceneManagerState::Exiting || mSceneManagerState == SceneManagerState::Entering)
-    // {
-    //     int alpha = static_cast<int>(mSceneManagerAlpha * 255.0f);
-    //     SDL_SetRenderDrawBlendMode(mRenderer, SDL_BLENDMODE_BLEND);
-    //     SDL_SetRenderDrawColor(mRenderer, 0, 0, 0, alpha);
-    //     SDL_Rect fullscreenRect = {0, 0, mWindowWidth, mWindowHeight};
-    //     SDL_RenderFillRect(mRenderer, &fullscreenRect);
-    // }
-
-    
 }
 
 void Game::SetBackgroundImage(const std::string& texturePath, const Vector2 &position, const Vector2 &size)
