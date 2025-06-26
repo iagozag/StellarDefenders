@@ -20,5 +20,5 @@ public:
     void run(Game &game, const float delta_t);
 
 private:
-    std::vector<Planet> planets;
+    std::vector<Planet> m_planets;
 };

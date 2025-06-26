@@ -12,10 +12,10 @@
 #include "../Components/RigidBodyComponent.h"
 #include "../Components/DrawComponents/DrawSpriteComponent.h"
 
-Star::Star(Game* game, const float radius, const int numVertices, const float forwardForce)
-        :Actor(game)
-        ,mRigidBodyComponent(nullptr)
-        ,mDrawSpriteComponent(nullptr)
+Star::Star(Game* game, const float radius, const int numVertices, const float forwardForce):
+    Actor(game),
+    mDrawSpriteComponent(nullptr),
+    mRigidBodyComponent(nullptr)
 {
     // --------------
     // TODO - PARTE 3

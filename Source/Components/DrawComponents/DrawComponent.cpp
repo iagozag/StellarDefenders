@@ -6,10 +6,10 @@
 #include "../../Actors/Actor.h"
 #include "../../Game.h"
 
-DrawComponent::DrawComponent(class Actor* owner, int drawOrder)
-    :Component(owner)
-    ,mDrawOrder(drawOrder)
-    ,mIsVisible(true)
+DrawComponent::DrawComponent(class Actor* owner, int drawOrder):
+    Component(owner),
+    mIsVisible(true),
+    mDrawOrder(drawOrder)
 {
 //    mOwner->GetGame()->AddDrawable(this);
 }

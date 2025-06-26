@@ -10,20 +10,22 @@
 #include "../Components/RigidBodyComponent.h"
 #include "../Components/DrawComponents/DrawSpriteComponent.h"
 
-Ship::Ship(Game* game,
-           const float height,
-           const float forwardForce,
-           const float rotationForce,
-           const float frictionCoefficient)
-        : Actor(game)
-        , mLaserCooldown(0.f)
-        , mHeight(height)
-        , mRigidBodyComponent(nullptr)
-        , mDrawSpriteComponent(nullptr)
-        , mForwardSpeed(forwardForce)
-        , mRotationForce(rotationForce)
-        , mFrictionCoefficient(frictionCoefficient)
-        , mShipState(ShipState::Positioning)
+Ship::Ship(
+    Game* game,
+    const float height,
+    const float forwardForce,
+    const float rotationForce,
+    const float frictionCoefficient
+):
+    Actor(game),
+    mForwardSpeed(forwardForce),
+    mRotationForce(rotationForce),
+    mFrictionCoefficient(frictionCoefficient),
+    mLaserCooldown(0.f),
+    mHeight(height),
+    mShipState(ShipState::Positioning),
+    mDrawSpriteComponent(nullptr),
+    mRigidBodyComponent(nullptr)
 {
     // --------------
     // TODO - PARTE 3

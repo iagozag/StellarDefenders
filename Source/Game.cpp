@@ -28,29 +28,29 @@
 #include "Components/ColliderComponents/AABBColliderComponent.h"
 #include "SpatialHashing.h"
 
-Game::Game(int windowWidth, int windowHeight)
-        :mWindow(nullptr)
-        ,mRenderer(nullptr)
-        ,mTicksCount(0)
-        ,mIsRunning(true)
-        ,mShip(nullptr)
-        ,mWindowWidth(windowWidth)
-        ,mWindowHeight(windowHeight)
-        ,mHUD(nullptr)
-        ,mBackgroundColor(0, 0, 0)
-        ,mModColor(255, 255, 255)
-        ,mCameraPos(Vector2::Zero)
-        ,mAudio(nullptr)
-        ,mGameTimer(0.0f)
-        ,mGameTimeLimit(0)
-        ,mSceneManagerTimer(0.0f)
-        ,mSceneManagerState(SceneManagerState::None)
-        ,mGameScene(GameScene::MainMenu)
-        ,mNextScene(GameScene::MainMenu)
-        ,mBackgroundTexture(nullptr)
-        ,mBackgroundSize(Vector2::Zero)
-        ,mBackgroundPosition(Vector2::Zero)
-        ,mIsViableAreaActive(false)
+Game::Game(int windowWidth, int windowHeight):
+    mSceneManagerState(SceneManagerState::None),
+    mSceneManagerTimer(0.0f),
+    mWindow(nullptr),
+    mRenderer(nullptr),
+    mAudio(nullptr),
+    mWindowWidth(windowWidth),
+    mWindowHeight(windowHeight),
+    mTicksCount(0),
+    mIsRunning(true),
+    mGameScene(GameScene::MainMenu),
+    mNextScene(GameScene::MainMenu),
+    mBackgroundColor(0, 0, 0),
+    mModColor(255, 255, 255),
+    mCameraPos(Vector2::Zero),
+    mShip(nullptr),
+    mHUD(nullptr),
+    mIsViableAreaActive(false),
+    mGameTimer(0.0f),
+    mGameTimeLimit(0),
+    mBackgroundTexture(nullptr),
+    mBackgroundSize(Vector2::Zero),
+    mBackgroundPosition(Vector2::Zero)
 {
 
 }
@@ -292,11 +292,11 @@ void Game::LoadMainMenu()
     const Vector2 button2Pos = Vector2(0, titlePos.y)+Vector2(mWindowWidth/2.0f - 100.0f, 250.0f);
     const Vector2 buttonSize = Vector2(200.0f, 40.0f);
 
-    auto button1 = mainMenu->AddButton("Play", button1Pos, buttonSize, [this]() {
+    mainMenu->AddButton("Play", button1Pos, buttonSize, [this]() {
                                 SetGameScene(GameScene::Ship, TRANSITION_TIME);
                             });
 
-    auto button2 = mainMenu->AddButton("Exit", button2Pos, buttonSize, [this]() {
+    mainMenu->AddButton("Exit", button2Pos, buttonSize, [this]() {
                                 Shutdown();
                             });
 }
@@ -315,23 +315,7 @@ void Game::LoadLevel(const std::string& levelName, const int levelWidth, const i
     BuildLevel(mLevelData, levelWidth, levelHeight);
 }
 
-void Game::BuildLevel(int** levelData, int width, int height)
-{
-
-    // Const map to convert tile ID to block type
-    const std::map<int, const std::string> tileMap = {
-    };
-
-    for (int y = 0; y < LEVEL_HEIGHT; ++y)
-    {
-        for (int x = 0; x < LEVEL_WIDTH; ++x)
-        {
-            int tile = levelData[y][x];
-
-
-        }
-    }
-}
+void Game::BuildLevel(int** levelData, int width, int height) {}
 
 int **Game::ReadLevelData(const std::string& fileName, int width, int height)
 {
@@ -391,6 +375,7 @@ void Game::RunLoop()
 
 void Game::ProcessInput()
 {
+    SDL_GetWindowSize(mWindow, &mWindowWidth, &mWindowHeight);
     SDL_Event event;
     while (SDL_PollEvent(&event))
     {
@@ -539,7 +524,6 @@ void Game::UpdateGame()
 void Game::UpdateCamera()
 {
     Vector2 posJog = mAlien->GetPosition();
-    Vector2 posCam =  GetCameraPos();
 
     posJog.x -= mWindowWidth / 2;
 

@@ -12,15 +12,15 @@ const float MAX_SPEED_X = 750.0f;
 const float MAX_SPEED_Y = 750.0f;
 const float GRAVITY = 2000.0f;
 
-RigidBodyComponent::RigidBodyComponent(class Actor* owner, float mass, float friction, bool applyGravity, int updateOrder)
-        :Component(owner, updateOrder)
-        ,mMass(mass)
-        ,mApplyGravity(applyGravity)
-        ,mApplyFriction(true)
-        ,mFrictionCoefficient(friction)
-        ,mVelocity(Vector2::Zero)
-        ,mAcceleration(Vector2::Zero)
-        ,mAngularSpeed(.0f)
+RigidBodyComponent::RigidBodyComponent(class Actor* owner, float mass, float friction, bool applyGravity, int updateOrder):
+    Component(owner, updateOrder),
+    mApplyGravity(applyGravity),
+    mApplyFriction(true),
+    mFrictionCoefficient(friction),
+    mMass(mass),
+    mAngularSpeed(.0f),
+    mVelocity(Vector2::Zero),
+    mAcceleration(Vector2::Zero)
 {
 
 }

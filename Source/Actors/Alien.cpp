@@ -8,12 +8,12 @@
 //
 
 
-Alien::Alien(Game* game, const float forwardSpeed, const float jumpSpeed)
-        : Actor(game)
-        , mIsRunning(false)
-        , mIsDead(false)
-        , mForwardSpeed(forwardSpeed)
-        , mJumpSpeed(jumpSpeed)
+Alien::Alien(Game* game, const float forwardSpeed, const float jumpSpeed):
+    Actor(game),
+    mForwardSpeed(forwardSpeed),
+    mJumpSpeed(jumpSpeed),
+    mIsRunning(false),
+    mIsDead(false)
 {
     // --------------
     // TODO - PARTES 1 e 4

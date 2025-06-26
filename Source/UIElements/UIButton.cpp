@@ -7,11 +7,11 @@
 UIButton::UIButton(const std::string& text, class UIFont* font, std::function<void()> onClick,
                     const Vector2& pos, const Vector2& size, const Vector3& color,
                     int pointSize , unsigned wrapLength,
-                    const Vector2 &textPos, const Vector2 &textSize, const Vector3& textColor)
-        :UIElement(pos, size, color)
-        ,mOnClick(onClick)
-        ,mHighlighted(false)
-        ,mText(text, font, pointSize, wrapLength, textPos, textSize, textColor)
+                    const Vector2 &textPos, const Vector2 &textSize, const Vector3& textColor):
+    UIElement(pos, size, color),
+    mOnClick(onClick),
+    mText(text, font, pointSize, wrapLength, textPos, textSize, textColor),
+    mHighlighted(false)
 {
 
 }

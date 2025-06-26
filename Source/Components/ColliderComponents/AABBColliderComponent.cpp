@@ -6,14 +6,20 @@
 #include "../../Actors/Actor.h"
 #include "../../Game.h"
 
-AABBColliderComponent::AABBColliderComponent(class Actor* owner, int dx, int dy, int w, int h,
-        ColliderLayer layer, bool isStatic, int updateOrder)
-        :Component(owner, updateOrder)
-        ,mOffset(Vector2((float)dx, (float)dy))
-        ,mIsStatic(isStatic)
-        ,mWidth(w)
-        ,mHeight(h)
-        ,mLayer(layer)
+AABBColliderComponent::AABBColliderComponent(
+    Actor* owner,
+    int dx, int dy,
+    int w, int h,
+    ColliderLayer layer,
+    bool isStatic,
+    int updateOrder
+):
+    Component(owner, updateOrder),
+    mOffset(Vector2((float)dx, (float)dy)),
+    mWidth(w),
+    mHeight(h),
+    mIsStatic(isStatic),
+    mLayer(layer)
 {
 //    mOwner->GetGame()->AddCollider(this);
 }

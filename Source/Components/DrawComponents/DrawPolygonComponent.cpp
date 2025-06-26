@@ -6,10 +6,10 @@
 #include "../../Actors/Actor.h"
 #include "../../Game.h"
 
-DrawPolygonComponent::DrawPolygonComponent(class Actor* owner, std::vector<Vector2> &vertices, int drawOrder)
-        :DrawComponent(owner)
-        ,mVertices(vertices)
-        ,mDrawOrder(drawOrder)
+DrawPolygonComponent::DrawPolygonComponent(class Actor* owner, std::vector<Vector2> &vertices, int drawOrder):
+    DrawComponent(owner),
+    mDrawOrder(drawOrder),
+    mVertices(vertices)
 {
 }
 

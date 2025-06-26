@@ -2,7 +2,7 @@
 #include "simulation.hpp"
 
 Simulation::Simulation(std::vector<Planet> planets):
-    planets(std::move(planets)) {}
+    m_planets(std::move(planets)) {}
 
 void Simulation::draw(Game &game) const {
 

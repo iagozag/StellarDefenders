@@ -11,13 +11,13 @@
 #include "../Components/Component.h"
 #include <algorithm>
 
-Actor::Actor(Game* game)
-        : mState(ActorState::Active)
-        , mPosition(Vector2::Zero)
-        , mScale(1.0f)
-        , mRotation(0.0f)
-        , mGame(game)
-        , mIsOnGround(false)
+Actor::Actor(Game* game):
+    mGame(game),
+    mState(ActorState::Active),
+    mPosition(Vector2::Zero),
+    mScale(1.0f),
+    mRotation(0.0f),
+    mIsOnGround(false)
 {
     mGame->AddActor(this);
 }

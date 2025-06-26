@@ -5,13 +5,15 @@
 #include "UIText.h"
 #include "UIFont.h"
 
-UIText::UIText(const std::string &text, class UIFont* font, int pointSize, const unsigned wrapLength,
-               const Vector2 &pos, const Vector2 &size, const Vector3 &color)
-   :UIElement(pos, size, color)
-   ,mFont(font)
-   ,mPointSize(pointSize)
-   ,mWrapLength(wrapLength)
-   ,mTextTexture(nullptr)
+UIText::UIText(
+    const std::string &text, class UIFont* font, int pointSize, const unsigned wrapLength,
+    const Vector2 &pos, const Vector2 &size, const Vector3 &color
+):
+    UIElement(pos, size, color),
+    mFont(font),
+    mTextTexture(nullptr),
+    mPointSize(pointSize),
+    mWrapLength(wrapLength)
 {
     // --------------
     // TODO - PARTE 1-1
