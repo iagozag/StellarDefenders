@@ -33,6 +33,8 @@
 constexpr Planet PLANETS[] = {};
 constexpr auto NUM_PLANETS = sizeof(PLANETS) / sizeof(PLANETS[0]);
 
+constexpr glm::u8vec4 BACKGROUND_COLOR = {0, 0, 0, 0};
+
 Game::Game(int windowWidth, int windowHeight):
     mSceneManagerState(SceneManagerState::None),
     mSceneManagerTimer(0.0f),
@@ -45,7 +47,6 @@ Game::Game(int windowWidth, int windowHeight):
     mIsRunning(true),
     mGameScene(GameScene::MainMenu),
     mNextScene(GameScene::MainMenu),
-    mBackgroundColor(0, 0, 0),
     mModColor(255, 255, 255),
     mShip(nullptr),
     mHUD(nullptr),
@@ -220,9 +221,6 @@ void Game::ChangeScene()
         // TODO 1. Toque a música de fundo "MusicMain.ogg" em loop e armaze o SoundHandle retornado em mMusicHandle.
 
         // Set background color
-        mBackgroundColor.Set(0.0f, 0.0f, 0.0f);
-
-        // Set background color
         //SetBackgroundImage("../Assets/Sprites/background.png", Vector2(TILE_SIZE,0), Vector2(6784,448));
 
         // Initialize actors
@@ -250,9 +248,6 @@ void Game::ChangeScene()
         // mMusicHandle = mAudio->PlaySound("MusicUnderground.ogg", 1);
 
 
-        // Set background color
-        mBackgroundColor.Set(0.0f, 0.0f, 0.0f);
-
         // Initialize actors
         // LoadLevel("../Assets/Levels/level1-2.csv", LEVEL_WIDTH, LEVEL_HEIGHT);
     }
@@ -274,8 +269,6 @@ void Game::DisableViableArea()
 
 void Game::LoadMainMenu()
 {
-    // Set background color
-    mBackgroundColor.Set(0.0f, 0.0f, 0.0f);
 
     // SetBackgroundImage("../Assets/Sprites/Background.png", Vector2(TILE_SIZE,-TILE_SIZE), Vector2(6784,448));
 
@@ -654,11 +647,12 @@ glm::ivec2 Game::get_window_dimensions() const {
 }
 
 void Game::GenerateOutput() {
-    // m_simulation.draw(*this);
 
     // Clear frame with background color
     SDL_SetRenderDrawColor(mRenderer, 0, 0, 0, 0);
     SDL_RenderClear(mRenderer);
+
+    m_simulation.draw(*this);
 
     // Draw viable area
     if (mGameScene != GameScene::MainMenu and mGameScene != GameScene::Ship and mIsViableAreaActive)

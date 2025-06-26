@@ -168,7 +168,6 @@ private:
     GameScene mNextScene;
 
     // Background and camera
-    Vector3 mBackgroundColor;
     Vector3 mModColor;
     Camera m_camera;
 
