@@ -21,6 +21,10 @@ void Simulation::draw(Game &game) const {
     for(auto &target : m_targets) {
         target.draw(game);
     }
+
+    for(auto &fragment : m_fragments) {
+        fragment.draw(game);
+    }
 }
 
 glm::vec2 calculate_acceleration(const glm::vec2 &body_pos, const Planet &attractor) {
@@ -50,6 +54,12 @@ void Simulation::run(Game &game, float delta_t) {
         acel.y = 0;
     }
 
+    glm::vec2 fragment_accelerations[m_fragments.size()];
+    for(auto &acel : fragment_accelerations) {
+        acel.x = 0;
+        acel.y = 0;
+    }
+
 
     for(size_t i = 0; i < m_planets.size(); i++) {
         for(size_t j = i + 1; j < m_planets.size(); j++) {
@@ -72,6 +82,10 @@ void Simulation::run(Game &game, float delta_t) {
         for(size_t j = 0; j < m_targets.size(); j++) {
             target_accelerations[j] += calculate_acceleration(m_targets[j].m_position, m_planets[i]);
         }
+
+        for(size_t j = 0; j < m_fragments.size(); j++) {
+            fragment_accelerations[j] += calculate_acceleration(m_fragments[j].m_position, m_planets[i]);
+        }
     }
 
     for(size_t i = 0; i < m_planets.size(); i++) {
@@ -84,6 +98,10 @@ void Simulation::run(Game &game, float delta_t) {
 
     for(size_t i = 0; i < m_targets.size(); i++) {
         m_targets[i].apply_acceleration(target_accelerations[i], delta_t);
+    }
+    
+    for(size_t i = 0; i < m_fragments.size(); i++) {
+        m_fragments[i].apply_acceleration(fragment_accelerations[i], delta_t);
     }
 
     run_collision_tests();
@@ -101,6 +119,9 @@ void Simulation::run_collision_tests() {
     for(auto &target : m_targets) {
         collidables.push_back(target);
     }
+    for(auto &fragment : m_fragments) {
+        collidables.push_back(fragment);
+    }
 
     for(size_t i = 0; i < collidables.size(); i++) {
         for(size_t j = i + 1; j < collidables.size(); j++) {
@@ -113,6 +134,21 @@ void Simulation::run_collision_tests() {
         }
     }
 
+
+    std::vector<std::reference_wrapper<KinematicBody>> targets;
+    targets.reserve(m_targets.size());
+    for(size_t i = 0; i < m_targets.size(); i++) {
+        targets.push_back(m_targets[i]);
+    }
+
+    for(size_t i = 0; i < m_kamikaze.size(); i++) {
+        if(m_kamikaze[i].target_inside_radius(targets.data(), targets.size())) {
+            m_kamikaze[i].m_should_delete = true;
+            add_fragments(m_kamikaze[i].generate_fragments());
+        }
+    }
+
+
     delete_dead();
 }
 
@@ -124,9 +160,14 @@ void Simulation::delete_dead() {
     const auto target_predicate = std::function([](const Target &target) {
         return !target.m_should_delete;
     });
+
+    const auto fragment_predicate = std::function([](const Fragment &fragment) {
+        return !fragment.m_should_delete;
+    });
     
     filter(m_kamikaze, kamikaze_predicate);
     filter(m_targets, target_predicate);
+    filter(m_fragments, fragment_predicate);
 }
 
 void Simulation::add_fragments(const std::vector<Fragment> &fragments) {

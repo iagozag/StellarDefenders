@@ -2,6 +2,7 @@
 #pragma once
 
 #include "particle.hpp"
+#include "fragment.hpp"
 
 class Game;
 
@@ -14,6 +15,8 @@ public:
 
     bool target_inside_radius(const std::reference_wrapper<KinematicBody> targets[], const size_t amount_targets) const;
     void draw(Game &game) const;
+
+    std::vector<Fragment> generate_fragments() const;
 
     void on_collision() override;
 
