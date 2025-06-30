@@ -31,11 +31,18 @@
 #include <glm/gtc/constants.hpp>
 
 const Planet planets[] = {
-    Planet({-0.5, -0.5}, {0.2, -0.2}, 0.05, 0.01),
-    Planet({ 0.5,  0.5}, {-0.2, 0.2}, 0.05, 0.01),
-    Planet({ 0,  0}, {0, 0}, 0.2, 0.1),
+    Planet({-0.5, -0.5}, {0.2, -0.2}, 0.025, 0.01),
+    Planet({ 0.5,  0.5}, {-0.2, 0.2}, 0.025, 0.01),
+    Planet({ 0,  0}, {0, 0}, 0.1, 0.1),
 };
+
+const Kamikaze kamikaze[] = {
+    Kamikaze({ 0.5, -0.5}, {0.2, 0.2}),
+    Kamikaze({-0.5,  0.5}, {-0.22, -0.22})
+};
+
 constexpr auto NUM_PLANETS = sizeof(planets) / sizeof(planets[0]);
+constexpr auto NUM_KAMIKAZE = sizeof(kamikaze) / sizeof(kamikaze[0]);
 
 constexpr glm::u8vec4 BACKGROUND_COLOR = {0, 0, 0, 255};
 
@@ -60,7 +67,10 @@ Game::Game(int windowWidth, int windowHeight):
     mBackgroundTexture(nullptr),
     mBackgroundSize(glm::vec2(.0f)),
     mBackgroundPosition(glm::vec2(.0f)),
-    m_simulation(std::vector(planets, &planets[NUM_PLANETS]))
+    m_simulation(
+        std::vector(planets, &planets[NUM_PLANETS]),
+        std::vector(kamikaze, &kamikaze[NUM_KAMIKAZE])
+    )
 {
 
 }
@@ -475,7 +485,7 @@ void Game::UpdateGame() {
     m_simulation.run(*this, delta_t);
 
 
-    
+
     if(mGamePlayState != GamePlayState::Paused && mGamePlayState != GamePlayState::GameOver)
     {
         // Reinsert all actors and pending actors
