@@ -17,7 +17,7 @@ glm::mat4 Camera::get_projection_matrix(const Game &game) const {
     float view_height;
 
     // m_scale define o tamanho da menor dimensão visível na tela.
-    const float view_size_min = m_scale; 
+    const float view_size_min = m_scale * 2; 
 
     if (aspect_ratio < 1.0f) {
         // --- Modo Portrait (tela mais alta que larga) ---

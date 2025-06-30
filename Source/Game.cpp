@@ -30,8 +30,12 @@
 #include "Scenes/Simulation/simulation.hpp"
 #include <glm/gtc/constants.hpp>
 
-constexpr Planet PLANETS[] = {};
-constexpr auto NUM_PLANETS = sizeof(PLANETS) / sizeof(PLANETS[0]);
+const Planet planets[] = {
+    Planet({-0.5, -0.5}, {0.2, -0.2}, 0.05, 0.01),
+    Planet({ 0.5,  0.5}, {-0.2, 0.2}, 0.05, 0.01),
+    Planet({ 0,  0}, {0, 0}, 0.2, 0.1),
+};
+constexpr auto NUM_PLANETS = sizeof(planets) / sizeof(planets[0]);
 
 constexpr glm::u8vec4 BACKGROUND_COLOR = {0, 0, 0, 255};
 
@@ -56,7 +60,7 @@ Game::Game(int windowWidth, int windowHeight):
     mBackgroundTexture(nullptr),
     mBackgroundSize(glm::vec2(.0f)),
     mBackgroundPosition(glm::vec2(.0f)),
-    m_simulation(std::vector(PLANETS, &PLANETS[NUM_PLANETS]))
+    m_simulation(std::vector(planets, &planets[NUM_PLANETS]))
 {
 
 }
@@ -466,9 +470,12 @@ void Game::TogglePause()
 
 void Game::UpdateGame() {
     float delta_t = (SDL_GetTicks() - mTicksCount) / 1000.0f;
-    // m_simulation.run(*this, delta_t);
     mTicksCount = SDL_GetTicks();
+    
+    m_simulation.run(*this, delta_t);
 
+
+    
     if(mGamePlayState != GamePlayState::Paused && mGamePlayState != GamePlayState::GameOver)
     {
         // Reinsert all actors and pending actors
@@ -667,7 +674,9 @@ void Game::GenerateOutput() {
     SDL_SetRenderDrawColor(mRenderer, 0, 0, 0, 255);
     SDL_RenderClear(mRenderer);
 
-    // m_simulation.draw(*this);
+    m_simulation.draw(*this);
+
+
 
     if (mBackgroundTexture)
     {
@@ -714,9 +723,9 @@ void Game::GenerateOutput() {
 
     // Sort drawables by draw order
     std::sort(drawables.begin(), drawables.end(),
-              [](const DrawComponent* a, const DrawComponent* b) {
-                  return a->GetDrawOrder() < b->GetDrawOrder();
-              });
+                [](const DrawComponent* a, const DrawComponent* b) {
+                    return a->GetDrawOrder() < b->GetDrawOrder();
+                });
 
     // Draw all drawables
     for (auto drawable : drawables)
@@ -744,6 +753,9 @@ void Game::GenerateOutput() {
         SDL_Rect fullscreenRect = {0, 0, mWindowWidth, mWindowHeight};
         SDL_RenderFillRect(mRenderer, &fullscreenRect);
     }
+
+
+
 
     // Swap front buffer and back buffer
     SDL_RenderPresent(mRenderer);
