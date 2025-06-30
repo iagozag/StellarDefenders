@@ -28,12 +28,13 @@
 #include "Components/ColliderComponents/AABBColliderComponent.h"
 #include "SpatialHashing.h"
 #include "Scenes/Simulation/simulation.hpp"
+#include "Scenes/Simulation/target.hpp"
 #include <glm/gtc/constants.hpp>
 
 const Planet planets[] = {
     Planet({-0.5, -0.5}, {0.2, -0.2}, 0.025, 0.01),
     Planet({ 0.5,  0.5}, {-0.2, 0.2}, 0.025, 0.01),
-    Planet({ 0,  0}, {0, 0}, 0.1, 0.1),
+    Planet({ 0,  0}, {0, 0}, 0.06, 0.1),
 };
 
 const Kamikaze kamikaze[] = {
@@ -41,8 +42,15 @@ const Kamikaze kamikaze[] = {
     Kamikaze({-0.5,  0.5}, {-0.22, -0.22})
 };
 
-constexpr auto NUM_PLANETS = sizeof(planets) / sizeof(planets[0]);
-constexpr auto NUM_KAMIKAZE = sizeof(kamikaze) / sizeof(kamikaze[0]);
+const Target targets[] = {
+    Target({0.2, 0}, {0.85, 0})
+};
+
+#define ARR_LEN(ARR) (sizeof(ARR) / sizeof(ARR[0]))
+
+constexpr auto NUM_PLANETS = ARR_LEN(planets);
+constexpr auto NUM_KAMIKAZE = ARR_LEN(kamikaze);
+constexpr auto NUM_TARGETS = ARR_LEN(targets);
 
 constexpr glm::u8vec4 BACKGROUND_COLOR = {0, 0, 0, 255};
 
@@ -69,7 +77,8 @@ Game::Game(int windowWidth, int windowHeight):
     mBackgroundPosition(glm::vec2(.0f)),
     m_simulation(
         std::vector(planets, &planets[NUM_PLANETS]),
-        std::vector(kamikaze, &kamikaze[NUM_KAMIKAZE])
+        std::vector(kamikaze, &kamikaze[NUM_KAMIKAZE]),
+        std::vector(targets, &targets[NUM_TARGETS])
     )
 {
 

@@ -1,0 +1,19 @@
+
+#pragma once
+
+#include "particle.hpp"
+
+constexpr float TARGET_RADIUS = 0.03;
+
+class Game;
+
+class Target: public Particle {
+public:
+    Target(const glm::vec2 &position, const glm::vec2 &speed);
+
+    void draw(Game &game) const;
+
+    void on_collision() override;
+
+    bool m_should_delete: 1;
+};

@@ -4,9 +4,10 @@
 #include "../../sq.hpp"
 #include "../../filter_vector.hpp"
 
-Simulation::Simulation(std::vector<Planet> planets, std::vector<Kamikaze> kamikaze):
+Simulation::Simulation(std::vector<Planet> planets, std::vector<Kamikaze> kamikaze, std::vector<Target> targets):
     m_planets(std::move(planets)),
-    m_kamikaze(std::move(kamikaze)) {}
+    m_kamikaze(std::move(kamikaze)),
+    m_targets(std::move(targets)) {}
 
 void Simulation::draw(Game &game) const {
     for(auto &planet : m_planets) {
@@ -15,6 +16,10 @@ void Simulation::draw(Game &game) const {
 
     for(auto &kamikaze : m_kamikaze) {
         kamikaze.draw(game);
+    }
+
+    for(auto &target : m_targets) {
+        target.draw(game);
     }
 }
 
@@ -32,11 +37,19 @@ void Simulation::run(Game &game, float delta_t) {
         acel.x = 0;
         acel.y = 0;
     }
+
     glm::vec2 planet_accelerations[m_planets.size()];
     for(auto &acel : planet_accelerations) {
         acel.x = 0;
         acel.y = 0;
     }
+
+    glm::vec2 target_accelerations[m_targets.size()];
+    for(auto &acel : target_accelerations) {
+        acel.x = 0;
+        acel.y = 0;
+    }
+
 
     for(size_t i = 0; i < m_planets.size(); i++) {
         for(size_t j = i + 1; j < m_planets.size(); j++) {
@@ -55,6 +68,10 @@ void Simulation::run(Game &game, float delta_t) {
         for(size_t j = 0; j < m_kamikaze.size(); j++) {
             kamikaze_accelerations[j] += calculate_acceleration(m_kamikaze[j].m_position, m_planets[i]);
         }
+
+        for(size_t j = 0; j < m_targets.size(); j++) {
+            target_accelerations[j] += calculate_acceleration(m_targets[j].m_position, m_planets[i]);
+        }
     }
 
     for(size_t i = 0; i < m_planets.size(); i++) {
@@ -63,6 +80,10 @@ void Simulation::run(Game &game, float delta_t) {
 
     for(size_t i = 0; i < m_kamikaze.size(); i++) {
         m_kamikaze[i].apply_acceleration(kamikaze_accelerations[i], delta_t);
+    }
+
+    for(size_t i = 0; i < m_targets.size(); i++) {
+        m_targets[i].apply_acceleration(target_accelerations[i], delta_t);
     }
 
     run_collision_tests();
@@ -76,6 +97,9 @@ void Simulation::run_collision_tests() {
     }
     for(auto &kamikaze : m_kamikaze) {
         collidables.push_back(kamikaze);
+    }
+    for(auto &target : m_targets) {
+        collidables.push_back(target);
     }
 
     for(size_t i = 0; i < collidables.size(); i++) {
@@ -96,6 +120,17 @@ void Simulation::delete_dead() {
     const auto kamikaze_predicate = std::function([](const Kamikaze &kamikaze) {
         return !kamikaze.m_should_delete;
     });
+
+    const auto target_predicate = std::function([](const Target &target) {
+        return !target.m_should_delete;
+    });
     
     filter(m_kamikaze, kamikaze_predicate);
+    filter(m_targets, target_predicate);
+}
+
+void Simulation::add_fragments(const std::vector<Fragment> &fragments) {
+    for(auto &fragment : fragments) {
+        m_fragments.push_back(fragment);
+    }
 }
