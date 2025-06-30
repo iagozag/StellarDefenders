@@ -17,6 +17,8 @@ O jogo foi desenvolvido em C++ com a biblioteca SDL, com artes simples em 2D e s
 - [ ] Simulação física de movimento orbital
 
 ## Créditos
-**Caroline Carvalho** e **Lucas Almeida** - Menu inicial interativo
+### Caroline Carvalho e Lucas Almeida
+Responsáveis pelo menu inicial interativo, incluindo o hub central, o personagem principal e a nave-mãe, além da transição para as fases do jogo.
 
-**Denilson Martins** e **Iago Zagnoli** - Puzzles e mecânicas de jogo
+### Denilson Martins e Iago Zagnoli
+Responsáveis pela jogabilidade principal, incluindo a mecânica de posicionamento e lançamento de naves e simulação física de movimento orbital.
