@@ -73,3 +73,5 @@ glm::mat4 Camera::get_total_transformation_matrix(const Game &game) const {
 }
 
 glm::vec2 Camera::get_pos() const{ return m_pos; }
+
+void Camera::set_pos(glm::vec2 pos){ m_pos = pos; }

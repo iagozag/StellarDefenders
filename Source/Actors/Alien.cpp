@@ -117,17 +117,12 @@ void Alien::OnProcessInput(const uint8_t* state)
 
 void Alien::OnUpdate(float deltaTime)
 {
-
-    // --------------
-    // TODO - PARTE 2
-    // --------------
-
-    // TODO 4 (~2 linhas): Para evitar que o jogador ultrapasse o limite inferior (esquerdo) da câmera,
-    //  limite sua posição horizontal para ser sempre maior ou igual a posição horizontal da câmera.
-
     mPosition.y = std::min(mPosition.y, (float)(mGame->GetWindowHeight()-171));
 
-    if (mPosition.x > 2800) mGame->SetGameScene(Game::GameScene::Level1, Game::TRANSITION_TIME);
+    if(mPosition.x <= .0f) mPosition.x = .0f;
+    if (mPosition.x > 2800){
+        mGame->SetGameScene(Game::GameScene::Level1, Game::TRANSITION_TIME);
+    }
 
     ManageAnimations();
 }
@@ -162,8 +157,9 @@ void Alien::Kill()
     // TODO 8 (~4 linhas): altere a animação para "dead" e o valor da variável `mIsDead` para verdadeiro.
     //  Além disso, desabilite os componentes `mRigidBodyComponent` e `mColliderComponent`
 
-    mDrawComponent->SetAnimation("dead");
+    mDrawComponent->SetAnimation("idle");
     mIsDead = true;
+    SetState(ActorState::Destroy);
     mRigidBodyComponent->SetEnabled(false);
     mColliderComponent->SetEnabled(false);
 

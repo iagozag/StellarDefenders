@@ -115,8 +115,8 @@ bool Game::Initialize()
 
 
     mSpatialHashing = new SpatialHashing(TILE_SIZE * 4.0f,
-                                         LEVEL_WIDTH * TILE_SIZE,
-                                         LEVEL_HEIGHT * TILE_SIZE);
+                                         WORLD_WIDTH,
+                                         WORLD_HEIGHT);
     mTicksCount = SDL_GetTicks();
 
     // Init all game actors
@@ -182,7 +182,7 @@ void Game::ChangeScene()
     mGamePlayState = GamePlayState::Playing;
 
     // Reset scene manager state
-    mSpatialHashing = new SpatialHashing(TILE_SIZE * 4.0f, LEVEL_WIDTH * TILE_SIZE, LEVEL_HEIGHT * TILE_SIZE);
+    mSpatialHashing = new SpatialHashing(TILE_SIZE * 4.0f, WORLD_WIDTH, WORLD_HEIGHT);
 
     // Scene Manager FSM: using if/else instead of switch
     if (mNextScene == GameScene::MainMenu)
@@ -192,10 +192,10 @@ void Game::ChangeScene()
     }
     else if (mNextScene == GameScene::Ship)
     {
-        mAlien = new Alien(this);
+        if(!mAlien) mAlien = new Alien(this);
         mAlien->SetPosition(glm::vec2(0, mWindowHeight-TILE_SIZE));
 
-        SetBackgroundImage("../Assets/Sprites/background.png", glm::vec2(0,0), glm::vec2(3000,448));
+        SetBackgroundImage("../Assets/Sprites/background.png", glm::vec2(0,0), glm::vec2(WORLD_WIDTH,WORLD_HEIGHT));
     }
     else if (mNextScene == GameScene::Level1)
     {
@@ -221,7 +221,7 @@ void Game::ChangeScene()
         // TODO 1. Toque a música de fundo "MusicMain.ogg" em loop e armaze o SoundHandle retornado em mMusicHandle.
 
         // Set background color
-        //SetBackgroundImage("../Assets/Sprites/background.png", glm::vec2(TILE_SIZE,0), glm::vec2(6784,448));
+        //SetBackgroundImage("../Assets/Sprites/background.png", glm::vec2(TILE_SIZE,0), glm::vec2(6784,WORLD_HEIGHT));
 
         // Initialize actors
         // LoadLevel("../Assets/Levels/level1-1.csv", LEVEL_WIDTH, LEVEL_HEIGHT);
@@ -270,7 +270,7 @@ void Game::DisableViableArea()
 void Game::LoadMainMenu()
 {
 
-    // SetBackgroundImage("../Assets/Sprites/Background.png", glm::vec2(TILE_SIZE,-TILE_SIZE), glm::vec2(6784,448));
+    // SetBackgroundImage("../Assets/Sprites/Background.png", glm::vec2(TILE_SIZE,-TILE_SIZE), glm::vec2(6784,WORLD_HEIGHT));
 
     // --------------
     // TODO - PARTE 1
@@ -475,6 +475,8 @@ void Game::UpdateGame() {
         UpdateActors(delta_t);
     }
 
+    UpdateCamera();
+
     // Reinsert audio system
     mAudio->Update(delta_t);
 
@@ -502,6 +504,20 @@ void Game::UpdateGame() {
 
     // TODO 1.: Chame UpdateSceneManager passando o deltaTime.
     UpdateSceneManager(delta_t);
+}
+
+void Game::UpdateCamera(){
+    if (mGameScene != GameScene::Ship){
+        m_camera.set_pos(glm::vec2(.0f));
+        return;
+    }
+
+    float horizontalCameraPos = mAlien->GetPosition().x - (mWindowWidth / 2.0f);
+
+    float maxCameraPos = WORLD_WIDTH - mWindowWidth;
+    horizontalCameraPos = Math::Clamp(horizontalCameraPos, 0.0f, maxCameraPos);
+
+    m_camera.set_pos(glm::vec2(horizontalCameraPos, m_camera.get_pos().y));
 }
 
 void Game::UpdateSceneManager(float deltaTime)
@@ -657,7 +673,7 @@ void Game::GenerateOutput() {
     {
         // Cria um retângulo de destino na tela com a posição e o tamanho do fundo
         SDL_Rect destRect;
-        destRect.x = static_cast<int>(mBackgroundPosition.x);
+        destRect.x = static_cast<int>(mBackgroundPosition.x-m_camera.get_pos().x);
         destRect.y = static_cast<int>(mBackgroundPosition.y);
         destRect.w = static_cast<int>(mBackgroundSize.x);
         destRect.h = static_cast<int>(mBackgroundSize.y);
@@ -677,6 +693,8 @@ void Game::GenerateOutput() {
         SDL_SetRenderDrawColor(mRenderer, 255, 100, 100, 64);
         SDL_RenderFillRect(mRenderer, &inviableAreaRect);
     }
+
+    if (mShip) mShip->DrawSlingShotLine();
 
     // Get actors on camera
     std::vector<Actor*> actorsOnCamera =

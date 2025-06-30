@@ -25,6 +25,8 @@
 class Game
 {
 public:
+    static const int WORLD_WIDTH = 3000;
+    static const int WORLD_HEIGHT = 448;
     static const int LEVEL_WIDTH = 215;
     static const int LEVEL_HEIGHT = 15;
     static const int TILE_SIZE = 32;
@@ -106,6 +108,8 @@ public:
 
     void SetBackgroundImage(const std::string& imagePath, const glm::vec2 &position = glm::vec2(.0f), const glm::vec2& size = glm::vec2(.0f));
     void TogglePause();
+
+    void UpdateCamera();
 
     // Game-specific
     void AddStar(class Star* star);

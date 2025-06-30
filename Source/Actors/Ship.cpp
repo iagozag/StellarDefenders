@@ -10,6 +10,11 @@
 #include "../Components/RigidBodyComponent.h"
 #include "../Components/DrawComponents/DrawSpriteComponent.h"
 
+#define GLM_ENABLE_EXPERIMENTAL
+
+#include <glm/gtc/constants.hpp>
+#include <glm/gtx/vector_angle.hpp>
+
 Ship::Ship(
     Game* game,
     const float height
@@ -30,6 +35,30 @@ Ship::Ship(
     mCircleColliderComponent = new CircleColliderComponent(this, mHeight/2);
 }
 
+void Ship::DrawSlingShotLine()
+{
+    if (mShipState == ShipState::SlingShot or mShipState == ShipState::Ready) {
+        SDL_SetRenderDrawColor(mGame->GetRenderer(), 255, 255, 255, 255);
+        glm::vec2 pos = mPosition + mHeight/2.0f;
+        glm::vec2 v = pos-mSlingShotMousePos;
+        glm::vec2 end = pos+v;
+        SDL_RenderDrawLine(mGame->GetRenderer(), pos.x, pos.y, end.x, end.y);
+
+        const float headSize = 15.0f;
+        const float headAngle = glm::pi<float>() / 6.0f;
+
+        if (glm::length(v) == 0) return;
+        
+        v = glm::normalize(v);
+
+        glm::vec2 point1 = end - headSize * glm::rotate(v, headAngle);
+        glm::vec2 point2 = end - headSize * glm::rotate(v, -headAngle);
+
+        SDL_RenderDrawLine(mGame->GetRenderer(), end.x, end.y, point1.x, point1.y);
+        SDL_RenderDrawLine(mGame->GetRenderer(), end.x, end.y, point2.x, point2.y);
+    }
+}
+
 void Ship::OnProcessInput(const uint8_t* state)
 {
     int mouseX, mouseY;
@@ -39,9 +68,12 @@ void Ship::OnProcessInput(const uint8_t* state)
         mShipState = ShipState::SlingShot;
         mGame->DisableViableArea();
     }
-    else if(mShipState == ShipState::SlingShot and mouseState & SDL_BUTTON(SDL_BUTTON_LEFT)){
-        mShipState = ShipState::Ready;
-        mDirection = mPosition-mSlingShotPoint;
+    else if(mShipState == ShipState::SlingShot){
+        mSlingShotMousePos = glm::vec2(mouseX, mouseY);
+        if(!(mouseState & SDL_BUTTON(SDL_BUTTON_LEFT))){
+            mShipState = ShipState::Ready;
+            mDirection = mPosition-mSlingShotMousePos;
+        }
     }
 }
 
