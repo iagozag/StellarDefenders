@@ -32,6 +32,4 @@ private:
     glm::vec2 mDirection;
 
     class DrawSpriteComponent* mDrawSpriteComponent;
-    class RigidBodyComponent* mRigidBodyComponent;
-    class CircleColliderComponent* mCircleColliderComponent;
 };

@@ -5,9 +5,6 @@
 #include "Ship.h"
 #include "Star.h"
 #include "../Game.h"
-// #include "../Actors/Laser.h"
-#include "../Components/ColliderComponents/CircleColliderComponent.h"
-#include "../Components/RigidBodyComponent.h"
 #include "../Components/DrawComponents/DrawSpriteComponent.h"
 
 #define GLM_ENABLE_EXPERIMENTAL
@@ -22,17 +19,9 @@ Ship::Ship(
     Actor(game),
     mHeight(height),
     mShipState(ShipState::Positioning),
-    mDrawSpriteComponent(nullptr),
-    mRigidBodyComponent(nullptr),
-    mCircleColliderComponent(nullptr)
+    mDrawSpriteComponent(nullptr)
 {
-    glm::vec2 v1(-mHeight, mHeight/2), v2(mHeight, 0), v3(-mHeight, -mHeight/2);
-
-    std::vector<glm::vec2> vertices = {v1, v2, v3};
-
     mDrawSpriteComponent = new DrawSpriteComponent(this, "../Assets/Sprites/Idle.png", mHeight, mHeight);
-    mRigidBodyComponent = new RigidBodyComponent(this, 1, 0, false);
-    mCircleColliderComponent = new CircleColliderComponent(this, mHeight/2);
 }
 
 void Ship::DrawSlingShotLine()
@@ -91,13 +80,5 @@ void Ship::OnUpdate(float deltaTime)
         if(mouseY > area.y+area.h-mHeight) mouseY = area.y+area.h-mHeight;
 
         SetPosition(glm::vec2(mouseX, mouseY));
-    }
-
-    for(auto star: GetGame()->GetStars()){
-        auto starCollider = star->GetComponent<CircleColliderComponent>();
-
-        if(mCircleColliderComponent->Intersect(*starCollider)){
-            // mGame->Quit();
-        }
     }
 }
