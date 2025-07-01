@@ -67,7 +67,6 @@ Game::Game(int windowWidth, int windowHeight):
     mGameScene(GameScene::MainMenu),
     mNextScene(GameScene::MainMenu),
     mModColor(255, 255, 255),
-    mShip(nullptr),
     mHUD(nullptr),
     mIsViableAreaActive(false),
     mGameTimer(0.0f),
@@ -148,17 +147,6 @@ bool Game::Initialize()
     return true;
 }
 
-void Game::AddStar(Star* star)
-{
-    mStars.emplace_back(star);
-}
-
-void Game::RemoveStar(Star* star)
-{
-    auto it = std::find(mStars.begin(), mStars.end(), star);
-    if(it != mStars.end()) mStars.erase(it);
-}
-
 void Game::SetGameScene(Game::GameScene scene, float transitionTime)
 {
     if (mSceneManagerState == SceneManagerState::None)
@@ -222,15 +210,13 @@ void Game::ChangeScene()
     }
     else if (mNextScene == GameScene::Level1)
     {
-        mShip = new Ship(this, 50);
-        mShip->SetPosition(glm::vec2(0, 0));
+        mShips.emplace_back(new Ship(this, 50, "corvette.png"));
         // --------------
         // TODO - PARTE 3
         // --------------
 
         // TODO 1.: Crie um novo objeto HUD, passando o ponteiro do Game e o caminho para a fonte SMB.ttf.
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
-
         mHUD->SetLevelName("Fase 1");
 
         // Set Viable Area for ships
@@ -311,7 +297,7 @@ void Game::LoadMainMenu()
     const glm::vec2 buttonSize = glm::vec2(200.0f, 40.0f);
 
     mainMenu->AddButton("Play", button1Pos, buttonSize, [this]() {
-                                SetGameScene(GameScene::Ship, TRANSITION_TIME);
+                                SetGameScene(GameScene::Level1, TRANSITION_TIME);
                             });
 
     mainMenu->AddButton("Exit", button2Pos, buttonSize, [this]() {
@@ -722,7 +708,9 @@ void Game::GenerateOutput() {
         SDL_RenderFillRect(mRenderer, &inviableAreaRect);
     }
 
-    if (mShip) mShip->DrawSlingShotLine();
+    if (mShips.size()){
+        for(auto ship: mShips) ship->DrawSlingShotLine();
+    }
 
     // Get actors on camera
     std::vector<Actor*> actorsOnCamera =

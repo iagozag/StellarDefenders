@@ -17,7 +17,6 @@
 #include "Camera.hpp"
 
 #include "Actors/Ship.h"
-#include "Actors/Star.h"
 #include "Actors/Alien.h"
 
 #include "Scenes/Simulation/simulation.hpp"
@@ -112,11 +111,7 @@ public:
     void UpdateCamera();
 
     // Game-specific
-    void AddStar(class Star* star);
-    void RemoveStar(class Star* star);
-    std::vector<class Star*>& GetStars() { return mStars; }
-
-    class Ship* GetShip(){ return mShip; }
+    std::vector<class Ship*> GetShips(){ return mShips; }
 
     SDL_Rect GetViableArea(){ return mViableAreaRect; }
     void SetViableArea(const SDL_Rect& rect);
@@ -179,8 +174,7 @@ private:
     Camera m_camera;
 
     // Game-specific
-    class Ship* mShip;
-    std::vector<class Star*> mStars;
+    std::vector<class Ship*> mShips;
     class HUD *mHUD;
     SoundHandle mMusicHandle;
 

@@ -3,7 +3,6 @@
 //
 
 #include "Ship.h"
-#include "Star.h"
 #include "../Game.h"
 #include "../Components/DrawComponents/DrawSpriteComponent.h"
 
@@ -14,14 +13,17 @@
 
 Ship::Ship(
     Game* game,
-    const float height
+    const float height,
+    const std::string filePath
 ):
     Actor(game),
     mHeight(height),
     mShipState(ShipState::Positioning),
-    mDrawSpriteComponent(nullptr)
+    mDrawSpriteComponent(nullptr),
+    mRigidBodyComponent(nullptr)
 {
-    mDrawSpriteComponent = new DrawSpriteComponent(this, "../Assets/Sprites/Idle.png", mHeight, mHeight);
+    mDrawSpriteComponent = new DrawSpriteComponent(this, "../Assets/Sprites/Ships/"+filePath, mHeight, mHeight);
+    mRigidBodyComponent = new RigidBodyComponent(this, 1.0f, 0.0f, false);
 }
 
 void Ship::DrawSlingShotLine()
@@ -60,8 +62,9 @@ void Ship::OnProcessInput(const uint8_t* state)
     else if(mShipState == ShipState::SlingShot){
         mSlingShotMousePos = glm::vec2(mouseX, mouseY);
         if(!(mouseState & SDL_BUTTON(SDL_BUTTON_LEFT))){
-            mShipState = ShipState::Ready;
-            mDirection = mPosition-mSlingShotMousePos;
+            mShipState = ShipState::Simulating;
+            mDirection = (mPosition + mHeight / 2.0f) - mSlingShotMousePos;
+            mLaunchTime = 2.0f;
         }
     }
 }
@@ -80,5 +83,10 @@ void Ship::OnUpdate(float deltaTime)
         if(mouseY > area.y+area.h-mHeight) mouseY = area.y+area.h-mHeight;
 
         SetPosition(glm::vec2(mouseX, mouseY));
+    }
+    else if (mShipState == ShipState::Simulating)
+    {
+        mLaunchTime = std::max(.0f, mLaunchTime-deltaTime);
+        if(mLaunchTime > .0f) mRigidBodyComponent->ApplyForce(mDirection);
     }
 }
