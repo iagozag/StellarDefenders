@@ -78,15 +78,15 @@ void Ship::OnUpdate(float deltaTime)
         SDL_Rect area = mGame->GetViableArea();
 
         if(mouseX < area.x) mouseX = area.x;
-        if(mouseX > area.x+area.w-mHeight) mouseX = area.x+area.w-mHeight;
+        if(mouseX > area.x+area.w-mHeight/2.0f) mouseX = area.x+area.w-mHeight/2.0f;
         if(mouseY < area.y) mouseY = area.y;
-        if(mouseY > area.y+area.h-mHeight) mouseY = area.y+area.h-mHeight;
+        if(mouseY > area.y+area.h-mHeight/2.0f) mouseY = area.y+area.h-mHeight/2.0f;
 
-        SetPosition(glm::vec2(mouseX, mouseY));
+        SetPosition(glm::vec2(mouseX-mHeight/2.0f, mouseY-mHeight/2.0f));
     }
     else if (mShipState == ShipState::Simulating)
     {
-        mLaunchTime = std::max(.0f, mLaunchTime-deltaTime);
+        mLaunchTime -= deltaTime;
         if(mLaunchTime > .0f) mRigidBodyComponent->ApplyForce(mDirection);
     }
 }
