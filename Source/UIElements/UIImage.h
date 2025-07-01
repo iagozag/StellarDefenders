@@ -8,6 +8,8 @@
 #include <SDL_image.h>
 #include "UIElement.h"
 
+class Game;
+
 class UIImage :  public UIElement
 {
 public:
@@ -16,7 +18,7 @@ public:
 
     ~UIImage();
 
-    void Draw(SDL_Renderer* renderer, const glm::vec2 &screenPos) override;
+    void Draw(Game &game, const glm::vec2 &screenPos) override;
 
 private:
     SDL_Texture* mTexture; // Texture for the image

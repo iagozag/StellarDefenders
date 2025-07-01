@@ -61,29 +61,11 @@ void UIScreen::Update(float deltaTime)
 	
 }
 
-void UIScreen::Draw(SDL_Renderer *renderer)
-{
-    // --------------
-    // TODO - PARTE 1-1
-    // --------------
+void UIScreen::Draw(Game &game) {
 
-    // TODO 1.: Percorra a listas de textos (mTexts) e chame o método Draw de cada UIText, passando o renderer
-    //  e a posição da tela (mPos).
-    for(auto t: mTexts) t->Draw(renderer, mPos);
-
-    // --------------
-    // TODO - PARTE 1-2
-    // --------------
-
-    // TODO 1.: Percorra a lista de botões (mButtons) e chame o método Draw de cada UIButton, passando o renderer
-    for(auto b: mButtons) b->Draw(renderer, mPos);
-
-    // --------------
-    // TODO - PARTE 1-3
-    // --------------
-
-    // TODO 1.: Percorra a lista de imagens (mImages) e chame o método Draw de cada UIImage, passando o renderer
-    for(auto i: mImages) i->Draw(renderer, mPos);
+    for(auto t: mTexts) t->Draw(game, mPos);
+    for(auto b: mButtons) b->Draw(game, mPos);
+    for(auto i: mImages) i->Draw(game, mPos);
 }
 
 void UIScreen::ProcessInput(const uint8_t* keys)

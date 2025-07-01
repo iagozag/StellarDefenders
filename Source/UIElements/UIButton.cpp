@@ -4,6 +4,9 @@
 
 #include "UIButton.h"
 
+#include "../Game.h"
+#include "../rect_transform.hpp"
+
 UIButton::UIButton(const std::string& text, class UIFont* font, std::function<void()> onClick,
                     const glm::vec2& pos, const glm::vec2& size, const glm::vec3& color,
                     int pointSize , unsigned wrapLength,
@@ -22,26 +25,15 @@ UIButton::~UIButton()
 }
 
 
-void UIButton::Draw(SDL_Renderer *renderer, const glm::vec2 &screenPos)
-{
-    // --------------
-    // TODO - PARTE 1-2
-    // --------------
+void UIButton::Draw(Game &game, const glm::vec2 &screenPos) {
+    auto renderer = game.GetRenderer();
+    
+    SDL_FRect titleQuad = {mPosition.x+screenPos.x, mPosition.y+screenPos.y, mSize.x, mSize.y};
+    const auto transform_matrix = game.GetCamera().get_total_transformation_matrix(game);
+    const auto transformed = rect_transform(titleQuad, transform_matrix);
 
-    // TODO 1.: Crie um SDL_Rect chamado titleQuad com a posição relativa do botão na tela. Some a posição do botão
-    //  (mPosition) com a posição da tela (screenPos) para obter a posição final do botão.
-    //  Use mSize para definir a largura e altura.
-    SDL_Rect titleQuad = {(int)(mPosition.x+screenPos.x), (int)(mPosition.y+screenPos.y), (int)mSize.x, (int)mSize.y};
-
-    // TODO 2.: Verifique se o botão está destacado (mHighlighted). Se sim, defina a cor de preenchimento do
-    //  retângulo como laranja (200, 100, 0, 255) usando SDL_SetRenderDrawColor. Em seguida,
-    //  desenhe o retângulo usando SDL_RenderFillRect com o renderer passado como parâmetro.
-    if(mHighlighted) SDL_SetRenderDrawColor(renderer, 200, 100, 0, 255), SDL_RenderFillRect(renderer, &titleQuad);
-
-
-    // TODO 3.: Desenhe o texto do botão usando o método Draw da classe UIText. Use posição relativa ao botão, ou seja,
-    //  a posição do texto deve ser o centro do botão menos a metade do tamanho do texto.
-    mText.Draw(renderer, mPosition+(mSize*0.5f)-(mText.GetSize()*0.5f));
+    if(mHighlighted) SDL_SetRenderDrawColor(renderer, 200, 100, 0, 255), SDL_RenderFillRectF(renderer, &transformed);    
+    mText.Draw(game, mPosition+(mSize*0.5f)-(mText.GetSize()*0.5f));
 }
 
 void UIButton::OnClick()

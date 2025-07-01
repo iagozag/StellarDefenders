@@ -9,12 +9,13 @@
 #include <glm/glm.hpp>
 #include "../Color.h"
 
+class Game;
+
 class UIElement {
 public:
     UIElement(const glm::vec2 &pos, const glm::vec2 &size, const glm::vec3 &color);
     virtual ~UIElement() = default;
 
-    // Getters/setters
     const glm::vec2& GetPosition() const { return mPosition; }
     void SetPosition(const glm::vec2 &pos) { mPosition = pos; }
 
@@ -24,7 +25,7 @@ public:
     const glm::vec3& GetColor() const { return mColor; }
     void SetColor(const glm::vec3 &color) { mColor = color; }
 
-    virtual void Draw(SDL_Renderer* renderer, const glm::vec2 &screenPos) {};
+    virtual void Draw(Game &game, const glm::vec2 &screenPos) {};
 
 protected:
     glm::vec2 mPosition;

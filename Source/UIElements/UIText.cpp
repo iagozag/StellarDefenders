@@ -4,6 +4,8 @@
 
 #include "UIText.h"
 #include "UIFont.h"
+#include "../Game.h"
+#include "../rect_transform.hpp"
 
 UIText::UIText(
     const std::string &text, class UIFont* font, int pointSize, const unsigned wrapLength,
@@ -47,17 +49,14 @@ void UIText::SetText(const std::string &text)
     mText = text;
 }
 
-void UIText::Draw(SDL_Renderer *renderer, const glm::vec2 &screenPos)
-{
-    // --------------
-    // TODO - PARTE 1-1
-    // --------------
+#include <iostream>
 
-    // TODO 1.: Crie um SDL_Rect chamado titleQuad que representa a posição e o tamanho do texto na tela. Como elementos
-    //  de UI geralmente são desenhados usando posição relativa, e não absoluta, some a posição do elemento UI (mPosition)
-    //  com a posição da tela (screenPos) para obter a posição final do texto.
-    SDL_Rect titleQuad = {(int)(mPosition.x+screenPos.x), (int)(mPosition.y+screenPos.y), (int)mSize.x, (int)mSize.y};
+void UIText::Draw(Game &game, const glm::vec2 &screenPos) {
+    std::cout << screenPos.x << ' ' << screenPos.y << '\n';
+    std::cout << mSize.x << ' ' << mSize.y << "\n\n";
+    SDL_FRect titleQuad = {mPosition.x+screenPos.x, mPosition.y+screenPos.y, mSize.x, mSize.y};
+    const auto transform = game.GetCamera().get_total_transformation_matrix(game);
+    const auto transformed_quad = rect_transform(titleQuad, transform);
 
-    // TODO 2.: Desenhe a textura de texto mTextTexture usando SDL_RenderCopyEx. Use o renderer passado como parâmetro.
-    SDL_RenderCopyEx(renderer, mTextTexture, nullptr, &titleQuad, 0.0, nullptr, SDL_FLIP_NONE);
+    SDL_RenderCopyExF(game.GetRenderer(), mTextTexture, nullptr, &transformed_quad, 0.0, nullptr, SDL_FLIP_NONE);
 }

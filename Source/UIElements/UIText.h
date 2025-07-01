@@ -9,6 +9,8 @@
 #include "../Math.h"
 #include "UIElement.h"
 
+class Game;
+
 class UIText : public UIElement {
 public:
     UIText(const std::string& text, class UIFont* font, int pointSize = 40, const unsigned wrapLength = 1024,
@@ -17,7 +19,7 @@ public:
     ~UIText();
 
     void SetText(const std::string& name);
-    void Draw(SDL_Renderer* renderer, const glm::vec2 &screenPos) override;
+    void Draw(Game &game, const glm::vec2 &screenPos) override;
 
 protected:
     std::string mText;

@@ -11,6 +11,8 @@
 #include "UIElement.h"
 #include "../Math.h"
 
+class Game;
+
 class UIButton : public UIElement
 {
 public:
@@ -18,14 +20,14 @@ public:
              const glm::vec2& pos, const glm::vec2& size, const glm::vec3& color = glm::vec3(30, 30, 30),
              int pointSize = 40, const unsigned wrapLength = 1024,
              const glm::vec2 &textPos = glm::vec2(.0f),
-             const glm::vec2 &textSize = glm::vec2(140.f, 20.0f),
+             const glm::vec2 &textSize = glm::vec2(1.12f, 0.16f),
              const glm::vec3& textColor = Color::White);
 
     ~UIButton();
 
     // Set the name of the button
     void SetText(const std::string& text);
-    void Draw(SDL_Renderer* renderer, const glm::vec2 &screenPos) override;
+    void Draw(Game &game, const glm::vec2 &screenPos) override;
 
     void SetHighlighted(bool sel) { mHighlighted = sel; }
     bool GetHighlighted() const { return mHighlighted; }

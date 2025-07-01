@@ -3,17 +3,13 @@
 //
 
 #include "UIImage.h"
+#include "../Game.h"
+#include "../rect_transform.hpp"
 
 UIImage::UIImage(SDL_Renderer* renderer, const std::string &imagePath, const glm::vec2 &pos, const glm::vec2 &size, const glm::vec3 &color)
     : UIElement(pos, size, color),
     mTexture(nullptr)
 {
-    // --------------
-    // TODO - PARTE 1-3
-    // --------------
-
-    // TODO 1.: Replique o código do método LoadTexture da classe Game, mas desta vez carregue a imagem
-    //  a partir do caminho imagePath passado como parâmetro. Arma zene o resultado em mTexture.
     SDL_Surface* surface = IMG_Load(imagePath.c_str());
 
     if (!surface) {
@@ -29,35 +25,19 @@ UIImage::UIImage(SDL_Renderer* renderer, const std::string &imagePath, const glm
     }
 }
 
-UIImage::~UIImage()
-{
-    // --------------
-    // TODO - PARTE 1-3
-    // --------------
-
-    // TODO 1.: Libere a textura mTexture, se ela não for nula, utilizando SDL_DestroyTexture.
-    //  Não se esqueça de definir mTexture como nullptr após liberar a textura.
+UIImage::~UIImage() {
     if(mTexture){
         SDL_DestroyTexture(mTexture);
         mTexture = nullptr;
     }
 }
 
-void UIImage::Draw(SDL_Renderer* renderer, const glm::vec2 &screenPos)
-{
-    // --------------
-    // TODO - PARTE 1-3
-    // --------------
-
-    // TODO 1.: Verifique se mTexture é nula. Se for, retorne imediatamente.
+void UIImage::Draw(Game &game, const glm::vec2 &screenPos) {
     if(!mTexture) return;
 
+    SDL_FRect rectImage = {mPosition.x+screenPos.x, mPosition.y+screenPos.y, mSize.x, mSize.y};
+    const auto transform = game.GetCamera().get_total_transformation_matrix(game);
+    const auto transformed_rect = rect_transform(rectImage, transform);
 
-    // TODO 2.: Crie um SDL_Rect para definir a posição e o tamanho da imagem na tela. A posição deve ser
-    //  relativa ao screenPos passado como parâmetro, ou seja, some screenPos com mPosition.
-    SDL_Rect rectImage = {(int)(mPosition.x+screenPos.x), (int)(mPosition.y+screenPos.y), (int)mSize.x, (int)mSize.y};
-
-
-    // TODO 3.: Desenhe a textura mTexture no renderer usando SDL_RenderCopy.
-    SDL_RenderCopy(renderer, mTexture, nullptr, &rectImage);
+    SDL_RenderCopyF(game.GetRenderer(), mTexture, nullptr, &transformed_rect);
 }

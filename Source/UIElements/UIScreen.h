@@ -18,6 +18,8 @@
 #include "UIButton.h"
 #include "UIImage.h"
 
+class Game;
+
 class UIScreen
 {
 public:
@@ -33,7 +35,7 @@ public:
 
 	// UIScreen subclasses can override these
 	virtual void Update(float deltaTime);
-	virtual void Draw(class SDL_Renderer *renderer);
+	virtual void Draw(Game &game);
 	virtual void ProcessInput(const uint8_t* keys);
 	virtual void HandleKeyPress(int key);
 

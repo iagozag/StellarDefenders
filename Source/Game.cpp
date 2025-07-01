@@ -288,13 +288,13 @@ void Game::LoadMainMenu()
     // Esse método será usado para criar uma tela de UI e adicionar os elementos do menu principal.
     auto mainMenu = new UIScreen(this, "../Assets/Fonts/SMB.ttf");
 
-    const glm::vec2 titleSize = glm::vec2(500.0f, 88.0f);
-    const glm::vec2 titlePos = glm::vec2(mWindowWidth/2.0f - titleSize.x/2.0f, 50.0f);
+    const glm::vec2 titleSize = glm::vec2(1.8, 0.32);
+    const glm::vec2 titlePos = glm::vec2(-0.9, 0.4);
     mainMenu->AddText("Stellar Defenders", titlePos, titleSize);
 
-    const glm::vec2 button1Pos = glm::vec2(0, titlePos.y)+glm::vec2(mWindowWidth/2.0f - 100.0f, 200.0f);
-    const glm::vec2 button2Pos = glm::vec2(0, titlePos.y)+glm::vec2(mWindowWidth/2.0f - 100.0f, 250.0f);
-    const glm::vec2 buttonSize = glm::vec2(200.0f, 40.0f);
+    const glm::vec2 button1Pos = glm::vec2(-0.8, -0.4);
+    const glm::vec2 button2Pos = glm::vec2(-0.8, -0.8);
+    const glm::vec2 buttonSize = glm::vec2(1.6, 0.32);
 
     mainMenu->AddButton("Play", button1Pos, buttonSize, [this]() {
                                 SetGameScene(GameScene::Level1, TRANSITION_TIME);
@@ -752,7 +752,7 @@ void Game::GenerateOutput() {
     // Draw all UI screens
     for (auto ui :mUIStack)
     {
-        ui->Draw(mRenderer);
+        ui->Draw(*this);
     }
 
     // --------------
