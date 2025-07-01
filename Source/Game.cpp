@@ -69,6 +69,7 @@ Game::Game(int windowWidth, int windowHeight):
     mModColor(255, 255, 255),
     mHUD(nullptr),
     mIsViableAreaActive(false),
+	mAlien(nullptr),
     mGameTimer(0.0f),
     mGameTimeLimit(0),
     mBackgroundTexture(nullptr),
