@@ -86,13 +86,13 @@ void UIScreen::HandleKeyPress(int key)
     //  e destaque o próximo botão. Se o índice for maior ou igual ao tamanho da lista, defina-o como 0 (o primeiro botão).
     //  Se a tecla for Enter, verifique se o índice do botão selecionado é válido (maior ou igual a 0 e menor que
     //  o tamanho da lista). Se for, chame o método OnClick do botão selecionado.
-    if(key == SDLK_w  or key == SDLK_UP){
+    if(key == SDLK_UP){
         mButtons[mSelectedButtonIndex]->SetHighlighted(false);
         mSelectedButtonIndex--;
         if(mSelectedButtonIndex < 0) mSelectedButtonIndex = (int)mButtons.size()-1;
         mButtons[mSelectedButtonIndex]->SetHighlighted(true);
     }
-    else if(key == SDLK_s or key == SDLK_DOWN){
+    else if(key == SDLK_DOWN){
         mButtons[mSelectedButtonIndex]->SetHighlighted(false);
         mSelectedButtonIndex++;
         if(mSelectedButtonIndex >= (int)mButtons.size()) mSelectedButtonIndex = 0;

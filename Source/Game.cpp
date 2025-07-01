@@ -395,7 +395,7 @@ void Game::ProcessInput()
 
                 HandleKeyPressActors(event.key.keysym.sym, event.key.repeat == 0);
 
-                if (event.key.keysym.sym == SDLK_RETURN)
+                if (event.key.keysym.sym == SDLK_ESCAPE)
                 {
                     TogglePause();
                 }
@@ -526,8 +526,8 @@ void Game::UpdateCamera(){
 
         m_camera.m_pos.x -= state[SDL_SCANCODE_A] * m_camera.m_scale / 100;
         m_camera.m_pos.x += state[SDL_SCANCODE_D] * m_camera.m_scale / 100;
-        m_camera.m_pos.y -= state[SDL_SCANCODE_W] * m_camera.m_scale / 100;
-        m_camera.m_pos.y += state[SDL_SCANCODE_S] * m_camera.m_scale / 100;
+        m_camera.m_pos.y -= state[SDL_SCANCODE_S] * m_camera.m_scale / 100;
+        m_camera.m_pos.y += state[SDL_SCANCODE_W] * m_camera.m_scale / 100;
 
     } else if (mGameScene != GameScene::Ship) {
         m_camera.m_pos = glm::vec2(.0f);
