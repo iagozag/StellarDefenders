@@ -6,16 +6,13 @@
 class Game;
 
 class Camera {
-    public:
-        Camera();
+public:
+    Camera();
 
-        glm::mat4 get_total_transformation_matrix(const Game &game) const;
-        glm::mat4 get_projection_matrix(const Game &game) const;
-        glm::mat4 get_screen_matrix(const Game &game) const;
-        glm::vec2 get_pos() const;
-        void set_pos(glm::vec2 pos);
-
-    private:
-        glm::vec2 m_pos;
-        float m_scale;
+    glm::mat4 get_total_transformation_matrix(const Game &game) const;
+    glm::mat4 get_projection_matrix(const Game &game) const;
+    glm::mat4 get_screen_matrix(const Game &game) const;
+    
+    glm::vec2 m_pos;
+    float m_scale;
 };

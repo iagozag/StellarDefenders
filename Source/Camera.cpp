@@ -71,7 +71,3 @@ glm::mat4 Camera::get_screen_matrix(const Game &game) const {
 glm::mat4 Camera::get_total_transformation_matrix(const Game &game) const {
     return get_screen_matrix(game) * get_projection_matrix(game);
 }
-
-glm::vec2 Camera::get_pos() const{ return m_pos; }
-
-void Camera::set_pos(glm::vec2 pos){ m_pos = pos; }

@@ -389,18 +389,20 @@ void Game::ProcessInput()
                 Quit();
                 break;
             case SDL_KEYDOWN:
-                // Handle key press for UI screens
                 if (!mUIStack.empty()) {
                     mUIStack.back()->HandleKeyPress(event.key.keysym.sym);
                 }
 
                 HandleKeyPressActors(event.key.keysym.sym, event.key.repeat == 0);
 
-                // Check if the Return key has been pressed to pause/unpause the game
                 if (event.key.keysym.sym == SDLK_RETURN)
                 {
                     TogglePause();
                 }
+                break;
+
+            case SDL_MOUSEWHEEL:
+                m_camera.m_scale *= glm::pow(0.92f, event.wheel.y);
                 break;
         }
     }
@@ -519,17 +521,24 @@ void Game::UpdateGame() {
 }
 
 void Game::UpdateCamera(){
-    if (mGameScene != GameScene::Ship){
-        m_camera.set_pos(glm::vec2(.0f));
-        return;
+    if(mGameScene == GameScene::MainMenu) {
+        const Uint8* state = SDL_GetKeyboardState(NULL);
+
+        m_camera.m_pos.x -= state[SDL_SCANCODE_A] * m_camera.m_scale / 100;
+        m_camera.m_pos.x += state[SDL_SCANCODE_D] * m_camera.m_scale / 100;
+        m_camera.m_pos.y -= state[SDL_SCANCODE_W] * m_camera.m_scale / 100;
+        m_camera.m_pos.y += state[SDL_SCANCODE_S] * m_camera.m_scale / 100;
+
+    } else if (mGameScene != GameScene::Ship) {
+        m_camera.m_pos = glm::vec2(.0f);
+    } else {
+        float horizontalCameraPos = mAlien->GetPosition().x - (mWindowWidth / 2.0f);
+
+        float maxCameraPos = WORLD_WIDTH - mWindowWidth;
+        horizontalCameraPos = Math::Clamp(horizontalCameraPos, 0.0f, maxCameraPos);
+
+        m_camera.m_pos.x = horizontalCameraPos;
     }
-
-    float horizontalCameraPos = mAlien->GetPosition().x - (mWindowWidth / 2.0f);
-
-    float maxCameraPos = WORLD_WIDTH - mWindowWidth;
-    horizontalCameraPos = Math::Clamp(horizontalCameraPos, 0.0f, maxCameraPos);
-
-    m_camera.set_pos(glm::vec2(horizontalCameraPos, m_camera.get_pos().y));
 }
 
 void Game::UpdateSceneManager(float deltaTime)
@@ -687,7 +696,7 @@ void Game::GenerateOutput() {
     {
         // Cria um retângulo de destino na tela com a posição e o tamanho do fundo
         SDL_Rect destRect;
-        destRect.x = static_cast<int>(mBackgroundPosition.x-m_camera.get_pos().x);
+        destRect.x = static_cast<int>(mBackgroundPosition.x-m_camera.m_pos.x);
         destRect.y = static_cast<int>(mBackgroundPosition.y);
         destRect.w = static_cast<int>(mBackgroundSize.x);
         destRect.h = static_cast<int>(mBackgroundSize.y);

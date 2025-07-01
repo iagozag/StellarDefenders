@@ -19,7 +19,7 @@ void DrawPolygonComponent::Draw(SDL_Renderer *renderer, const glm::vec3 &modColo
     SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
 
     glm::vec2 pos = mOwner->GetPosition();
-    glm::vec2 cameraPos = mOwner->GetGame()->GetCamera().get_pos();
+    glm::vec2 cameraPos = mOwner->GetGame()->GetCamera().m_pos;
 
     // Render vertices as lines
     for(int i = 0; i < mVertices.size() - 1; i++) {
