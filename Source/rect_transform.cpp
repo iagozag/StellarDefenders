@@ -16,10 +16,10 @@ SDL_FRect rect_transform(const SDL_FRect &rect, const glm::mat4 &transform_matri
 
     // 3. Encontre os valores mínimos e máximos de X e Y entre os cantos transformados
     // Isso define o novo bounding box alinhado aos eixos.
-    float minX = std::min({transformedTopLeft.x, transformedTopRight.x, transformedBottomLeft.x, transformedBottomRight.x});
-    float minY = std::min({transformedTopLeft.y, transformedTopRight.y, transformedBottomLeft.y, transformedBottomRight.y});
-    float maxX = std::max({transformedTopLeft.x, transformedTopRight.x, transformedBottomLeft.x, transformedBottomRight.x});
-    float maxY = std::max({transformedTopLeft.y, transformedTopRight.y, transformedBottomLeft.y, transformedBottomRight.y});
+    float minX = std::min(std::min(transformedTopLeft.x, transformedTopRight.x), std::min(transformedBottomLeft.x, transformedBottomRight.x));
+    float minY = std::min(std::min(transformedTopLeft.y, transformedTopRight.y), std::min(transformedBottomLeft.y, transformedBottomRight.y));
+    float maxX = std::max(std::max(transformedTopLeft.x, transformedTopRight.x), std::max(transformedBottomLeft.x, transformedBottomRight.x));
+    float maxY = std::max(std::max(transformedTopLeft.y, transformedTopRight.y), std::max(transformedBottomLeft.y, transformedBottomRight.y));
 
     // 4. Crie e retorne o novo SDL_FRect (bounding box) a partir dos valores min/max
     return {minX, minY, maxX - minX, maxY - minY};
