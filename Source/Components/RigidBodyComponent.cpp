@@ -7,9 +7,10 @@
 #include "../Game.h"
 #include "RigidBodyComponent.h"
 #include "ColliderComponents/AABBColliderComponent.h"
+#include <iostream>
 
-const float MAX_SPEED_X = 750.0f;
-const float MAX_SPEED_Y = 750.0f;
+const float MAX_SPEED_X = 120.0f;
+const float MAX_SPEED_Y = 120.0f;
 const float GRAVITY = 2000.0f;
 
 RigidBodyComponent::RigidBodyComponent(class Actor* owner, float mass, float friction, bool applyGravity, int updateOrder):
@@ -47,7 +48,7 @@ void RigidBodyComponent::Update(float deltaTime)
     mVelocity.x = Math::Clamp<float>(mVelocity.x, -MAX_SPEED_X, MAX_SPEED_X);
     mVelocity.y = Math::Clamp<float>(mVelocity.y, -MAX_SPEED_Y, MAX_SPEED_Y);
 
-    if(Math::NearZero(mVelocity.x, 1.0f)) {
+    if(Math::NearZero(mVelocity.x, 0.1f)) {
         mVelocity.x = 0.f;
     }
 

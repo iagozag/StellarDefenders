@@ -48,6 +48,7 @@ Game::Game(int windowWidth, int windowHeight):
     mIsRunning(true),
     mGameScene(GameScene::MainMenu),
     mNextScene(GameScene::MainMenu),
+    m_camera(),
     mHUD(nullptr),
     mIsViableAreaActive(false),
 	mAlien(nullptr),
@@ -170,7 +171,7 @@ void Game::ChangeScene()
     else if (mNextScene == GameScene::Ship)
     {
         if(!mAlien) mAlien = new Alien(this);
-        mAlien->SetPosition(glm::vec2(-1, 0));
+        mAlien->SetPosition(glm::vec2(-1, -1));
 
         // SetBackgroundImage("../Assets/Sprites/background.png", glm::vec2(-1,-1), glm::vec2(2.0*(float)WORLD_WIDTH/(float)mWindowWidth,2.0));
     }
@@ -382,12 +383,12 @@ void Game::UpdateCamera(){
     } else if (mGameScene != GameScene::Ship) {
         m_camera.m_pos = glm::vec2(.0f);
     } else {
-        float horizontalCameraPos = mAlien->GetPosition().x - (mWindowWidth / 2.0f);
+        // float horizontalCameraPos = mAlien->GetPosition().x - (mWindowWidth / 2.0f);
 
-        float maxCameraPos = WORLD_WIDTH - mWindowWidth;
-        horizontalCameraPos = Math::Clamp(horizontalCameraPos, 0.0f, maxCameraPos);
+        // float maxCameraPos = WORLD_WIDTH - mWindowWidth;
+        // horizontalCameraPos = Math::Clamp(horizontalCameraPos, 0.0f, maxCameraPos);
 
-        m_camera.m_pos.x = horizontalCameraPos;
+        // m_camera.m_pos.x = horizontalCameraPos;
     }
 }
 

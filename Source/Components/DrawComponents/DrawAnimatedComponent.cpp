@@ -8,10 +8,9 @@
 #include "../../Json.h"
 #include <fstream>
 
-DrawAnimatedComponent::DrawAnimatedComponent(class Actor* owner, const std::string &spriteSheetPath, const std::string &spriteSheetData, float width, float height, int drawOrder)
+DrawAnimatedComponent::DrawAnimatedComponent(class Actor* owner, const std::string &spriteSheetPath, const std::string &spriteSheetData, glm::vec2 scale, int drawOrder)
         :DrawSpriteComponent(owner, spriteSheetPath, 0, 0, drawOrder),
-         mSpriteWidth(width),
-         mSpriteHeight(height)
+         mScale(scale)
 {
     LoadSpriteSheet(spriteSheetPath, spriteSheetData);
 }
@@ -48,19 +47,17 @@ void DrawAnimatedComponent::LoadSpriteSheet(const std::string& texturePath, cons
 
 void DrawAnimatedComponent::Draw(SDL_Renderer* renderer)
 {
-    if (mAnimations.empty() || mSpriteSheetData.empty()) {
-        return;
-    }
-
     int spriteIdx = mAnimations[mAnimName][static_cast<int>(mAnimTimer)];
     
     SDL_Rect* srcRect = &mSpriteSheetData[spriteIdx];
 
+    float ratio = (float)srcRect->w/(float)srcRect->h;
+
     SDL_FRect dstRect = {
             mOwner->GetPosition().x - mOwner->GetGame()->GetCamera().m_pos.x,
             mOwner->GetPosition().y - mOwner->GetGame()->GetCamera().m_pos.y,
-            mSpriteWidth,
-            mSpriteHeight
+            ratio*mScale.x,
+            ratio*mScale.y
     };
 
     SDL_RendererFlip flip = (mOwner->GetRotation() == Math::Pi) ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE;

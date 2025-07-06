@@ -10,7 +10,7 @@
 class DrawAnimatedComponent : public DrawSpriteComponent {
 public:
     // (Lower draw order corresponds with further back)
-    DrawAnimatedComponent(class Actor* owner, const std::string &spriteSheetPath, const std::string &spriteSheetData, float width, float height, int drawOrder = 100);
+    DrawAnimatedComponent(class Actor* owner, const std::string &spriteSheetPath, const std::string &spriteSheetData, glm::vec2 scale, int drawOrder = 100);
     ~DrawAnimatedComponent() override;
 
     void Draw(SDL_Renderer* renderer) override;
@@ -34,11 +34,10 @@ private:
     // Vector of sprites
     std::vector<SDL_Rect> mSpriteSheetData;
 
+    glm::vec2 mScale;
+
     // Map of animation name to vector of textures corresponding to the animation
     std::unordered_map<std::string, std::vector<int>> mAnimations;
-
-    float mSpriteWidth;
-    float mSpriteHeight;
 
     // Name of current animation
     std::string mAnimName;
