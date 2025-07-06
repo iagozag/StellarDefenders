@@ -31,27 +31,6 @@
 #include "Scenes/Simulation/target.hpp"
 #include <glm/gtc/constants.hpp>
 
-const Planet planets[] = {
-    Planet({-0.5, -0.5}, {0.2, -0.2}, 0.025, 0.01),
-    Planet({ 0.5,  0.5}, {-0.2, 0.2}, 0.025, 0.01),
-    Planet({ 0,  0}, {0, 0}, 0.06, 0.1),
-};
-
-const Kamikaze kamikaze[] = {
-    Kamikaze({ 0.5, -0.5}, {0.2, 0.2}),
-    Kamikaze({-0.5,  0.5}, {-0.22, -0.22})
-};
-
-const Target targets[] = {
-    Target({0.2, 0}, {0.85, 0})
-};
-
-#define ARR_LEN(ARR) (sizeof(ARR) / sizeof(ARR[0]))
-
-constexpr auto NUM_PLANETS = ARR_LEN(planets);
-constexpr auto NUM_KAMIKAZE = ARR_LEN(kamikaze);
-constexpr auto NUM_TARGETS = ARR_LEN(targets);
-
 constexpr glm::u8vec4 BACKGROUND_COLOR = {0, 0, 0, 255};
 
 Game::Game(int windowWidth, int windowHeight):
@@ -74,12 +53,7 @@ Game::Game(int windowWidth, int windowHeight):
     mGameTimeLimit(0),
     mBackgroundTexture(nullptr),
     mBackgroundSize(glm::vec2(.0f)),
-    mBackgroundPosition(glm::vec2(.0f)),
-    m_simulation(
-        std::vector(planets, &planets[NUM_PLANETS]),
-        std::vector(kamikaze, &kamikaze[NUM_KAMIKAZE]),
-        std::vector(targets, &targets[NUM_TARGETS])
-    )
+    mBackgroundPosition(glm::vec2(.0f))
 {
 
 }
@@ -212,29 +186,13 @@ void Game::ChangeScene()
     else if (mNextScene == GameScene::Level1)
     {
         mShips.emplace_back(new Ship(this, 50, "corvette.png"));
-        // --------------
-        // TODO - PARTE 3
-        // --------------
-
-        // TODO 1.: Crie um novo objeto HUD, passando o ponteiro do Game e o caminho para a fonte SMB.ttf.
+        
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
         mHUD->SetLevelName("Fase 1");
 
-        // Set Viable Area for ships
         SDL_Rect viableArea = {0, 0, mWindowWidth/2, mWindowHeight};
         SetViableArea(viableArea);
 
-        // --------------
-        // TODO - PARTE 4
-        // --------------
-
-        // TODO 1. Toque a música de fundo "MusicMain.ogg" em loop e armaze o SoundHandle retornado em mMusicHandle.
-
-        // Set background color
-        //SetBackgroundImage("../Assets/Sprites/background.png", glm::vec2(TILE_SIZE,0), glm::vec2(6784,WORLD_HEIGHT));
-
-        // Initialize actors
-        // LoadLevel("../Assets/Levels/level1-1.csv", LEVEL_WIDTH, LEVEL_HEIGHT);
     }
     else if (mNextScene == GameScene::Level2)
     {
@@ -445,7 +403,6 @@ void Game::HandleKeyPressActors(const int key, const bool isPressed)
 
 void Game::TogglePause()
 {
-
     if (mGameScene != GameScene::MainMenu)
     {
         if (mGamePlayState == GamePlayState::Playing)
@@ -479,9 +436,6 @@ void Game::TogglePause()
 void Game::UpdateGame() {
     float delta_t = (SDL_GetTicks() - mTicksCount) / 1000.0f;
     mTicksCount = SDL_GetTicks();
-    
-    m_simulation.run(*this, delta_t);
-
 
 
     if(mGamePlayState != GamePlayState::Paused && mGamePlayState != GamePlayState::GameOver)
@@ -688,10 +642,6 @@ void Game::GenerateOutput() {
     // Clear frame with background color
     SDL_SetRenderDrawColor(mRenderer, 0, 0, 0, 255);
     SDL_RenderClear(mRenderer);
-
-    m_simulation.draw(*this);
-
-
 
     if (mBackgroundTexture)
     {

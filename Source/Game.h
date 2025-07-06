@@ -188,6 +188,4 @@ private:
     SDL_Texture *mBackgroundTexture;
     glm::vec2 mBackgroundSize;
     glm::vec2 mBackgroundPosition;
-
-    Simulation m_simulation;
 };

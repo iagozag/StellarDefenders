@@ -4,10 +4,10 @@
 #include "../../sq.hpp"
 #include "../../filter_vector.hpp"
 
-Simulation::Simulation(std::vector<Planet> planets, std::vector<Kamikaze> kamikaze, std::vector<Target> targets):
+Simulation::Simulation(std::vector<Planet> planets, std::vector<Target> targets):
     m_planets(std::move(planets)),
-    m_kamikaze(std::move(kamikaze)),
-    m_targets(std::move(targets)) {}
+    m_targets(std::move(targets)),
+    m_locked(true) {}
 
 void Simulation::draw(Game &game) const {
     for(auto &planet : m_planets) {
@@ -35,6 +35,9 @@ glm::vec2 calculate_acceleration(const glm::vec2 &body_pos, const Planet &attrac
 }
 
 void Simulation::run(Game &game, float delta_t) {
+    if(m_locked) {
+        return;
+    }
 
     glm::vec2 kamikaze_accelerations[m_kamikaze.size()];
     for(auto &acel : kamikaze_accelerations) {
@@ -174,4 +177,16 @@ void Simulation::add_fragments(const std::vector<Fragment> &fragments) {
     for(auto &fragment : fragments) {
         m_fragments.push_back(fragment);
     }
+}
+
+void Simulation::lock() {
+    m_locked = true;
+}
+
+void Simulation::unlock() {
+    m_locked = false;
+}
+
+void Simulation::add_kamikaze(const glm::vec2 &position, const glm::vec2 &speed) {
+    m_kamikaze.emplace_back(position, speed);
 }
