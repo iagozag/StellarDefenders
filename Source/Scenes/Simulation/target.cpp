@@ -10,7 +10,7 @@ Target::Target(const glm::vec2 &position, const glm::vec2 &speed):
     m_should_delete(false) {}
 
 void Target::draw(Game &game) const {
-    game.draw_ellipsis(m_position, {m_radius, m_radius});
+    game.draw_ellipsis(m_position, glm::vec2(m_radius) * 2.f, {200, 30, 40, 255});
 }
 
 void Target::on_collision() {
