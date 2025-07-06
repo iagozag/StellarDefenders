@@ -201,30 +201,6 @@ Source/Actors/EmergencyLight.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\stellar-defenders.dir\build.make CMakeFiles/stellar-defenders.dir/Source/Actors/EmergencyLight.cpp.s
 .PHONY : Source/Actors/EmergencyLight.cpp.s
 
-Source/Actors/Laser.obj: Source/Actors/Laser.cpp.obj
-.PHONY : Source/Actors/Laser.obj
-
-# target to build an object file
-Source/Actors/Laser.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\stellar-defenders.dir\build.make CMakeFiles/stellar-defenders.dir/Source/Actors/Laser.cpp.obj
-.PHONY : Source/Actors/Laser.cpp.obj
-
-Source/Actors/Laser.i: Source/Actors/Laser.cpp.i
-.PHONY : Source/Actors/Laser.i
-
-# target to preprocess a source file
-Source/Actors/Laser.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\stellar-defenders.dir\build.make CMakeFiles/stellar-defenders.dir/Source/Actors/Laser.cpp.i
-.PHONY : Source/Actors/Laser.cpp.i
-
-Source/Actors/Laser.s: Source/Actors/Laser.cpp.s
-.PHONY : Source/Actors/Laser.s
-
-# target to generate assembly for a file
-Source/Actors/Laser.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\stellar-defenders.dir\build.make CMakeFiles/stellar-defenders.dir/Source/Actors/Laser.cpp.s
-.PHONY : Source/Actors/Laser.cpp.s
-
 Source/Actors/Ship.obj: Source/Actors/Ship.cpp.obj
 .PHONY : Source/Actors/Ship.obj
 
@@ -609,6 +585,54 @@ Source/Random.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\stellar-defenders.dir\build.make CMakeFiles/stellar-defenders.dir/Source/Random.cpp.s
 .PHONY : Source/Random.cpp.s
 
+Source/Scenes/1/one.obj: Source/Scenes/1/one.cpp.obj
+.PHONY : Source/Scenes/1/one.obj
+
+# target to build an object file
+Source/Scenes/1/one.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stellar-defenders.dir\build.make CMakeFiles/stellar-defenders.dir/Source/Scenes/1/one.cpp.obj
+.PHONY : Source/Scenes/1/one.cpp.obj
+
+Source/Scenes/1/one.i: Source/Scenes/1/one.cpp.i
+.PHONY : Source/Scenes/1/one.i
+
+# target to preprocess a source file
+Source/Scenes/1/one.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stellar-defenders.dir\build.make CMakeFiles/stellar-defenders.dir/Source/Scenes/1/one.cpp.i
+.PHONY : Source/Scenes/1/one.cpp.i
+
+Source/Scenes/1/one.s: Source/Scenes/1/one.cpp.s
+.PHONY : Source/Scenes/1/one.s
+
+# target to generate assembly for a file
+Source/Scenes/1/one.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stellar-defenders.dir\build.make CMakeFiles/stellar-defenders.dir/Source/Scenes/1/one.cpp.s
+.PHONY : Source/Scenes/1/one.cpp.s
+
+Source/Scenes/ShipMenu/ShipMenu.obj: Source/Scenes/ShipMenu/ShipMenu.cpp.obj
+.PHONY : Source/Scenes/ShipMenu/ShipMenu.obj
+
+# target to build an object file
+Source/Scenes/ShipMenu/ShipMenu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stellar-defenders.dir\build.make CMakeFiles/stellar-defenders.dir/Source/Scenes/ShipMenu/ShipMenu.cpp.obj
+.PHONY : Source/Scenes/ShipMenu/ShipMenu.cpp.obj
+
+Source/Scenes/ShipMenu/ShipMenu.i: Source/Scenes/ShipMenu/ShipMenu.cpp.i
+.PHONY : Source/Scenes/ShipMenu/ShipMenu.i
+
+# target to preprocess a source file
+Source/Scenes/ShipMenu/ShipMenu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stellar-defenders.dir\build.make CMakeFiles/stellar-defenders.dir/Source/Scenes/ShipMenu/ShipMenu.cpp.i
+.PHONY : Source/Scenes/ShipMenu/ShipMenu.cpp.i
+
+Source/Scenes/ShipMenu/ShipMenu.s: Source/Scenes/ShipMenu/ShipMenu.cpp.s
+.PHONY : Source/Scenes/ShipMenu/ShipMenu.s
+
+# target to generate assembly for a file
+Source/Scenes/ShipMenu/ShipMenu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stellar-defenders.dir\build.make CMakeFiles/stellar-defenders.dir/Source/Scenes/ShipMenu/ShipMenu.cpp.s
+.PHONY : Source/Scenes/ShipMenu/ShipMenu.cpp.s
+
 Source/Scenes/Simulation/collidable_sphere.obj: Source/Scenes/Simulation/collidable_sphere.cpp.obj
 .PHONY : Source/Scenes/Simulation/collidable_sphere.obj
 
@@ -969,6 +993,30 @@ Source/UIElements/UIText.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\stellar-defenders.dir\build.make CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.s
 .PHONY : Source/UIElements/UIText.cpp.s
 
+Source/norm_greater.obj: Source/norm_greater.cpp.obj
+.PHONY : Source/norm_greater.obj
+
+# target to build an object file
+Source/norm_greater.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stellar-defenders.dir\build.make CMakeFiles/stellar-defenders.dir/Source/norm_greater.cpp.obj
+.PHONY : Source/norm_greater.cpp.obj
+
+Source/norm_greater.i: Source/norm_greater.cpp.i
+.PHONY : Source/norm_greater.i
+
+# target to preprocess a source file
+Source/norm_greater.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stellar-defenders.dir\build.make CMakeFiles/stellar-defenders.dir/Source/norm_greater.cpp.i
+.PHONY : Source/norm_greater.cpp.i
+
+Source/norm_greater.s: Source/norm_greater.cpp.s
+.PHONY : Source/norm_greater.s
+
+# target to generate assembly for a file
+Source/norm_greater.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\stellar-defenders.dir\build.make CMakeFiles/stellar-defenders.dir/Source/norm_greater.cpp.s
+.PHONY : Source/norm_greater.cpp.s
+
 Source/rect_transform.obj: Source/rect_transform.cpp.obj
 .PHONY : Source/rect_transform.obj
 
@@ -1011,9 +1059,6 @@ help:
 	@echo ... Source/Actors/EmergencyLight.obj
 	@echo ... Source/Actors/EmergencyLight.i
 	@echo ... Source/Actors/EmergencyLight.s
-	@echo ... Source/Actors/Laser.obj
-	@echo ... Source/Actors/Laser.i
-	@echo ... Source/Actors/Laser.s
 	@echo ... Source/Actors/Ship.obj
 	@echo ... Source/Actors/Ship.i
 	@echo ... Source/Actors/Ship.s
@@ -1062,6 +1107,12 @@ help:
 	@echo ... Source/Random.obj
 	@echo ... Source/Random.i
 	@echo ... Source/Random.s
+	@echo ... Source/Scenes/1/one.obj
+	@echo ... Source/Scenes/1/one.i
+	@echo ... Source/Scenes/1/one.s
+	@echo ... Source/Scenes/ShipMenu/ShipMenu.obj
+	@echo ... Source/Scenes/ShipMenu/ShipMenu.i
+	@echo ... Source/Scenes/ShipMenu/ShipMenu.s
 	@echo ... Source/Scenes/Simulation/collidable_sphere.obj
 	@echo ... Source/Scenes/Simulation/collidable_sphere.i
 	@echo ... Source/Scenes/Simulation/collidable_sphere.s
@@ -1107,6 +1158,9 @@ help:
 	@echo ... Source/UIElements/UIText.obj
 	@echo ... Source/UIElements/UIText.i
 	@echo ... Source/UIElements/UIText.s
+	@echo ... Source/norm_greater.obj
+	@echo ... Source/norm_greater.i
+	@echo ... Source/norm_greater.s
 	@echo ... Source/rect_transform.obj
 	@echo ... Source/rect_transform.i
 	@echo ... Source/rect_transform.s

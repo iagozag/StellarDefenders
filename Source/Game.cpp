@@ -165,15 +165,18 @@ void Game::ChangeScene()
     // Scene Manager FSM: using if/else instead of switch
     if (mNextScene == GameScene::MainMenu)
     {
+        mMusicHandle = mAudio->PlaySound("mainMenu.mp3", true);
         // Initialize main menu actors
         LoadMainMenu();
     }
     else if (mNextScene == GameScene::Ship)
     {
+        mMusicHandle = mAudio->PlaySound("spaceshipAmbient.mp3", true);
         mShipMenu = new ShipMenu(*this);
     }
     else if (mNextScene == GameScene::Level1)
     {
+        mMusicHandle = mAudio->PlaySound("level1.mp3", true);
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
         mHUD->SetLevelName("Fase 1");
 
@@ -181,6 +184,7 @@ void Game::ChangeScene()
     }
     else if (mNextScene == GameScene::Level2)
     {
+        mMusicHandle = mAudio->PlaySound("level2.mp3", true);
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
 
         mHUD->SetLevelName("Fase 2");

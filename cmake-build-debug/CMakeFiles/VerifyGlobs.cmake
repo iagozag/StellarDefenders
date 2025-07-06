@@ -8,7 +8,6 @@ set(OLD_GLOB
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Actors/Actor.cpp"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Actors/Alien.cpp"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Actors/EmergencyLight.cpp"
-  "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Actors/Laser.cpp"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Actors/Ship.cpp"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/AudioSystem.cpp"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Camera.cpp"
@@ -25,6 +24,8 @@ set(OLD_GLOB
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Main.cpp"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Math.cpp"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Random.cpp"
+  "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/1/one.cpp"
+  "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/ShipMenu/ShipMenu.cpp"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/collidable_sphere.cpp"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/fragment.cpp"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/kamikaze.cpp"
@@ -40,6 +41,7 @@ set(OLD_GLOB
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/UIElements/UIImage.cpp"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/UIElements/UIScreen.cpp"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/UIElements/UIText.cpp"
+  "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/norm_greater.cpp"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/rect_transform.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
@@ -53,7 +55,6 @@ set(OLD_GLOB
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Actors/Actor.h"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Actors/Alien.h"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Actors/EmergencyLight.h"
-  "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Actors/Laser.h"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Actors/Ship.h"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/AudioSystem.h"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/CSV.h"
@@ -88,6 +89,8 @@ endif()
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/*.hpp")
 set(OLD_GLOB
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Camera.hpp"
+  "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/1/one.hpp"
+  "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/ShipMenu/ShipMenu.hpp"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/collidable_sphere.hpp"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/fragment.hpp"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/kamikaze.hpp"
@@ -97,6 +100,7 @@ set(OLD_GLOB
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/simulation.hpp"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/target.hpp"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/filter_vector.hpp"
+  "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/norm_greater.hpp"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/rect_transform.hpp"
   "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/sq.hpp"
   )
