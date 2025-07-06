@@ -5,6 +5,8 @@
 #include "../../filter_vector.hpp"
 
 #include <iostream>
+#include <unordered_set>
+#include <limits>
 
 Simulation::Simulation(std::vector<Planet> planets, std::vector<Target> targets):
     m_planets(std::move(planets)),
@@ -131,29 +133,101 @@ void Simulation::run(Game &game, float delta_t) {
     run_collision_tests();
 }
 
-void Simulation::run_collision_tests() {
-    std::vector<std::reference_wrapper<CollidableSphere>> collidables;
-    
-    for(auto &planet : m_planets) {
-        collidables.push_back(planet);
+static glm::vec2 v_min(const glm::vec2 &a, const glm::vec2 &b) {
+    return glm::vec2(std::min(a.x, b.x), std::min(a.y, b.y));
+}
+
+static glm::vec2 v_max(const glm::vec2 &a, const glm::vec2 &b) {
+    return glm::vec2(std::max(a.x, b.x), std::max(a.y, b.y));
+}
+
+struct PairHasher {
+    template <class T1, class T2>
+    std::size_t operator() (const std::pair<T1, T2> &p) const {
+        auto hash1 = std::hash<T1>{}(p.first);
+        auto hash2 = std::hash<T2>{}(p.second);
+
+        return hash1 ^ (hash2 << 1);
     }
-    for(auto &kamikaze : m_kamikaze) {
-        collidables.push_back(kamikaze);
+};
+
+void Simulation::run_collision_tests() {
+    constexpr size_t MAX_GRID_SIZE = 128;
+
+    std::vector<std::reference_wrapper<CollidableSphere>> grid[MAX_GRID_SIZE][MAX_GRID_SIZE];
+    glm::vec2 start(std::numeric_limits<float>::infinity()), end(-std::numeric_limits<float>::infinity());
+
+    for(auto &planet : m_planets) {
+        start = v_min(start, planet.m_position - planet.get_radius());
+        end = v_max(end, planet.m_position + planet.get_radius());
     }
     for(auto &target : m_targets) {
-        collidables.push_back(target);
+        start = v_min(start, target.m_position - target.get_radius());
+        end = v_max(end, target.m_position + target.get_radius());
     }
     for(auto &fragment : m_fragments) {
-        collidables.push_back(fragment);
+        start = v_min(start, fragment.m_position - fragment.get_radius());
+        end = v_max(end, fragment.m_position + fragment.get_radius());
+    }
+    for(auto &kamikaze : m_kamikaze) {
+        start = v_min(start, kamikaze.m_position - kamikaze.get_radius());
+        end = v_max(end, kamikaze.m_position + kamikaze.get_radius());
     }
 
-    for(size_t i = 0; i < collidables.size(); i++) {
-        for(size_t j = i + 1; j < collidables.size(); j++) {
-            auto &coli = collidables[i].get();
-            auto &colj = collidables[j].get();
-            if(coli.collides(colj)) {
-                coli.on_collision();
-                colj.on_collision();
+    const auto world_size = end - start;
+    const auto inv_cell_size = float(MAX_GRID_SIZE) / world_size;
+    auto add_to_grid = [start, inv_cell_size, &grid](Particle& body) {
+        const glm::vec2 body_min = body.m_position - body.get_radius();
+        const glm::vec2 body_max = body.m_position + body.get_radius();
+
+        glm::ivec2 grid_min = glm::max(glm::ivec2(0), glm::ivec2((body_min - start) * inv_cell_size));
+        glm::ivec2 grid_max = glm::min(glm::ivec2(MAX_GRID_SIZE - 1), glm::ivec2((body_max - start) * inv_cell_size));
+
+        for(int y = grid_min.y; y <= grid_max.y; ++y) {
+            for(int x = grid_min.x; x <= grid_max.x; ++x) {
+                grid[y][x].push_back(body);
+            }
+        }
+    };
+
+    for(auto& planet : m_planets) {
+        add_to_grid(planet);
+    }
+    for(auto& target : m_targets) {
+        add_to_grid(target);
+    }
+    for(auto& fragment : m_fragments) {
+        add_to_grid(fragment);
+    }
+    for(auto& kamikaze : m_kamikaze) {
+        add_to_grid(kamikaze);
+    }
+
+    using SpherePair = std::pair<CollidableSphere*, CollidableSphere*>;
+    std::unordered_set<SpherePair, PairHasher> tested_pairs;
+    for(size_t y = 0; y < MAX_GRID_SIZE; ++y) {
+        for(size_t x = 0; x < MAX_GRID_SIZE; ++x) {
+            auto& cell = grid[y][x];
+            if(cell.size() < 2) {
+                continue;
+            }
+
+            for(size_t i = 0; i < cell.size(); ++i) {
+                for(size_t j = i + 1; j < cell.size(); ++j) {
+                    CollidableSphere& coli = cell[i].get();
+                    CollidableSphere& colj = cell[j].get();
+
+                    CollidableSphere* p1 = &coli;
+                    CollidableSphere* p2 = &colj;
+                    if (p1 > p2) std::swap(p1, p2);
+
+                    if (tested_pairs.insert({p1, p2}).second) {
+                        if (coli.collides(colj)) {
+                            coli.on_collision();
+                            colj.on_collision();
+                        }
+                    }
+                }
             }
         }
     }
