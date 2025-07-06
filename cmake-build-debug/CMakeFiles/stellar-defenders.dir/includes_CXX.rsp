@@ -1,1 +1,1 @@
--isystem C:/PROGRA~1/SDL2/cmake/../include -isystem C:/PROGRA~1/SDL2_I~1/cmake/../include -isystem C:/PROGRA~1/SDL2_ttf/X86_64~1/include/SDL2 -isystem C:/PROGRA~1/SDL2_M~1/X86_64~1/include/SDL2
+-IC:/Users/LUQUIN~1/DOCUME~1/UFMG/2025.1/DCC192~1/TPs/Projeto/STELLA~1/vendor -isystem C:/PROGRA~1/SDL2/cmake/../include -isystem C:/PROGRA~1/SDL2_I~1/cmake/../include -isystem C:/PROGRA~1/SDL2_ttf/X86_64~1/include/SDL2 -isystem C:/PROGRA~1/SDL2_M~1/X86_64~1/include/SDL2
