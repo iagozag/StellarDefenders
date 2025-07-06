@@ -44,7 +44,7 @@ void DrawAnimatedComponent::LoadSpriteSheet(const std::string& texturePath, cons
     }
 }
 
-void DrawAnimatedComponent::Draw(SDL_Renderer* renderer, const glm::vec3 &modColor)
+void DrawAnimatedComponent::Draw(SDL_Renderer* renderer)
 {
     if (mAnimations.empty() || mSpriteSheetData.empty()) {
         return;
@@ -64,15 +64,14 @@ void DrawAnimatedComponent::Draw(SDL_Renderer* renderer, const glm::vec3 &modCol
     SDL_RendererFlip flip = (mOwner->GetRotation() == Math::Pi) ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE;
 
     SDL_SetTextureBlendMode(mSpriteSheetSurface, SDL_BLENDMODE_BLEND);
-    SDL_SetTextureColorMod(mSpriteSheetSurface,
-                           static_cast<Uint8>(modColor.x),
-                           static_cast<Uint8>(modColor.y),
-                           static_cast<Uint8>(modColor.z));
 
     const auto transform = GetGame()->GetCamera().get_total_transformation_matrix(*GetGame());
     const auto transformed_dest = rect_transform(dstRect, transform);
 
     SDL_RenderCopyExF(renderer, mSpriteSheetSurface, srcRect, &transformed_dest, mOwner->GetRotation(), nullptr, flip);
+=======
+    SDL_RenderCopyEx(renderer, mSpriteSheetSurface, srcRect, &dstRect, mOwner->GetRotation(), nullptr, flip);
+>>>>>>> 150c80ff8520482fa8b0958297f36122f7a3a2cf
 }
 
 void DrawAnimatedComponent::Update(float deltaTime)

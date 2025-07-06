@@ -57,7 +57,7 @@ void Ship::OnProcessInput(const uint8_t* state)
 
     if (mShipState == ShipState::Positioning and (mouseState & SDL_BUTTON(SDL_BUTTON_LEFT))){
         mShipState = ShipState::SlingShot;
-        mGame->DisableViableArea();
+        // mGame->DisableViableArea();
     }
     else if(mShipState == ShipState::SlingShot){
         mSlingShotMousePos = glm::vec2(mouseX, mouseY);
@@ -75,12 +75,12 @@ void Ship::OnUpdate(float deltaTime)
         int mouseX, mouseY;
         SDL_GetMouseState(&mouseX,&mouseY);
 
-        SDL_Rect area = mGame->GetViableArea();
+        // SDL_Rect area = mGame->GetViableArea();
 
-        if(mouseX < area.x) mouseX = area.x;
-        if(mouseX > area.x+area.w-mHeight/2.0f) mouseX = area.x+area.w-mHeight/2.0f;
-        if(mouseY < area.y) mouseY = area.y;
-        if(mouseY > area.y+area.h-mHeight/2.0f) mouseY = area.y+area.h-mHeight/2.0f;
+        // if(mouseX < area.x) mouseX = area.x;
+        // if(mouseX > area.x+area.w-mHeight/2.0f) mouseX = area.x+area.w-mHeight/2.0f;
+        // if(mouseY < area.y) mouseY = area.y;
+        // if(mouseY > area.y+area.h-mHeight/2.0f) mouseY = area.y+area.h-mHeight/2.0f;
 
         SetPosition(glm::vec2(mouseX-mHeight/2.0f, mouseY-mHeight/2.0f));
     }

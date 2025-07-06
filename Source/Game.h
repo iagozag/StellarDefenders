@@ -11,6 +11,8 @@
 #include <vector>
 #include <unordered_map>
 #include <glm/glm.hpp>
+#include <memory>
+#include <optional>
 
 #include "AudioSystem.h"
 #include "Math.h"
@@ -73,7 +75,6 @@ public:
 
     // Level functions
     void LoadMainMenu();
-    void LoadLevel(const std::string& levelName, const int levelWidth, const int levelHeight);
 
     std::vector<Actor *> GetNearbyActors(const glm::vec2& position, const int range = 1);
     std::vector<class AABBColliderComponent *> GetNearbyColliders(const glm::vec2& position, const int range = 2);
@@ -81,10 +82,10 @@ public:
     void Reinsert(Actor* actor);
 
     // Audio functions
-    class AudioSystem* GetAudio() { return mAudio; }
+    AudioSystem* GetAudio();
 
     // Camera functions
-    class Camera GetCamera(){ return m_camera; }
+    const Camera &GetCamera();
 
     // UI functions
     void PushUI(class UIScreen* screen) { mUIStack.emplace_back(screen); }
@@ -105,17 +106,9 @@ public:
     void ResetGameScene(float transitionTime = .0f);
     void UnloadScene();
 
-    void SetBackgroundImage(const std::string& imagePath, const glm::vec2 &position = glm::vec2(.0f), const glm::vec2& size = glm::vec2(.0f));
     void TogglePause();
 
     void UpdateCamera();
-
-    // Game-specific
-    std::vector<class Ship*> GetShips(){ return mShips; }
-
-    SDL_Rect GetViableArea(){ return mViableAreaRect; }
-    void SetViableArea(const SDL_Rect& rect);
-    void DisableViableArea();
 
     void SetGamePlayState(GamePlayState state) { mGamePlayState = state; }
     GamePlayState GetGamePlayState() const { return mGamePlayState; }
@@ -137,10 +130,6 @@ private:
 
     // HUD functions
     void UpdateLevelTime(float deltaTime);
-
-    // Load the level from a CSV file as a 2D array
-    int **ReadLevelData(const std::string& fileName, int width, int height);
-    void BuildLevel(int** levelData, int width, int height);
 
     // Spatial Hashing for collision detection
     class SpatialHashing* mSpatialHashing;
@@ -169,12 +158,9 @@ private:
     GameScene mGameScene;
     GameScene mNextScene;
 
-    // Background and camera
-    glm::vec3 mModColor;
     Camera m_camera;
 
     // Game-specific
-    std::vector<class Ship*> mShips;
     class HUD *mHUD;
     SoundHandle mMusicHandle;
 
@@ -185,9 +171,5 @@ private:
     float mGameTimer;
     int mGameTimeLimit;
 
-    SDL_Texture *mBackgroundTexture;
-    glm::vec2 mBackgroundSize;
-    glm::vec2 mBackgroundPosition;
-
-    Simulation m_simulation;
+    std::optional<std::unique_ptr<Simulation>> m_current_simulation;
 };
