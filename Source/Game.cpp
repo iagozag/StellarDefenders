@@ -51,9 +51,9 @@ Game::Game(int windowWidth, int windowHeight):
     m_camera(),
     mHUD(nullptr),
     mIsViableAreaActive(false),
-	mAlien(nullptr),
     mGameTimer(0.0f),
-    mGameTimeLimit(0)
+    mGameTimeLimit(0),
+    mShipMenu(nullptr)
 {
 
 }
@@ -170,10 +170,7 @@ void Game::ChangeScene()
     }
     else if (mNextScene == GameScene::Ship)
     {
-        if(!mAlien) mAlien = new Alien(this);
-        mAlien->SetPosition(glm::vec2(-1, -1));
-
-        // SetBackgroundImage("../Assets/Sprites/background.png", glm::vec2(-1,-1), glm::vec2(2.0*(float)WORLD_WIDTH/(float)mWindowWidth,2.0));
+        mShipMenu = new ShipMenu(*this);
     }
     else if (mNextScene == GameScene::Level1)
     {
@@ -184,16 +181,8 @@ void Game::ChangeScene()
     }
     else if (mNextScene == GameScene::Level2)
     {
-        // --------------
-        // TODO - PARTE 3
-        // --------------
-
-        // TODO 1.: Crie um novo objeto HUD, passando o ponteiro do Game e o caminho para a fonte SMB.ttf. Como
-        //  feito no nível 1-1.
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
 
-        // TODO 2.: Altere o atributo mGameTimeLimit para 400 (400 segundos) e ajuste o HUD com esse tempo inicial. Como
-        //  feito no nível 1-1.
         mHUD->SetLevelName("Fase 2");
     }
 
@@ -304,11 +293,6 @@ void Game::TogglePause()
         if (mGamePlayState == GamePlayState::Playing)
         {
             mGamePlayState = GamePlayState::Paused;
-
-            // --------------
-            // TODO - PARTE 4
-            // --------------
-
             // TODO 1.: Pare a música de fundo atual usando PauseSound() e toque o som "Coin.wav" para indicar a pausa.
             // mAudio->PauseSound(mMusicHandle);
             // mAudio->PlaySound("Coin.wav");
@@ -316,11 +300,6 @@ void Game::TogglePause()
         else if (mGamePlayState == GamePlayState::Paused)
         {
             mGamePlayState = GamePlayState::Playing;
-
-            // --------------
-            // TODO - PARTE 4
-            // --------------
-
             // TODO 1.: Retome a música de fundo atual usando ResumeSound() e toque o som "Coin.wav" para
             //  indicar a retomada do jogo.
             // mAudio->ResumeSound(mMusicHandle);
@@ -379,7 +358,6 @@ void Game::UpdateCamera(){
         m_camera.m_pos.x += state[SDL_SCANCODE_D] * m_camera.m_scale / 100;
         m_camera.m_pos.y -= state[SDL_SCANCODE_S] * m_camera.m_scale / 100;
         m_camera.m_pos.y += state[SDL_SCANCODE_W] * m_camera.m_scale / 100;
-
     } else if (mGameScene != GameScene::Ship) {
         m_camera.m_pos = glm::vec2(.0f);
     } else {
@@ -538,6 +516,9 @@ void Game::GenerateOutput() {
     // Clear frame with background color
     SDL_SetRenderDrawColor(mRenderer, 0, 0, 0, 255);
     SDL_RenderClear(mRenderer);
+
+    if(mGameScene == GameScene::Ship)
+        mShipMenu->draw(*this);
 
     // Draw viable area
     if (mGameScene != GameScene::MainMenu and mGameScene != GameScene::Ship and mIsViableAreaActive)

@@ -22,6 +22,7 @@
 #include "Actors/Alien.h"
 
 #include "Scenes/Simulation/simulation.hpp"
+#include "Scenes/ShipMenu/ShipMenu.hpp"
 
 class Game
 {
@@ -167,9 +168,9 @@ private:
     SDL_Rect mViableAreaRect;
     bool mIsViableAreaActive;
 
-    class Alien* mAlien;
     float mGameTimer;
     int mGameTimeLimit;
 
+    class ShipMenu* mShipMenu;
     std::optional<std::unique_ptr<Simulation>> m_current_simulation;
 };
