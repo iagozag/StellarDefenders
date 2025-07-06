@@ -4,10 +4,12 @@
 #include "../../sq.hpp"
 #include "../../filter_vector.hpp"
 
+#include <iostream>
+
 Simulation::Simulation(std::vector<Planet> planets, std::vector<Target> targets):
     m_planets(std::move(planets)),
     m_targets(std::move(targets)),
-    m_locked(true) {}
+    m_locked(false) {}
 
 void Simulation::draw(Game &game) const {
     for(auto &planet : m_planets) {

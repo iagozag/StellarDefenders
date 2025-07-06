@@ -3,6 +3,8 @@
 
 #include "../../Game.h"
 
+constexpr float TARGET_RADIUS = 0.005;
+
 Target::Target(const glm::vec2 &position, const glm::vec2 &speed):
     Particle(position, speed, TARGET_RADIUS),
     m_should_delete(false) {}

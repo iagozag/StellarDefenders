@@ -3,8 +3,6 @@
 
 #include "particle.hpp"
 
-constexpr float TARGET_RADIUS = 0.03;
-
 class Game;
 
 class Target: public Particle {

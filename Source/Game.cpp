@@ -113,6 +113,8 @@ bool Game::Initialize()
     // Init all game actors
     SetGameScene(GameScene::MainMenu);
 
+    m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level1()));
+
     return true;
 }
 
@@ -593,12 +595,12 @@ void Game::GenerateOutput() {
         SDL_RenderFillRect(mRenderer, &fullscreenRect);
     }
 
-    // Swap front buffer and back buffer
-    SDL_RenderPresent(mRenderer);
-
     if(m_current_simulation) {
         m_current_simulation.value()->draw(*this);
     }
+
+    // Swap front buffer and back buffer
+    SDL_RenderPresent(mRenderer);
 }
 
 SDL_Texture* Game::LoadTexture(const std::string& texturePath)
