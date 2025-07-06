@@ -29,6 +29,25 @@ void Simulation::draw(Game &game) const {
     }
 }
 
+std::vector<glm::vec2> Simulation::simulate(Game &game, const glm::vec2 &position, const glm::vec2 &speed) const {
+    auto copy = Simulation(m_planets, {});
+    copy.add_kamikaze(position, speed);
+    copy.unlock();
+
+    constexpr float DELTA_T = 1 / 60.f;
+    constexpr float DURATION = 10;
+    constexpr size_t NUM_STEPS = DURATION / DELTA_T;
+
+    std::vector<glm::vec2> res;
+    res.reserve(NUM_STEPS);
+    for(size_t i = 0; i < NUM_STEPS && copy.m_kamikaze.size(); i++) {
+        res.push_back(copy.m_kamikaze[0].m_position);
+        copy.run(game, DELTA_T);
+    }
+
+    return res;
+}
+
 glm::vec2 calculate_acceleration(const glm::vec2 &body_pos, const Planet &attractor) {
     const auto diff = attractor.m_position - body_pos;
     const auto dist_sq = sq(diff.x) + sq(diff.y);

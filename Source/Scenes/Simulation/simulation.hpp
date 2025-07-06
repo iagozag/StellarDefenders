@@ -24,6 +24,8 @@ public:
     void lock();
     void unlock();
 
+    std::vector<glm::vec2> simulate(Game &game, const glm::vec2 &position, const glm::vec2 &speed) const;
+
 private:
 
     void run_collision_tests();
