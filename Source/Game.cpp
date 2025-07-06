@@ -30,6 +30,7 @@
 #include "Scenes/Simulation/target.hpp"
 #include <glm/gtc/constants.hpp>
 #include "rect_transform.hpp"
+#include "filter_vector.hpp"
 
 #include "Scenes/1/one.hpp"
 
@@ -348,22 +349,18 @@ void Game::UpdateGame() {
         }
     }
 
-    // Delete any UIElements that are closed
-    auto iter = mUIStack.begin();
-    while (iter != mUIStack.end()) {
-        if ((*iter)->GetState() == UIScreen::UIState::Closing) {
-            delete *iter;
-            iter = mUIStack.erase(iter);
-        } else {
-            ++iter;
+    for(auto &el : mUIStack) {
+        if(el->GetState() == UIScreen::UIState::Closing) {
+            delete el;
+            el = nullptr;
         }
     }
 
-    // --------------
-    // TODO - PARTE 2
-    // --------------
+    const auto predicate = [](const UIScreen *el) {
+        return !!el;
+    };
+    filter<UIScreen *>(mUIStack, predicate);
 
-    // TODO 1.: Chame UpdateSceneManager passando o deltaTime.
     UpdateSceneManager(delta_t);
 }
 
