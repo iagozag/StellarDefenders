@@ -1,3 +1,3 @@
-C:/Users/csxuser/Downloads/jogos/StellarDefenders/cmake-build-debug/CMakeFiles/stellar-defenders.dir
-C:/Users/csxuser/Downloads/jogos/StellarDefenders/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/csxuser/Downloads/jogos/StellarDefenders/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/cmake-build-debug/CMakeFiles/stellar-defenders.dir
+C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -25,21 +25,21 @@ Alien::Alien(Game* game, const float forwardSpeed, const float jumpSpeed):
 
 void Alien::OnProcessInput(const uint8_t* state)
 {
-    if (state[SDL_SCANCODE_D])
+    if (state[SDL_SCANCODE_D] || state[SDL_SCANCODE_RIGHT])
     {
         mRigidBodyComponent->ApplyForce(glm::vec2(mForwardSpeed,0));
         mRotation = 0.0f;
         mIsRunning = true;
     }
 
-    if (state[SDL_SCANCODE_A])
+    if (state[SDL_SCANCODE_A] || state[SDL_SCANCODE_LEFT])
     {
         mRigidBodyComponent->ApplyForce(glm::vec2(-mForwardSpeed, 0.0f));
         mRotation = Math::Pi;
         mIsRunning = true;
     }
     
-    if (!state[SDL_SCANCODE_A] && !state[SDL_SCANCODE_D])
+    if (!state[SDL_SCANCODE_A] && !state[SDL_SCANCODE_D] && !state[SDL_SCANCODE_RIGHT] && !state[SDL_SCANCODE_LEFT])
     {
         mIsRunning = false;
     }
