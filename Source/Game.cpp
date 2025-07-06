@@ -30,6 +30,7 @@
 #include "Scenes/Simulation/simulation.hpp"
 #include "Scenes/Simulation/target.hpp"
 #include <glm/gtc/constants.hpp>
+#include "Scenes/1/one.hpp"
 
 constexpr glm::u8vec4 BACKGROUND_COLOR = {0, 0, 0, 255};
 
@@ -45,15 +46,11 @@ Game::Game(int windowWidth, int windowHeight):
     mIsRunning(true),
     mGameScene(GameScene::MainMenu),
     mNextScene(GameScene::MainMenu),
-    mModColor(255, 255, 255),
     mHUD(nullptr),
     mIsViableAreaActive(false),
 	mAlien(nullptr),
     mGameTimer(0.0f),
-    mGameTimeLimit(0),
-    mBackgroundTexture(nullptr),
-    mBackgroundSize(glm::vec2(.0f)),
-    mBackgroundPosition(glm::vec2(.0f))
+    mGameTimeLimit(0)
 {
 
 }
@@ -180,19 +177,13 @@ void Game::ChangeScene()
     {
         if(!mAlien) mAlien = new Alien(this);
         mAlien->SetPosition(glm::vec2(0, mWindowHeight-TILE_SIZE));
-
-        SetBackgroundImage("../Assets/Sprites/background.png", glm::vec2(0,0), glm::vec2(WORLD_WIDTH,WORLD_HEIGHT));
     }
     else if (mNextScene == GameScene::Level1)
     {
-        mShips.emplace_back(new Ship(this, 50, "corvette.png"));
-        
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
         mHUD->SetLevelName("Fase 1");
 
-        SDL_Rect viableArea = {0, 0, mWindowWidth/2, mWindowHeight};
-        SetViableArea(viableArea);
-
+        m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level1()));
     }
     else if (mNextScene == GameScene::Level2)
     {
@@ -207,43 +198,14 @@ void Game::ChangeScene()
         // TODO 2.: Altere o atributo mGameTimeLimit para 400 (400 segundos) e ajuste o HUD com esse tempo inicial. Como
         //  feito no nível 1-1.
         mHUD->SetLevelName("Fase 2");
-
-        // --------------
-        // TODO - PARTE 4
-        // --------------
-
-        // TODO 1. Toque a música de fundo "MusicUnderground.ogg" em loop e armaze o SoundHandle retornado em mMusicHandle.
-        // mMusicHandle = mAudio->PlaySound("MusicUnderground.ogg", 1);
-
-
-        // Initialize actors
-        // LoadLevel("../Assets/Levels/level1-2.csv", LEVEL_WIDTH, LEVEL_HEIGHT);
     }
 
     // Set new scene
     mGameScene = mNextScene;
 }
 
-void Game::SetViableArea(const SDL_Rect& rect)
-{
-    mViableAreaRect = rect;
-    mIsViableAreaActive = true;
-}
-
-void Game::DisableViableArea()
-{
-    mIsViableAreaActive = false;
-}
-
 void Game::LoadMainMenu()
 {
-
-    // SetBackgroundImage("../Assets/Sprites/Background.png", glm::vec2(TILE_SIZE,-TILE_SIZE), glm::vec2(6784,WORLD_HEIGHT));
-
-    // --------------
-    // TODO - PARTE 1
-    // --------------
-
     // Esse método será usado para criar uma tela de UI e adicionar os elementos do menu principal.
     auto mainMenu = new UIScreen(this, "../Assets/Fonts/SMB.ttf");
 
@@ -262,68 +224,6 @@ void Game::LoadMainMenu()
     mainMenu->AddButton("Exit", button2Pos, buttonSize, [this]() {
                                 Shutdown();
                             });
-}
-
-void Game::LoadLevel(const std::string& levelName, const int levelWidth, const int levelHeight)
-{
-    // Load level data
-    int **mLevelData = ReadLevelData(levelName, levelWidth, levelHeight);
-
-    if (!mLevelData) {
-        SDL_Log("Failed to load level data");
-        return;
-    }
-
-    // Instantiate level actors
-    BuildLevel(mLevelData, levelWidth, levelHeight);
-}
-
-void Game::BuildLevel(int** levelData, int width, int height) {}
-
-int **Game::ReadLevelData(const std::string& fileName, int width, int height)
-{
-    std::ifstream file(fileName);
-    if (!file.is_open())
-    {
-        SDL_Log("Failed to load paths: %s", fileName.c_str());
-        return nullptr;
-    }
-
-    // Create a 2D array of size width and height to store the level data
-    int** levelData = new int*[height];
-    for (int i = 0; i < height; ++i)
-    {
-        levelData[i] = new int[width];
-    }
-
-    // Read the file line by line
-    int row = 0;
-
-    std::string line;
-    while (!file.eof())
-    {
-        std::getline(file, line);
-        if(!line.empty())
-        {
-            auto tiles = CSVHelper::Split(line);
-
-            if (tiles.size() != width) {
-                SDL_Log("Invalid level data");
-                return nullptr;
-            }
-
-            for (int i = 0; i < width; ++i) {
-                levelData[row][i] = tiles[i];
-            }
-        }
-
-        ++row;
-    }
-
-    // Close the file
-    file.close();
-
-    return levelData;
 }
 
 void Game::RunLoop()
@@ -643,19 +543,6 @@ void Game::GenerateOutput() {
     SDL_SetRenderDrawColor(mRenderer, 0, 0, 0, 255);
     SDL_RenderClear(mRenderer);
 
-    if (mBackgroundTexture)
-    {
-        // Cria um retângulo de destino na tela com a posição e o tamanho do fundo
-        SDL_Rect destRect;
-        destRect.x = static_cast<int>(mBackgroundPosition.x-m_camera.m_pos.x);
-        destRect.y = static_cast<int>(mBackgroundPosition.y);
-        destRect.w = static_cast<int>(mBackgroundSize.x);
-        destRect.h = static_cast<int>(mBackgroundSize.y);
-
-        // Copia a textura de fundo para o renderizador na posição/tamanho especificados
-        SDL_RenderCopy(mRenderer, mBackgroundTexture, nullptr, &destRect);
-    }
-
     // Draw viable area
     if (mGameScene != GameScene::MainMenu and mGameScene != GameScene::Ship and mIsViableAreaActive)
     {
@@ -666,10 +553,6 @@ void Game::GenerateOutput() {
         SDL_Rect inviableAreaRect = {mViableAreaRect.x+mViableAreaRect.w, 0, mWindowWidth-(mViableAreaRect.x+mViableAreaRect.w), mWindowHeight};
         SDL_SetRenderDrawColor(mRenderer, 255, 100, 100, 64);
         SDL_RenderFillRect(mRenderer, &inviableAreaRect);
-    }
-
-    if (mShips.size()){
-        for(auto ship: mShips) ship->DrawSlingShotLine();
     }
 
     // Get actors on camera
@@ -697,7 +580,7 @@ void Game::GenerateOutput() {
     // Draw all drawables
     for (auto drawable : drawables)
     {
-        drawable->Draw(mRenderer, mModColor);
+        drawable->Draw(mRenderer);
     }
 
     // Draw all UI screens
@@ -726,26 +609,6 @@ void Game::GenerateOutput() {
 
     // Swap front buffer and back buffer
     SDL_RenderPresent(mRenderer);
-}
-
-void Game::SetBackgroundImage(const std::string& texturePath, const glm::vec2 &position, const glm::vec2 &size)
-{
-    if (mBackgroundTexture) {
-        SDL_DestroyTexture(mBackgroundTexture);
-        mBackgroundTexture = nullptr;
-    }
-
-    // Load background texture
-    mBackgroundTexture = LoadTexture(texturePath);
-    if (!mBackgroundTexture) {
-        SDL_Log("Failed to load background texture: %s", texturePath.c_str());
-    }
-
-    // Set background position
-    mBackgroundPosition = position;
-
-    // Set background size
-    mBackgroundSize = size;
 }
 
 SDL_Texture* Game::LoadTexture(const std::string& texturePath)
@@ -801,12 +664,6 @@ void Game::UnloadScene()
         delete ui;
     }
     mUIStack.clear();
-
-    // Delete background texture
-    if (mBackgroundTexture) {
-        SDL_DestroyTexture(mBackgroundTexture);
-        mBackgroundTexture = nullptr;
-    }
 }
 
 void Game::Shutdown()
@@ -831,4 +688,12 @@ void Game::Shutdown()
     SDL_DestroyRenderer(mRenderer);
     SDL_DestroyWindow(mWindow);
     SDL_Quit();
+}
+
+AudioSystem* Game::GetAudio() {
+    return mAudio;
+}
+
+const Camera &Game::GetCamera() {
+    return m_camera;
 }

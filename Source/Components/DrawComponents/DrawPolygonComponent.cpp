@@ -13,7 +13,7 @@ DrawPolygonComponent::DrawPolygonComponent(class Actor* owner, std::vector<glm::
 {
 }
 
-void DrawPolygonComponent::Draw(SDL_Renderer *renderer, const glm::vec3 &modColor)
+void DrawPolygonComponent::Draw(SDL_Renderer *renderer)
 {
     // Set draw color to green
     SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
