@@ -24,12 +24,12 @@
 #include "Components/DrawComponents/DrawComponent.h"
 #include "Components/DrawComponents/DrawSpriteComponent.h"
 #include "Components/DrawComponents/DrawAnimatedComponent.h"
-#include "Components/DrawComponents/DrawPolygonComponent.h"
 #include "Components/ColliderComponents/AABBColliderComponent.h"
 #include "SpatialHashing.h"
 #include "Scenes/Simulation/simulation.hpp"
 #include "Scenes/Simulation/target.hpp"
 #include <glm/gtc/constants.hpp>
+#include "rect_transform.hpp"
 
 const Planet planets[] = {
     Planet({-0.5, -0.5}, {0.2, -0.2}, 0.025, 0.01),
@@ -129,11 +129,6 @@ bool Game::Initialize()
     // Start random number generator
     Random::Init();
 
-    // --------------
-    // TODO - PARTE 4
-    // --------------
-
-    // TODO 1. Instancie um AudioSystem.
     mAudio = new AudioSystem();
 
 
@@ -174,11 +169,6 @@ void Game::SetGameScene(Game::GameScene scene, float transitionTime)
 
 void Game::ResetGameScene(float transitionTime)
 {
-    // --------------
-    // TODO - PARTE 2
-    // --------------
-
-    // TODO 1.: Chame SetGameScene passando o mGameScene atual e o tempo de transição.
     SetGameScene(mGameScene, transitionTime);
 }
 
@@ -205,9 +195,9 @@ void Game::ChangeScene()
     else if (mNextScene == GameScene::Ship)
     {
         if(!mAlien) mAlien = new Alien(this);
-        mAlien->SetPosition(glm::vec2(0, mWindowHeight-TILE_SIZE));
+        mAlien->SetPosition(glm::vec2(-0.9, 1.0));
 
-        SetBackgroundImage("../Assets/Sprites/background.png", glm::vec2(0,0), glm::vec2(WORLD_WIDTH,WORLD_HEIGHT));
+        SetBackgroundImage("../Assets/Sprites/background.png", glm::vec2(-1,-1), glm::vec2(2.0*(float)WORLD_WIDTH/(float)mWindowWidth,2.0));
     }
     else if (mNextScene == GameScene::Level1)
     {
@@ -279,14 +269,6 @@ void Game::DisableViableArea()
 
 void Game::LoadMainMenu()
 {
-
-    // SetBackgroundImage("../Assets/Sprites/Background.png", glm::vec2(TILE_SIZE,-TILE_SIZE), glm::vec2(6784,WORLD_HEIGHT));
-
-    // --------------
-    // TODO - PARTE 1
-    // --------------
-
-    // Esse método será usado para criar uma tela de UI e adicionar os elementos do menu principal.
     auto mainMenu = new UIScreen(this, "../Assets/Fonts/SMB.ttf");
 
     const glm::vec2 titleSize = glm::vec2(1.8, 0.32);
@@ -691,19 +673,20 @@ void Game::GenerateOutput() {
 
     m_simulation.draw(*this);
 
-
-
     if (mBackgroundTexture)
     {
         // Cria um retângulo de destino na tela com a posição e o tamanho do fundo
-        SDL_Rect destRect;
+        SDL_FRect destRect;
         destRect.x = static_cast<int>(mBackgroundPosition.x-m_camera.m_pos.x);
         destRect.y = static_cast<int>(mBackgroundPosition.y);
         destRect.w = static_cast<int>(mBackgroundSize.x);
         destRect.h = static_cast<int>(mBackgroundSize.y);
 
+        const auto transform = m_camera.get_total_transformation_matrix(*this);
+        const auto transformed_dest = rect_transform(destRect, transform);
+
         // Copia a textura de fundo para o renderizador na posição/tamanho especificados
-        SDL_RenderCopy(mRenderer, mBackgroundTexture, nullptr, &destRect);
+        SDL_RenderCopyF(mRenderer, mBackgroundTexture, nullptr, &transformed_dest);
     }
 
     // Draw viable area
@@ -770,9 +753,6 @@ void Game::GenerateOutput() {
         SDL_Rect fullscreenRect = {0, 0, mWindowWidth, mWindowHeight};
         SDL_RenderFillRect(mRenderer, &fullscreenRect);
     }
-
-
-
 
     // Swap front buffer and back buffer
     SDL_RenderPresent(mRenderer);

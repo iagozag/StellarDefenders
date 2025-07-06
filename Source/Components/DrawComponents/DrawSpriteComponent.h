@@ -19,6 +19,6 @@ protected:
     // Map of textures loaded
     SDL_Texture* mSpriteSheetSurface;
 
-    int mWidth;
-    int mHeight;
+    float mWidth;
+    float mHeight;
 };

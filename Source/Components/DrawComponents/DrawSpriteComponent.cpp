@@ -26,9 +26,9 @@ DrawSpriteComponent::~DrawSpriteComponent()
 
 void DrawSpriteComponent::Draw(SDL_Renderer *renderer, const glm::vec3 &modColor)
 {
-    SDL_Rect dstRect = {
-        static_cast<int>(mOwner->GetPosition().x - mOwner->GetGame()->GetCamera().m_pos.x),
-        static_cast<int>(mOwner->GetPosition().y - mOwner->GetGame()->GetCamera().m_pos.y),
+    SDL_FRect dstRect = {
+        mOwner->GetPosition().x - mOwner->GetGame()->GetCamera().m_pos.x,
+        mOwner->GetPosition().y - mOwner->GetGame()->GetCamera().m_pos.y,
         mWidth,
         mHeight
     };
@@ -45,5 +45,8 @@ void DrawSpriteComponent::Draw(SDL_Renderer *renderer, const glm::vec3 &modColor
                            static_cast<Uint8>(modColor.y),
                            static_cast<Uint8>(modColor.z));
 
-    SDL_RenderCopyEx(renderer, mSpriteSheetSurface, nullptr, &dstRect, mOwner->GetRotation(), nullptr, flip);
+    const auto transform = GetGame()->GetCamera().get_total_transformation_matrix(*GetGame());
+    const auto transformed_dest = rect_transform(dstRect, transform);
+
+    SDL_RenderCopyExF(renderer, mSpriteSheetSurface, nullptr, &transformed_dest, mOwner->GetRotation(), nullptr, flip);
 }

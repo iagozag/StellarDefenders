@@ -18,51 +18,50 @@ DrawAnimatedComponent::~DrawAnimatedComponent()
 {
     DrawSpriteComponent::~DrawSpriteComponent();
 
-    for (const auto& rect : mSpriteSheetData)
-    {
-        delete rect;
-    }
     mSpriteSheetData.clear();
 }
 
 void DrawAnimatedComponent::LoadSpriteSheet(const std::string& texturePath, const std::string& dataPath)
 {
-    // Load sprite sheet texture
     mSpriteSheetSurface = mOwner->GetGame()->LoadTexture(texturePath);
 
-    // Load sprite sheet data
     std::ifstream spriteSheetFile(dataPath);
+    if (!spriteSheetFile.is_open()) {
+        return;
+    }
+
     nlohmann::json spriteSheetData = nlohmann::json::parse(spriteSheetFile);
 
-    SDL_Rect* rect = nullptr;
+    mSpriteSheetData.clear();
     for(const auto& frame : spriteSheetData["frames"]) {
-
-        int x = frame["frame"]["x"].get<int>();
-        int y = frame["frame"]["y"].get<int>();
-        int w = frame["frame"]["w"].get<int>();
-        int h = frame["frame"]["h"].get<int>();
-        rect = new SDL_Rect({x, y, w, h});
-
+        SDL_Rect rect;
+        rect.x = frame["frame"]["x"].get<int>();
+        rect.y = frame["frame"]["y"].get<int>();
+        rect.w = frame["frame"]["w"].get<int>();
+        rect.h = frame["frame"]["h"].get<int>();
+        
         mSpriteSheetData.emplace_back(rect);
     }
 }
 
 void DrawAnimatedComponent::Draw(SDL_Renderer* renderer, const glm::vec3 &modColor)
 {
-    int spriteIdx = mAnimations[mAnimName][static_cast<int>(mAnimTimer)];
-    SDL_Rect* srcRect = mSpriteSheetData[spriteIdx];
+    if (mAnimations.empty() || mSpriteSheetData.empty()) {
+        return;
+    }
 
-    SDL_Rect dstRect = {
-            static_cast<int>(mOwner->GetPosition().x - mOwner->GetGame()->GetCamera().m_pos.x),
-            static_cast<int>(mOwner->GetPosition().y - mOwner->GetGame()->GetCamera().m_pos.y),
-            srcRect->w,
-            srcRect->h
+    int spriteIdx = mAnimations[mAnimName][static_cast<int>(mAnimTimer)];
+    
+    SDL_Rect* srcRect = &mSpriteSheetData[spriteIdx];
+
+    SDL_FRect dstRect = {
+            mOwner->GetPosition().x - mOwner->GetGame()->GetCamera().m_pos.x,
+            mOwner->GetPosition().y - mOwner->GetGame()->GetCamera().m_pos.y,
+            static_cast<float>(srcRect->w),
+            static_cast<float>(srcRect->h)
     };
 
-    SDL_RendererFlip flip = SDL_FLIP_NONE;
-    if (mOwner->GetRotation() == Math::Pi) {
-        flip = SDL_FLIP_HORIZONTAL;
-    }
+    SDL_RendererFlip flip = (mOwner->GetRotation() == Math::Pi) ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE;
 
     SDL_SetTextureBlendMode(mSpriteSheetSurface, SDL_BLENDMODE_BLEND);
     SDL_SetTextureColorMod(mSpriteSheetSurface,
@@ -70,7 +69,10 @@ void DrawAnimatedComponent::Draw(SDL_Renderer* renderer, const glm::vec3 &modCol
                            static_cast<Uint8>(modColor.y),
                            static_cast<Uint8>(modColor.z));
 
-    SDL_RenderCopyEx(renderer, mSpriteSheetSurface, srcRect, &dstRect, mOwner->GetRotation(), nullptr, flip);
+    const auto transform = GetGame()->GetCamera().get_total_transformation_matrix(*GetGame());
+    const auto transformed_dest = rect_transform(dstRect, transform);
+
+    SDL_RenderCopyExF(renderer, mSpriteSheetSurface, srcRect, &transformed_dest, mOwner->GetRotation(), nullptr, flip);
 }
 
 void DrawAnimatedComponent::Update(float deltaTime)

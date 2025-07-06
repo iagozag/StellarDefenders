@@ -8,6 +8,7 @@
 #include "../../Math.h"
 #include <vector>
 #include <SDL.h>
+#include "../../rect_transform.hpp"
 
 class DrawComponent : public Component
 {
