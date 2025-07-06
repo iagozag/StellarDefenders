@@ -106,7 +106,7 @@ bool Game::Initialize()
     mAudio = new AudioSystem();
 
 
-    mSpatialHashing = new SpatialHashing(TILE_SIZE * 4.0f,
+    mSpatialHashing = new SpatialHashing(32.0f * 4.0f,
                                          WORLD_WIDTH,
                                          WORLD_HEIGHT);
     mTicksCount = SDL_GetTicks();
@@ -160,7 +160,7 @@ void Game::ChangeScene()
     mGamePlayState = GamePlayState::Playing;
 
     // Reset scene manager state
-    mSpatialHashing = new SpatialHashing(TILE_SIZE * 4.0f, WORLD_WIDTH, WORLD_HEIGHT);
+    mSpatialHashing = new SpatialHashing(32.0f * 4.0f, WORLD_WIDTH, WORLD_HEIGHT);
 
     // Scene Manager FSM: using if/else instead of switch
     if (mNextScene == GameScene::MainMenu)
@@ -358,16 +358,11 @@ void Game::UpdateCamera(){
         m_camera.m_pos.x += state[SDL_SCANCODE_D] * m_camera.m_scale / 100;
         m_camera.m_pos.y -= state[SDL_SCANCODE_S] * m_camera.m_scale / 100;
         m_camera.m_pos.y += state[SDL_SCANCODE_W] * m_camera.m_scale / 100;
-    } else if (mGameScene != GameScene::Ship) {
+    } else if (mGameScene == GameScene::Ship) {
         m_camera.m_pos = glm::vec2(.0f);
-    } else {
-        // float horizontalCameraPos = mAlien->GetPosition().x - (mWindowWidth / 2.0f);
-
-        // float maxCameraPos = WORLD_WIDTH - mWindowWidth;
-        // horizontalCameraPos = Math::Clamp(horizontalCameraPos, 0.0f, maxCameraPos);
-
-        // m_camera.m_pos.x = horizontalCameraPos;
     }
+    else
+        m_camera.m_pos = glm::vec2(.0f);
 }
 
 void Game::UpdateSceneManager(float deltaTime)

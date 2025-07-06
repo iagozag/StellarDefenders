@@ -29,10 +29,6 @@ class Game
 public:
     static const int WORLD_WIDTH = 3000;
     static const int WORLD_HEIGHT = 448;
-    static const int LEVEL_WIDTH = 215;
-    static const int LEVEL_HEIGHT = 15;
-    static const int TILE_SIZE = 32;
-    static const int SPAWN_DISTANCE = 700;
     static const int TRANSITION_TIME = 1;
 
     enum class GameScene

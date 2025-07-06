@@ -55,9 +55,6 @@ void Alien::OnProcessInput(const uint8_t* state)
 void Alien::OnUpdate(float deltaTime)
 {
     if(mPosition.x <= -1.f) mPosition.x = -1.f;
-    // if (mPosition.x > 2800){
-    //     mGame->SetGameScene(Game::GameScene::Level1, Game::TRANSITION_TIME);
-    // }
 
     ManageAnimations();
 }

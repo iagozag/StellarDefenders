@@ -8,7 +8,7 @@ ShipMenu::ShipMenu(Game& game):
 {
     mAlien->SetPosition(glm::vec2(-1, -1));
     mBackgroundPosition = glm::vec2(-1, -1);
-    mBackgroundSize = glm::vec2(2.0*(float)Game::WORLD_WIDTH/(float)game.GetWindowWidth(),2.0);
+    mBackgroundSize = glm::vec2(2.0*(float)Game::WORLD_WIDTH/(float)game.GetWindowWidth(), 2.0);
 }
 
 ShipMenu::~ShipMenu(){
