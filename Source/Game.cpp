@@ -30,6 +30,7 @@
 #include "Scenes/Simulation/target.hpp"
 #include <glm/gtc/constants.hpp>
 #include "rect_transform.hpp"
+#include "filter_vector.hpp"
 
 #include "Scenes/1/one.hpp"
 
@@ -111,6 +112,8 @@ bool Game::Initialize()
 
     // Init all game actors
     SetGameScene(GameScene::MainMenu);
+
+    m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level1()));
 
     return true;
 }
@@ -348,23 +351,23 @@ void Game::UpdateGame() {
         }
     }
 
-    // Delete any UIElements that are closed
-    auto iter = mUIStack.begin();
-    while (iter != mUIStack.end()) {
-        if ((*iter)->GetState() == UIScreen::UIState::Closing) {
-            delete *iter;
-            iter = mUIStack.erase(iter);
-        } else {
-            ++iter;
+    for(auto &el : mUIStack) {
+        if(el->GetState() == UIScreen::UIState::Closing) {
+            delete el;
+            el = nullptr;
         }
     }
 
-    // --------------
-    // TODO - PARTE 2
-    // --------------
+    const auto predicate = [](const UIScreen *el) {
+        return !!el;
+    };
+    filter<UIScreen *>(mUIStack, predicate);
 
-    // TODO 1.: Chame UpdateSceneManager passando o deltaTime.
     UpdateSceneManager(delta_t);
+
+    if(m_current_simulation) {
+        m_current_simulation.value()->run(*this, delta_t);
+    }
 }
 
 void Game::UpdateCamera(){
@@ -535,24 +538,6 @@ void Game::GenerateOutput() {
     SDL_SetRenderDrawColor(mRenderer, 0, 0, 0, 255);
     SDL_RenderClear(mRenderer);
 
-    // m_simulation.draw(*this);
-    // 
-    // if (mBackgroundTexture)
-    // {
-    //     // Cria um retângulo de destino na tela com a posição e o tamanho do fundo
-    //     SDL_FRect destRect;
-    //     destRect.x = static_cast<int>(mBackgroundPosition.x-m_camera.m_pos.x);
-    //     destRect.y = static_cast<int>(mBackgroundPosition.y);
-    //     destRect.w = static_cast<int>(mBackgroundSize.x);
-    //     destRect.h = static_cast<int>(mBackgroundSize.y);
-
-    //     const auto transform = m_camera.get_total_transformation_matrix(*this);
-    //     const auto transformed_dest = rect_transform(destRect, transform);
-
-    //     // Copia a textura de fundo para o renderizador na posição/tamanho especificados
-    //     SDL_RenderCopyF(mRenderer, mBackgroundTexture, nullptr, &transformed_dest);
-    // }
-
     // Draw viable area
     if (mGameScene != GameScene::MainMenu and mGameScene != GameScene::Ship and mIsViableAreaActive)
     {
@@ -599,10 +584,6 @@ void Game::GenerateOutput() {
         ui->Draw(*this);
     }
 
-    // --------------
-    // TODO - PARTE 2
-    // --------------
-
     // TODO 1.: Verifique se o SceneManager está no estado ativo. Se estiver, desenhe um retângulo preto cobrindo
     //  toda a tela.
     if (mSceneManagerState == SceneManagerState::Exiting || mSceneManagerState == SceneManagerState::Entering)
@@ -612,6 +593,10 @@ void Game::GenerateOutput() {
         SDL_SetRenderDrawColor(mRenderer, 0, 0, 0, alpha);
         SDL_Rect fullscreenRect = {0, 0, mWindowWidth, mWindowHeight};
         SDL_RenderFillRect(mRenderer, &fullscreenRect);
+    }
+
+    if(m_current_simulation) {
+        m_current_simulation.value()->draw(*this);
     }
 
     // Swap front buffer and back buffer
