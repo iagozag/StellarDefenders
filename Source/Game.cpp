@@ -169,7 +169,7 @@ void Game::ChangeScene()
         if(!mAlien) mAlien = new Alien(this);
         mAlien->SetPosition(glm::vec2(-0.9, 1.0));
 
-        SetBackgroundImage("../Assets/Sprites/background.png", glm::vec2(-1,-1), glm::vec2(2.0*(float)WORLD_WIDTH/(float)mWindowWidth,2.0));
+        // SetBackgroundImage("../Assets/Sprites/background.png", glm::vec2(-1,-1), glm::vec2(2.0*(float)WORLD_WIDTH/(float)mWindowWidth,2.0));
     }
     else if (mNextScene == GameScene::Level1)
     {
@@ -535,23 +535,23 @@ void Game::GenerateOutput() {
     SDL_SetRenderDrawColor(mRenderer, 0, 0, 0, 255);
     SDL_RenderClear(mRenderer);
 
-    m_simulation.draw(*this);
+    // m_simulation.draw(*this);
+    // 
+    // if (mBackgroundTexture)
+    // {
+    //     // Cria um retângulo de destino na tela com a posição e o tamanho do fundo
+    //     SDL_FRect destRect;
+    //     destRect.x = static_cast<int>(mBackgroundPosition.x-m_camera.m_pos.x);
+    //     destRect.y = static_cast<int>(mBackgroundPosition.y);
+    //     destRect.w = static_cast<int>(mBackgroundSize.x);
+    //     destRect.h = static_cast<int>(mBackgroundSize.y);
 
-    if (mBackgroundTexture)
-    {
-        // Cria um retângulo de destino na tela com a posição e o tamanho do fundo
-        SDL_FRect destRect;
-        destRect.x = static_cast<int>(mBackgroundPosition.x-m_camera.m_pos.x);
-        destRect.y = static_cast<int>(mBackgroundPosition.y);
-        destRect.w = static_cast<int>(mBackgroundSize.x);
-        destRect.h = static_cast<int>(mBackgroundSize.y);
+    //     const auto transform = m_camera.get_total_transformation_matrix(*this);
+    //     const auto transformed_dest = rect_transform(destRect, transform);
 
-        const auto transform = m_camera.get_total_transformation_matrix(*this);
-        const auto transformed_dest = rect_transform(destRect, transform);
-
-        // Copia a textura de fundo para o renderizador na posição/tamanho especificados
-        SDL_RenderCopyF(mRenderer, mBackgroundTexture, nullptr, &transformed_dest);
-    }
+    //     // Copia a textura de fundo para o renderizador na posição/tamanho especificados
+    //     SDL_RenderCopyF(mRenderer, mBackgroundTexture, nullptr, &transformed_dest);
+    // }
 
     // Draw viable area
     if (mGameScene != GameScene::MainMenu and mGameScene != GameScene::Ship and mIsViableAreaActive)

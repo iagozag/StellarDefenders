@@ -69,9 +69,6 @@ void DrawAnimatedComponent::Draw(SDL_Renderer* renderer)
     const auto transformed_dest = rect_transform(dstRect, transform);
 
     SDL_RenderCopyExF(renderer, mSpriteSheetSurface, srcRect, &transformed_dest, mOwner->GetRotation(), nullptr, flip);
-=======
-    SDL_RenderCopyEx(renderer, mSpriteSheetSurface, srcRect, &dstRect, mOwner->GetRotation(), nullptr, flip);
->>>>>>> 150c80ff8520482fa8b0958297f36122f7a3a2cf
 }
 
 void DrawAnimatedComponent::Update(float deltaTime)
