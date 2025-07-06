@@ -636,6 +636,13 @@ UIFont* Game::LoadFont(const std::string& fileName)
 
 void Game::UnloadScene()
 {
+    // Pause current music
+    if (mAudio && mMusicHandle.IsValid())
+    {
+        mAudio->PauseSound(mMusicHandle);
+        mMusicHandle.Reset();
+    }
+
     // Delete actors
     delete mSpatialHashing;
     mSpatialHashing = nullptr;
