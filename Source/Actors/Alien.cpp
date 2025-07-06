@@ -48,8 +48,8 @@ void Alien::OnProcessInput(const uint8_t* state)
 
 void Alien::OnUpdate(float deltaTime)
 {
-    if(mPosition.x <= -1.f+m_scale.x/2.0f+0.1f) mPosition.x = -1.f+m_scale.x/2.0f+0.1f;
-    if(mPosition.x >= 2.f-0.1f) mPosition.x = 2.f-0.1f;
+    if(mPosition.x <= -0.9f+m_scale.x/2.0f) mPosition.x = -0.9f+m_scale.x/2.0f;
+    if(mPosition.x >= 1.9f) mPosition.x = 1.9f;
 
     ManageAnimations();
 }

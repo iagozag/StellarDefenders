@@ -31,7 +31,6 @@ void ShipMenu::draw(Game& game) const{
     destRect.y = mBackgroundPosition.y;
     destRect.w = viewport.y*ratio;
     destRect.h = viewport.y;
-
     
     cam.m_pos.x = std::max(cam.m_pos.x, viewport.x/2.0f-1.0f);
     cam.m_pos.x = std::min(cam.m_pos.x, viewport.x/2.0f+1.0f);

@@ -366,11 +366,8 @@ void Game::UpdateCamera(){
         m_camera.m_pos.x += state[SDL_SCANCODE_D] * m_camera.m_scale / 100;
         m_camera.m_pos.y -= state[SDL_SCANCODE_S] * m_camera.m_scale / 100;
         m_camera.m_pos.y += state[SDL_SCANCODE_W] * m_camera.m_scale / 100;
-    } else if (mGameScene == GameScene::Ship) {
-        m_camera.m_pos = glm::vec2(.0f);
     }
-    else
-        m_camera.m_pos = glm::vec2(.0f);
+    else m_camera.m_pos = glm::vec2(.0f);
 }
 
 void Game::UpdateSceneManager(float deltaTime)
