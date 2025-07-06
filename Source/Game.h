@@ -82,7 +82,8 @@ public:
     AudioSystem* GetAudio();
 
     // Camera functions
-    const Camera &GetCamera();
+    const Camera &GetCamera() const;
+    Camera &GetCamera();
 
     // UI functions
     void PushUI(class UIScreen* screen) { mUIStack.emplace_back(screen); }

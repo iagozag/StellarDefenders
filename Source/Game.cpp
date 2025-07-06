@@ -114,7 +114,7 @@ bool Game::Initialize()
     // Init all game actors
     SetGameScene(GameScene::MainMenu);
 
-    m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level1()));
+    // m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level1()));
 
     return true;
 }
@@ -327,7 +327,7 @@ void Game::UpdateGame() {
         UpdateActors(delta_t);
     }
 
-    UpdateCamera();
+    // UpdateCamera();
 
     // Reinsert audio system
     mAudio->Update(delta_t);
@@ -671,6 +671,10 @@ AudioSystem* Game::GetAudio() {
     return mAudio;
 }
 
-const Camera &Game::GetCamera() {
+const Camera &Game::GetCamera() const {
+    return m_camera;
+}
+
+Camera &Game::GetCamera() {
     return m_camera;
 }

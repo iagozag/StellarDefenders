@@ -1,12 +1,5 @@
-//
-// Created by csxuser on 22/06/2025.
-//
-
 #include "Alien.h"
-//
-// Created by Lucas N. Ferreira on 03/08/23.
-//
-
+#include "../norm_greater.hpp"
 
 Alien::Alien(Game* game, const float forwardSpeed, const float jumpSpeed):
     Actor(game),
@@ -17,10 +10,11 @@ Alien::Alien(Game* game, const float forwardSpeed, const float jumpSpeed):
 {
     mRigidBodyComponent = new RigidBodyComponent(this, 1,10, false);
 
-
     // mColliderComponent = new AABBColliderComponent(this, 0, 0, Game::TILE_SIZE - 4.0f, Game::TILE_SIZE, ColliderLayer::Player);
 
-    mDrawComponent = new DrawAnimatedComponent(this,  "../Assets/Sprites/ET/texture.png", "../Assets/Sprites/ET/texture.json", glm::vec2(1, 1.5), 200);
+    m_scale = glm::vec2(1, 1.5);
+    mDrawComponent = new DrawAnimatedComponent(this,  "../Assets/Sprites/ET/texture.png", "../Assets/Sprites/ET/texture.json", m_scale, 200);
+    m_scale = norm_greater(m_scale);
 
     mDrawComponent->AddAnimation("idle", std::vector<int>({6}));
     mDrawComponent->AddAnimation("run", std::vector<int>({4,0,2,11,8,5}));
@@ -54,7 +48,8 @@ void Alien::OnProcessInput(const uint8_t* state)
 
 void Alien::OnUpdate(float deltaTime)
 {
-    if(mPosition.x <= -1.f) mPosition.x = -1.f;
+    if(mPosition.x <= -1.f+m_scale.x/2.0f) mPosition.x = -1.f+m_scale.x/2.0f;
+    if(mPosition.x >= 1.f-m_scale.x/2.0f) mPosition.x = 1.f-m_scale.x/2.0f;
 
     ManageAnimations();
 }
