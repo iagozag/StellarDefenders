@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.obj.d"
   "CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.obj"
   "CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.obj.d"
+  "CMakeFiles/stellar-defenders.dir/Source/Actors/EmergencyLight.cpp.obj"
+  "CMakeFiles/stellar-defenders.dir/Source/Actors/EmergencyLight.cpp.obj.d"
   "CMakeFiles/stellar-defenders.dir/Source/Actors/Laser.cpp.obj"
   "CMakeFiles/stellar-defenders.dir/Source/Actors/Laser.cpp.obj.d"
   "CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.obj"

@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "stellar-defenders::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-stellar-defenders-Debug-923a4b1d7fb0b4c98c3b.json",
+					"jsonFile" : "target-stellar-defenders-Debug-c292517709966e2b0192.json",
 					"name" : "stellar-defenders",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/csxuser/Downloads/jogos/StellarDefenders/cmake-build-debug",
-		"source" : "C:/Users/csxuser/Downloads/jogos/StellarDefenders"
+		"build" : "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/cmake-build-debug",
+		"source" : "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders"
 	},
 	"version" : 
 	{
