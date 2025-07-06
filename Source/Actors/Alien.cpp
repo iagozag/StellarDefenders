@@ -54,7 +54,7 @@ Alien::Alien(Game* game, const float forwardSpeed, const float jumpSpeed):
     // TODO 4.1 (~1 linhas): Crie um componente DrawAnimatedComponent passando os caminhos da imagem (.png) e
     //  dos dados (.json) do sprite sheet do Mário que você criou com o FreeTexturePacker. Armaze o ponteiro
     //  desse componente no atributo `mDrawComponent` da classe Mario.
-    mDrawComponent = new DrawAnimatedComponent(this,  "../Assets/Sprites/ET/texture.png", "../Assets/Sprites/ET/texture.json",200);
+    mDrawComponent = new DrawAnimatedComponent(this,  "../Assets/Sprites/ET/texture.png", "../Assets/Sprites/ET/texture.json", 0.5, 1, 200);
 
 
 
@@ -117,12 +117,12 @@ void Alien::OnProcessInput(const uint8_t* state)
 
 void Alien::OnUpdate(float deltaTime)
 {
-    mPosition.y = std::min(mPosition.y, (float)(mGame->GetWindowHeight()-171));
+    // mPosition.y = std::min(mPosition.y, (float)(mGame->GetWindowHeight()-171));
 
-    if(mPosition.x <= .0f) mPosition.x = .0f;
-    if (mPosition.x > 2800){
-        mGame->SetGameScene(Game::GameScene::Level1, Game::TRANSITION_TIME);
-    }
+    // if(mPosition.x <= .0f) mPosition.x = .0f;
+    // if (mPosition.x > 2800){
+    //     mGame->SetGameScene(Game::GameScene::Level1, Game::TRANSITION_TIME);
+    // }
 
     ManageAnimations();
 }

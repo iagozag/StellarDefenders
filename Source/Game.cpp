@@ -167,7 +167,7 @@ void Game::ChangeScene()
     else if (mNextScene == GameScene::Ship)
     {
         if(!mAlien) mAlien = new Alien(this);
-        mAlien->SetPosition(glm::vec2(-0.9, 1.0));
+        mAlien->SetPosition(glm::vec2(-1, 0));
 
         // SetBackgroundImage("../Assets/Sprites/background.png", glm::vec2(-1,-1), glm::vec2(2.0*(float)WORLD_WIDTH/(float)mWindowWidth,2.0));
     }

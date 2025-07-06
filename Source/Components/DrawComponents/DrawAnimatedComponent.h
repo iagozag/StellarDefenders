@@ -10,7 +10,7 @@
 class DrawAnimatedComponent : public DrawSpriteComponent {
 public:
     // (Lower draw order corresponds with further back)
-    DrawAnimatedComponent(class Actor* owner, const std::string &spriteSheetPath, const std::string &spriteSheetData, int drawOrder = 100);
+    DrawAnimatedComponent(class Actor* owner, const std::string &spriteSheetPath, const std::string &spriteSheetData, float width, float height, int drawOrder = 100);
     ~DrawAnimatedComponent() override;
 
     void Draw(SDL_Renderer* renderer) override;
@@ -36,6 +36,9 @@ private:
 
     // Map of animation name to vector of textures corresponding to the animation
     std::unordered_map<std::string, std::vector<int>> mAnimations;
+
+    float mSpriteWidth;
+    float mSpriteHeight;
 
     // Name of current animation
     std::string mAnimName;

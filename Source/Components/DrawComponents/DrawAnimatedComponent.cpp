@@ -8,8 +8,10 @@
 #include "../../Json.h"
 #include <fstream>
 
-DrawAnimatedComponent::DrawAnimatedComponent(class Actor* owner, const std::string &spriteSheetPath, const std::string &spriteSheetData, int drawOrder)
-        :DrawSpriteComponent(owner, spriteSheetPath, 0, 0, drawOrder)
+DrawAnimatedComponent::DrawAnimatedComponent(class Actor* owner, const std::string &spriteSheetPath, const std::string &spriteSheetData, float width, float height, int drawOrder)
+        :DrawSpriteComponent(owner, spriteSheetPath, 0, 0, drawOrder),
+         mSpriteWidth(width),
+         mSpriteHeight(height)
 {
     LoadSpriteSheet(spriteSheetPath, spriteSheetData);
 }
@@ -57,15 +59,15 @@ void DrawAnimatedComponent::Draw(SDL_Renderer* renderer)
     SDL_FRect dstRect = {
             mOwner->GetPosition().x - mOwner->GetGame()->GetCamera().m_pos.x,
             mOwner->GetPosition().y - mOwner->GetGame()->GetCamera().m_pos.y,
-            static_cast<float>(srcRect->w),
-            static_cast<float>(srcRect->h)
+            mSpriteWidth,
+            mSpriteHeight
     };
 
     SDL_RendererFlip flip = (mOwner->GetRotation() == Math::Pi) ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE;
 
     SDL_SetTextureBlendMode(mSpriteSheetSurface, SDL_BLENDMODE_BLEND);
 
-    const auto transform = GetGame()->GetCamera().get_total_transformation_matrix(*GetGame());
+    const auto transform = mOwner->GetGame()->GetCamera().get_total_transformation_matrix(*mOwner->GetGame());
     const auto transformed_dest = rect_transform(dstRect, transform);
 
     SDL_RenderCopyExF(renderer, mSpriteSheetSurface, srcRect, &transformed_dest, mOwner->GetRotation(), nullptr, flip);
