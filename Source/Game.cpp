@@ -248,6 +248,14 @@ void Game::ProcessInput()
             case SDL_MOUSEWHEEL:
                 m_camera.m_scale *= glm::pow(0.92f, event.wheel.y);
                 break;
+
+            // case SDL_MOUSEBUTTONUP:
+            //     {
+            //         std::cout << event.button.x << ' ' << event.button.y << '\n';
+            //         const auto pos = m_camera.screen_position_to_world_position(*this, glm::vec2(event.button.x, event.button.y));
+            //         std::cout << pos.x << ' ' << pos.y << '\n';
+            //     }
+            //     break;
         }
     }
 
@@ -442,7 +450,7 @@ std::vector<AABBColliderComponent *> Game::GetNearbyColliders(const glm::vec2& p
     return mSpatialHashing->QueryColliders(position, range);
 }
 
-void Game::draw_ellipsis(const glm::vec2 &pos, const glm::vec2 &dim, const size_t num_steps) {
+void Game::draw_ellipsis(const glm::vec2 &pos, const glm::vec2 &dim, const glm::u8vec4 &color, const size_t num_steps) {
     const auto transform = m_camera.get_total_transformation_matrix(*this);
 
     // Uma elipse preenchida pode ser construída como um triângulo fan
@@ -455,10 +463,10 @@ void Game::draw_ellipsis(const glm::vec2 &pos, const glm::vec2 &dim, const size_
     SDL_Vertex center_vertex;
     center_vertex.position.x = pos.x;
     center_vertex.position.y = pos.y;
-    center_vertex.color.r = 255; // Cor vermelha por padrão, você pode parametrizar
-    center_vertex.color.g = 0;
-    center_vertex.color.b = 0;
-    center_vertex.color.a = 255;
+    center_vertex.color.r = color.r;
+    center_vertex.color.g = color.g;
+    center_vertex.color.b = color.b;
+    center_vertex.color.a = color.a;
     vertices.push_back(center_vertex);
 
     // Gera os vértices da borda da elipse
@@ -468,7 +476,7 @@ void Game::draw_ellipsis(const glm::vec2 &pos, const glm::vec2 &dim, const size_
         SDL_Vertex border_vertex;
         border_vertex.position.x = pos.x + dim.x * 0.5f * glm::cos(angle);
         border_vertex.position.y = pos.y + dim.y * 0.5f * glm::sin(angle);
-        border_vertex.color = {0, Uint8((i & 1) * 255), Uint8((1 - (i & 1)) * 255), 255}; // Usa a mesma cor do centro
+        border_vertex.color = center_vertex.color;
         vertices.push_back(border_vertex);
     }
 

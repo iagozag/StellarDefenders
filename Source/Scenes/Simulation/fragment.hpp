@@ -6,8 +6,6 @@
 
 class Game;
 
-constexpr float FRAGMENT_RADIUS = 0.005;
-
 class Fragment: public Particle {
 public:
     Fragment(const glm::vec2 &position, const glm::vec2 &speed);

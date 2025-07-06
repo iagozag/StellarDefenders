@@ -14,6 +14,8 @@ public:
     glm::mat4 get_screen_matrix(const Game &game) const;
     glm::vec2 get_viewport_size(const Game &game) const;
 
+    glm::vec2 screen_position_to_world_position(const Game &game, const glm::vec2 &screen_position) const;
+
     glm::vec2 m_pos;
     float m_scale;
 };

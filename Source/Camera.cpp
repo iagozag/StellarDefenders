@@ -77,3 +77,11 @@ glm::vec2 Camera::get_viewport_size(const Game &game) const {
 
     return { view_width, view_height };
 }
+
+glm::vec2 Camera::screen_position_to_world_position(const Game &game, const glm::vec2 &screen_position) const {
+    const auto world_to_screen_matrix = get_total_transformation_matrix(game);
+    const auto screen_to_world_matrix = glm::inverse(world_to_screen_matrix);
+    const auto screen_pos_homogeneous = glm::vec4(screen_position.x, screen_position.y, 0, 1);
+    const auto world_pos = screen_to_world_matrix * screen_pos_homogeneous;
+    return glm::vec2(world_pos);
+}

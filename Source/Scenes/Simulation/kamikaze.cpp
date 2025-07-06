@@ -23,7 +23,7 @@ bool Kamikaze::target_inside_radius(const std::reference_wrapper<KinematicBody> 
 }
 
 void Kamikaze::draw(Game &game) const {
-    game.draw_ellipsis(m_position, {KAMIKAZE_RADIUS * 2, KAMIKAZE_RADIUS * 2});
+    game.draw_ellipsis(m_position, glm::vec2(KAMIKAZE_RADIUS) * 2.f, {100, 100, 100, 255});
 }
 
 void Kamikaze::on_collision() {

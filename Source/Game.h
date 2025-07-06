@@ -114,7 +114,7 @@ public:
     void SetGamePlayState(GamePlayState state) { mGamePlayState = state; }
     GamePlayState GetGamePlayState() const { return mGamePlayState; }
 
-    void draw_ellipsis(const glm::vec2 &pos, const glm::vec2 &dim, const size_t num_steps = 16);
+    void draw_ellipsis(const glm::vec2 &pos, const glm::vec2 &dim, const glm::u8vec4 &color, const size_t num_steps = 16);
     glm::ivec2 get_window_dimensions() const;
 
 private:
