@@ -106,7 +106,7 @@ bool Game::Initialize()
     mAudio = new AudioSystem();
 
 
-    mSpatialHashing = new SpatialHashing(TILE_SIZE * 4.0f,
+    mSpatialHashing = new SpatialHashing(32.0f * 4.0f,
                                          WORLD_WIDTH,
                                          WORLD_HEIGHT);
     mTicksCount = SDL_GetTicks();
@@ -114,7 +114,7 @@ bool Game::Initialize()
     // Init all game actors
     SetGameScene(GameScene::MainMenu);
 
-    m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level1()));
+    // m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level1()));
 
     return true;
 }
@@ -160,20 +160,23 @@ void Game::ChangeScene()
     mGamePlayState = GamePlayState::Playing;
 
     // Reset scene manager state
-    mSpatialHashing = new SpatialHashing(TILE_SIZE * 4.0f, WORLD_WIDTH, WORLD_HEIGHT);
+    mSpatialHashing = new SpatialHashing(32.0f * 4.0f, WORLD_WIDTH, WORLD_HEIGHT);
 
     // Scene Manager FSM: using if/else instead of switch
     if (mNextScene == GameScene::MainMenu)
     {
+        mMusicHandle = mAudio->PlaySound("mainMenu.mp3", true);
         // Initialize main menu actors
         LoadMainMenu();
     }
     else if (mNextScene == GameScene::Ship)
     {
+        mMusicHandle = mAudio->PlaySound("spaceshipAmbient.mp3", true);
         mShipMenu = new ShipMenu(*this);
     }
     else if (mNextScene == GameScene::Level1)
     {
+        mMusicHandle = mAudio->PlaySound("level1.mp3", true);
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
         mHUD->SetLevelName("Fase 1");
 
@@ -181,6 +184,7 @@ void Game::ChangeScene()
     }
     else if (mNextScene == GameScene::Level2)
     {
+        mMusicHandle = mAudio->PlaySound("level2.mp3", true);
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
 
         mHUD->SetLevelName("Fase 2");
@@ -327,7 +331,7 @@ void Game::UpdateGame() {
         UpdateActors(delta_t);
     }
 
-    UpdateCamera();
+    // UpdateCamera();
 
     // Reinsert audio system
     mAudio->Update(delta_t);
@@ -366,16 +370,11 @@ void Game::UpdateCamera(){
         m_camera.m_pos.x += state[SDL_SCANCODE_D] * m_camera.m_scale / 100;
         m_camera.m_pos.y -= state[SDL_SCANCODE_S] * m_camera.m_scale / 100;
         m_camera.m_pos.y += state[SDL_SCANCODE_W] * m_camera.m_scale / 100;
-    } else if (mGameScene != GameScene::Ship) {
+    } else if (mGameScene == GameScene::Ship) {
         m_camera.m_pos = glm::vec2(.0f);
-    } else {
-        // float horizontalCameraPos = mAlien->GetPosition().x - (mWindowWidth / 2.0f);
-
-        // float maxCameraPos = WORLD_WIDTH - mWindowWidth;
-        // horizontalCameraPos = Math::Clamp(horizontalCameraPos, 0.0f, maxCameraPos);
-
-        // m_camera.m_pos.x = horizontalCameraPos;
     }
+    else
+        m_camera.m_pos = glm::vec2(.0f);
 }
 
 void Game::UpdateSceneManager(float deltaTime)
@@ -637,6 +636,13 @@ UIFont* Game::LoadFont(const std::string& fileName)
 
 void Game::UnloadScene()
 {
+    // Pause current music
+    if (mAudio && mMusicHandle.IsValid())
+    {
+        mAudio->PauseSound(mMusicHandle);
+        mMusicHandle.Reset();
+    }
+
     // Delete actors
     delete mSpatialHashing;
     mSpatialHashing = nullptr;
@@ -676,6 +682,10 @@ AudioSystem* Game::GetAudio() {
     return mAudio;
 }
 
-const Camera &Game::GetCamera() {
+const Camera &Game::GetCamera() const {
+    return m_camera;
+}
+
+Camera &Game::GetCamera() {
     return m_camera;
 }

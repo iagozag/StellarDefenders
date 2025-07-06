@@ -30,6 +30,7 @@ class Alien : public Actor{
         float mJumpSpeed;
         bool mIsRunning;
         bool mIsDead;
+        glm::vec2 m_scale;
 
         class RigidBodyComponent* mRigidBodyComponent;
         class DrawAnimatedComponent* mDrawComponent;

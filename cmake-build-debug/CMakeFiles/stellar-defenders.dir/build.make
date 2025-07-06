@@ -43,19 +43,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2024.3.5\bin\cmake\win\x64\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2024.3.4\bin\cmake\win\x64\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2024.3.5\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2024.3.4\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\csxuser\Downloads\jogos\StellarDefenders
+CMAKE_SOURCE_DIR = "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug
+CMAKE_BINARY_DIR = "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/stellar-defenders.dir/depend.make
@@ -70,534 +70,579 @@ include CMakeFiles/stellar-defenders.dir/flags.make
 
 CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Actors/Actor.cpp
+CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Actors/Actor.cpp
 CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Actors\Actor.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Actors\Actor.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Actors\Actor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Actors\Actor.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Actors\Actor.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Actors\Actor.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Actors\Actor.cpp > CMakeFiles\stellar-defenders.dir\Source\Actors\Actor.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Actors\Actor.cpp" > CMakeFiles\stellar-defenders.dir\Source\Actors\Actor.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Actors\Actor.cpp -o CMakeFiles\stellar-defenders.dir\Source\Actors\Actor.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Actors\Actor.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Actors\Actor.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Actors/Alien.cpp
+CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Actors/Alien.cpp
 CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Actors\Alien.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Actors\Alien.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Actors\Alien.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Actors\Alien.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Actors\Alien.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Actors\Alien.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Actors\Alien.cpp > CMakeFiles\stellar-defenders.dir\Source\Actors\Alien.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Actors\Alien.cpp" > CMakeFiles\stellar-defenders.dir\Source\Actors\Alien.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Actors\Alien.cpp -o CMakeFiles\stellar-defenders.dir\Source\Actors\Alien.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Actors\Alien.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Actors\Alien.cpp.s
 
-CMakeFiles/stellar-defenders.dir/Source/Actors/Laser.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
-CMakeFiles/stellar-defenders.dir/Source/Actors/Laser.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Actors/Laser.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Actors/Laser.cpp
-CMakeFiles/stellar-defenders.dir/Source/Actors/Laser.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Actors/Laser.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Actors/Laser.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Actors\Laser.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Actors\Laser.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Actors\Laser.cpp
+CMakeFiles/stellar-defenders.dir/Source/Actors/EmergencyLight.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
+CMakeFiles/stellar-defenders.dir/Source/Actors/EmergencyLight.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
+CMakeFiles/stellar-defenders.dir/Source/Actors/EmergencyLight.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Actors/EmergencyLight.cpp
+CMakeFiles/stellar-defenders.dir/Source/Actors/EmergencyLight.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Actors/EmergencyLight.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Actors/EmergencyLight.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Actors\EmergencyLight.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Actors\EmergencyLight.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Actors\EmergencyLight.cpp"
 
-CMakeFiles/stellar-defenders.dir/Source/Actors/Laser.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Actors/Laser.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Actors\Laser.cpp > CMakeFiles\stellar-defenders.dir\Source\Actors\Laser.cpp.i
+CMakeFiles/stellar-defenders.dir/Source/Actors/EmergencyLight.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Actors/EmergencyLight.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Actors\EmergencyLight.cpp" > CMakeFiles\stellar-defenders.dir\Source\Actors\EmergencyLight.cpp.i
 
-CMakeFiles/stellar-defenders.dir/Source/Actors/Laser.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Actors/Laser.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Actors\Laser.cpp -o CMakeFiles\stellar-defenders.dir\Source\Actors\Laser.cpp.s
+CMakeFiles/stellar-defenders.dir/Source/Actors/EmergencyLight.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Actors/EmergencyLight.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Actors\EmergencyLight.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Actors\EmergencyLight.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Actors/Ship.cpp
+CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Actors/Ship.cpp
 CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Actors\Ship.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Actors\Ship.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Actors\Ship.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Actors\Ship.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Actors\Ship.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Actors\Ship.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Actors\Ship.cpp > CMakeFiles\stellar-defenders.dir\Source\Actors\Ship.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Actors\Ship.cpp" > CMakeFiles\stellar-defenders.dir\Source\Actors\Ship.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Actors\Ship.cpp -o CMakeFiles\stellar-defenders.dir\Source\Actors\Ship.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Actors\Ship.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Actors\Ship.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/AudioSystem.cpp
+CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/AudioSystem.cpp
 CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\AudioSystem.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\AudioSystem.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\AudioSystem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\AudioSystem.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\AudioSystem.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\AudioSystem.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\AudioSystem.cpp > CMakeFiles\stellar-defenders.dir\Source\AudioSystem.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\AudioSystem.cpp" > CMakeFiles\stellar-defenders.dir\Source\AudioSystem.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\AudioSystem.cpp -o CMakeFiles\stellar-defenders.dir\Source\AudioSystem.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\AudioSystem.cpp" -o CMakeFiles\stellar-defenders.dir\Source\AudioSystem.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/Camera.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Camera.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Camera.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Camera.cpp
+CMakeFiles/stellar-defenders.dir/Source/Camera.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Camera.cpp
 CMakeFiles/stellar-defenders.dir/Source/Camera.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Camera.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Camera.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Camera.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Camera.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Camera.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Camera.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Camera.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Camera.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Camera.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/Camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Camera.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Camera.cpp > CMakeFiles\stellar-defenders.dir\Source\Camera.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Camera.cpp" > CMakeFiles\stellar-defenders.dir\Source\Camera.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/Camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Camera.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Camera.cpp -o CMakeFiles\stellar-defenders.dir\Source\Camera.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Camera.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Camera.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/AABBColliderComponent.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/AABBColliderComponent.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/AABBColliderComponent.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Components/ColliderComponents/AABBColliderComponent.cpp
+CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/AABBColliderComponent.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Components/ColliderComponents/AABBColliderComponent.cpp
 CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/AABBColliderComponent.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/AABBColliderComponent.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/AABBColliderComponent.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Components\ColliderComponents\AABBColliderComponent.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Components\ColliderComponents\AABBColliderComponent.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Components\ColliderComponents\AABBColliderComponent.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/AABBColliderComponent.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/AABBColliderComponent.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Components\ColliderComponents\AABBColliderComponent.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Components\ColliderComponents\AABBColliderComponent.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Components\ColliderComponents\AABBColliderComponent.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/AABBColliderComponent.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/AABBColliderComponent.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Components\ColliderComponents\AABBColliderComponent.cpp > CMakeFiles\stellar-defenders.dir\Source\Components\ColliderComponents\AABBColliderComponent.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Components\ColliderComponents\AABBColliderComponent.cpp" > CMakeFiles\stellar-defenders.dir\Source\Components\ColliderComponents\AABBColliderComponent.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/AABBColliderComponent.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/AABBColliderComponent.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Components\ColliderComponents\AABBColliderComponent.cpp -o CMakeFiles\stellar-defenders.dir\Source\Components\ColliderComponents\AABBColliderComponent.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Components\ColliderComponents\AABBColliderComponent.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Components\ColliderComponents\AABBColliderComponent.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/CircleColliderComponent.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/CircleColliderComponent.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/CircleColliderComponent.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Components/ColliderComponents/CircleColliderComponent.cpp
+CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/CircleColliderComponent.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Components/ColliderComponents/CircleColliderComponent.cpp
 CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/CircleColliderComponent.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/CircleColliderComponent.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/CircleColliderComponent.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Components\ColliderComponents\CircleColliderComponent.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Components\ColliderComponents\CircleColliderComponent.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Components\ColliderComponents\CircleColliderComponent.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/CircleColliderComponent.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/CircleColliderComponent.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Components\ColliderComponents\CircleColliderComponent.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Components\ColliderComponents\CircleColliderComponent.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Components\ColliderComponents\CircleColliderComponent.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/CircleColliderComponent.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/CircleColliderComponent.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Components\ColliderComponents\CircleColliderComponent.cpp > CMakeFiles\stellar-defenders.dir\Source\Components\ColliderComponents\CircleColliderComponent.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Components\ColliderComponents\CircleColliderComponent.cpp" > CMakeFiles\stellar-defenders.dir\Source\Components\ColliderComponents\CircleColliderComponent.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/CircleColliderComponent.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Components/ColliderComponents/CircleColliderComponent.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Components\ColliderComponents\CircleColliderComponent.cpp -o CMakeFiles\stellar-defenders.dir\Source\Components\ColliderComponents\CircleColliderComponent.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Components\ColliderComponents\CircleColliderComponent.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Components\ColliderComponents\CircleColliderComponent.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Components/Component.cpp
+CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Components/Component.cpp
 CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Components\Component.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Components\Component.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Components\Component.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Components\Component.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Components\Component.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Components\Component.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Components\Component.cpp > CMakeFiles\stellar-defenders.dir\Source\Components\Component.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Components\Component.cpp" > CMakeFiles\stellar-defenders.dir\Source\Components\Component.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Components/Component.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Components\Component.cpp -o CMakeFiles\stellar-defenders.dir\Source\Components\Component.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Components\Component.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Components\Component.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawAnimatedComponent.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawAnimatedComponent.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawAnimatedComponent.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Components/DrawComponents/DrawAnimatedComponent.cpp
+CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawAnimatedComponent.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Components/DrawComponents/DrawAnimatedComponent.cpp
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawAnimatedComponent.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawAnimatedComponent.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawAnimatedComponent.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawAnimatedComponent.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawAnimatedComponent.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Components\DrawComponents\DrawAnimatedComponent.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawAnimatedComponent.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawAnimatedComponent.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawAnimatedComponent.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawAnimatedComponent.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Components\DrawComponents\DrawAnimatedComponent.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawAnimatedComponent.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawAnimatedComponent.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Components\DrawComponents\DrawAnimatedComponent.cpp > CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawAnimatedComponent.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Components\DrawComponents\DrawAnimatedComponent.cpp" > CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawAnimatedComponent.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawAnimatedComponent.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawAnimatedComponent.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Components\DrawComponents\DrawAnimatedComponent.cpp -o CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawAnimatedComponent.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Components\DrawComponents\DrawAnimatedComponent.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawAnimatedComponent.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Components/DrawComponents/DrawComponent.cpp
+CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Components/DrawComponents/DrawComponent.cpp
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawComponent.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawComponent.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Components\DrawComponents\DrawComponent.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawComponent.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawComponent.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Components\DrawComponents\DrawComponent.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Components\DrawComponents\DrawComponent.cpp > CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawComponent.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Components\DrawComponents\DrawComponent.cpp" > CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawComponent.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawComponent.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Components\DrawComponents\DrawComponent.cpp -o CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawComponent.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Components\DrawComponents\DrawComponent.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawComponent.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawPolygonComponent.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawPolygonComponent.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawPolygonComponent.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Components/DrawComponents/DrawPolygonComponent.cpp
+CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawPolygonComponent.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Components/DrawComponents/DrawPolygonComponent.cpp
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawPolygonComponent.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawPolygonComponent.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawPolygonComponent.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawPolygonComponent.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawPolygonComponent.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Components\DrawComponents\DrawPolygonComponent.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawPolygonComponent.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawPolygonComponent.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawPolygonComponent.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawPolygonComponent.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Components\DrawComponents\DrawPolygonComponent.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawPolygonComponent.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawPolygonComponent.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Components\DrawComponents\DrawPolygonComponent.cpp > CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawPolygonComponent.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Components\DrawComponents\DrawPolygonComponent.cpp" > CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawPolygonComponent.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawPolygonComponent.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawPolygonComponent.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Components\DrawComponents\DrawPolygonComponent.cpp -o CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawPolygonComponent.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Components\DrawComponents\DrawPolygonComponent.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawPolygonComponent.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComponent.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComponent.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComponent.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Components/DrawComponents/DrawSpriteComponent.cpp
+CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComponent.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Components/DrawComponents/DrawSpriteComponent.cpp
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComponent.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComponent.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComponent.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawSpriteComponent.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawSpriteComponent.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Components\DrawComponents\DrawSpriteComponent.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComponent.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComponent.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawSpriteComponent.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawSpriteComponent.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Components\DrawComponents\DrawSpriteComponent.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComponent.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComponent.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Components\DrawComponents\DrawSpriteComponent.cpp > CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawSpriteComponent.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Components\DrawComponents\DrawSpriteComponent.cpp" > CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawSpriteComponent.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComponent.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Components/DrawComponents/DrawSpriteComponent.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Components\DrawComponents\DrawSpriteComponent.cpp -o CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawSpriteComponent.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Components\DrawComponents\DrawSpriteComponent.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Components\DrawComponents\DrawSpriteComponent.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/Components/RigidBodyComponent.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Components/RigidBodyComponent.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Components/RigidBodyComponent.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Components/RigidBodyComponent.cpp
+CMakeFiles/stellar-defenders.dir/Source/Components/RigidBodyComponent.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Components/RigidBodyComponent.cpp
 CMakeFiles/stellar-defenders.dir/Source/Components/RigidBodyComponent.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/RigidBodyComponent.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Components/RigidBodyComponent.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Components\RigidBodyComponent.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Components\RigidBodyComponent.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Components\RigidBodyComponent.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Components/RigidBodyComponent.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Components/RigidBodyComponent.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Components\RigidBodyComponent.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Components\RigidBodyComponent.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Components\RigidBodyComponent.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/Components/RigidBodyComponent.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Components/RigidBodyComponent.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Components\RigidBodyComponent.cpp > CMakeFiles\stellar-defenders.dir\Source\Components\RigidBodyComponent.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Components\RigidBodyComponent.cpp" > CMakeFiles\stellar-defenders.dir\Source\Components\RigidBodyComponent.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/Components/RigidBodyComponent.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Components/RigidBodyComponent.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Components\RigidBodyComponent.cpp -o CMakeFiles\stellar-defenders.dir\Source\Components\RigidBodyComponent.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Components\RigidBodyComponent.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Components\RigidBodyComponent.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/Game.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Game.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Game.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Game.cpp
+CMakeFiles/stellar-defenders.dir/Source/Game.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Game.cpp
 CMakeFiles/stellar-defenders.dir/Source/Game.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Game.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Game.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Game.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Game.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Game.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Game.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Game.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Game.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Game.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/Game.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Game.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Game.cpp > CMakeFiles\stellar-defenders.dir\Source\Game.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Game.cpp" > CMakeFiles\stellar-defenders.dir\Source\Game.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/Game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Game.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Game.cpp -o CMakeFiles\stellar-defenders.dir\Source\Game.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Game.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Game.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/HUD.cpp
+CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/HUD.cpp
 CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\HUD.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\HUD.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\HUD.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\HUD.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\HUD.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\HUD.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\HUD.cpp > CMakeFiles\stellar-defenders.dir\Source\HUD.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\HUD.cpp" > CMakeFiles\stellar-defenders.dir\Source\HUD.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\HUD.cpp -o CMakeFiles\stellar-defenders.dir\Source\HUD.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\HUD.cpp" -o CMakeFiles\stellar-defenders.dir\Source\HUD.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/Main.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Main.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Main.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Main.cpp
+CMakeFiles/stellar-defenders.dir/Source/Main.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Main.cpp
 CMakeFiles/stellar-defenders.dir/Source/Main.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Main.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Main.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Main.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Main.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Main.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Main.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Main.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Main.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Main.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/Main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Main.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Main.cpp > CMakeFiles\stellar-defenders.dir\Source\Main.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Main.cpp" > CMakeFiles\stellar-defenders.dir\Source\Main.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/Main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Main.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Main.cpp -o CMakeFiles\stellar-defenders.dir\Source\Main.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Main.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Main.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/Math.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Math.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Math.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Math.cpp
+CMakeFiles/stellar-defenders.dir/Source/Math.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Math.cpp
 CMakeFiles/stellar-defenders.dir/Source/Math.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Math.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Math.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Math.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Math.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Math.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Math.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Math.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Math.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Math.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Math.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/Math.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Math.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Math.cpp > CMakeFiles\stellar-defenders.dir\Source\Math.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Math.cpp" > CMakeFiles\stellar-defenders.dir\Source\Math.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/Math.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Math.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Math.cpp -o CMakeFiles\stellar-defenders.dir\Source\Math.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Math.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Math.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/Random.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Random.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Random.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Random.cpp
+CMakeFiles/stellar-defenders.dir/Source/Random.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Random.cpp
 CMakeFiles/stellar-defenders.dir/Source/Random.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Random.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Random.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Random.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Random.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Random.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Random.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Random.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Random.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Random.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Random.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/Random.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Random.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Random.cpp > CMakeFiles\stellar-defenders.dir\Source\Random.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Random.cpp" > CMakeFiles\stellar-defenders.dir\Source\Random.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/Random.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Random.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Random.cpp -o CMakeFiles\stellar-defenders.dir\Source\Random.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Random.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Random.cpp.s
+
+CMakeFiles/stellar-defenders.dir/Source/Scenes/1/one.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
+CMakeFiles/stellar-defenders.dir/Source/Scenes/1/one.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
+CMakeFiles/stellar-defenders.dir/Source/Scenes/1/one.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/1/one.cpp
+CMakeFiles/stellar-defenders.dir/Source/Scenes/1/one.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Scenes/1/one.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Scenes/1/one.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Scenes\1\one.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Scenes\1\one.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\1\one.cpp"
+
+CMakeFiles/stellar-defenders.dir/Source/Scenes/1/one.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Scenes/1/one.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\1\one.cpp" > CMakeFiles\stellar-defenders.dir\Source\Scenes\1\one.cpp.i
+
+CMakeFiles/stellar-defenders.dir/Source/Scenes/1/one.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Scenes/1/one.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\1\one.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Scenes\1\one.cpp.s
+
+CMakeFiles/stellar-defenders.dir/Source/Scenes/ShipMenu/ShipMenu.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
+CMakeFiles/stellar-defenders.dir/Source/Scenes/ShipMenu/ShipMenu.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
+CMakeFiles/stellar-defenders.dir/Source/Scenes/ShipMenu/ShipMenu.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/ShipMenu/ShipMenu.cpp
+CMakeFiles/stellar-defenders.dir/Source/Scenes/ShipMenu/ShipMenu.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Scenes/ShipMenu/ShipMenu.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Scenes/ShipMenu/ShipMenu.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Scenes\ShipMenu\ShipMenu.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Scenes\ShipMenu\ShipMenu.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\ShipMenu\ShipMenu.cpp"
+
+CMakeFiles/stellar-defenders.dir/Source/Scenes/ShipMenu/ShipMenu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Scenes/ShipMenu/ShipMenu.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\ShipMenu\ShipMenu.cpp" > CMakeFiles\stellar-defenders.dir\Source\Scenes\ShipMenu\ShipMenu.cpp.i
+
+CMakeFiles/stellar-defenders.dir/Source/Scenes/ShipMenu/ShipMenu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Scenes/ShipMenu/ShipMenu.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\ShipMenu\ShipMenu.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Scenes\ShipMenu\ShipMenu.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/collidable_sphere.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/collidable_sphere.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/collidable_sphere.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Scenes/Simulation/collidable_sphere.cpp
+CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/collidable_sphere.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/collidable_sphere.cpp
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/collidable_sphere.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/collidable_sphere.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/collidable_sphere.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\collidable_sphere.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\collidable_sphere.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Scenes\Simulation\collidable_sphere.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/collidable_sphere.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/collidable_sphere.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\collidable_sphere.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\collidable_sphere.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\Simulation\collidable_sphere.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/collidable_sphere.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/collidable_sphere.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Scenes\Simulation\collidable_sphere.cpp > CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\collidable_sphere.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\Simulation\collidable_sphere.cpp" > CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\collidable_sphere.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/collidable_sphere.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/collidable_sphere.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Scenes\Simulation\collidable_sphere.cpp -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\collidable_sphere.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\Simulation\collidable_sphere.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\collidable_sphere.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/fragment.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/fragment.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/fragment.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Scenes/Simulation/fragment.cpp
+CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/fragment.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/fragment.cpp
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/fragment.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/fragment.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/fragment.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\fragment.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\fragment.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Scenes\Simulation\fragment.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/fragment.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/fragment.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\fragment.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\fragment.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\Simulation\fragment.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/fragment.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/fragment.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Scenes\Simulation\fragment.cpp > CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\fragment.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\Simulation\fragment.cpp" > CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\fragment.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/fragment.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/fragment.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Scenes\Simulation\fragment.cpp -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\fragment.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\Simulation\fragment.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\fragment.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kamikaze.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kamikaze.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kamikaze.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Scenes/Simulation/kamikaze.cpp
+CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kamikaze.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/kamikaze.cpp
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kamikaze.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kamikaze.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kamikaze.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\kamikaze.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\kamikaze.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Scenes\Simulation\kamikaze.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kamikaze.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kamikaze.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\kamikaze.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\kamikaze.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\Simulation\kamikaze.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kamikaze.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kamikaze.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Scenes\Simulation\kamikaze.cpp > CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\kamikaze.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\Simulation\kamikaze.cpp" > CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\kamikaze.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kamikaze.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kamikaze.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Scenes\Simulation\kamikaze.cpp -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\kamikaze.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\Simulation\kamikaze.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\kamikaze.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kinematic_body.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kinematic_body.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kinematic_body.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Scenes/Simulation/kinematic_body.cpp
+CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kinematic_body.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/kinematic_body.cpp
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kinematic_body.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kinematic_body.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kinematic_body.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\kinematic_body.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\kinematic_body.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Scenes\Simulation\kinematic_body.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kinematic_body.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kinematic_body.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\kinematic_body.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\kinematic_body.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\Simulation\kinematic_body.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kinematic_body.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kinematic_body.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Scenes\Simulation\kinematic_body.cpp > CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\kinematic_body.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\Simulation\kinematic_body.cpp" > CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\kinematic_body.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kinematic_body.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kinematic_body.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Scenes\Simulation\kinematic_body.cpp -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\kinematic_body.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\Simulation\kinematic_body.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\kinematic_body.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/particle.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/particle.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/particle.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Scenes/Simulation/particle.cpp
+CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/particle.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/particle.cpp
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/particle.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/particle.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/particle.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\particle.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\particle.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Scenes\Simulation\particle.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/particle.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/particle.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\particle.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\particle.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\Simulation\particle.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/particle.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/particle.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Scenes\Simulation\particle.cpp > CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\particle.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\Simulation\particle.cpp" > CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\particle.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/particle.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/particle.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Scenes\Simulation\particle.cpp -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\particle.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\Simulation\particle.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\particle.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/planet.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/planet.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/planet.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Scenes/Simulation/planet.cpp
+CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/planet.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/planet.cpp
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/planet.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/planet.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/planet.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\planet.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\planet.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Scenes\Simulation\planet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/planet.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/planet.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\planet.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\planet.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\Simulation\planet.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/planet.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/planet.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Scenes\Simulation\planet.cpp > CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\planet.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\Simulation\planet.cpp" > CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\planet.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/planet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/planet.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Scenes\Simulation\planet.cpp -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\planet.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\Simulation\planet.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\planet.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/simulation.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/simulation.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/simulation.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Scenes/Simulation/simulation.cpp
+CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/simulation.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/simulation.cpp
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/simulation.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/simulation.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/simulation.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\simulation.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\simulation.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Scenes\Simulation\simulation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/simulation.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/simulation.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\simulation.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\simulation.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\Simulation\simulation.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/simulation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/simulation.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Scenes\Simulation\simulation.cpp > CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\simulation.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\Simulation\simulation.cpp" > CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\simulation.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/simulation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/simulation.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Scenes\Simulation\simulation.cpp -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\simulation.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\Simulation\simulation.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\simulation.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/target.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/target.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/target.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/Scenes/Simulation/target.cpp
+CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/target.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/target.cpp
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/target.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/target.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/target.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\target.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\target.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Scenes\Simulation\target.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/target.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/target.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\target.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\target.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\Simulation\target.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/target.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/target.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Scenes\Simulation\target.cpp > CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\target.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\Simulation\target.cpp" > CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\target.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/target.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/target.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\Scenes\Simulation\target.cpp -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\target.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\Scenes\Simulation\target.cpp" -o CMakeFiles\stellar-defenders.dir\Source\Scenes\Simulation\target.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/SpatialHashing.cpp
+CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/SpatialHashing.cpp
 CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\SpatialHashing.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\SpatialHashing.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\SpatialHashing.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\SpatialHashing.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\SpatialHashing.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\SpatialHashing.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\SpatialHashing.cpp > CMakeFiles\stellar-defenders.dir\Source\SpatialHashing.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\SpatialHashing.cpp" > CMakeFiles\stellar-defenders.dir\Source\SpatialHashing.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/SpatialHashing.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\SpatialHashing.cpp -o CMakeFiles\stellar-defenders.dir\Source\SpatialHashing.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\SpatialHashing.cpp" -o CMakeFiles\stellar-defenders.dir\Source\SpatialHashing.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIButton.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIButton.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/UIElements/UIButton.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/UIElements/UIButton.cpp
+CMakeFiles/stellar-defenders.dir/Source/UIElements/UIButton.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/UIElements/UIButton.cpp
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIButton.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/UIElements/UIButton.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/UIElements/UIButton.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\UIElements\UIButton.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\UIElements\UIButton.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\UIElements\UIButton.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/UIElements/UIButton.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/UIElements/UIButton.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\UIElements\UIButton.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\UIElements\UIButton.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\UIElements\UIButton.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIButton.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/UIElements/UIButton.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\UIElements\UIButton.cpp > CMakeFiles\stellar-defenders.dir\Source\UIElements\UIButton.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\UIElements\UIButton.cpp" > CMakeFiles\stellar-defenders.dir\Source\UIElements\UIButton.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIButton.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/UIElements/UIButton.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\UIElements\UIButton.cpp -o CMakeFiles\stellar-defenders.dir\Source\UIElements\UIButton.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\UIElements\UIButton.cpp" -o CMakeFiles\stellar-defenders.dir\Source\UIElements\UIButton.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIElement.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIElement.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/UIElements/UIElement.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/UIElements/UIElement.cpp
+CMakeFiles/stellar-defenders.dir/Source/UIElements/UIElement.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/UIElements/UIElement.cpp
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIElement.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/UIElements/UIElement.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/UIElements/UIElement.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\UIElements\UIElement.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\UIElements\UIElement.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\UIElements\UIElement.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/UIElements/UIElement.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/UIElements/UIElement.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\UIElements\UIElement.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\UIElements\UIElement.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\UIElements\UIElement.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIElement.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/UIElements/UIElement.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\UIElements\UIElement.cpp > CMakeFiles\stellar-defenders.dir\Source\UIElements\UIElement.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\UIElements\UIElement.cpp" > CMakeFiles\stellar-defenders.dir\Source\UIElements\UIElement.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIElement.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/UIElements/UIElement.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\UIElements\UIElement.cpp -o CMakeFiles\stellar-defenders.dir\Source\UIElements\UIElement.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\UIElements\UIElement.cpp" -o CMakeFiles\stellar-defenders.dir\Source\UIElements\UIElement.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIFont.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIFont.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/UIElements/UIFont.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/UIElements/UIFont.cpp
+CMakeFiles/stellar-defenders.dir/Source/UIElements/UIFont.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/UIElements/UIFont.cpp
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIFont.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/UIElements/UIFont.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/UIElements/UIFont.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\UIElements\UIFont.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\UIElements\UIFont.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\UIElements\UIFont.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/UIElements/UIFont.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/UIElements/UIFont.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\UIElements\UIFont.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\UIElements\UIFont.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\UIElements\UIFont.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIFont.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/UIElements/UIFont.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\UIElements\UIFont.cpp > CMakeFiles\stellar-defenders.dir\Source\UIElements\UIFont.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\UIElements\UIFont.cpp" > CMakeFiles\stellar-defenders.dir\Source\UIElements\UIFont.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIFont.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/UIElements/UIFont.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\UIElements\UIFont.cpp -o CMakeFiles\stellar-defenders.dir\Source\UIElements\UIFont.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\UIElements\UIFont.cpp" -o CMakeFiles\stellar-defenders.dir\Source\UIElements\UIFont.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/UIElements/UIImage.cpp
+CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/UIElements/UIImage.cpp
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\UIElements\UIImage.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\UIElements\UIImage.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\UIElements\UIImage.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\UIElements\UIImage.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\UIElements\UIImage.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\UIElements\UIImage.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\UIElements\UIImage.cpp > CMakeFiles\stellar-defenders.dir\Source\UIElements\UIImage.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\UIElements\UIImage.cpp" > CMakeFiles\stellar-defenders.dir\Source\UIElements\UIImage.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\UIElements\UIImage.cpp -o CMakeFiles\stellar-defenders.dir\Source\UIElements\UIImage.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\UIElements\UIImage.cpp" -o CMakeFiles\stellar-defenders.dir\Source\UIElements\UIImage.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/UIElements/UIScreen.cpp
+CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/UIElements/UIScreen.cpp
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\UIElements\UIScreen.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\UIElements\UIScreen.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\UIElements\UIScreen.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\UIElements\UIScreen.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\UIElements\UIScreen.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\UIElements\UIScreen.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\UIElements\UIScreen.cpp > CMakeFiles\stellar-defenders.dir\Source\UIElements\UIScreen.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\UIElements\UIScreen.cpp" > CMakeFiles\stellar-defenders.dir\Source\UIElements\UIScreen.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\UIElements\UIScreen.cpp -o CMakeFiles\stellar-defenders.dir\Source\UIElements\UIScreen.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\UIElements\UIScreen.cpp" -o CMakeFiles\stellar-defenders.dir\Source\UIElements\UIScreen.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/UIElements/UIText.cpp
+CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/UIElements/UIText.cpp
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\UIElements\UIText.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\UIElements\UIText.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\UIElements\UIText.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\UIElements\UIText.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\UIElements\UIText.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\UIElements\UIText.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\UIElements\UIText.cpp > CMakeFiles\stellar-defenders.dir\Source\UIElements\UIText.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\UIElements\UIText.cpp" > CMakeFiles\stellar-defenders.dir\Source\UIElements\UIText.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\UIElements\UIText.cpp -o CMakeFiles\stellar-defenders.dir\Source\UIElements\UIText.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\UIElements\UIText.cpp" -o CMakeFiles\stellar-defenders.dir\Source\UIElements\UIText.cpp.s
+
+CMakeFiles/stellar-defenders.dir/Source/norm_greater.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
+CMakeFiles/stellar-defenders.dir/Source/norm_greater.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
+CMakeFiles/stellar-defenders.dir/Source/norm_greater.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/norm_greater.cpp
+CMakeFiles/stellar-defenders.dir/Source/norm_greater.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/norm_greater.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/norm_greater.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\norm_greater.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\norm_greater.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\norm_greater.cpp"
+
+CMakeFiles/stellar-defenders.dir/Source/norm_greater.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/norm_greater.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\norm_greater.cpp" > CMakeFiles\stellar-defenders.dir\Source\norm_greater.cpp.i
+
+CMakeFiles/stellar-defenders.dir/Source/norm_greater.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/norm_greater.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\norm_greater.cpp" -o CMakeFiles\stellar-defenders.dir\Source\norm_greater.cpp.s
 
 CMakeFiles/stellar-defenders.dir/Source/rect_transform.cpp.obj: CMakeFiles/stellar-defenders.dir/flags.make
 CMakeFiles/stellar-defenders.dir/Source/rect_transform.cpp.obj: CMakeFiles/stellar-defenders.dir/includes_CXX.rsp
-CMakeFiles/stellar-defenders.dir/Source/rect_transform.cpp.obj: C:/Users/csxuser/Downloads/jogos/StellarDefenders/Source/rect_transform.cpp
+CMakeFiles/stellar-defenders.dir/Source/rect_transform.cpp.obj: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192\ -\ Desenvolvimento\ de\ Jogos\ Digitais/TPs/Projeto/StellarDefenders/Source/rect_transform.cpp
 CMakeFiles/stellar-defenders.dir/Source/rect_transform.cpp.obj: CMakeFiles/stellar-defenders.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/rect_transform.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/rect_transform.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\rect_transform.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\rect_transform.cpp.obj -c C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\rect_transform.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/stellar-defenders.dir/Source/rect_transform.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stellar-defenders.dir/Source/rect_transform.cpp.obj -MF CMakeFiles\stellar-defenders.dir\Source\rect_transform.cpp.obj.d -o CMakeFiles\stellar-defenders.dir\Source\rect_transform.cpp.obj -c "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\rect_transform.cpp"
 
 CMakeFiles/stellar-defenders.dir/Source/rect_transform.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stellar-defenders.dir/Source/rect_transform.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\rect_transform.cpp > CMakeFiles\stellar-defenders.dir\Source\rect_transform.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\rect_transform.cpp" > CMakeFiles\stellar-defenders.dir\Source\rect_transform.cpp.i
 
 CMakeFiles/stellar-defenders.dir/Source/rect_transform.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stellar-defenders.dir/Source/rect_transform.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\csxuser\Downloads\jogos\StellarDefenders\Source\rect_transform.cpp -o CMakeFiles\stellar-defenders.dir\Source\rect_transform.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\Source\rect_transform.cpp" -o CMakeFiles\stellar-defenders.dir\Source\rect_transform.cpp.s
 
 # Object files for target stellar-defenders
 stellar__defenders_OBJECTS = \
 "CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.obj" \
 "CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.obj" \
-"CMakeFiles/stellar-defenders.dir/Source/Actors/Laser.cpp.obj" \
+"CMakeFiles/stellar-defenders.dir/Source/Actors/EmergencyLight.cpp.obj" \
 "CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.obj" \
 "CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.obj" \
 "CMakeFiles/stellar-defenders.dir/Source/Camera.cpp.obj" \
@@ -614,6 +659,8 @@ stellar__defenders_OBJECTS = \
 "CMakeFiles/stellar-defenders.dir/Source/Main.cpp.obj" \
 "CMakeFiles/stellar-defenders.dir/Source/Math.cpp.obj" \
 "CMakeFiles/stellar-defenders.dir/Source/Random.cpp.obj" \
+"CMakeFiles/stellar-defenders.dir/Source/Scenes/1/one.cpp.obj" \
+"CMakeFiles/stellar-defenders.dir/Source/Scenes/ShipMenu/ShipMenu.cpp.obj" \
 "CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/collidable_sphere.cpp.obj" \
 "CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/fragment.cpp.obj" \
 "CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kamikaze.cpp.obj" \
@@ -629,6 +676,7 @@ stellar__defenders_OBJECTS = \
 "CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.obj" \
 "CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.obj" \
 "CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.obj" \
+"CMakeFiles/stellar-defenders.dir/Source/norm_greater.cpp.obj" \
 "CMakeFiles/stellar-defenders.dir/Source/rect_transform.cpp.obj"
 
 # External object files for target stellar-defenders
@@ -636,7 +684,7 @@ stellar__defenders_EXTERNAL_OBJECTS =
 
 stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/Source/Actors/Actor.cpp.obj
 stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/Source/Actors/Alien.cpp.obj
-stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/Source/Actors/Laser.cpp.obj
+stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/Source/Actors/EmergencyLight.cpp.obj
 stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/Source/Actors/Ship.cpp.obj
 stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/Source/AudioSystem.cpp.obj
 stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/Source/Camera.cpp.obj
@@ -653,6 +701,8 @@ stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/Source/HUD.cpp.obj
 stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/Source/Main.cpp.obj
 stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/Source/Math.cpp.obj
 stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/Source/Random.cpp.obj
+stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/Source/Scenes/1/one.cpp.obj
+stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/Source/Scenes/ShipMenu/ShipMenu.cpp.obj
 stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/collidable_sphere.cpp.obj
 stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/fragment.cpp.obj
 stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/Source/Scenes/Simulation/kamikaze.cpp.obj
@@ -668,16 +718,17 @@ stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/Source/UIElements/UIFont
 stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/Source/UIElements/UIImage.cpp.obj
 stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/Source/UIElements/UIScreen.cpp.obj
 stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/Source/UIElements/UIText.cpp.obj
+stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/Source/norm_greater.cpp.obj
 stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/Source/rect_transform.cpp.obj
 stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/build.make
 stellar-defenders.exe: C:/Program\ Files/SDL2/cmake/../lib/x64/SDL2.lib
 stellar-defenders.exe: C:/Program\ Files/SDL2_image/cmake/../lib/x64/SDL2_image.lib
-stellar-defenders.exe: C:/Program\ Files/SDL2_ttf/cmake/../lib/x64/SDL2_ttf.lib
-stellar-defenders.exe: C:/Program\ Files/SDL2_mixer/cmake/../lib/x64/SDL2_mixer.lib
+stellar-defenders.exe: C:/Program\ Files/SDL2_ttf/x86_64-w64-mingw32/lib/libSDL2_ttf.dll.a
+stellar-defenders.exe: C:/Program\ Files/SDL2_mixer/x86_64-w64-mingw32/lib/libSDL2_mixer.dll.a
 stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/linkLibs.rsp
 stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/objects1.rsp
 stellar-defenders.exe: CMakeFiles/stellar-defenders.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Linking CXX executable stellar-defenders.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_39) "Linking CXX executable stellar-defenders.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\stellar-defenders.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -689,6 +740,6 @@ CMakeFiles/stellar-defenders.dir/clean:
 .PHONY : CMakeFiles/stellar-defenders.dir/clean
 
 CMakeFiles/stellar-defenders.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\csxuser\Downloads\jogos\StellarDefenders C:\Users\csxuser\Downloads\jogos\StellarDefenders C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug\CMakeFiles\stellar-defenders.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders" "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders" "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug" "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug" "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug\CMakeFiles\stellar-defenders.dir\DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : CMakeFiles/stellar-defenders.dir/depend
 

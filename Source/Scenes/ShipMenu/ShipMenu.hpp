@@ -14,6 +14,8 @@ public:
     ShipMenu(Game &game);
     ~ShipMenu();
 
+    Alien* GetAlien() const { return mAlien; }
+
     void draw(Game& game) const;
     void run(const float delta_t);
 

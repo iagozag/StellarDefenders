@@ -1,26 +1,16 @@
-"C:\Program Files\JetBrains\CLion 2024.3.5\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/mingw64/bin/mingw32-make.exe -DCMAKE_CXX_COMPILER=C:/mingw64/bin/g++.exe -G "MinGW Makefiles" -S C:\Users\csxuser\Downloads\jogos\StellarDefenders -B C:\Users\csxuser\Downloads\jogos\StellarDefenders\cmake-build-debug
--- The C compiler identification is GNU 15.1.0
--- The CXX compiler identification is GNU 15.1.0
+"C:\Program Files\JetBrains\CLion 2024.3.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "MinGW Makefiles" -S "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders" -B "C:\Users\luquinhas\Documents\UFMG\2025.1\DCC192 - Desenvolvimento de Jogos Digitais\TPs\Projeto\StellarDefenders\cmake-build-debug"
+-- The C compiler identification is GNU 13.1.0
+-- The CXX compiler identification is GNU 13.1.0
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
--- Check for working C compiler: C:/mingw64/bin/gcc.exe - skipped
+-- Check for working C compiler: C:/Program Files/JetBrains/CLion 2024.3.4/bin/mingw/bin/gcc.exe - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
 -- Detecting CXX compiler ABI info
 -- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: C:/mingw64/bin/g++.exe - skipped
+-- Check for working CXX compiler: C:/Program Files/JetBrains/CLion 2024.3.4/bin/mingw/bin/g++.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
-CMake Deprecation Warning at C:/Program Files/SDL2_ttf/cmake/sdl2_ttf-config.cmake:10 (cmake_minimum_required):
-  Compatibility with CMake < 3.5 will be removed from a future version of
-  CMake.
-
-  Update the VERSION argument <min> value or use a ...<max> suffix to tell
-  CMake that the project does not need compatibility with older versions.
-Call Stack (most recent call first):
-  CMakeLists.txt:14 (find_package)
-
-
--- Configuring done (4.0s)
+-- Configuring done (4.6s)
 -- Generating done (0.1s)
--- Build files have been written to: C:/Users/csxuser/Downloads/jogos/StellarDefenders/cmake-build-debug
+-- Build files have been written to: C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/cmake-build-debug

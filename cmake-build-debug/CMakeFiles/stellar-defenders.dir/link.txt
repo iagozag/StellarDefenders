@@ -1,3 +1,3 @@
-"C:\Program Files\JetBrains\CLion 2024.3.5\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\stellar-defenders.dir/objects.a
-C:\mingw64\bin\ar.exe qc CMakeFiles\stellar-defenders.dir/objects.a @CMakeFiles\stellar-defenders.dir\objects1.rsp
-C:\mingw64\bin\g++.exe -g -fsanitize=address -fsanitize=undefined -mconsole -Wl,--whole-archive CMakeFiles\stellar-defenders.dir/objects.a -Wl,--no-whole-archive -o stellar-defenders.exe -Wl,--out-implib,libstellar-defenders.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\stellar-defenders.dir\linkLibs.rsp
+"C:\Program Files\JetBrains\CLion 2024.3.4\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\stellar-defenders.dir/objects.a
+C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\ar.exe qc CMakeFiles\stellar-defenders.dir/objects.a @CMakeFiles\stellar-defenders.dir\objects1.rsp
+C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE -g -mconsole -Wl,--whole-archive CMakeFiles\stellar-defenders.dir/objects.a -Wl,--no-whole-archive -o stellar-defenders.exe -Wl,--out-implib,libstellar-defenders.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\stellar-defenders.dir\linkLibs.rsp

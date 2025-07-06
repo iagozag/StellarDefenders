@@ -1,0 +1,356 @@
+{
+	"globsDependent" : 
+	[
+		{
+			"expression" : "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/*.cpp",
+			"paths" : 
+			[
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Actors/Actor.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Actors/Alien.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Actors/EmergencyLight.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Actors/Ship.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/AudioSystem.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Camera.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Components/ColliderComponents/AABBColliderComponent.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Components/ColliderComponents/CircleColliderComponent.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Components/Component.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Components/DrawComponents/DrawAnimatedComponent.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Components/DrawComponents/DrawComponent.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Components/DrawComponents/DrawPolygonComponent.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Components/DrawComponents/DrawSpriteComponent.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Components/RigidBodyComponent.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Game.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/HUD.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Main.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Math.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Random.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/1/one.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/ShipMenu/ShipMenu.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/collidable_sphere.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/fragment.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/kamikaze.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/kinematic_body.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/particle.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/planet.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/simulation.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/target.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/SpatialHashing.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/UIElements/UIButton.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/UIElements/UIElement.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/UIElements/UIFont.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/UIElements/UIImage.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/UIElements/UIScreen.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/UIElements/UIText.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/norm_greater.cpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/rect_transform.cpp"
+			],
+			"recurse" : true
+		},
+		{
+			"expression" : "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/*.h",
+			"paths" : 
+			[
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Actors/Actor.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Actors/Alien.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Actors/EmergencyLight.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Actors/Ship.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/AudioSystem.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/CSV.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Color.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Components/ColliderComponents/AABBColliderComponent.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Components/ColliderComponents/CircleColliderComponent.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Components/Component.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Components/DrawComponents/DrawAnimatedComponent.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Components/DrawComponents/DrawComponent.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Components/DrawComponents/DrawPolygonComponent.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Components/DrawComponents/DrawSpriteComponent.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Components/RigidBodyComponent.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Game.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/HUD.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Json.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Math.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Random.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/SpatialHashing.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/UIElements/UIButton.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/UIElements/UIElement.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/UIElements/UIFont.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/UIElements/UIImage.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/UIElements/UIScreen.h",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/UIElements/UIText.h"
+			],
+			"recurse" : true
+		},
+		{
+			"expression" : "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/*.hpp",
+			"paths" : 
+			[
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Camera.hpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/1/one.hpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/ShipMenu/ShipMenu.hpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/collidable_sphere.hpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/fragment.hpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/kamikaze.hpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/kinematic_body.hpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/particle.hpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/planet.hpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/simulation.hpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/Scenes/Simulation/target.hpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/filter_vector.hpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/norm_greater.hpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/rect_transform.hpp",
+				"C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/Source/sq.hpp"
+			],
+			"recurse" : true
+		}
+	],
+	"inputs" : 
+	[
+		{
+			"path" : "CMakeLists.txt"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.30.5/CMakeSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-Initialize.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.30.5/CMakeCCompiler.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/WindowsPaths.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.30.5/CMakeRCCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeRCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-windres.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-C-ABI.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-CXX-ABI.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/Program Files/SDL2/cmake/sdl2-config-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/Program Files/SDL2/cmake/sdl2-config.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/FeatureSummary.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/Program Files/SDL2_image/cmake/sdl2_image-config-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/Program Files/SDL2_image/cmake/sdl2_image-config.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/FeatureSummary.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/Program Files/SDL2_ttf/cmake/sdl2_ttf-config-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/Program Files/SDL2_ttf/x86_64-w64-mingw32/lib/cmake/SDL2_ttf/sdl2_ttf-config-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/Program Files/SDL2_ttf/cmake/sdl2_ttf-config.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/Program Files/SDL2_ttf/x86_64-w64-mingw32/lib/cmake/SDL2_ttf/sdl2_ttf-config.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/FeatureSummary.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/Program Files/SDL2_mixer/cmake/sdl2_mixer-config-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/Program Files/SDL2_mixer/x86_64-w64-mingw32/lib/cmake/SDL2_mixer/sdl2_mixer-config-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/Program Files/SDL2_mixer/cmake/sdl2_mixer-config.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/Program Files/SDL2_mixer/x86_64-w64-mingw32/lib/cmake/SDL2_mixer/sdl2_mixer-config.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/FeatureSummary.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/Program Files/SDL2_mixer/x86_64-w64-mingw32/lib/cmake/SDL2_mixer/PkgConfigHelper.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake"
+		}
+	],
+	"kind" : "cmakeFiles",
+	"paths" : 
+	{
+		"build" : "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders/cmake-build-debug",
+		"source" : "C:/Users/luquinhas/Documents/UFMG/2025.1/DCC192 - Desenvolvimento de Jogos Digitais/TPs/Projeto/StellarDefenders"
+	},
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 1
+	}
+}

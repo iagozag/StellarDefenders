@@ -1,12 +1,5 @@
-//
-// Created by csxuser on 22/06/2025.
-//
-
 #include "Alien.h"
-//
-// Created by Lucas N. Ferreira on 03/08/23.
-//
-
+#include "../norm_greater.hpp"
 
 Alien::Alien(Game* game, const float forwardSpeed, const float jumpSpeed):
     Actor(game),
@@ -17,10 +10,11 @@ Alien::Alien(Game* game, const float forwardSpeed, const float jumpSpeed):
 {
     mRigidBodyComponent = new RigidBodyComponent(this, 1,10, false);
 
-
     // mColliderComponent = new AABBColliderComponent(this, 0, 0, Game::TILE_SIZE - 4.0f, Game::TILE_SIZE, ColliderLayer::Player);
 
-    mDrawComponent = new DrawAnimatedComponent(this,  "../Assets/Sprites/ET/texture.png", "../Assets/Sprites/ET/texture.json", glm::vec2(1, 1.5), 200);
+    m_scale = glm::vec2(1, 1.5);
+    mDrawComponent = new DrawAnimatedComponent(this,  "../Assets/Sprites/ET/texture.png", "../Assets/Sprites/ET/texture.json", m_scale, 200);
+    m_scale = norm_greater(m_scale);
 
     mDrawComponent->AddAnimation("idle", std::vector<int>({6}));
     mDrawComponent->AddAnimation("run", std::vector<int>({4,0,2,11,8,5}));
@@ -31,21 +25,21 @@ Alien::Alien(Game* game, const float forwardSpeed, const float jumpSpeed):
 
 void Alien::OnProcessInput(const uint8_t* state)
 {
-    if (state[SDL_SCANCODE_D])
+    if (state[SDL_SCANCODE_D] || state[SDL_SCANCODE_RIGHT])
     {
         mRigidBodyComponent->ApplyForce(glm::vec2(mForwardSpeed,0));
         mRotation = 0.0f;
         mIsRunning = true;
     }
 
-    if (state[SDL_SCANCODE_A])
+    if (state[SDL_SCANCODE_A] || state[SDL_SCANCODE_LEFT])
     {
         mRigidBodyComponent->ApplyForce(glm::vec2(-mForwardSpeed, 0.0f));
         mRotation = Math::Pi;
         mIsRunning = true;
     }
     
-    if (!state[SDL_SCANCODE_A] && !state[SDL_SCANCODE_D])
+    if (!state[SDL_SCANCODE_A] && !state[SDL_SCANCODE_D] && !state[SDL_SCANCODE_RIGHT] && !state[SDL_SCANCODE_LEFT])
     {
         mIsRunning = false;
     }
@@ -54,10 +48,8 @@ void Alien::OnProcessInput(const uint8_t* state)
 
 void Alien::OnUpdate(float deltaTime)
 {
-    if(mPosition.x <= -1.f) mPosition.x = -1.f;
-    // if (mPosition.x > 2800){
-    //     mGame->SetGameScene(Game::GameScene::Level1, Game::TRANSITION_TIME);
-    // }
+    if(mPosition.x <= -1.f+m_scale.x/2.0f+0.1f) mPosition.x = -1.f+m_scale.x/2.0f+0.1f;
+    if(mPosition.x >= 2.f-0.1f) mPosition.x = 2.f-0.1f;
 
     ManageAnimations();
 }
