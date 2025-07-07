@@ -23,7 +23,7 @@ Level2::Level2(UIScreen *screen):
         std::vector(targets.begin(), targets.end()),
         60,
         1,
-        1,
+        2,
         screen
     )
 {}
