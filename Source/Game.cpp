@@ -32,6 +32,8 @@
 #include "filter_vector.hpp"
 
 #include "Scenes/1/one.hpp"
+#include "Scenes/2/two.hpp"
+#include "Scenes/3/three.hpp"
 
 constexpr glm::u8vec4 BACKGROUND_COLOR = {0, 0, 0, 255};
 
@@ -171,15 +173,21 @@ void Game::ChangeScene()
         mMusicHandle = mAudio->PlaySound("level1.mp3", true);
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
         mHUD->SetLevelName("Fase 1");
-
         m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level1(new UIScreen(this, "../Assets/Fonts/SMB.ttf"))));
     }
     else if (mNextScene == GameScene::Level2)
     {
         mMusicHandle = mAudio->PlaySound("level2.mp3", true);
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
-
         mHUD->SetLevelName("Fase 2");
+        m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level2(new UIScreen(this, "../Assets/Fonts/SMB.ttf"))));
+    }
+    else if (mNextScene == GameScene::Level3)
+    {
+        mMusicHandle = mAudio->PlaySound("level1.mp3", true);
+        mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
+        mHUD->SetLevelName("Fase 3");
+        m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level3(new UIScreen(this, "../Assets/Fonts/SMB.ttf"))));
     }
 
     // Set new scene
