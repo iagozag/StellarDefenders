@@ -17,7 +17,7 @@ void Planet::draw(Game &game, const bool draw_positioning_radius) const {
     game.draw_ellipsis(m_position, glm::vec2(m_radius) * 2.f, {100, 255, 200, 255});
 }
 
-void Planet::on_collision() {}
+void Planet::on_collision(const CollidableIdentifier collided) {}
 
 glm::vec2 Planet::position_ship_accordingly(const glm::vec2 &mouse_position) const {
     const auto direction_to_mouse = mouse_position - m_position;
@@ -38,4 +38,8 @@ glm::vec2 Planet::position_ship_accordingly(const glm::vec2 &mouse_position) con
     } else {
         return m_position + norm * m_positioning_radius;
     }
+}
+
+CollidableIdentifier Planet::get_identifier() const {
+    return CollidableIdentifier::Planet;
 }

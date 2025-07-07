@@ -11,7 +11,8 @@ public:
 
     void draw(Game &game) const;
 
-    void on_collision() override;
+    void on_collision(const CollidableIdentifier collided) override;
+    CollidableIdentifier get_identifier() const override;
 
     bool m_should_delete: 1;
 };

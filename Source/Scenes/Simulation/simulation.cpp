@@ -317,8 +317,8 @@ void Simulation::run_collision_tests() {
 
                     if (tested_pairs.insert({p1, p2}).second) {
                         if (coli.collides(colj)) {
-                            coli.on_collision();
-                            colj.on_collision();
+                            coli.on_collision(colj.get_identifier());
+                            colj.on_collision(coli.get_identifier());
                         }
                     }
                 }

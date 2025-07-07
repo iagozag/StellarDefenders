@@ -14,7 +14,9 @@ Fragment::Fragment(const glm::vec2 &position, const glm::vec2 &speed):
     m_should_delete(false),
     m_time_alive(0) {}
 
-void Fragment::on_collision() {}
+void Fragment::on_collision(const CollidableIdentifier collided) {
+    m_should_delete = collided != CollidableIdentifier::Fragment;
+}
 
 void Fragment::draw(Game &game) const {
 
@@ -30,4 +32,8 @@ void Fragment::draw(Game &game) const {
     };
 
     game.draw_ellipsis(m_position, glm::vec2(m_radius) * 2.f, final_color);
+}
+
+CollidableIdentifier Fragment::get_identifier() const {
+    return CollidableIdentifier::Fragment;
 }

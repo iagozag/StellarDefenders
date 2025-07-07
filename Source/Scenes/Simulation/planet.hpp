@@ -15,7 +15,8 @@ public:
     // Mouse position deve corresponder às coordenadas já normalizadas (de -1 até 1)
     glm::vec2 position_ship_accordingly(const glm::vec2 &mouse_position) const;
 
-    void on_collision() override;
+    void on_collision(const CollidableIdentifier collided) override;
+    CollidableIdentifier get_identifier() const override;
 
     float m_mass;
     float m_positioning_radius;
