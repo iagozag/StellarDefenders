@@ -172,21 +172,21 @@ void Game::ChangeScene()
     {
         mMusicHandle = mAudio->PlaySound("level1.mp3", true);
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
-        mHUD->SetLevelName("Fase 1");
+        mHUD->SetLevelName("Level 1");
         m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level1(new UIScreen(this, "../Assets/Fonts/SMB.ttf"))));
     }
     else if (mNextScene == GameScene::Level2)
     {
         mMusicHandle = mAudio->PlaySound("level2.mp3", true);
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
-        mHUD->SetLevelName("Fase 2");
+        mHUD->SetLevelName("Level 2");
         m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level2(new UIScreen(this, "../Assets/Fonts/SMB.ttf"))));
     }
     else if (mNextScene == GameScene::Level3)
     {
         mMusicHandle = mAudio->PlaySound("level1.mp3", true);
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
-        mHUD->SetLevelName("Fase 3");
+        mHUD->SetLevelName("Level 3");
         m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level3(new UIScreen(this, "../Assets/Fonts/SMB.ttf"))));
     }
 
