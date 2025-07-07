@@ -21,7 +21,9 @@ public:
         const float duration,
         const uint32_t ships_to_be_positioned,
         const uint32_t level,
-        UIScreen *screen);
+        UIScreen *screen,
+        Game &game
+    );
 
     virtual ~Simulation();
 

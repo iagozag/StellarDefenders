@@ -14,7 +14,8 @@ Simulation::Simulation(
     const float duration,
     const uint32_t ships_to_be_positioned,
     const uint32_t level,
-    UIScreen *screen
+    UIScreen *screen,
+    Game &game
 ):
     m_planets(std::move(planets)),
     m_targets(std::move(targets)),
@@ -28,8 +29,15 @@ Simulation::Simulation(
     m_running(false)
 {
     if(m_screen) {
+        m_screen->AddButton("Menu", glm::vec2(0.45, -0.35), glm::vec2(0.5, 0.2), [this, &game]() {
+            if(m_running && all_enemies_dead()) {
+                game.SetCurrentLevel(m_level + 1);
+            }
+            game.SetGameScene(Game::GameScene::Ship);
+            m_screen = nullptr;
+        });
         m_screen->AddButton("Stop", glm::vec2(0.45, -0.55), glm::vec2(0.5, 0.2), [this]() {
-            if(!m_locked) {
+            if(m_running) {
                 *this = std::move(*m_backup);
                 delete m_backup;
                 m_backup = nullptr;
@@ -111,7 +119,7 @@ const Planet *Simulation::get_nearest_positionable_planet(const glm::vec2 &posit
 }
 
 std::vector<glm::vec2> Simulation::simulate(Game &game, const glm::vec2 &position, const glm::vec2 &speed) const {
-    auto copy = Simulation(m_planets, {}, 100, 1, 0, nullptr);
+    auto copy = Simulation(m_planets, {}, 100, 1, 0, nullptr, game);
     copy.add_kamikaze(position, speed);
     copy.unlock();
 
@@ -225,6 +233,8 @@ void Simulation::run(Game &game, const float delta_t, const bool ignore_collisio
     if(!ignore_collision) {
         run_collision_tests();
     }
+
+    m_time_simulated += delta_t;
 }
 
 static glm::vec2 v_min(const glm::vec2 &a, const glm::vec2 &b) {

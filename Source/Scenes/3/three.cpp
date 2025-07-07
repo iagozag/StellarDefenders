@@ -3,6 +3,7 @@
 
 #include <array>
 #include "../../sq.hpp"
+#include "../../Game.h"
 
 const float VELOCITY_SCALE_FACTOR = 0.3;
 const float GM_SCALE_FACTOR = sq(VELOCITY_SCALE_FACTOR);
@@ -20,13 +21,14 @@ const std::array<Target, 2> targets = {{
     Target({0.44, -0.5}, glm::vec2(0, -0.67735) * VELOCITY_SCALE_FACTOR)
 }};
 
-Level3::Level3(UIScreen *screen):
+Level3::Level3(UIScreen *screen, Game &game):
     Simulation(
         std::vector(planets.begin(), planets.end()),
         std::vector(targets.begin(), targets.end()),
         60,
         2,
         3,
-        screen
+        screen,
+        game
     )
 {}
