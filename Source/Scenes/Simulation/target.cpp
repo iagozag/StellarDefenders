@@ -13,6 +13,10 @@ void Target::draw(Game &game) const {
     game.draw_ellipsis(m_position, glm::vec2(m_radius) * 2.f, {200, 30, 40, 255});
 }
 
-void Target::on_collision() {
+void Target::on_collision(const CollidableIdentifier collided) {
     m_should_delete = true;
+}
+
+CollidableIdentifier Target::get_identifier() const {
+    return CollidableIdentifier::Target;
 }

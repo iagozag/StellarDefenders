@@ -33,7 +33,7 @@ void Kamikaze::draw_ghost(Game &game) const {
     game.draw_ellipsis(m_position, glm::vec2(KAMIKAZE_RADIUS) * 2.f, {0, 0, 255, 100}, 16);
 }
 
-void Kamikaze::on_collision() {
+void Kamikaze::on_collision(const CollidableIdentifier collided) {
     m_should_delete = true;
 }
 
@@ -62,4 +62,8 @@ std::vector<Fragment> Kamikaze::generate_fragments() const {
         fragments.emplace_back(initial_position, m_speed + speed);
     }
     return fragments;
+}
+
+CollidableIdentifier Kamikaze::get_identifier() const {
+    return CollidableIdentifier::Kamikaze;
 }
