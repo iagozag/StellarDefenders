@@ -12,19 +12,52 @@ Simulation::Simulation(
     std::vector<Planet> planets,
     std::vector<Target> targets,
     const float duration,
-    const uint32_t ships_to_be_positioned
+    const uint32_t ships_to_be_positioned,
+    UIScreen *screen
 ):
     m_planets(std::move(planets)),
     m_targets(std::move(targets)),
     m_time_simulated(0),
     m_duration(duration),
+    m_screen(screen),
+    m_backup(nullptr),
     m_ships_to_be_positioned(ships_to_be_positioned),
-    m_locked(true)
-{}
+    m_locked(true),
+    m_running(false)
+{
+    if(m_screen) {
+        m_screen->AddButton("Stop", glm::vec2(0.45, -0.55), glm::vec2(0.5, 0.2), [this]() {
+            if(!m_locked) {
+                *this = std::move(*m_backup);
+                delete m_backup;
+                m_backup = nullptr;
+            }
+        });
+        m_screen->AddButton("Simulate", glm::vec2(0.45, -0.75), glm::vec2(0.5, 0.2), [this]() {
+            if(m_locked) {
+                m_backup = new Simulation(*this);
+                unlock();
+                m_running = true;
+            }
+        });
+        m_screen->AddButton("Remove all", glm::vec2(0.45, -0.95), glm::vec2(0.5, 0.2), [this]() {
+            m_ships_to_be_positioned += m_kamikaze.size();
+            m_kamikaze.clear();
+        });
+    }
+}
+
+bool Simulation::all_enemies_dead() const {
+    return m_targets.size();
+}
+
+Simulation::~Simulation() {
+    delete m_backup;
+}
 
 void Simulation::draw(Game &game) const {
     for(auto &planet : m_planets) {
-        planet.draw(game);
+        planet.draw(game, !m_running);
     }
 
     for(auto &kamikaze : m_kamikaze) {
@@ -70,7 +103,7 @@ const Planet *Simulation::get_nearest_positionable_planet(const glm::vec2 &posit
 }
 
 std::vector<glm::vec2> Simulation::simulate(Game &game, const glm::vec2 &position, const glm::vec2 &speed) const {
-    auto copy = Simulation(m_planets, {}, 100, 1);
+    auto copy = Simulation(m_planets, {}, 100, 1, nullptr);
     copy.add_kamikaze(position, speed);
     copy.unlock();
 
@@ -96,6 +129,12 @@ glm::vec2 calculate_acceleration(const glm::vec2 &body_pos, const Planet &attrac
 }
 
 void Simulation::run(Game &game, const float delta_t, const bool ignore_collision) {
+    if(m_screen) {
+        m_screen->clear_text();
+        const auto rendered_text = std::to_string(m_ships_to_be_positioned) + " ship remaining";
+        m_screen->AddText(rendered_text, glm::vec2(-0.925, -0.925), glm::vec2(1, 0.10));
+    }
+
     if(m_locked) {
         return;
     }

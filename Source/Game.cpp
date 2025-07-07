@@ -172,7 +172,7 @@ void Game::ChangeScene()
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
         mHUD->SetLevelName("Fase 1");
 
-        m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level1()));
+        m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level1(new UIScreen(this, "../Assets/Fonts/SMB.ttf"))));
     }
     else if (mNextScene == GameScene::Level2)
     {
@@ -199,17 +199,12 @@ void Game::LoadMainMenu()
     const glm::vec2 buttonSize = glm::vec2(1.6, 0.32);
 
     mainMenu->AddButton("Play", button1Pos, buttonSize, [this]() {
-                                SetGameScene(GameScene::Ship, TRANSITION_TIME);
+                                SetGameScene(GameScene::Level1, TRANSITION_TIME);
                             });
 
     mainMenu->AddButton("Exit", button2Pos, buttonSize, [this]() {
                                 Shutdown();
                             });
-}
-
-void Game::prepare_simulation(const size_t amount_kamikaze) {
-    // auto menu = new UIScreen(this, "../Assets/Fonts/SMB.ttf");
-
 }
 
 void Game::RunLoop()
