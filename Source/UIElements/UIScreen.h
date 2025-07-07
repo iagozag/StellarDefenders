@@ -42,6 +42,8 @@ public:
     // Set state to closing
 	void Close();
 
+	void clear();
+
     // Get state of UI screen
 	UIState GetState() const { return mState; }
 

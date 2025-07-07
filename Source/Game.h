@@ -72,6 +72,7 @@ public:
 
     // Level functions
     void LoadMainMenu();
+    void prepare_simulation(const size_t amount_kamikaze);
 
     std::vector<Actor *> GetNearbyActors(const glm::vec2& position, const int range = 1);
     std::vector<class AABBColliderComponent *> GetNearbyColliders(const glm::vec2& position, const int range = 2);

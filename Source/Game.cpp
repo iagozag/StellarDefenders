@@ -213,6 +213,19 @@ void Game::LoadMainMenu()
     mainMenu->AddButton("Exit", button2Pos, buttonSize, [this]() {
                                 Shutdown();
                             });
+    
+    mainMenu->clear();
+
+    mainMenu->AddText("1 ship remaining", glm::vec2(-0.925, -0.925), glm::vec2(1, 0.15));
+    
+    mainMenu->AddButton("Simulate", glm::vec2(0.45, -0.95), glm::vec2(0.5, 0.2), []() {
+        std::cout << "AAA\n";
+    });
+}
+
+void Game::prepare_simulation(const size_t amount_kamikaze) {
+    // auto menu = new UIScreen(this, "../Assets/Fonts/SMB.ttf");
+
 }
 
 void Game::RunLoop()

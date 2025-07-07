@@ -65,6 +65,7 @@
         "ranges": "cpp",
         "valarray": "cpp",
         "bitset": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "unordered_set": "cpp"
     }
 }
