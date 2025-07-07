@@ -19,6 +19,7 @@ const std::array<Target, 1> targets = {{
 Level1::Level1():
     Simulation(
         std::vector(planets.begin(), planets.end()),
-        std::vector(targets.begin(), targets.end())
+        std::vector(targets.begin(), targets.end()),
+        60
     )
 {}
