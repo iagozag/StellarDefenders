@@ -239,6 +239,18 @@ void Game::ProcessInput()
                 {
                     TogglePause();
                 }
+
+                if(event.key.keysym.sym == SDLK_SPACE) {
+                    if(m_current_simulation) {
+                        auto &sim = m_current_simulation.value();
+                        if(sim->is_locked()) {
+                            sim->unlock();
+                        } else {
+                            sim->lock();
+                        }
+                    }
+                }
+
                 break;
 
             case SDL_MOUSEWHEEL:

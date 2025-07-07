@@ -4,9 +4,9 @@
 #include "../../Game.h"
 
 constexpr glm::vec3 INITIAL_COLOR = {1.0f, 1.0f, 1.0f};
-constexpr float DECAY_RED   = 1.5f;
-constexpr float DECAY_GREEN = 2.5f;
-constexpr float DECAY_BLUE  = 4.0f;
+constexpr float DECAY_RED   = 0.75f;
+constexpr float DECAY_GREEN = 1.25f;
+constexpr float DECAY_BLUE  = 2.0f;
 constexpr float FRAGMENT_RADIUS = 0.002;
 
 Fragment::Fragment(const glm::vec2 &position, const glm::vec2 &speed):

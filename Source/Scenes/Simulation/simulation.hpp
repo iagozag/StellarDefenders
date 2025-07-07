@@ -34,6 +34,8 @@ public:
     void lock();
     void unlock();
 
+    bool is_locked() const;
+
     void process_input(Game &game, const uint8_t* state);
 
     bool all_enemies_dead() const;
