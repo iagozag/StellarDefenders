@@ -1,7 +1,3 @@
-//
-// Created by csxuser on 22/06/2025.
-//
-
 #ifndef ALIEN_H
 #define ALIEN_H
 
@@ -11,9 +7,12 @@
 #include "../Components/DrawComponents/DrawAnimatedComponent.h"
 #include "../Components/ColliderComponents/AABBColliderComponent.h"
 
+class UIScreen;
+
 class Alien : public Actor{
     public:
-        explicit Alien(Game* game, float forwardSpeed = 15.0f, float jumpSpeed = -750.0f);
+        explicit Alien(Game* game, float forwardSpeed = 80.0f, float jumpSpeed = -750.0f);
+        ~Alien();
 
         void OnProcessInput(const Uint8* keyState) override;
         void OnUpdate(float deltaTime) override;
@@ -34,6 +33,8 @@ class Alien : public Actor{
         bool mIsDead;
         glm::vec2 m_size;
 
+        class UIScreen* mLevelSelectPrompt;
+
         class RigidBodyComponent* mRigidBodyComponent;
         class DrawAnimatedComponent* mDrawComponent;
         class AABBColliderComponent* mColliderComponent;
@@ -41,4 +42,4 @@ class Alien : public Actor{
 
 
 
-#endif //MAINMENUACTOR_H
+#endif

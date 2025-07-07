@@ -1,12 +1,14 @@
 #include "Alien.h"
 #include "../norm_greater.hpp"
+#include "../UIElements/UIScreen.h"
 
 Alien::Alien(Game* game, const float forwardSpeed, const float jumpSpeed):
     Actor(game),
     mForwardSpeed(forwardSpeed),
     mJumpSpeed(jumpSpeed),
     mIsRunning(false),
-    mIsDead(false)
+    mIsDead(false),
+    mLevelSelectPrompt(nullptr)
 {
     mRigidBodyComponent = new RigidBodyComponent(this, 1,10, false);
 
@@ -21,6 +23,15 @@ Alien::Alien(Game* game, const float forwardSpeed, const float jumpSpeed):
 
     mDrawComponent->SetAnimation("idle");
     mDrawComponent->SetAnimFPS(10.0f);
+}
+
+Alien::~Alien()
+{
+    if (mLevelSelectPrompt)
+    {
+        mLevelSelectPrompt->Close();
+        mLevelSelectPrompt = nullptr;
+    }
 }
 
 void Alien::OnProcessInput(const uint8_t* state)
@@ -45,12 +56,23 @@ void Alien::OnProcessInput(const uint8_t* state)
     }
 
     if(mPosition.x > mGame->GetShipMenu()->GetBackgroundSize().x - 3.f){
-        
+        if (!mLevelSelectPrompt)
+        {
+            mLevelSelectPrompt = new UIScreen(mGame, "../Assets/Fonts/SMB.ttf");
+            mLevelSelectPrompt->AddText("aperte de 1 a 3 para escolher a fase", glm::vec2(mPosition.x + 0.3f, -0.25f), glm::vec2(1.9f, 0.15f));
+        }
 
         int currentLevel = mGame->GetCurrentLevel();
         if(state[SDL_SCANCODE_1]) mGame->SetGameScene(Game::GameScene::Level1, Game::TRANSITION_TIME);
         if(state[SDL_SCANCODE_2] and currentLevel >= 2) mGame->SetGameScene(Game::GameScene::Level2, Game::TRANSITION_TIME);
         if(state[SDL_SCANCODE_3] and currentLevel >= 3) mGame->SetGameScene(Game::GameScene::Level3, Game::TRANSITION_TIME);
+    }
+    else{
+        if (mLevelSelectPrompt)
+        {
+            mLevelSelectPrompt->Close();
+            mLevelSelectPrompt = nullptr;
+        }
     }
 }
 
