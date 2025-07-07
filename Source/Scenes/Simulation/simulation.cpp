@@ -33,7 +33,7 @@ Simulation::Simulation(
             if(m_running && all_enemies_dead()) {
                 game.SetCurrentLevel(m_level + 1);
             }
-            game.SetGameScene(Game::GameScene::Ship);
+            game.SetGameScene(Game::GameScene::Ship, Game::TRANSITION_TIME);
             m_screen = nullptr;
         });
         m_screen->AddButton("Stop", glm::vec2(0.45, -0.55), glm::vec2(0.5, 0.2), [this]() {

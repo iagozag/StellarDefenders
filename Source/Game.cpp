@@ -54,11 +54,7 @@ Game::Game(int windowWidth, int windowHeight):
     mGameTimer(0.0f),
     mGameTimeLimit(0),
     mShipMenu(nullptr),
-#ifndef NDEBUG
     mCurrentLevel(4)
-#else
-    mCurrentLevel(1)
-#endif
 {
 
 }
