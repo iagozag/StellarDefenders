@@ -55,17 +55,18 @@ void VirtualPositioning::draw(Game &game, const Simulation &simulation) const {
         const auto speed = calculate_speed(m_start.value(), m_current_mouse_pos);
 
         auto positions = simulation.simulate(game, m_start.value(), speed);
+        const auto falls = positions.size() != 599;
         auto tmp_kamikaze = Kamikaze(m_start.value(), glm::vec2(0));
         tmp_kamikaze.draw(game);
-        for(auto position : positions) {
-            tmp_kamikaze.m_position = position;
-            tmp_kamikaze.draw_ghost(game);
+        for(size_t i = 0; i < positions.size(); i++) {
+            tmp_kamikaze.m_position = positions[i];
+            tmp_kamikaze.draw_ghost(game, falls && i == positions.size() - 1);
         }
 
     } else {
         if(m_current_positioning) {
             const auto tmp_kamikaze = Kamikaze(m_current_positioning.value(), glm::vec2(0));
-            tmp_kamikaze.draw_ghost(game);
+            tmp_kamikaze.draw_ghost(game, false);
         }
     }
 }

@@ -29,8 +29,12 @@ void Kamikaze::draw(Game &game) const {
     game.draw_ellipsis(m_position, glm::vec2(KAMIKAZE_RADIUS) * 2.f, {0, 0, 255, 255});
 }
 
-void Kamikaze::draw_ghost(Game &game) const {
-    game.draw_ellipsis(m_position, glm::vec2(KAMIKAZE_RADIUS) * 2.f, {0, 0, 255, 100}, 16);
+void Kamikaze::draw_ghost(Game &game, const bool dead) const {
+    if(dead) {
+        game.draw_ellipsis(m_position, glm::vec2(KAMIKAZE_RADIUS) * 2.f, {200, 100, 0, 255}, 16);
+    } else {
+        game.draw_ellipsis(m_position, glm::vec2(KAMIKAZE_RADIUS) * 2.f, {0, 0, 255, 100}, 16);
+    }
 }
 
 void Kamikaze::on_collision(const CollidableIdentifier collided) {

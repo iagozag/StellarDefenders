@@ -23,7 +23,7 @@ public:
 
     bool target_inside_radius(const std::reference_wrapper<KinematicBody> targets[], const size_t amount_targets) const;
     void draw(Game &game) const;
-    void draw_ghost(Game &game) const;
+    void draw_ghost(Game &game, const bool dead) const;
 
     std::vector<Fragment> generate_fragments() const;
 
