@@ -165,18 +165,18 @@ void Game::ChangeScene()
     // Scene Manager FSM: using if/else instead of switch
     if (mNextScene == GameScene::MainMenu)
     {
-        mMusicHandle = mAudio->PlaySound("mainMenu.mp3", true);
+        // mMusicHandle = mAudio->PlaySound("mainMenu.mp3", true);
         // Initialize main menu actors
         LoadMainMenu();
     }
     else if (mNextScene == GameScene::Ship)
     {
-        mMusicHandle = mAudio->PlaySound("spaceshipAmbient.mp3", true);
+        // mMusicHandle = mAudio->PlaySound("spaceshipAmbient.mp3", true);
         mShipMenu = new ShipMenu(*this);
     }
     else if (mNextScene == GameScene::Level1)
     {
-        mMusicHandle = mAudio->PlaySound("level1.mp3", true);
+        // mMusicHandle = mAudio->PlaySound("level1.mp3", true);
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
         mHUD->SetLevelName("Fase 1");
 
@@ -184,7 +184,7 @@ void Game::ChangeScene()
     }
     else if (mNextScene == GameScene::Level2)
     {
-        mMusicHandle = mAudio->PlaySound("level2.mp3", true);
+        // mMusicHandle = mAudio->PlaySound("level2.mp3", true);
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
 
         mHUD->SetLevelName("Fase 2");
@@ -207,7 +207,7 @@ void Game::LoadMainMenu()
     const glm::vec2 buttonSize = glm::vec2(1.6, 0.32);
 
     mainMenu->AddButton("Play", button1Pos, buttonSize, [this]() {
-                                SetGameScene(GameScene::Ship, TRANSITION_TIME);
+                                SetGameScene(GameScene::Level1, TRANSITION_TIME);
                             });
 
     mainMenu->AddButton("Exit", button2Pos, buttonSize, [this]() {
@@ -280,6 +280,10 @@ void Game::ProcessInputActors()
         {
             actor->ProcessInput(state);
         }
+
+        if(m_current_simulation) {
+            m_current_simulation.value()->ProcessInput(state);
+        }
     }
 }
 
@@ -295,7 +299,6 @@ void Game::HandleKeyPressActors(const int key, const bool isPressed)
             actor->HandleKeyPress(key, isPressed);
         }
     }
-
 }
 
 void Game::TogglePause()
@@ -305,17 +308,14 @@ void Game::TogglePause()
         if (mGamePlayState == GamePlayState::Playing)
         {
             mGamePlayState = GamePlayState::Paused;
-            // TODO 1.: Pare a música de fundo atual usando PauseSound() e toque o som "Coin.wav" para indicar a pausa.
-            // mAudio->PauseSound(mMusicHandle);
-            // mAudio->PlaySound("Coin.wav");
+            mAudio->PauseSound(mMusicHandle);
+            mAudio->PlaySound("Coin.wav");
         }
         else if (mGamePlayState == GamePlayState::Paused)
         {
             mGamePlayState = GamePlayState::Playing;
-            // TODO 1.: Retome a música de fundo atual usando ResumeSound() e toque o som "Coin.wav" para
-            //  indicar a retomada do jogo.
-            // mAudio->ResumeSound(mMusicHandle);
-            // mAudio->PlaySound("Coin.wav");
+            mAudio->ResumeSound(mMusicHandle);
+            mAudio->PlaySound("Coin.wav");
         }
     }
 }
@@ -373,10 +373,7 @@ void Game::UpdateCamera(){
     }
     else if(mGameScene == GameScene::Ship and mShipMenu and mShipMenu->GetAlien()){
         const glm::vec2& alienPos = mShipMenu->GetAlien()->GetPosition();
-
         m_camera.m_pos.x = alienPos.x;
-        // m_camera.m_pos.x = std::max(m_camera.m_pos.x, viewportWidth / 2.0f);
-        // m_camera.m_pos.x = std::min(m_camera.m_pos.x, WORLD_WIDTH - (viewportWidth / 2.0f));
     }
     else m_camera.m_pos = glm::vec2(.0f);
 }
@@ -619,15 +616,6 @@ SDL_Texture* Game::LoadTexture(const std::string& texturePath)
 
 UIFont* Game::LoadFont(const std::string& fileName)
 {
-    // --------------
-    // TODO - PARTE 1-1
-    // --------------
-
-    // TODO 1.: Verifique se o arquivo de fonte já está carregado no mapa mFonts.
-    //  Se sim, retorne o ponteiro para a fonte carregada.
-    //  Se não, crie um novo objeto UIFont, carregue a fonte do arquivo usando o método Load,
-    //  e se o carregamento for bem-sucedido, adicione a fonte ao mapa mFonts.
-    //  Se o carregamento falhar, descarregue a fonte com Unload e delete o objeto UIFont, retornando nullptr.
     if(mFonts.count(fileName)) return mFonts[fileName];
 
     UIFont* font = new UIFont(mRenderer);

@@ -2,14 +2,14 @@
 // Created by csxuser on 22/06/2025.
 //
 
-#ifndef MAINMENUACTOR_H
-#define MAINMENUACTOR_H
+#ifndef ALIEN_H
+#define ALIEN_H
 
+#include "Actor.h"
 #include "../Game.h"
 #include "../Components/RigidBodyComponent.h"
 #include "../Components/DrawComponents/DrawAnimatedComponent.h"
 #include "../Components/ColliderComponents/AABBColliderComponent.h"
-
 
 class Alien : public Actor{
     public:

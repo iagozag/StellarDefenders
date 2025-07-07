@@ -24,6 +24,8 @@ public:
     void lock();
     void unlock();
 
+    void ProcessInput(const uint8_t* state);
+
     std::vector<glm::vec2> simulate(Game &game, const glm::vec2 &position, const glm::vec2 &speed) const;
 
     bool finished() const;

@@ -32,7 +32,7 @@ void UIButton::Draw(Game &game, const glm::vec2 &screenPos) {
     const auto transform_matrix = game.GetCamera().get_total_transformation_matrix(game);
     const auto transformed = rect_transform(titleQuad, transform_matrix);
 
-    if(mHighlighted) SDL_SetRenderDrawColor(renderer, 200, 100, 0, 255), SDL_RenderFillRectF(renderer, &transformed);    
+    if(mHighlighted) SDL_SetRenderDrawColor(renderer, 75, 0, 130, 255), SDL_RenderFillRectF(renderer, &transformed);    
     mText.Draw(game, mPosition+(mSize*0.5f)-(mText.GetSize()*0.5f));
 }
 

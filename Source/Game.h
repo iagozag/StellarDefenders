@@ -18,7 +18,6 @@
 #include "Math.h"
 #include "Camera.hpp"
 
-#include "Actors/Ship.h"
 #include "Actors/Alien.h"
 
 #include "Scenes/Simulation/simulation.hpp"

@@ -13,7 +13,9 @@ Simulation::Simulation(std::vector<Planet> planets, std::vector<Target> targets,
     m_targets(std::move(targets)),
     m_time_simulated(0),
     m_duration(duration),
-    m_locked(false) {}
+    m_locked(false) {
+        m_kamikaze.emplace_back(Kamikaze(glm::vec2(.0f), glm::vec2(.0f)));
+    }
 
 void Simulation::draw(Game &game) const {
     for(auto &planet : m_planets) {
@@ -22,6 +24,10 @@ void Simulation::draw(Game &game) const {
 
     for(auto &kamikaze : m_kamikaze) {
         kamikaze.draw(game);
+
+        if(kamikaze.GetShipState() == ShipState::SlingShot or kamikaze.GetShipState() == ShipState::Ready){
+            kamikaze.DrawSlingShotLine(game, simulate(game, kamikaze.get_position(), kamikaze.get_direction()));
+        }
     }
 
     for(auto &target : m_targets) {
@@ -31,6 +37,10 @@ void Simulation::draw(Game &game) const {
     for(auto &fragment : m_fragments) {
         fragment.draw(game);
     }
+}
+
+void Simulation::ProcessInput(const uint8_t* state){
+    for(auto& kamikaze: m_kamikaze) kamikaze.OnProcessInput(state);
 }
 
 std::vector<glm::vec2> Simulation::simulate(Game &game, const glm::vec2 &position, const glm::vec2 &speed) const {
@@ -126,7 +136,10 @@ void Simulation::run(Game &game, float delta_t) {
     }
 
     for(size_t i = 0; i < m_kamikaze.size(); i++) {
-        m_kamikaze[i].apply_acceleration(kamikaze_accelerations[i], delta_t);
+        auto& k = m_kamikaze[i];
+        k.OnUpdate(game, delta_t);
+
+        k.apply_acceleration(kamikaze_accelerations[i], delta_t);
     }
 
     for(size_t i = 0; i < m_targets.size(); i++) {
