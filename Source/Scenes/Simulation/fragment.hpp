@@ -14,4 +14,5 @@ public:
     void draw(Game &game) const;
 
     bool m_should_delete: 1;
+    float m_time_alive;
 };
