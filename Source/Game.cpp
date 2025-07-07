@@ -199,8 +199,8 @@ void Game::LoadMainMenu()
 {
     auto mainMenu = new UIScreen(this, "../Assets/Fonts/SMB.ttf");
 
-    const glm::vec2 titleSize = glm::vec2(1.8, 0.32);
-    const glm::vec2 titlePos = glm::vec2(-0.9, 0.4);
+    const glm::vec2 titleSize = glm::vec2(2.2f, 0.6f);
+    const glm::vec2 titlePos = glm::vec2(-1.1f, 0.2);
     mainMenu->AddText("Stellar Defenders", titlePos, titleSize);
 
     const glm::vec2 button1Pos = glm::vec2(-0.8, -0.4);

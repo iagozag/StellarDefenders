@@ -59,7 +59,7 @@ void Alien::OnProcessInput(const uint8_t* state)
         if (!mLevelSelectPrompt)
         {
             mLevelSelectPrompt = new UIScreen(mGame, "../Assets/Fonts/SMB.ttf");
-            mLevelSelectPrompt->AddText("aperte de 1 a 3 para escolher a fase", glm::vec2(mPosition.x + 0.3f, -0.25f), glm::vec2(1.9f, 0.15f));
+            mLevelSelectPrompt->AddText("Pressione de 1 a 3 para selecionar a fase (deve concluir a fase anterior)", glm::vec2(mPosition.x, -0.25f), glm::vec2(2.f, 0.3f));
         }
 
         int currentLevel = mGame->GetCurrentLevel();
