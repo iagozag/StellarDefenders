@@ -13,7 +13,7 @@ class Game;
 
 class Simulation {
 public:
-    Simulation(std::vector<Planet> planets, std::vector<Target> targets);
+    Simulation(std::vector<Planet> planets, std::vector<Target> targets, const float duration);
 
     void draw(Game &game) const;
     void run(Game &game, const float delta_t);
@@ -26,6 +26,8 @@ public:
 
     std::vector<glm::vec2> simulate(Game &game, const glm::vec2 &position, const glm::vec2 &speed) const;
 
+    bool finished() const;
+    
 private:
 
     void run_collision_tests();
@@ -35,6 +37,8 @@ private:
     std::vector<Kamikaze> m_kamikaze;
     std::vector<Target> m_targets;
     std::vector<Fragment> m_fragments;
+    float m_time_simulated;
+    float m_duration;
 
     bool m_locked: 1;
 };

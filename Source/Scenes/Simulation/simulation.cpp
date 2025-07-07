@@ -8,9 +8,11 @@
 #include <unordered_set>
 #include <limits>
 
-Simulation::Simulation(std::vector<Planet> planets, std::vector<Target> targets):
+Simulation::Simulation(std::vector<Planet> planets, std::vector<Target> targets, const float duration):
     m_planets(std::move(planets)),
     m_targets(std::move(targets)),
+    m_time_simulated(0),
+    m_duration(duration),
     m_locked(false) {}
 
 void Simulation::draw(Game &game) const {
@@ -32,7 +34,7 @@ void Simulation::draw(Game &game) const {
 }
 
 std::vector<glm::vec2> Simulation::simulate(Game &game, const glm::vec2 &position, const glm::vec2 &speed) const {
-    auto copy = Simulation(m_planets, {});
+    auto copy = Simulation(m_planets, {}, 100);
     copy.add_kamikaze(position, speed);
     copy.unlock();
 
@@ -59,6 +61,11 @@ glm::vec2 calculate_acceleration(const glm::vec2 &body_pos, const Planet &attrac
 
 void Simulation::run(Game &game, float delta_t) {
     if(m_locked) {
+        return;
+    }
+
+    if(finished()) {
+        lock();
         return;
     }
 
@@ -284,4 +291,8 @@ void Simulation::unlock() {
 
 void Simulation::add_kamikaze(const glm::vec2 &position, const glm::vec2 &speed) {
     m_kamikaze.emplace_back(position, speed);
+}
+
+bool Simulation::finished() const {
+    return m_time_simulated >= m_duration;
 }
