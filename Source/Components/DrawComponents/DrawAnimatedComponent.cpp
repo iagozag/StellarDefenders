@@ -15,10 +15,7 @@ DrawAnimatedComponent::DrawAnimatedComponent(class Actor* owner, const std::stri
     LoadSpriteSheet(spriteSheetPath, spriteSheetData);
 }
 
-DrawAnimatedComponent::~DrawAnimatedComponent()
-{
-    DrawSpriteComponent::~DrawSpriteComponent();
-
+DrawAnimatedComponent::~DrawAnimatedComponent() {
     mSpriteSheetData.clear();
 }
 

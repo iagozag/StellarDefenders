@@ -42,7 +42,6 @@ target_compile_options(${PROJECT_NAME} PRIVATE
     -Wno-unused-result
     -Wno-sign-compare
     -Wno-char-subscripts
-    -O2
 )
 
 # Flags específicas para o tipo de build
@@ -60,10 +59,14 @@ if (CMAKE_BUILD_TYPE STREQUAL "Debug")
         -fsanitize=undefined
     )
 elseif (CMAKE_BUILD_TYPE STREQUAL "Release")
-    # As otimizações (-O3) e -DNDEBUG são adicionadas automaticamente
-    # pelo CMake para o tipo de build "Release".
-    # Não precisamos adicionar nada aqui, a menos que queiramos flags *adicionais* específicas.
-    # Exemplo: target_compile_options(${PROJECT_NAME} PRIVATE -ffast-math)
+    target_compile_options(${PROJECT_NAME} PRIVATE
+        -ffast-math
+        -O3
+        -DNDEBUG
+        -march=native
+        -flto
+        -s
+    )
 elseif (NOT CMAKE_BUILD_TYPE)
     # Define um tipo de build padrão se CMAKE_BUILD_TYPE não for especificado.
     # Isso pode ser útil para IDEs ou para evitar o erro de build se o usuário não definir.

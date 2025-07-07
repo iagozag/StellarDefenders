@@ -14,10 +14,7 @@ DrawSpriteComponent::DrawSpriteComponent(class Actor* owner, const std::string &
     mSpriteSheetSurface = mOwner->GetGame()->LoadTexture(texturePath);
 }
 
-DrawSpriteComponent::~DrawSpriteComponent()
-{
-    DrawComponent::~DrawComponent();
-
+DrawSpriteComponent::~DrawSpriteComponent() {
     if (mSpriteSheetSurface) {
         SDL_DestroyTexture(mSpriteSheetSurface);
         mSpriteSheetSurface = nullptr;
