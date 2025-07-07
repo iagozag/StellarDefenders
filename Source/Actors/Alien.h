@@ -11,7 +11,7 @@ class UIScreen;
 
 class Alien : public Actor{
     public:
-        explicit Alien(Game* game, float forwardSpeed = 80.0f);
+        explicit Alien(Game* game, float forwardSpeed = 15.0f);
         ~Alien();
 
         void OnProcessInput(const Uint8* keyState) override;
