@@ -9,8 +9,8 @@ const float GM_SCALE_FACTOR = sq(VELOCITY_SCALE_FACTOR);
 
 const std::array<Planet, 4> planets = {{
     Planet({-0.5, 0}, glm::vec2(0,  0.1) * VELOCITY_SCALE_FACTOR, 0.03, 0.02 * GM_SCALE_FACTOR, 0.12),
-    Planet({ 0, 0.1}, glm::vec2(0, -0.1) * VELOCITY_SCALE_FACTOR, 0.03, 0.02 * GM_SCALE_FACTOR),
-    Planet({ 0, -0.1}, glm::vec2(0, -0.1) * VELOCITY_SCALE_FACTOR, 0.03, 0.02 * GM_SCALE_FACTOR),
+    Planet({ 0, 0.1}, glm::vec2(0.1, -0.1) * VELOCITY_SCALE_FACTOR, 0.03, 0.02 * GM_SCALE_FACTOR),
+    Planet({ 0, -0.1}, glm::vec2(-0.1, -0.1) * VELOCITY_SCALE_FACTOR, 0.03, 0.02 * GM_SCALE_FACTOR),
     Planet({ 0.5, 0}, glm::vec2(0, -0.1) * VELOCITY_SCALE_FACTOR, 0.03, 0.02 * GM_SCALE_FACTOR)
 }};
 
