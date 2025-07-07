@@ -69,7 +69,7 @@ elseif (NOT CMAKE_BUILD_TYPE)
     # Isso pode ser útil para IDEs ou para evitar o erro de build se o usuário não definir.
     # Você pode escolher 'Debug' ou 'Release' como padrão.
     message(STATUS "No CMAKE_BUILD_TYPE specified, defaulting to Debug.")
-    set(CMAKE_BUILD_TYPE "Debug" CACHE STRING "Choose the type of build, e.g. Debug, Release, RelWithDebInfo, MinSizeRel." FORCE)
+    set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the type of build, e.g. Debug, Release, RelWithDebInfo, MinSizeRel." FORCE)
     set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "RelWithDebInfo" "MinSizeRel")
 endif()
 
