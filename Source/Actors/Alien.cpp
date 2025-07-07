@@ -43,14 +43,15 @@ void Alien::OnProcessInput(const uint8_t* state)
     {
         mIsRunning = false;
     }
-}
 
+    if(mPosition.x > mGame->GetShipMenu()->GetBackgroundSize().x - 3.f and state[SDL_SCANCODE_E]){
+        mGame->SetGameScene(Game::GameScene::Level1, Game::TRANSITION_TIME);
+    }
+}
 
 void Alien::OnUpdate(float deltaTime)
 {
     mPosition.x = std::max(mPosition.x, -1.f);
-
-    auto &cam = mGame->GetCamera();
     mPosition.x = std::min(mPosition.x, mGame->GetShipMenu()->GetBackgroundSize().x-0.5f-m_size.x);
 
     ManageAnimations();
@@ -76,15 +77,6 @@ void Alien::Kill()
 
 }
 
-void Alien::OnHorizontalCollision(const float minOverlap, AABBColliderComponent* other)
-{
-    if (other->GetLayer() == ColliderLayer::Enemy) {
-    }
-}
+void Alien::OnHorizontalCollision(const float minOverlap, AABBColliderComponent* other) {}
 
-void Alien::OnVerticalCollision(const float minOverlap, AABBColliderComponent* other)
-{
-    if (other->GetLayer() == ColliderLayer::Enemy) {
-    }
-
-}
+void Alien::OnVerticalCollision(const float minOverlap, AABBColliderComponent* other) {}

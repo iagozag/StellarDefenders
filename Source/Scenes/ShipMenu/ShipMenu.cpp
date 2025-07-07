@@ -1,15 +1,20 @@
 
 #include "ShipMenu.hpp"
 #include "../../rect_transform.hpp"
-#include <iostream>
+#include "../../Actors/EmergencyLight.h"
 
 ShipMenu::ShipMenu(Game& game):
     mAlien(new Alien(&game)),
-    mBackgroundTexture(game.LoadTexture("../Assets/Sprites/background.png"))
+    mBackgroundTexture(game.LoadTexture("../Assets/Sprites/background.png")),
+    cam(game.GetCamera()),
+    viewport(cam.get_viewport_size(game))
 {
     mAlien->SetPosition(glm::vec2(-1, -1));
     mBackgroundPosition = glm::vec2(-1, -1);
     mBackgroundSize = glm::vec2(Game::WORLD_WIDTH, Game::WORLD_HEIGHT) / (float)Game::WORLD_HEIGHT * 2.f;
+
+    auto light = new EmergencyLight(&game);
+    light->SetPosition(glm::vec2(mBackgroundSize.x-2.2f-viewport.x/2.0f, 0.1));
 }
 
 ShipMenu::~ShipMenu(){
@@ -22,9 +27,6 @@ ShipMenu::~ShipMenu(){
 }
 
 void ShipMenu::draw(Game& game) const{
-    auto &cam = game.GetCamera();
-    auto viewport = cam.get_viewport_size(game);
-
     SDL_FRect destRect;
     destRect.x = mBackgroundPosition.x;
     destRect.y = mBackgroundPosition.y;

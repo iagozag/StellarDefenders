@@ -165,13 +165,13 @@ void Game::ChangeScene()
     // Scene Manager FSM: using if/else instead of switch
     if (mNextScene == GameScene::MainMenu)
     {
-        // mMusicHandle = mAudio->PlaySound("mainMenu.mp3", true);
+        mMusicHandle = mAudio->PlaySound("mainMenu.mp3", true);
         // Initialize main menu actors
         LoadMainMenu();
     }
     else if (mNextScene == GameScene::Ship)
     {
-        // mMusicHandle = mAudio->PlaySound("spaceshipAmbient.mp3", true);
+        mMusicHandle = mAudio->PlaySound("spaceshipAmbient.mp3", true);
         mShipMenu = new ShipMenu(*this);
     }
     else if (mNextScene == GameScene::Level1)
@@ -253,13 +253,13 @@ void Game::ProcessInput()
                 m_camera.m_scale *= glm::pow(0.92f, event.wheel.y);
                 break;
 
-            case SDL_MOUSEBUTTONUP:
-                {
-                    std::cout << event.button.x << ' ' << event.button.y << '\n';
-                    const auto pos = m_camera.screen_position_to_world_position(*this, glm::vec2(event.button.x, event.button.y));
-                    std::cout << pos.x << ' ' << pos.y << '\n';
-                }
-                break;
+            // case SDL_MOUSEBUTTONUP:
+            //     {
+            //         std::cout << event.button.x << ' ' << event.button.y << '\n';
+            //         const auto pos = m_camera.screen_position_to_world_position(*this, glm::vec2(event.button.x, event.button.y));
+            //         std::cout << pos.x << ' ' << pos.y << '\n';
+            //     }
+            //     break;
         }
     }
 

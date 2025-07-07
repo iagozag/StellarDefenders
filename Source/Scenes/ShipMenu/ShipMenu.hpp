@@ -26,4 +26,6 @@ private:
     SDL_Texture *mBackgroundTexture;
     glm::vec2 mBackgroundPosition;
     glm::vec2 mBackgroundSize;
+    Camera &cam;
+    glm::vec2 viewport;
 };

@@ -13,7 +13,7 @@
 
 class Alien : public Actor{
     public:
-        explicit Alien(Game* game, float forwardSpeed = 60.0f, float jumpSpeed = -750.0f);
+        explicit Alien(Game* game, float forwardSpeed = 15.0f, float jumpSpeed = -750.0f);
 
         void OnProcessInput(const Uint8* keyState) override;
         void OnUpdate(float deltaTime) override;
