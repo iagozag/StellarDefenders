@@ -117,7 +117,7 @@ void Game::SetGameScene(Game::GameScene scene, float transitionTime)
 {
     if (mSceneManagerState == SceneManagerState::None)
     {
-        if (scene == GameScene::MainMenu || scene == GameScene::Ship || scene == GameScene::Level1 || scene == GameScene::Level2)
+        if (scene == GameScene::MainMenu || scene == GameScene::Ship || scene == GameScene::Level1 || scene == GameScene::Level2 || scene == GameScene::Level3)
         {
             mNextScene = scene;
             mSceneManagerState = SceneManagerState::Exiting;
@@ -207,7 +207,7 @@ void Game::LoadMainMenu()
     const glm::vec2 buttonSize = glm::vec2(1.6, 0.32);
 
     mainMenu->AddButton("Play", button1Pos, buttonSize, [this]() {
-                                SetGameScene(GameScene::Ship, TRANSITION_TIME);
+                                SetGameScene(GameScene::Level3, TRANSITION_TIME);
                             });
 
     mainMenu->AddButton("Exit", button2Pos, buttonSize, [this]() {
