@@ -42,8 +42,8 @@ void VirtualPositioning::process_input(Game &game, Simulation &simulation) {
         if(m_current_positioning) {
             m_start = m_current_positioning;
         }
-    } else if(!left_pressed && m_last_pressed && m_start) {
-        simulation.add_kamikaze(m_start.value(), calculate_speed(m_start.value(), m_current_mouse_pos));
+    } else if(!left_pressed && m_last_pressed && m_start && nearest_planet) {
+        simulation.add_kamikaze(m_start.value(), nearest_planet->m_speed + calculate_speed(m_start.value(), m_current_mouse_pos));
         m_start = std::nullopt;
     }
 
@@ -52,7 +52,8 @@ void VirtualPositioning::process_input(Game &game, Simulation &simulation) {
 
 void VirtualPositioning::draw(Game &game, const Simulation &simulation) const {
     if(m_start) {
-        const auto speed = calculate_speed(m_start.value(), m_current_mouse_pos);
+        const auto nearest_planet = simulation.get_nearest_positionable_planet(m_start.value());
+        const auto speed = nearest_planet->m_speed + calculate_speed(m_start.value(), m_current_mouse_pos);
 
         auto positions = simulation.simulate(game, m_start.value(), speed);
         const auto falls = positions.size() != 599;
