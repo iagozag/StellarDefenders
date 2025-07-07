@@ -75,17 +75,10 @@ void UIScreen::ProcessInput(const uint8_t* keys)
 
 void UIScreen::HandleKeyPress(int key)
 {
-    if(mGame->GetGameScene() != Game::GameScene::MainMenu) return;
-    // --------------
-    // TODO - PARTE 1-2
-    // --------------
-
-    // TODO 1.: Verifique se a tecla pressionada é W (SDLK_w), S (SDLK_s) ou Enter (SDLK_RETURN). Se a tecla for W,
-    //  diminua o índice do botão selecionado (mSelectedButtonIndex) e destaque o botão anterior. Se o índice for
-    //  menor que 0, defina-o como o último botão da lista. Se a tecla for S, aumente o índice do botão selecionado
-    //  e destaque o próximo botão. Se o índice for maior ou igual ao tamanho da lista, defina-o como 0 (o primeiro botão).
-    //  Se a tecla for Enter, verifique se o índice do botão selecionado é válido (maior ou igual a 0 e menor que
-    //  o tamanho da lista). Se for, chame o método OnClick do botão selecionado.
+    if(mGame->GetGameScene() == Game::GameScene::Ship) {
+        return;
+    }
+ 
     if(key == SDLK_UP){
         mButtons[mSelectedButtonIndex]->SetHighlighted(false);
         mSelectedButtonIndex--;
@@ -102,21 +95,18 @@ void UIScreen::HandleKeyPress(int key)
         mButtons[mSelectedButtonIndex]->OnClick();
 }
 
-void UIScreen::clear() {
-    for(auto &v : mButtons) {
-        delete v;
-    }
-    mButtons.clear();
-
+void UIScreen::clear_text() {
     for(auto &v : mTexts) {
         delete v;
     }
     mTexts.clear();
+}
 
-    for(auto &v : mImages) {
+void UIScreen::clear_button() {
+    for(auto &v : mButtons) {
         delete v;
     }
-    mImages.clear();
+    mButtons.clear();
 }
 
 void UIScreen::Close()

@@ -42,7 +42,8 @@ public:
     // Set state to closing
 	void Close();
 
-	void clear();
+	void clear_text();
+	void clear_button();
 
     // Get state of UI screen
 	UIState GetState() const { return mState; }

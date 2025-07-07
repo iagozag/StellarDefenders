@@ -1,6 +1,3 @@
-//
-// Created by Lucas N. Ferreira on 22/05/25.
-//
 
 #include "UIButton.h"
 
@@ -36,12 +33,6 @@ void UIButton::Draw(Game &game, const glm::vec2 &screenPos) {
     mText.Draw(game, mPosition+(mSize*0.5f)-(mText.GetSize()*0.5f));
 }
 
-void UIButton::OnClick()
-{
-    // --------------
-    // TODO - PARTE 1-2
-    // --------------
-
-    // TODO 1.: Verifique se o ponteiro mOnClick não é nulo. Se não for, chame a função mOnClick().
+void UIButton::OnClick() {
     if(mOnClick) mOnClick();
 }

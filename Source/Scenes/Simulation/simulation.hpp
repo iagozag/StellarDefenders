@@ -9,12 +9,20 @@
 #include "target.hpp"
 #include "fragment.hpp"
 #include "virtual_positioning.hpp"
+#include "../../UIElements/UIScreen.h"
 
 class Game;
 
 class Simulation {
 public:
-    Simulation(std::vector<Planet> planets, std::vector<Target> targets, const float duration, const uint32_t ships_to_be_positioned);
+    Simulation(
+        std::vector<Planet> planets,
+        std::vector<Target> targets,
+        const float duration,
+        const uint32_t ships_to_be_positioned,
+        UIScreen *screen);
+
+    virtual ~Simulation();
 
     void draw(Game &game) const;
     void run(Game &game, const float delta_t, const bool ignore_collision = false);
@@ -26,6 +34,8 @@ public:
     void unlock();
 
     void process_input(Game &game, const uint8_t* state);
+
+    bool all_enemies_dead() const;
 
     std::vector<glm::vec2> simulate(Game &game, const glm::vec2 &position, const glm::vec2 &speed) const;
 
@@ -45,9 +55,13 @@ private:
     float m_time_simulated;
     float m_duration;
 
+    UIScreen *m_screen;
+    Simulation *m_backup;
+
     VirtualPositioning m_virtual_positioning;
 
     uint32_t m_ships_to_be_positioned;
 
     bool m_locked: 1;
+    bool m_running: 1;
 };

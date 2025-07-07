@@ -10,8 +10,10 @@ Planet::Planet(const glm::vec2 &position, const glm::vec2 &speed, const float ra
     m_mass(mass),
     m_positioning_radius(positioning_radius) {}
 
-void Planet::draw(Game &game) const {
-    game.draw_ellipsis(m_position, glm::vec2(m_positioning_radius) * 2.f, {100, 200, 0, 100});
+void Planet::draw(Game &game, const bool draw_positioning_radius) const {
+    if(draw_positioning_radius) {
+        game.draw_ellipsis(m_position, glm::vec2(m_positioning_radius) * 2.f, {100, 200, 0, 100});
+    }
     game.draw_ellipsis(m_position, glm::vec2(m_radius) * 2.f, {100, 255, 200, 255});
 }
 
