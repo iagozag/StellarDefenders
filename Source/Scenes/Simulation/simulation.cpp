@@ -135,6 +135,7 @@ void Simulation::run(Game &game, float delta_t) {
     
     for(size_t i = 0; i < m_fragments.size(); i++) {
         m_fragments[i].apply_acceleration(fragment_accelerations[i], delta_t);
+        m_fragments[i].m_time_alive += delta_t;
     }
 
     run_collision_tests();
