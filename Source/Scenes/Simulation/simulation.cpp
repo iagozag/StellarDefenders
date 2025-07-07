@@ -72,15 +72,19 @@ void Simulation::draw(Game &game) const {
         fragment.draw(game);
     }
 
-    if(m_locked && m_time_simulated == 0 && m_ships_to_be_positioned) {
+    if(m_locked && !m_running && m_time_simulated == 0 && m_ships_to_be_positioned) {
         m_virtual_positioning.draw(game, *this);
     }
 }
 
 void Simulation::process_input(Game &game, const uint8_t* state) {
-    if(m_locked && m_time_simulated == 0 && m_ships_to_be_positioned) {
+    if(m_locked && !m_running && m_time_simulated == 0 && m_ships_to_be_positioned) {
         m_virtual_positioning.process_input(game, *this);
     }
+}
+
+bool Simulation::is_locked() const {
+    return m_locked;
 }
 
 const Planet *Simulation::get_nearest_positionable_planet(const glm::vec2 &position) const {
