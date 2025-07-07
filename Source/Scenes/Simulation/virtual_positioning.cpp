@@ -9,7 +9,7 @@
 #include "simulation.hpp"
 
 constexpr float ARROW_MAX_LEGTH = 0.5;
-constexpr float SPEED_MULTIPLIER = 1;
+constexpr float SPEED_MULTIPLIER = 0.5;
 
 VirtualPositioning::VirtualPositioning():
     m_last_pressed(false)
