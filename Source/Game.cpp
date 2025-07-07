@@ -53,7 +53,8 @@ Game::Game(int windowWidth, int windowHeight):
     mIsViableAreaActive(false),
     mGameTimer(0.0f),
     mGameTimeLimit(0),
-    mShipMenu(nullptr)
+    mShipMenu(nullptr),
+    mCurrentLevel(1)
 {
 
 }
@@ -207,20 +208,20 @@ void Game::LoadMainMenu()
     const glm::vec2 buttonSize = glm::vec2(1.6, 0.32);
 
     mainMenu->AddButton("Play", button1Pos, buttonSize, [this]() {
-                                SetGameScene(GameScene::Level1, TRANSITION_TIME);
+                                SetGameScene(GameScene::Ship, TRANSITION_TIME);
                             });
 
     mainMenu->AddButton("Exit", button2Pos, buttonSize, [this]() {
                                 Shutdown();
                             });
     
-    mainMenu->clear();
+    // mainMenu->clear();
 
-    mainMenu->AddText("1 ship remaining", glm::vec2(-0.925, -0.925), glm::vec2(1, 0.15));
+    // mainMenu->AddText("1 ship remaining", glm::vec2(-0.925, -0.925), glm::vec2(1, 0.15));
     
-    mainMenu->AddButton("Simulate", glm::vec2(0.45, -0.95), glm::vec2(0.5, 0.2), []() {
-        std::cout << "AAA\n";
-    });
+    // mainMenu->AddButton("Simulate", glm::vec2(0.45, -0.95), glm::vec2(0.5, 0.2), []() {
+    //     std::cout << "AAA\n";
+    // });
 }
 
 void Game::prepare_simulation(const size_t amount_kamikaze) {

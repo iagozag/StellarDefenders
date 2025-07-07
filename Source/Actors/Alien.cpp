@@ -44,8 +44,13 @@ void Alien::OnProcessInput(const uint8_t* state)
         mIsRunning = false;
     }
 
-    if(mPosition.x > mGame->GetShipMenu()->GetBackgroundSize().x - 3.f and state[SDL_SCANCODE_E]){
-        mGame->SetGameScene(Game::GameScene::Level1, Game::TRANSITION_TIME);
+    if(mPosition.x > mGame->GetShipMenu()->GetBackgroundSize().x - 3.f){
+        
+
+        int currentLevel = mGame->GetCurrentLevel();
+        if(state[SDL_SCANCODE_1]) mGame->SetGameScene(Game::GameScene::Level1, Game::TRANSITION_TIME);
+        if(state[SDL_SCANCODE_2] and currentLevel >= 2) mGame->SetGameScene(Game::GameScene::Level2, Game::TRANSITION_TIME);
+        if(state[SDL_SCANCODE_3] and currentLevel >= 3) mGame->SetGameScene(Game::GameScene::Level3, Game::TRANSITION_TIME);
     }
 }
 

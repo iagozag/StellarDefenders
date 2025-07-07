@@ -35,7 +35,8 @@ public:
         MainMenu,
         Ship,
         Level1,
-        Level2
+        Level2,
+        Level3
     };
 
     enum class SceneManagerState
@@ -116,6 +117,9 @@ public:
 
     class ShipMenu* GetShipMenu(){ return mShipMenu; }
 
+    int GetCurrentLevel(){ return mCurrentLevel; }
+    void SetCurrentLevel(int c){ mCurrentLevel = std::max(mCurrentLevel, c); }
+
 private:
     void ProcessInput();
     void UpdateGame();
@@ -172,4 +176,6 @@ private:
 
     class ShipMenu* mShipMenu;
     std::optional<std::unique_ptr<Simulation>> m_current_simulation;
+
+    int mCurrentLevel;
 };
