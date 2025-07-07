@@ -16,6 +16,8 @@ public:
 
     Alien* GetAlien() const { return mAlien; }
 
+    glm::vec2 GetBackgroundSize(){ return mBackgroundSize; }
+
     void draw(Game& game) const;
     void run(const float delta_t);
 

@@ -54,8 +54,8 @@ void DrawAnimatedComponent::Draw(SDL_Renderer* renderer)
     float ratio = (float)srcRect->w/(float)srcRect->h;
 
     SDL_FRect dstRect = {
-            mOwner->GetPosition().x - mOwner->GetGame()->GetCamera().m_pos.x,
-            mOwner->GetPosition().y - mOwner->GetGame()->GetCamera().m_pos.y,
+            mOwner->GetPosition().x,
+            mOwner->GetPosition().y,
             ratio*mScale.x,
             ratio*mScale.y
     };
