@@ -13,7 +13,7 @@ public:
     void draw(Game &game) const;
 
     // Mouse position deve corresponder às coordenadas já normalizadas (de -1 até 1)
-    glm::vec2 position_ship_accordingly(const glm::vec2 &mouse_position);
+    glm::vec2 position_ship_accordingly(const glm::vec2 &mouse_position) const;
 
     void on_collision() override;
 

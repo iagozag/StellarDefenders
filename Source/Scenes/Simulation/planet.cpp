@@ -17,7 +17,7 @@ void Planet::draw(Game &game) const {
 
 void Planet::on_collision() {}
 
-glm::vec2 Planet::position_ship_accordingly(const glm::vec2 &mouse_position) {
+glm::vec2 Planet::position_ship_accordingly(const glm::vec2 &mouse_position) const {
     const auto direction_to_mouse = mouse_position - m_position;
     const auto dist_sq = length2(direction_to_mouse);
     const auto dist = glm::sqrt(dist_sq);

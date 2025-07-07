@@ -296,7 +296,7 @@ void Game::ProcessInputActors()
         }
 
         if(m_current_simulation) {
-            m_current_simulation.value()->ProcessInput(state);
+            m_current_simulation.value()->process_input(*this, state);
         }
     }
 }
