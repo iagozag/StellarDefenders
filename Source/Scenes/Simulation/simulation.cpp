@@ -13,6 +13,7 @@ Simulation::Simulation(
     std::vector<Target> targets,
     const float duration,
     const uint32_t ships_to_be_positioned,
+    const uint32_t level,
     UIScreen *screen
 ):
     m_planets(std::move(planets)),
@@ -22,6 +23,7 @@ Simulation::Simulation(
     m_screen(screen),
     m_backup(nullptr),
     m_ships_to_be_positioned(ships_to_be_positioned),
+    m_level(level),
     m_locked(true),
     m_running(false)
 {
@@ -107,7 +109,7 @@ const Planet *Simulation::get_nearest_positionable_planet(const glm::vec2 &posit
 }
 
 std::vector<glm::vec2> Simulation::simulate(Game &game, const glm::vec2 &position, const glm::vec2 &speed) const {
-    auto copy = Simulation(m_planets, {}, 100, 1, nullptr);
+    auto copy = Simulation(m_planets, {}, 100, 1, 0, nullptr);
     copy.add_kamikaze(position, speed);
     copy.unlock();
 

@@ -64,6 +64,7 @@ private:
     VirtualPositioning m_virtual_positioning;
 
     uint32_t m_ships_to_be_positioned;
+    uint32_t m_level;
 
     bool m_locked: 1;
     bool m_running: 1;
