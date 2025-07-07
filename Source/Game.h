@@ -168,9 +168,6 @@ private:
     class HUD *mHUD;
     SoundHandle mMusicHandle;
 
-    SDL_Rect mViableAreaRect;
-    bool mIsViableAreaActive;
-
     float mGameTimer;
     int mGameTimeLimit;
 

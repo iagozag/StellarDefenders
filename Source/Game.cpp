@@ -14,7 +14,6 @@
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 #include <SDL_mixer.h>
-#include "CSV.h"
 #include "Random.h"
 #include "Game.h"
 #include "HUD.h"
@@ -50,7 +49,6 @@ Game::Game(int windowWidth, int windowHeight):
     mNextScene(GameScene::MainMenu),
     m_camera(),
     mHUD(nullptr),
-    mIsViableAreaActive(false),
     mGameTimer(0.0f),
     mGameTimeLimit(0),
     mShipMenu(nullptr),
@@ -87,35 +85,28 @@ bool Game::Initialize()
         return false;
     }
 
-    // Initialize SDL_ttf
     if (TTF_Init() != 0)
     {
         SDL_Log("Failed to initialize SDL_ttf");
         return false;
     }
 
-    // Initialize SDL_mixer
    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) == -1)
     {
         SDL_Log("Failed to initialize SDL_mixer");
         return false;
     }
 
-    // Start random number generator
     Random::Init();
 
     mAudio = new AudioSystem();
-
 
     mSpatialHashing = new SpatialHashing(32.0f * 4.0f,
                                          WORLD_WIDTH,
                                          WORLD_HEIGHT);
     mTicksCount = SDL_GetTicks();
 
-    // Init all game actors
     SetGameScene(GameScene::MainMenu);
-
-    // m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level1()));
 
     return true;
 }
@@ -166,18 +157,18 @@ void Game::ChangeScene()
     // Scene Manager FSM: using if/else instead of switch
     if (mNextScene == GameScene::MainMenu)
     {
-        // mMusicHandle = mAudio->PlaySound("mainMenu.mp3", true);
+        mMusicHandle = mAudio->PlaySound("mainMenu.mp3", true);
         // Initialize main menu actors
         LoadMainMenu();
     }
     else if (mNextScene == GameScene::Ship)
     {
-        // mMusicHandle = mAudio->PlaySound("spaceshipAmbient.mp3", true);
+        mMusicHandle = mAudio->PlaySound("spaceshipAmbient.mp3", true);
         mShipMenu = new ShipMenu(*this);
     }
     else if (mNextScene == GameScene::Level1)
     {
-        // mMusicHandle = mAudio->PlaySound("level1.mp3", true);
+        mMusicHandle = mAudio->PlaySound("level1.mp3", true);
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
         mHUD->SetLevelName("Fase 1");
 
@@ -185,7 +176,7 @@ void Game::ChangeScene()
     }
     else if (mNextScene == GameScene::Level2)
     {
-        // mMusicHandle = mAudio->PlaySound("level2.mp3", true);
+        mMusicHandle = mAudio->PlaySound("level2.mp3", true);
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
 
         mHUD->SetLevelName("Fase 2");
@@ -214,14 +205,6 @@ void Game::LoadMainMenu()
     mainMenu->AddButton("Exit", button2Pos, buttonSize, [this]() {
                                 Shutdown();
                             });
-    
-    // mainMenu->clear();
-
-    // mainMenu->AddText("1 ship remaining", glm::vec2(-0.925, -0.925), glm::vec2(1, 0.15));
-    
-    // mainMenu->AddButton("Simulate", glm::vec2(0.45, -0.95), glm::vec2(0.5, 0.2), []() {
-    //     std::cout << "AAA\n";
-    // });
 }
 
 void Game::prepare_simulation(const size_t amount_kamikaze) {
@@ -541,18 +524,6 @@ void Game::GenerateOutput() {
 
     if(mGameScene == GameScene::Ship)
         mShipMenu->draw(*this);
-
-    // Draw viable area
-    if (mGameScene != GameScene::MainMenu and mGameScene != GameScene::Ship and mIsViableAreaActive)
-    {
-        SDL_SetRenderDrawBlendMode(mRenderer, SDL_BLENDMODE_BLEND);
-        SDL_SetRenderDrawColor(mRenderer, 135, 206, 250, 64);
-        SDL_RenderFillRect(mRenderer, &mViableAreaRect);
-
-        SDL_Rect inviableAreaRect = {mViableAreaRect.x+mViableAreaRect.w, 0, mWindowWidth-(mViableAreaRect.x+mViableAreaRect.w), mWindowHeight};
-        SDL_SetRenderDrawColor(mRenderer, 255, 100, 100, 64);
-        SDL_RenderFillRect(mRenderer, &inviableAreaRect);
-    }
 
     // Get actors on camera
     std::vector<Actor*> actorsOnCamera =

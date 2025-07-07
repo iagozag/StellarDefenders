@@ -2,21 +2,16 @@
 #include "../norm_greater.hpp"
 #include "../UIElements/UIScreen.h"
 
-Alien::Alien(Game* game, const float forwardSpeed, const float jumpSpeed):
+Alien::Alien(Game* game, const float forwardSpeed):
     Actor(game),
     mForwardSpeed(forwardSpeed),
-    mJumpSpeed(jumpSpeed),
     mIsRunning(false),
-    mIsDead(false),
     mLevelSelectPrompt(nullptr)
 {
     mRigidBodyComponent = new RigidBodyComponent(this, 1,10, false);
 
-    // mColliderComponent = new AABBColliderComponent(this, 0, 0, Game::TILE_SIZE - 4.0f, Game::TILE_SIZE, ColliderLayer::Player);
-
     m_size = glm::vec2(1, 1.5);
     mDrawComponent = new DrawAnimatedComponent(this,  "../Assets/Sprites/ET/texture.png", "../Assets/Sprites/ET/texture.json", m_size, 200);
-    // m_size = norm_greater(m_size);
 
     mDrawComponent->AddAnimation("idle", std::vector<int>({6}));
     mDrawComponent->AddAnimation("run", std::vector<int>({4,0,2,11,8,5}));
@@ -86,24 +81,10 @@ void Alien::OnUpdate(float deltaTime)
 
 void Alien::ManageAnimations()
 {
-    if (!mIsDead && mIsRunning) {
+    if (mIsRunning) {
         mDrawComponent->SetAnimation("run");
         mDrawComponent->SetAnimFPS(10.0f);
     }
-    if (!mIsDead && !mIsRunning) mDrawComponent->SetAnimation("idle");
+    else mDrawComponent->SetAnimation("idle");
 
 }
-
-void Alien::Kill()
-{
-    mDrawComponent->SetAnimation("idle");
-    mIsDead = true;
-    SetState(ActorState::Destroy);
-    mRigidBodyComponent->SetEnabled(false);
-    mColliderComponent->SetEnabled(false);
-
-}
-
-void Alien::OnHorizontalCollision(const float minOverlap, AABBColliderComponent* other) {}
-
-void Alien::OnVerticalCollision(const float minOverlap, AABBColliderComponent* other) {}

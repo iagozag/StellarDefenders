@@ -11,7 +11,7 @@ class UIScreen;
 
 class Alien : public Actor{
     public:
-        explicit Alien(Game* game, float forwardSpeed = 80.0f, float jumpSpeed = -750.0f);
+        explicit Alien(Game* game, float forwardSpeed = 80.0f);
         ~Alien();
 
         void OnProcessInput(const Uint8* keyState) override;
@@ -19,25 +19,17 @@ class Alien : public Actor{
 
         glm::vec2 GetScale(){ return m_size; }
 
-        void OnHorizontalCollision(const float minOverlap, AABBColliderComponent* other) override;
-        void OnVerticalCollision(const float minOverlap, AABBColliderComponent* other) override;
-
-        void Kill() override;
-
     private:
         void ManageAnimations();
 
         float mForwardSpeed;
-        float mJumpSpeed;
         bool mIsRunning;
-        bool mIsDead;
         glm::vec2 m_size;
 
         class UIScreen* mLevelSelectPrompt;
 
         class RigidBodyComponent* mRigidBodyComponent;
         class DrawAnimatedComponent* mDrawComponent;
-        class AABBColliderComponent* mColliderComponent;
 };
 
 
