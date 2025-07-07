@@ -50,7 +50,7 @@ void UIText::SetText(const std::string &text)
 }
 
 void UIText::Draw(Game &game, const glm::vec2 &screenPos) {
-    SDL_FRect titleQuad = {mPosition.x+screenPos.x, mPosition.y+screenPos.y, mSize.x, mSize.y};
+    SDL_FRect titleQuad = {mPosition.x, mPosition.y, mSize.x, mSize.y};
     const auto transform = game.GetCamera().get_total_transformation_matrix(game);
     const auto transformed_quad = rect_transform(titleQuad, transform);
 

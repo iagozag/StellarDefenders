@@ -102,6 +102,23 @@ void UIScreen::HandleKeyPress(int key)
         mButtons[mSelectedButtonIndex]->OnClick();
 }
 
+void UIScreen::clear() {
+    for(auto &v : mButtons) {
+        delete v;
+    }
+    mButtons.clear();
+
+    for(auto &v : mTexts) {
+        delete v;
+    }
+    mTexts.clear();
+
+    for(auto &v : mImages) {
+        delete v;
+    }
+    mImages.clear();
+}
+
 void UIScreen::Close()
 {
 	mState = UIState::Closing;
@@ -120,18 +137,21 @@ UIText* UIScreen::AddText(const std::string &name, const glm::vec2 &pos, const g
     return mTexts.back();
 }
 
-UIButton* UIScreen::AddButton(const std::string& name, const glm::vec2 &pos, const glm::vec2& dims, std::function<void()> onClick)
-{
-    // --------------
-    // TODO - PARTE 1-2
-    // --------------
+UIButton* UIScreen::AddButton(
+    const std::string& name,
+    const glm::vec2 &pos,
+    const glm::vec2& dims,
+    std::function<void()> onClick
+) {
+    constexpr float PADDING = 0.03;
+    mButtons.emplace_back(new UIButton(
+        name, mFont, onClick,
+        pos, dims, glm::vec3(200.0f/255.0f, 100.0f/255.0f, 0.0f/255.0f),
+        40, 1024,
+        pos + glm::vec2(PADDING),
+        dims - glm::vec2(PADDING) * 2.f
+    ));
 
-    // TODO 1.: Crie um novo UIButton com o nome, fonte (mFont), função de clique (onClick),
-    //  posição (pos), dimensões (dims) e cor laranja. Adicione o botão à lista de botões (mButtons).
-    mButtons.emplace_back(new UIButton(name, mFont, onClick, pos, dims, glm::vec3(200.0f/255.0f, 100.0f/255.0f, 0.0f/255.0f)));
-
-    // TODO 2.: Se a lista de botões (mButtons) tiver apenas um botão, defina o índice do botão
-    //  selecionado (mSelectedButtonIndex) como 0 e destaque o botão (b->SetHighlighted(true)).
     if((int)mButtons.size() == 1) mSelectedButtonIndex = 0, mButtons[0]->SetHighlighted(true);
 
     // TODO 3.: Retorne o ponteiro do botão criado (b).

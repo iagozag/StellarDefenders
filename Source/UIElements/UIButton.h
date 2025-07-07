@@ -17,10 +17,10 @@ class UIButton : public UIElement
 {
 public:
     UIButton(const std::string& text, class UIFont* font, std::function<void()> onClick,
-             const glm::vec2& pos, const glm::vec2& size, const glm::vec3& color = glm::vec3(30, 30, 30),
-             int pointSize = 40, const unsigned wrapLength = 1024,
-             const glm::vec2 &textPos = glm::vec2(.0f),
-             const glm::vec2 &textSize = glm::vec2(1.12f, 0.16f),
+             const glm::vec2& pos, const glm::vec2& size, const glm::vec3& color,
+             int pointSize, const unsigned wrapLength,
+             const glm::vec2 &textPos,
+             const glm::vec2 &textSize,
              const glm::vec3& textColor = Color::White);
 
     ~UIButton();
