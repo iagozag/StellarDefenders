@@ -207,7 +207,7 @@ void Game::LoadMainMenu()
     const glm::vec2 buttonSize = glm::vec2(1.6, 0.32);
 
     mainMenu->AddButton("Play", button1Pos, buttonSize, [this]() {
-                                SetGameScene(GameScene::Level3, TRANSITION_TIME);
+                                SetGameScene(GameScene::Ship, TRANSITION_TIME);
                             });
 
     mainMenu->AddButton("Exit", button2Pos, buttonSize, [this]() {
