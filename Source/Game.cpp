@@ -162,32 +162,43 @@ void Game::ChangeScene()
         mMusicHandle = mAudio->PlaySound("mainMenu.mp3", true);
         // Initialize main menu actors
         LoadMainMenu();
+        m_current_simulation = std::nullopt;
     }
     else if (mNextScene == GameScene::Ship)
     {
         mMusicHandle = mAudio->PlaySound("spaceshipAmbient.mp3", true);
         mShipMenu = new ShipMenu(*this);
+        m_current_simulation = std::nullopt;
     }
     else if (mNextScene == GameScene::Level1)
     {
         mMusicHandle = mAudio->PlaySound("level1.mp3", true);
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
         mHUD->SetLevelName("Level 1");
-        m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level1(new UIScreen(this, "../Assets/Fonts/SMB.ttf"))));
+        m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level1(
+            new UIScreen(this, "../Assets/Fonts/SMB.ttf"),
+            *this
+        )));
     }
     else if (mNextScene == GameScene::Level2)
     {
         mMusicHandle = mAudio->PlaySound("level2.mp3", true);
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
         mHUD->SetLevelName("Level 2");
-        m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level2(new UIScreen(this, "../Assets/Fonts/SMB.ttf"))));
+        m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level2(
+            new UIScreen(this, "../Assets/Fonts/SMB.ttf"),
+            *this
+        )));
     }
     else if (mNextScene == GameScene::Level3)
     {
         mMusicHandle = mAudio->PlaySound("level1.mp3", true);
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
         mHUD->SetLevelName("Level 3");
-        m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level3(new UIScreen(this, "../Assets/Fonts/SMB.ttf"))));
+        m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level3(
+            new UIScreen(this, "../Assets/Fonts/SMB.ttf"),
+            *this
+        )));
     }
 
     // Set new scene
