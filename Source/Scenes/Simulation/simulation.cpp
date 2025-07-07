@@ -137,11 +137,6 @@ glm::vec2 calculate_acceleration(const glm::vec2 &body_pos, const Planet &attrac
 }
 
 void Simulation::run(Game &game, const float delta_t, const bool ignore_collision) {
-    if(all_enemies_dead()){
-        game.SetGameScene(Game::GameScene::Ship, Game::TRANSITION_TIME);
-        game.SetCurrentLevel(m_level+1);
-    }
-
     if(m_screen) {
         m_screen->clear_text();
         const auto rendered_text = std::to_string(m_ships_to_be_positioned) + " ship remaining";
