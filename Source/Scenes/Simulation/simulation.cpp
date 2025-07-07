@@ -43,8 +43,10 @@ Simulation::Simulation(
             }
         });
         m_screen->AddButton("Remove all", glm::vec2(0.45, -0.95), glm::vec2(0.5, 0.2), [this]() {
-            m_ships_to_be_positioned += m_kamikaze.size();
-            m_kamikaze.clear();
+            if(!m_running) {
+                m_ships_to_be_positioned += m_kamikaze.size();
+                m_kamikaze.clear();
+            }
         });
     }
 }
@@ -208,8 +210,6 @@ void Simulation::run(Game &game, const float delta_t, const bool ignore_collisio
 
     for(size_t i = 0; i < m_kamikaze.size(); i++) {
         auto& k = m_kamikaze[i];
-        // k.OnUpdate(game, delta_t);
-
         k.apply_acceleration(kamikaze_accelerations[i], delta_t);
     }
 
