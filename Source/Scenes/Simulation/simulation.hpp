@@ -8,15 +8,16 @@
 #include "kamikaze.hpp"
 #include "target.hpp"
 #include "fragment.hpp"
+#include "virtual_positioning.hpp"
 
 class Game;
 
 class Simulation {
 public:
-    Simulation(std::vector<Planet> planets, std::vector<Target> targets, const float duration);
+    Simulation(std::vector<Planet> planets, std::vector<Target> targets, const float duration, const uint32_t ships_to_be_positioned);
 
     void draw(Game &game) const;
-    void run(Game &game, const float delta_t);
+    void run(Game &game, const float delta_t, const bool ignore_collision = false);
 
     void add_fragments(const std::vector<Fragment> &fragments);
     void add_kamikaze(const glm::vec2 &position, const glm::vec2 &speed);
@@ -24,11 +25,13 @@ public:
     void lock();
     void unlock();
 
-    void ProcessInput(const uint8_t* state);
+    void process_input(Game &game, const uint8_t* state);
 
     std::vector<glm::vec2> simulate(Game &game, const glm::vec2 &position, const glm::vec2 &speed) const;
 
     bool finished() const;
+
+    const Planet *get_nearest_positionable_planet(const glm::vec2 &position) const;
     
 private:
 
@@ -41,6 +44,10 @@ private:
     std::vector<Fragment> m_fragments;
     float m_time_simulated;
     float m_duration;
+
+    VirtualPositioning m_virtual_positioning;
+
+    uint32_t m_ships_to_be_positioned;
 
     bool m_locked: 1;
 };

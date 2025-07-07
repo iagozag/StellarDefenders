@@ -8,14 +8,19 @@
 #include <unordered_set>
 #include <limits>
 
-Simulation::Simulation(std::vector<Planet> planets, std::vector<Target> targets, const float duration):
+Simulation::Simulation(
+    std::vector<Planet> planets,
+    std::vector<Target> targets,
+    const float duration,
+    const uint32_t ships_to_be_positioned
+):
     m_planets(std::move(planets)),
     m_targets(std::move(targets)),
     m_time_simulated(0),
     m_duration(duration),
-    m_locked(false) {
-        m_kamikaze.emplace_back(Kamikaze(glm::vec2(.0f), glm::vec2(.0f)));
-    }
+    m_ships_to_be_positioned(ships_to_be_positioned),
+    m_locked(true)
+{}
 
 void Simulation::draw(Game &game) const {
     for(auto &planet : m_planets) {
@@ -24,10 +29,6 @@ void Simulation::draw(Game &game) const {
 
     for(auto &kamikaze : m_kamikaze) {
         kamikaze.draw(game);
-
-        if(kamikaze.GetShipState() == ShipState::SlingShot or kamikaze.GetShipState() == ShipState::Ready){
-            kamikaze.DrawSlingShotLine(game, simulate(game, kamikaze.get_position(), kamikaze.get_direction()));
-        }
     }
 
     for(auto &target : m_targets) {
@@ -37,14 +38,39 @@ void Simulation::draw(Game &game) const {
     for(auto &fragment : m_fragments) {
         fragment.draw(game);
     }
+
+    if(m_locked && m_time_simulated == 0 && m_ships_to_be_positioned) {
+        m_virtual_positioning.draw(game, *this);
+    }
 }
 
-void Simulation::ProcessInput(const uint8_t* state){
-    for(auto& kamikaze: m_kamikaze) kamikaze.OnProcessInput(state);
+void Simulation::process_input(Game &game, const uint8_t* state) {
+    if(m_locked && m_time_simulated == 0 && m_ships_to_be_positioned) {
+        m_virtual_positioning.process_input(game, *this);
+    }
+}
+
+const Planet *Simulation::get_nearest_positionable_planet(const glm::vec2 &position) const {
+    const Planet *nearest = nullptr;
+    for(auto &planet : m_planets) {
+        if(planet.m_positioning_radius != 0) {
+            if(!nearest) {
+                nearest = &planet;
+            } else {
+                const auto dist_nearest = glm::length(nearest->m_position - position);
+                const auto cur_dist = glm::length(planet.m_position - position);
+                if(cur_dist < dist_nearest) {
+                    nearest = &planet;   
+                }
+            }
+        }
+    }
+
+    return nearest;
 }
 
 std::vector<glm::vec2> Simulation::simulate(Game &game, const glm::vec2 &position, const glm::vec2 &speed) const {
-    auto copy = Simulation(m_planets, {}, 100);
+    auto copy = Simulation(m_planets, {}, 100, 1);
     copy.add_kamikaze(position, speed);
     copy.unlock();
 
@@ -69,7 +95,7 @@ glm::vec2 calculate_acceleration(const glm::vec2 &body_pos, const Planet &attrac
     return attractor.m_mass * force_dir / dist_sq;
 }
 
-void Simulation::run(Game &game, float delta_t) {
+void Simulation::run(Game &game, const float delta_t, const bool ignore_collision) {
     if(m_locked) {
         return;
     }
@@ -107,7 +133,7 @@ void Simulation::run(Game &game, float delta_t) {
     for(size_t i = 0; i < m_planets.size(); i++) {
         for(size_t j = i + 1; j < m_planets.size(); j++) {
             const auto diff = m_planets[i].m_position - m_planets[j].m_position;
-            const auto dist_sq = sq(diff.x) + sq(diff.y);
+            const auto dist_sq = std::max(sq(diff.x) + sq(diff.y), 0.00001f);
 
             const auto force_dir = glm::normalize(diff);
 
@@ -137,7 +163,7 @@ void Simulation::run(Game &game, float delta_t) {
 
     for(size_t i = 0; i < m_kamikaze.size(); i++) {
         auto& k = m_kamikaze[i];
-        k.OnUpdate(game, delta_t);
+        // k.OnUpdate(game, delta_t);
 
         k.apply_acceleration(kamikaze_accelerations[i], delta_t);
     }
@@ -151,7 +177,9 @@ void Simulation::run(Game &game, float delta_t) {
         m_fragments[i].m_time_alive += delta_t;
     }
 
-    run_collision_tests();
+    if(!ignore_collision) {
+        run_collision_tests();
+    }
 }
 
 static glm::vec2 v_min(const glm::vec2 &a, const glm::vec2 &b) {
@@ -173,7 +201,7 @@ struct PairHasher {
 };
 
 void Simulation::run_collision_tests() {
-    constexpr size_t MAX_GRID_SIZE = 128;
+    constexpr size_t MAX_GRID_SIZE = 32;
 
     std::vector<std::reference_wrapper<CollidableSphere>> grid[MAX_GRID_SIZE][MAX_GRID_SIZE];
     glm::vec2 start(std::numeric_limits<float>::infinity()), end(-std::numeric_limits<float>::infinity());
@@ -304,6 +332,7 @@ void Simulation::unlock() {
 }
 
 void Simulation::add_kamikaze(const glm::vec2 &position, const glm::vec2 &speed) {
+    m_ships_to_be_positioned--;
     m_kamikaze.emplace_back(position, speed);
 }
 

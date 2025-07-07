@@ -214,13 +214,13 @@ void Game::LoadMainMenu()
                                 Shutdown();
                             });
     
-    mainMenu->clear();
+    // mainMenu->clear();
 
-    mainMenu->AddText("1 ship remaining", glm::vec2(-0.925, -0.925), glm::vec2(1, 0.15));
+    // mainMenu->AddText("1 ship remaining", glm::vec2(-0.925, -0.925), glm::vec2(1, 0.15));
     
-    mainMenu->AddButton("Simulate", glm::vec2(0.45, -0.95), glm::vec2(0.5, 0.2), []() {
-        std::cout << "AAA\n";
-    });
+    // mainMenu->AddButton("Simulate", glm::vec2(0.45, -0.95), glm::vec2(0.5, 0.2), []() {
+    //     std::cout << "AAA\n";
+    // });
 }
 
 void Game::prepare_simulation(const size_t amount_kamikaze) {
@@ -295,7 +295,7 @@ void Game::ProcessInputActors()
         }
 
         if(m_current_simulation) {
-            m_current_simulation.value()->ProcessInput(state);
+            m_current_simulation.value()->process_input(*this, state);
         }
     }
 }

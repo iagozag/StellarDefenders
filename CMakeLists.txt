@@ -42,6 +42,7 @@ target_compile_options(${PROJECT_NAME} PRIVATE
     -Wno-unused-result
     -Wno-sign-compare
     -Wno-char-subscripts
+    -O2
 )
 
 # Flags específicas para o tipo de build
