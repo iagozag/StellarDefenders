@@ -162,44 +162,32 @@ void Game::ChangeScene()
         mMusicHandle = mAudio->PlaySound("mainMenu.mp3", true);
         // Initialize main menu actors
         LoadMainMenu();
-        m_current_simulation = std::nullopt;
     }
     else if (mNextScene == GameScene::Ship)
     {
         mMusicHandle = mAudio->PlaySound("spaceshipAmbient.mp3", true);
         mShipMenu = new ShipMenu(*this);
-        m_current_simulation = std::nullopt;
     }
     else if (mNextScene == GameScene::Level1)
     {
         mMusicHandle = mAudio->PlaySound("level1.mp3", true);
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
-        mHUD->SetLevelName("Fase 1");
-
-        m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level1(
-            new UIScreen(this, "../Assets/Fonts/SMB.ttf"),
-            *this
-        )));
+        mHUD->SetLevelName("Level 1");
+        m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level1(new UIScreen(this, "../Assets/Fonts/SMB.ttf"))));
     }
     else if (mNextScene == GameScene::Level2)
     {
         mMusicHandle = mAudio->PlaySound("level2.mp3", true);
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
-        mHUD->SetLevelName("Fase 2");
-        m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level2(
-            new UIScreen(this, "../Assets/Fonts/SMB.ttf"),
-            *this
-        )));
+        mHUD->SetLevelName("Level 2");
+        m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level2(new UIScreen(this, "../Assets/Fonts/SMB.ttf"))));
     }
     else if (mNextScene == GameScene::Level3)
     {
         mMusicHandle = mAudio->PlaySound("level1.mp3", true);
         mHUD = new HUD(this, "../Assets/Fonts/SMB.ttf");
-        mHUD->SetLevelName("Fase 3");
-        m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level3(
-            new UIScreen(this, "../Assets/Fonts/SMB.ttf"),
-            *this
-        )));
+        mHUD->SetLevelName("Level 3");
+        m_current_simulation = std::optional(std::unique_ptr<Simulation>(new Level3(new UIScreen(this, "../Assets/Fonts/SMB.ttf"))));
     }
 
     // Set new scene
@@ -219,7 +207,7 @@ void Game::LoadMainMenu()
     const glm::vec2 buttonSize = glm::vec2(1.6, 0.32);
 
     mainMenu->AddButton("Play", button1Pos, buttonSize, [this]() {
-                                SetGameScene(GameScene::Level3, TRANSITION_TIME);
+                                SetGameScene(GameScene::Ship, TRANSITION_TIME);
                             });
 
     mainMenu->AddButton("Exit", button2Pos, buttonSize, [this]() {
