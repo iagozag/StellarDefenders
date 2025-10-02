@@ -1,11 +1,11 @@
 # Screenshots
-![image](https://github.com/user-attachments/assets/75532a88-dba0-44f9-9941-c186d7b14fa1)
+<img width="641" height="441" alt="image" src="https://github.com/user-attachments/assets/f7c1d0c4-f33b-4032-adc5-342d6b429a07" />
 
-![image](https://github.com/user-attachments/assets/92c0d9d7-5d16-46fa-830e-35cf520874d7)
+<img width="1179" height="752" alt="image" src="https://github.com/user-attachments/assets/ad536cdf-998d-45fc-a1d0-cd6577818ae7" />
 
-![image](https://github.com/user-attachments/assets/417bb5b1-7ff2-495c-be5c-72a6f27a0aea)
+<img width="1205" height="767" alt="image" src="https://github.com/user-attachments/assets/25614815-2555-4e7b-860e-4619c7dc485a" />
 
-![image](https://github.com/user-attachments/assets/d2941330-4c61-4379-85ab-39ea002ae93e)
+<img width="1430" height="941" alt="image" src="https://github.com/user-attachments/assets/af86d113-2246-4985-95a4-665e542f2740" />
 
 # Stellar Defenders
 
